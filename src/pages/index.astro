@@ -5,26 +5,26 @@ import Footer from '../components/Footer.astro';
 import ContactForm from '../components/ContactForm.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import UniversitiesBanner from '../components/UniversitiesBanner.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 ---
 
 <Layout 
   title="Accompagnement académique en mathématiques et sciences | revise-tes-maths.fr"
   description="Accompagnement académique exigeant en mathématiques et sciences pour collège et lycée. Suivi individuel, rigueur méthodologique."
-  whatsappPhone="33616635187"
 >
   <Header />
   
   <!-- Hero Section -->
-  <section class="bg-white py-8 md:py-20">
+  <section class="bg-white py-4 md:py-6">
     <div class="container mx-auto px-4">
       <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-12">
+        <div class="flex flex-col md:flex-row items-center gap-3 md:gap-8">
           <!-- Photo -->
           <div class="flex-shrink-0">
             <img 
               src="/massyl.jpg" 
               alt="Massyl" 
-              class="w-28 h-28 md:w-64 md:h-64 rounded-full object-cover shadow-lg"
+              class="w-20 h-20 md:w-40 md:h-40 rounded-full object-cover shadow-lg border-2 border-black"
               loading="eager"
               decoding="async"
             />
@@ -32,29 +32,29 @@ import UniversitiesBanner from '../components/UniversitiesBanner.astro';
           
           <!-- Contenu texte -->
           <div class="flex-1 text-center md:text-left">
-            <h1 class="text-2xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
-              Accompagnement en mathématiques et physique-chimie
+            <h1 class="text-xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-3">
+              Accompagnement académique exigeant en mathématiques et sciences
             </h1>
             
-            <p class="text-base md:text-xl text-gray-700 mb-4 md:mb-6">
-              Collège & lycée – Suivi individuel
+            <p class="text-sm md:text-lg text-gray-700 mb-2 md:mb-3">
+              Collège & lycée – suivi individuel pour élèves ambitieux
             </p>
             
-            <p class="text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed">
-              Réussissez vos études avec un soutien sur-mesure
+            <p class="text-xs md:text-sm text-gray-600 mb-3 md:mb-4 leading-relaxed">
+              J’aide des élèves investis à construire une trajectoire académique solide grâce à un accompagnement exigeant, structuré et personnalisé.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start">
+            <div class="flex flex-col sm:flex-row gap-2 md:gap-3 justify-center md:justify-start">
               <a 
                 href="#contact" 
-                class="inline-block bg-gray-900 text-white px-6 py-2.5 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors text-center text-sm md:text-base"
+                class="inline-block bg-gray-900 text-white px-5 py-2 md:px-6 md:py-2.5 rounded-lg font-semibold hover:bg-gray-800 transition-colors text-center text-xs md:text-sm"
               >
-                Demander un entretien
+              Prendre contact
               </a>
               
               <a 
                 href="/a-propos" 
-                class="inline-block border-2 border-gray-900 text-gray-900 px-6 py-2.5 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition-colors text-center text-sm md:text-base"
+                class="inline-block border-2 border-gray-900 text-gray-900 px-5 py-2 md:px-6 md:py-2.5 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition-colors text-center text-xs md:text-sm"
               >
                 Qui suis-je ?
               </a>
@@ -77,7 +77,7 @@ import UniversitiesBanner from '../components/UniversitiesBanner.astro';
         </h2>
         
         <p class="text-gray-700 mb-6 leading-relaxed">
-          Accompagnement intellectuel exigeant, construit dans le temps pour :
+          Mon travail ne consiste pas à faire les exercices à la place de l’élève, mais à construire des bases solides et une autonomie durable.
         </p>
         
         <ul class="space-y-3 mb-8">
@@ -110,45 +110,169 @@ import UniversitiesBanner from '../components/UniversitiesBanner.astro';
           Disciplines enseignées
         </h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          <div>
-            <p class="text-lg font-semibold text-gray-900 mb-2">Mathématiques</p>
+        <p class="text-gray-700 mb-8 leading-relaxed text-center">
+          Les disciplines enseignées sont toujours intégrées dans une stratégie de progression cohérente, en lien avec les objectifs académiques de l’élève.
+        </p>
+        
+        <div class="space-y-3 max-w-xl mx-auto">
+          <div class="flex items-baseline justify-center">
+            <span class="text-gray-900 font-semibold text-lg">Mathématiques</span>
+            <span class="text-gray-600 text-sm ml-2">(priorité)</span>
           </div>
-          <div>
-            <p class="text-lg font-semibold text-gray-900 mb-2">Physique – Chimie</p>
+          
+          <div class="flex items-baseline justify-center">
+            <span class="text-gray-900 font-semibold text-lg">Physique – Chimie</span>
+            <span class="text-gray-600 text-sm ml-2">(selon parcours)</span>
           </div>
-          <div>
-            <p class="text-lg font-semibold text-gray-900 mb-2">Python</p>
-            <p class="text-sm text-gray-600">Algorithmique & logique</p>
+          
+          <div class="flex items-baseline justify-center">
+            <span class="text-gray-900 font-semibold text-lg">Python / Algorithmique</span>
+            <span class="text-gray-600 text-sm ml-2">(selon profil)</span>
           </div>
         </div>
         
-        <p class="text-gray-600 text-center mt-6">
+        <p class="text-gray-600 text-center mt-8">
           Du collège à la terminale
         </p>
       </div>
     </div>
   </section>
   
-  <!-- Contact -->
-  <section id="contact" class="bg-gray-50 py-12 md:py-16">
+  <!-- Accompagnement global -->
+  <section id="services" class="bg-gray-50 py-12 md:py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-2xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
-          Premier contact
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+          Un accompagnement global, pensé sur la durée
         </h2>
         
-        <p class="text-gray-700 mb-8 text-center leading-relaxed">
-          Un premier entretien permet de comprendre le parcours de l'élève et de vérifier l'adéquation avec ma méthode de travail.
+        <p class="text-gray-700 mb-8 leading-relaxed">
+          Chaque élève bénéficie d’un accompagnement individuel structuré, construit dans le temps. Les modalités — séances en présentiel ou en visio — s’adaptent à la situation, mais l’essentiel réside dans la continuité et la cohérence du suivi.
         </p>
         
-        <ContactForm />
+        <div class="bg-white rounded-lg shadow-sm p-6 md:p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-6">
+            Ce que comprend cet accompagnement
+          </h3>
+          
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <span class="text-gray-900 font-medium">Séances régulières</span>
+                <span class="text-gray-600"> — en présentiel (Paris et proche banlieue) ou en visio, selon les besoins</span>
+              </div>
+            </li>
+            
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <span class="text-gray-900 font-medium">Plan de travail personnalisé</span>
+                <span class="text-gray-600"> — adapté au niveau, aux objectifs et au rythme de l’élève</span>
+              </div>
+            </li>
+            
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <span class="text-gray-900 font-medium">Suivi régulier</span>
+                <span class="text-gray-600"> — bilan des progrès et ajustements continus du programme</span>
+              </div>
+            </li>
+            
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <span class="text-gray-900 font-medium">Préparation aux échéances</span>
+                <span class="text-gray-600"> — examens, spécialités, concours, avec entraînement ciblé et méthodologie</span>
+              </div>
+            </li>
+            
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <span class="text-gray-900 font-medium">Communication avec les parents</span>
+                <span class="text-gray-600"> — échanges réguliers sur la progression et les points d’attention</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <p class="text-gray-600 text-center mt-8 italic">
+          Un accompagnement construit dans la durée, pas une succession de séances ponctuelles.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact -->
+  <section id="contact" class="bg-gray-50 py-8 md:py-10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+          <!-- Colonne gauche : Texte -->
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+              Commencez votre réussite maintenant
+            </h2>
+            
+            <p class="text-gray-700 mb-4 leading-relaxed text-sm md:text-base">
+              Contactez-moi pour évaluer ensemble vos besoins et définir un programme personnalisé.
+            </p>
+            
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-gray-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700 text-sm md:text-base">Réponse garantie sous 24h</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-gray-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700 text-sm md:text-base">Programme personnalisé adapté à vos objectifs</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-gray-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700 text-sm md:text-base">Horaires flexibles 7j/7</span>
+              </li>
+            </ul>
+            
+            <div class="flex items-start">
+              <svg class="w-4 h-4 text-gray-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <p class="text-gray-700 text-sm md:text-base">
+                Vous pouvez aussi m'écrire directement à <a href="mailto:contact@revise-tes-maths.fr" class="text-gray-900 hover:text-gray-700 underline font-medium">contact@revise-tes-maths.fr</a>
+              </p>
+            </div>
+          </div>
+          
+          <!-- Colonne droite : Formulaire -->
+          <div>
+            <ContactForm />
+          </div>
+        </div>
       </div>
     </div>
   </section>
   
   <Footer />
   <StickyCTA />
+  <WhatsAppButton phoneNumber="33616635187" />
 </Layout>
 
 <style>

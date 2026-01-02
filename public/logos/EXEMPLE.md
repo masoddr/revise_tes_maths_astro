@@ -51,3 +51,4 @@ Par :
 
 Les logos doivent être au format SVG et placés dans ce dossier (`public/logos/`).
 
+

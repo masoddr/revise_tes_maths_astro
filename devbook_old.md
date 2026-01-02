@@ -110,7 +110,7 @@ S'inspirer du design premium observé avec :
 #### 7. Section Call-to-Action Finale
 **Titre** : "Prêt à Réussir ?"
 **Sous-titre** : "Commencez dès aujourd'hui avec un accompagnement sur-mesure !"
-**CTA** : "RÉSERVER UNE SÉANCE" (orange, large)
+**CTA** : " Prendre contact"
 
 #### 8. Footer
 - **Contact** : Téléphone, Email

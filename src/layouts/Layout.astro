@@ -1,20 +1,15 @@
 ---
 import '../styles/global.css';
 import ScrollToTop from '../components/ScrollToTop.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
 
 interface Props {
   title: string;
   description?: string;
-  whatsappPhone?: string;
-  whatsappMessage?: string;
 }
 
 const { 
   title, 
-  description = "Accompagnement académique exigeant en mathématiques et sciences pour collège et lycée. Suivi individuel, rigueur méthodologique, préparation aux meilleures formations.",
-  whatsappPhone,
-  whatsappMessage
+  description = "Accompagnement académique exigeant en mathématiques et sciences pour collège et lycée. Suivi individuel, rigueur méthodologique, préparation aux meilleures formations."
 } = Astro.props;
 ---
 
@@ -43,10 +38,9 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
-  <body class="font-sans antialiased bg-gray-50">
+  <body class="font-sans antialiased bg-white">
     <slot />
     <ScrollToTop />
-    <WhatsAppButton phoneNumber={whatsappPhone} message={whatsappMessage} />
   </body>
 </html>
 

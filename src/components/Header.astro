@@ -3,10 +3,11 @@
 ---
 
 <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-  <nav class="container mx-auto px-4 py-4">
+  <nav class="container mx-auto px-4 py-2 md:py-3">
     <div class="flex items-center justify-between max-w-[1040px] mx-auto">
-      <a href="/" class="text-lg font-semibold text-gray-900">
-        revise-tes-maths.fr
+      <a href="/" class="logo-link flex items-center space-x-2 text-xl font-bold">
+        <img src="/images/logo_revise_tes_maths.png" alt="Logo Révise Tes Maths" class="logo-image h-8 w-8 object-contain" />
+        <span class="logo-text">Révise Tes Maths</span>
       </a>
       
       <div class="hidden md:flex items-center space-x-6">
@@ -80,3 +81,41 @@
     mobileMenu?.classList.toggle('hidden');
   });
 </script>
+
+<style>
+  /* Logo animation styles */
+  .logo-link {
+    transition: all 0.3s ease;
+  }
+
+  .logo-link:hover {
+    transform: scale(1.05);
+  }
+
+  .logo-text {
+    background: linear-gradient(to right, #4f46e5, #9333ea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.3s ease;
+  }
+
+  .logo-link:hover .logo-text {
+    background: linear-gradient(to right, #9333ea, #4f46e5);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .logo-image {
+    animation: bounce-soft 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce-soft {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+</style>
