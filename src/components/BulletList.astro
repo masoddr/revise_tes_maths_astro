@@ -1,0 +1,18 @@
+---
+interface Props {
+  items: string[];
+  class?: string;
+}
+
+const { items, class: className = "" } = Astro.props;
+---
+
+<ul class={`space-y-3 ${className}`}>
+  {items.map((item) => (
+    <li class="flex items-start">
+      <span class="text-gray-600 mr-3 mt-1">•</span>
+      <span class="text-gray-700">{item}</span>
+    </li>
+  ))}
+</ul>
+
