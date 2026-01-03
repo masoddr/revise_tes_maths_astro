@@ -11,26 +11,20 @@
       </a>
       
       <div class="hidden md:flex items-center space-x-6">
-        <a href="/a-propos" class="text-gray-700 hover:text-gray-900 transition-colors text-sm">
+        <a href="/a-propos" class="nav-link text-sm">
           Qui suis-je ?
         </a>
-        <a href="/3eme" class="text-gray-700 hover:text-gray-900 transition-colors text-sm">
+        <a href="/3eme" class="nav-link text-sm">
           3ème
         </a>
-        <a href="/seconde" class="text-gray-700 hover:text-gray-900 transition-colors text-sm">
+        <a href="/seconde" class="nav-link text-sm">
           Seconde
         </a>
-        <a href="/premiere" class="text-gray-700 hover:text-gray-900 transition-colors text-sm">
+        <a href="/premiere" class="nav-link text-sm">
           Première
         </a>
-        <a href="/terminale" class="text-gray-700 hover:text-gray-900 transition-colors text-sm">
+        <a href="/terminale" class="nav-link text-sm">
           Terminale
-        </a>
-        <a 
-          href="/#contact" 
-          class="bg-gray-900 text-white px-5 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors text-sm"
-        >
-          Contact
         </a>
       </div>
       
@@ -47,26 +41,20 @@
     
     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
       <div class="space-y-3 pt-4">
-        <a href="/a-propos" class="block text-gray-700 hover:text-gray-900 text-sm py-2">
+        <a href="/a-propos" class="nav-link-mobile block text-sm py-2">
           Qui suis-je ?
         </a>
-        <a href="/3eme" class="block text-gray-700 hover:text-gray-900 text-sm py-2">
+        <a href="/3eme" class="nav-link-mobile block text-sm py-2">
           3ème
         </a>
-        <a href="/seconde" class="block text-gray-700 hover:text-gray-900 text-sm py-2">
+        <a href="/seconde" class="nav-link-mobile block text-sm py-2">
           Seconde
         </a>
-        <a href="/premiere" class="block text-gray-700 hover:text-gray-900 text-sm py-2">
+        <a href="/premiere" class="nav-link-mobile block text-sm py-2">
           Première
         </a>
-        <a href="/terminale" class="block text-gray-700 hover:text-gray-900 text-sm py-2">
+        <a href="/terminale" class="nav-link-mobile block text-sm py-2">
           Terminale
-        </a>
-        <a 
-          href="/#contact" 
-          class="block bg-gray-900 text-white px-6 py-2 rounded-lg font-medium text-center text-sm"
-        >
-          Contact
         </a>
       </div>
     </div>
@@ -93,17 +81,12 @@
   }
 
   .logo-text {
-    background: linear-gradient(to right, #4f46e5, #9333ea);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: background 0.3s ease;
+    color: #111827; /* gray-900 */
+    transition: color 0.3s ease;
   }
 
   .logo-link:hover .logo-text {
-    background: linear-gradient(to right, #9333ea, #4f46e5);
-    -webkit-background-clip: text;
-    background-clip: text;
+    color: #1f2937; /* gray-800 */
   }
 
   .logo-image {
@@ -117,5 +100,49 @@
     50% {
       transform: translateY(-8px);
     }
+  }
+
+  /* Navigation links with animated underline */
+  .nav-link {
+    position: relative;
+    color: #374151; /* gray-700 */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #111827; /* gray-900 */
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #111827; /* gray-900 */
+    transform: translateY(-2px);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Mobile navigation links */
+  .nav-link-mobile {
+    position: relative;
+    color: #374151; /* gray-700 */
+    transition: all 0.3s ease;
+    padding-left: 0.5rem;
+    border-left: 2px solid transparent;
+  }
+
+  .nav-link-mobile:hover {
+    color: #111827; /* gray-900 */
+    border-left-color: #111827;
+    transform: translateX(4px);
   }
 </style>

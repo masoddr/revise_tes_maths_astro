@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://revise-tes-maths.fr/sitemap.xml
+

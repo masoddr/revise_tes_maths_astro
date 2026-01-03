@@ -19,7 +19,8 @@ const {
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/images/logo_revise_tes_maths.png" />
+    <link rel="apple-touch-icon" href="/images/logo_revise_tes_maths.png" />
     <meta name="generator" content={Astro.generator} />
     
     <!-- Open Graph / Facebook -->
@@ -27,11 +28,42 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content="https://revise-tes-maths.fr" />
+    <meta property="og:image" content="https://revise-tes-maths.fr/images/logo_revise_tes_maths.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Révise Tes Maths" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://revise-tes-maths.fr/images/logo_revise_tes_maths.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={`https://revise-tes-maths.fr${Astro.url.pathname}`} />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Révise Tes Maths",
+      "description": description,
+      "url": "https://revise-tes-maths.fr",
+      "logo": "https://revise-tes-maths.fr/images/logo_revise_tes_maths.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Massyl",
+        "jobTitle": "Professeur de mathématiques",
+        "description": "Ingénieur Systèmes Spatiaux spécialisé en mathématiques appliquées"
+      },
+      "areaServed": "FR",
+      "educationalCredentialAwarded": "Baccalauréat",
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student"
+      }
+    }, null, 2)} />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
