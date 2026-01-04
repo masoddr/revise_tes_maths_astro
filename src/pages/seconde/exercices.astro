@@ -2,6 +2,101 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// Structure des exercices
+interface ExerciceItem {
+  titre: string;
+  fichier: string;
+}
+
+// Liste des exercices
+const exercices: ExerciceItem[] = [
+  {
+    titre: 'Système d\'équation',
+    fichier: '/pdf/seconde/exercices/Exo - Système_d\'équation.pdf'
+  },
+  {
+    titre: 'Échantillonnage',
+    fichier: '/pdf/seconde/exercices/Exo - Échantillonnage.pdf'
+  },
+  {
+    titre: 'Equation de droite',
+    fichier: '/pdf/seconde/exercices/Exo - Equation_de_droite.pdf'
+  },
+  {
+    titre: 'Équations et Inéquations 2',
+    fichier: '/pdf/seconde/exercices/Exo - Équations_et_Inéquations_2.pdf'
+  },
+  {
+    titre: 'Fonction de référence',
+    fichier: '/pdf/seconde/exercices/Exo - Fonction_de_référence.pdf'
+  },
+  {
+    titre: 'Calcul vectoriel - Colinéarité',
+    fichier: '/pdf/seconde/exercices/Exo - Calcul_vectoriel_-_Colinéarité.pdf'
+  },
+  {
+    titre: 'Probabilités',
+    fichier: '/pdf/seconde/exercices/Exo - Probabilités.pdf'
+  },
+  {
+    titre: 'Pourcentage et taux d\'évolution',
+    fichier: '/pdf/seconde/exercices/Exo - Pourcentage_et_taux_d\'évolution.pdf'
+  },
+  {
+    titre: 'Fonctions affines',
+    fichier: '/pdf/seconde/exercices/Exo - Fonctions_affines.pdf'
+  },
+  {
+    titre: 'Inéquations',
+    fichier: '/pdf/seconde/exercices/Exo - Inéquations.pdf'
+  },
+  {
+    titre: 'Étude qualitative de fonctions',
+    fichier: '/pdf/seconde/exercices/Exo - Étude_qualitative_de_fonctions.pdf'
+  },
+  {
+    titre: 'Repérage dans le plan',
+    fichier: '/pdf/seconde/exercices/Exo - Repérage_dans_le_plan.pdf'
+  },
+  {
+    titre: 'Équations',
+    fichier: '/pdf/seconde/exercices/Exo - Équations.pdf'
+  },
+  {
+    titre: 'Statistiques descriptives',
+    fichier: '/pdf/seconde/exercices/Exo - Statistiques_descriptives.pdf'
+  },
+  {
+    titre: 'Expressions algébriques',
+    fichier: '/pdf/seconde/exercices/Exo - Expressions_algébriques.pdf'
+  },
+  {
+    titre: 'Nombres 3',
+    fichier: '/pdf/seconde/exercices/Exo - Nombres_3.pdf'
+  },
+  {
+    titre: 'Généralités sur les fonctions',
+    fichier: '/pdf/seconde/exercices/Exo - Généralités_sur_les_fonctions.pdf'
+  },
+  {
+    titre: 'Pourcentage, proportion et inclusion',
+    fichier: '/pdf/seconde/exercices/Exo - Pourcentage,_proportion_et_inclusion.pdf'
+  },
+  {
+    titre: 'Nombres 2',
+    fichier: '/pdf/seconde/exercices/Exo - Nombres_2.pdf'
+  },
+  {
+    titre: 'Généralités sur les vecteurs',
+    fichier: '/pdf/seconde/exercices/Exo - Généralités_sur_les_vecteurs.pdf'
+  },
+  {
+    titre: 'Nombres 1',
+    fichier: '/pdf/seconde/exercices/Exo - Nombres_1.pdf'
+  }
+];
 ---
 
 <Layout 
@@ -9,6 +104,15 @@ import Footer from '../../components/Footer.astro';
   description="Exercices de mathématiques ciblés pour la classe de Seconde. Pratique et révisions par chapitre."
 >
   <Header />
+  
+  <!-- Breadcrumbs -->
+  <Breadcrumbs 
+    items={[
+      { label: 'Accueil', href: '/' },
+      { label: 'Seconde', href: '/seconde' },
+      { label: 'Exercices', href: '/seconde/exercices' }
+    ]}
+  />
   
   <!-- Hero Section -->
   <section class="bg-white py-12 md:py-16">
@@ -27,14 +131,34 @@ import Footer from '../../components/Footer.astro';
   <!-- Content Section -->
   <section class="bg-white py-12 md:py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <p class="text-gray-600 mb-8">
-          Contenu à venir : exercices ciblés par chapitre pour la classe de Seconde, avec corrigés détaillés.
-        </p>
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {exercices.map((exerciceItem) => (
+            <a 
+              href={exerciceItem.fichier}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 hover:border-blue-500"
+            >
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                    {exerciceItem.titre}
+                  </h3>
+                  <p class="text-sm text-gray-500">
+                    PDF
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>
   
   <Footer />
 </Layout>
-

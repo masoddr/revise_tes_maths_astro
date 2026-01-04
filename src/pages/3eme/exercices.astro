@@ -2,6 +2,81 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// Structure des exercices
+interface ExerciceItem {
+  titre: string;
+  fichier: string;
+}
+
+// Liste des exercices (uniquement les fichiers PDF, triés par numéro)
+const exercices: ExerciceItem[] = [
+  {
+    titre: '01. Nombres entiers',
+    fichier: '/pdf/troisieme/exercices/01. Exo-Nombres entiers.pdf'
+  },
+  {
+    titre: '02. Théorème de Thalès',
+    fichier: '/pdf/troisieme/exercices/02. Exo-Théorème de Thales.pdf'
+  },
+  {
+    titre: '03. Calculs numériques',
+    fichier: '/pdf/troisieme/exercices/03. Exo-Calculs numériques.pdf'
+  },
+  {
+    titre: '03.1. Calculs numériques',
+    fichier: '/pdf/troisieme/exercices/03.1. Exo-Calculs numériques.pdf'
+  },
+  {
+    titre: '03.2. Calculs numériques',
+    fichier: '/pdf/troisieme/exercices/03.2. Exo-Calculs numériques.pdf'
+  },
+  {
+    titre: '03.3. Calculs numériques',
+    fichier: '/pdf/troisieme/exercices/03.3. Exo-Calculs numériques.pdf'
+  },
+  {
+    titre: '04. Statistiques',
+    fichier: '/pdf/troisieme/exercices/04. Exo-Statistiques.pdf'
+  },
+  {
+    titre: '05. Trigonométrie',
+    fichier: '/pdf/troisieme/exercices/05. Exo-Trigonométrie.pdf'
+  },
+  {
+    titre: '06. Notion de fonctions',
+    fichier: '/pdf/troisieme/exercices/06. Exo-Notion de fonctions.pdf'
+  },
+  {
+    titre: '06.1. Notion de fonctions',
+    fichier: '/pdf/troisieme/exercices/06.1. Exo-Notion de fonctions.pdf'
+  },
+  {
+    titre: '06.2. Notion de fonctions',
+    fichier: '/pdf/troisieme/exercices/06.2. Exo-Notion de fonctions.pdf'
+  },
+  {
+    titre: '07. Expressions algébriques',
+    fichier: '/pdf/troisieme/exercices/07. Exo-Expressions algébriques.pdf'
+  },
+  {
+    titre: '08. Espaces - Sections de solides',
+    fichier: '/pdf/troisieme/exercices/08. Exo-Espaces - Sections de solides.pdf'
+  },
+  {
+    titre: '09. Factorisation et Equation',
+    fichier: '/pdf/troisieme/exercices/09. Exo-Factoristion et Equation.pdf'
+  },
+  {
+    titre: '10. Probabilités',
+    fichier: '/pdf/troisieme/exercices/10. Exo-Probabilités.pdf'
+  },
+  {
+    titre: '12. Triangles semblables',
+    fichier: '/pdf/troisieme/exercices/12. Exo-Triangles semblables.pdf'
+  }
+];
 ---
 
 <Layout 
@@ -9,6 +84,15 @@ import Footer from '../../components/Footer.astro';
   description="Exercices de mathématiques ciblés pour la classe de 3ème. Pratique et révisions par chapitre."
 >
   <Header />
+  
+  <!-- Breadcrumbs -->
+  <Breadcrumbs 
+    items={[
+      { label: 'Accueil', href: '/' },
+      { label: '3ème', href: '/3eme' },
+      { label: 'Exercices', href: '/3eme/exercices' }
+    ]}
+  />
   
   <!-- Hero Section -->
   <section class="bg-white py-12 md:py-16">
@@ -27,14 +111,34 @@ import Footer from '../../components/Footer.astro';
   <!-- Content Section -->
   <section class="bg-white py-12 md:py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <p class="text-gray-600 mb-8">
-          Contenu à venir : exercices ciblés par chapitre pour la classe de 3ème, avec corrigés détaillés.
-        </p>
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {exercices.map((exerciceItem) => (
+            <a 
+              href={exerciceItem.fichier}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 hover:border-blue-500"
+            >
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                    {exerciceItem.titre}
+                  </h3>
+                  <p class="text-sm text-gray-500">
+                    PDF
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>
   
   <Footer />
 </Layout>
-

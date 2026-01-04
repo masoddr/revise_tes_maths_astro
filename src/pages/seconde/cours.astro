@@ -2,6 +2,109 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// Structure des cours
+interface CoursItem {
+  titre: string;
+  fichier: string;
+}
+
+// Liste des cours
+const cours: CoursItem[] = [
+  {
+    titre: 'Système d\'équations',
+    fichier: '/pdf/seconde/cours/Système d\'équations.pdf'
+  },
+  {
+    titre: 'Échantillonnage',
+    fichier: '/pdf/seconde/cours/Échantillonnage.pdf'
+  },
+  {
+    titre: 'Equations de droites',
+    fichier: '/pdf/seconde/cours/Equations de droites.pdf'
+  },
+  {
+    titre: 'Équations et Inéquations 2',
+    fichier: '/pdf/seconde/cours/Équations_et_Inéquations_2.pdf'
+  },
+  {
+    titre: 'Calcul vectoriel - Colinéarité',
+    fichier: '/pdf/seconde/cours/Calcul_vectoriel_-_Colinéarité.pdf'
+  },
+  {
+    titre: 'Fonction de référence',
+    fichier: '/pdf/seconde/cours/Fonction_de_référence.pdf'
+  },
+  {
+    titre: 'Projeté orthogonal',
+    fichier: '/pdf/seconde/cours/Projeté_orthogonal.pdf'
+  },
+  {
+    titre: 'Pourcentage et taux d\'évolution',
+    fichier: '/pdf/seconde/cours/Pourcentage_et_taux_d\'évolution.pdf'
+  },
+  {
+    titre: 'Fonctions affines',
+    fichier: '/pdf/seconde/cours/Fonctions_affines.pdf'
+  },
+  {
+    titre: 'Probabilités',
+    fichier: '/pdf/seconde/cours/Probabilités.pdf'
+  },
+  {
+    titre: 'Inéquations',
+    fichier: '/pdf/seconde/cours/Inéquations.pdf'
+  },
+  {
+    titre: 'Étude qualitative de fonctions',
+    fichier: '/pdf/seconde/cours/Étude_qualitative_de_fonctions.pdf'
+  },
+  {
+    titre: 'Expressions algébriques',
+    fichier: '/pdf/seconde/cours/Expressions_algébriques.pdf'
+  },
+  {
+    titre: 'Équations',
+    fichier: '/pdf/seconde/cours/Équations.pdf'
+  },
+  {
+    titre: 'Repérage dans le plan',
+    fichier: '/pdf/seconde/cours/Repérage_dans_le_plan.pdf'
+  },
+  {
+    titre: 'Configurations du plan et de l\'espace',
+    fichier: '/pdf/seconde/cours/Configurations_du_plan_..._et_de_l\'espace.pdf'
+  },
+  {
+    titre: 'Statistiques descriptives',
+    fichier: '/pdf/seconde/cours/Statistiques_descriptives.pdf'
+  },
+  {
+    titre: 'Nombres 3',
+    fichier: '/pdf/seconde/cours/Nombres_3.pdf'
+  },
+  {
+    titre: 'Pourcentage et proportion',
+    fichier: '/pdf/seconde/cours/Pourcentage_et_proportion.pdf'
+  },
+  {
+    titre: 'Nombres 2',
+    fichier: '/pdf/seconde/cours/Nombres_2.pdf'
+  },
+  {
+    titre: 'Généralités sur les fonctions',
+    fichier: '/pdf/seconde/cours/Généralités_sur_les_fonctions.pdf'
+  },
+  {
+    titre: 'Nombres 1',
+    fichier: '/pdf/seconde/cours/Nombres_1.pdf'
+  },
+  {
+    titre: 'Généralités sur les vecteurs',
+    fichier: '/pdf/seconde/cours/Généralités_sur_les_vecteurs.pdf'
+  }
+];
 ---
 
 <Layout 
@@ -9,6 +112,15 @@ import Footer from '../../components/Footer.astro';
   description="Cours de mathématiques structurés par chapitre pour la classe de Seconde. Révisions et consolidation des bases."
 >
   <Header />
+  
+  <!-- Breadcrumbs -->
+  <Breadcrumbs 
+    items={[
+      { label: 'Accueil', href: '/' },
+      { label: 'Seconde', href: '/seconde' },
+      { label: 'Cours', href: '/seconde/cours' }
+    ]}
+  />
   
   <!-- Hero Section -->
   <section class="bg-white py-12 md:py-16">
@@ -27,14 +139,34 @@ import Footer from '../../components/Footer.astro';
   <!-- Content Section -->
   <section class="bg-white py-12 md:py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <p class="text-gray-600 mb-8">
-          Contenu à venir : cours structurés par chapitre pour la classe de Seconde, couvrant l'ensemble du programme officiel.
-        </p>
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {cours.map((coursItem) => (
+            <a 
+              href={coursItem.fichier}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 hover:border-blue-500"
+            >
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                    {coursItem.titre}
+                  </h3>
+                  <p class="text-sm text-gray-500">
+                    PDF
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>
   
   <Footer />
 </Layout>
-

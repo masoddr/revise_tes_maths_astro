@@ -2,6 +2,77 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// Structure des cours
+interface CoursItem {
+  titre: string;
+  fichier: string;
+}
+
+// Liste des cours (uniquement les fichiers PDF, triés par numéro)
+const cours: CoursItem[] = [
+  {
+    titre: '01. Nombres entiers',
+    fichier: '/pdf/troisieme/cours/01. Nombres entiers.pdf'
+  },
+  {
+    titre: '02. Théorème de Thalès',
+    fichier: '/pdf/troisieme/cours/02. Théorème de Thalès.pdf'
+  },
+  {
+    titre: '03. Calculs numériques',
+    fichier: '/pdf/troisieme/cours/03. Calculs numériques.pdf'
+  },
+  {
+    titre: '04. Statistiques',
+    fichier: '/pdf/troisieme/cours/04. Statistiques.pdf'
+  },
+  {
+    titre: '05. Trigonométrie',
+    fichier: '/pdf/troisieme/cours/05. Trigonométrie.pdf'
+  },
+  {
+    titre: '06. Notions de fonctions',
+    fichier: '/pdf/troisieme/cours/06. Notions de fonctions.pdf'
+  },
+  {
+    titre: '07. Expressions algébriques',
+    fichier: '/pdf/troisieme/cours/07. Expressions algebriques.pdf'
+  },
+  {
+    titre: '08. Sections de solides',
+    fichier: '/pdf/troisieme/cours/08. Sections de solides.pdf'
+  },
+  {
+    titre: '08. Espace - Sections de solides',
+    fichier: '/pdf/troisieme/cours/08. Espace - sections de solides.pdf'
+  },
+  {
+    titre: '08. Espace - Aires et volumes',
+    fichier: '/pdf/troisieme/cours/08. Espace - Aires et volumes.pdf'
+  },
+  {
+    titre: '09. Factorisation et Equation',
+    fichier: '/pdf/troisieme/cours/09. Factoristion et Equation.pdf'
+  },
+  {
+    titre: '10. Probabilités',
+    fichier: '/pdf/troisieme/cours/10. Probabilités.pdf'
+  },
+  {
+    titre: '10. Proba',
+    fichier: '/pdf/troisieme/cours/10. Proba.pdf'
+  },
+  {
+    titre: '11. Fonctions linéaires',
+    fichier: '/pdf/troisieme/cours/11. Fonctions linéaires.pdf'
+  },
+  {
+    titre: '12. Triangles semblables',
+    fichier: '/pdf/troisieme/cours/12. Triangles semblables.pdf'
+  }
+];
 ---
 
 <Layout 
@@ -9,6 +80,15 @@ import Footer from '../../components/Footer.astro';
   description="Cours de mathématiques structurés par chapitre pour la classe de 3ème. Révisions et préparation au brevet."
 >
   <Header />
+  
+  <!-- Breadcrumbs -->
+  <Breadcrumbs 
+    items={[
+      { label: 'Accueil', href: '/' },
+      { label: '3ème', href: '/3eme' },
+      { label: 'Cours', href: '/3eme/cours' }
+    ]}
+  />
   
   <!-- Hero Section -->
   <section class="bg-white py-12 md:py-16">
@@ -27,14 +107,34 @@ import Footer from '../../components/Footer.astro';
   <!-- Content Section -->
   <section class="bg-white py-12 md:py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <p class="text-gray-600 mb-8">
-          Contenu à venir : cours structurés par chapitre pour la classe de 3ème, couvrant l'ensemble du programme officiel.
-        </p>
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {cours.map((coursItem) => (
+            <a 
+              href={coursItem.fichier}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 hover:border-blue-500"
+            >
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                    {coursItem.titre}
+                  </h3>
+                  <p class="text-sm text-gray-500">
+                    PDF
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>
   
   <Footer />
 </Layout>
-

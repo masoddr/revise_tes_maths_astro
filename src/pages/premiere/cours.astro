@@ -2,6 +2,101 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// Structure des cours
+interface CoursItem {
+  titre: string;
+  fichier: string;
+}
+
+// Liste des cours
+const cours: CoursItem[] = [
+  {
+    titre: 'Application de la dérivée',
+    fichier: '/pdf/premiere/cours/Application_de_la_dérivée.pdf'
+  },
+  {
+    titre: 'Application du produit scalaire',
+    fichier: '/pdf/premiere/cours/Application_du_produit_scalaire.pdf'
+  },
+  {
+    titre: 'Cercle trigonométrique et radian',
+    fichier: '/pdf/premiere/cours/Cercle_trigonométrique_et_radian.pdf'
+  },
+  {
+    titre: 'Equation de degré 2',
+    fichier: '/pdf/premiere/cours/Equation_de_degré_2.pdf'
+  },
+  {
+    titre: 'Etude d\'une suite numérique',
+    fichier: '/pdf/premiere/cours/Etude_d\'une_suite_numérique.pdf'
+  },
+  {
+    titre: 'Fonction de référence',
+    fichier: '/pdf/premiere/cours/Fonction_de_référence.pdf'
+  },
+  {
+    titre: 'Fonction exponentielle',
+    fichier: '/pdf/premiere/cours/Fonction_exponentielle.pdf'
+  },
+  {
+    titre: 'Fonctions dérivées',
+    fichier: '/pdf/premiere/cours/Fonctions_dérivées.pdf'
+  },
+  {
+    titre: 'Fonctions trigonométriques',
+    fichier: '/pdf/premiere/cours/Fonctions_trigonométriques.pdf'
+  },
+  {
+    titre: 'Géométrie repérée',
+    fichier: '/pdf/premiere/cours/Géométrie_repérée.pdf'
+  },
+  {
+    titre: 'Indépendance de deux événements',
+    fichier: '/pdf/premiere/cours/Indépendance_de_deux_événements.pdf'
+  },
+  {
+    titre: 'Nombres dérivés',
+    fichier: '/pdf/premiere/cours/Nombres_dérivés.pdf'
+  },
+  {
+    titre: 'Polynôme de degré 2',
+    fichier: '/pdf/premiere/cours/Polynôme_de_degré_2.pdf'
+  },
+  {
+    titre: 'Probabilité conditionnelle',
+    fichier: '/pdf/premiere/cours/Probabilité_conditionelle.pdf'
+  },
+  {
+    titre: 'Produit scalaire dans le plan',
+    fichier: '/pdf/premiere/cours/Produit_scalaire_dans_le_plan.pdf'
+  },
+  {
+    titre: 'Signe d\'un polynôme de degré 2',
+    fichier: '/pdf/premiere/cours/Signe_d\'un_polynôme_de_degré_2.pdf'
+  },
+  {
+    titre: 'Somme des termes d\'une suite',
+    fichier: '/pdf/premiere/cours/Somme_des_termes_d\'une_suite.pdf'
+  },
+  {
+    titre: 'Suites arithmétiques',
+    fichier: '/pdf/premiere/cours/Suites_arithmétiques.pdf'
+  },
+  {
+    titre: 'Suites géométriques',
+    fichier: '/pdf/premiere/cours/Suites_géométriques.pdf'
+  },
+  {
+    titre: 'Suites numériques',
+    fichier: '/pdf/premiere/cours/Suites_numériques.pdf'
+  },
+  {
+    titre: 'Variables aléatoires réelles',
+    fichier: '/pdf/premiere/cours/Variables_aléatoires_réelles.pdf'
+  }
+];
 ---
 
 <Layout 
@@ -9,6 +104,15 @@ import Footer from '../../components/Footer.astro';
   description="Cours de mathématiques structurés par chapitre pour la classe de Première. Préparation aux spécialités et au bac."
 >
   <Header />
+  
+  <!-- Breadcrumbs -->
+  <Breadcrumbs 
+    items={[
+      { label: 'Accueil', href: '/' },
+      { label: 'Première', href: '/premiere' },
+      { label: 'Cours', href: '/premiere/cours' }
+    ]}
+  />
   
   <!-- Hero Section -->
   <section class="bg-white py-12 md:py-16">
@@ -27,14 +131,34 @@ import Footer from '../../components/Footer.astro';
   <!-- Content Section -->
   <section class="bg-white py-12 md:py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <p class="text-gray-600 mb-8">
-          Contenu à venir : cours structurés par chapitre pour la classe de Première, incluant les spécialités et couvrant l'ensemble du programme officiel.
-        </p>
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {cours.map((coursItem) => (
+            <a 
+              href={coursItem.fichier}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 hover:border-blue-500"
+            >
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                    {coursItem.titre}
+                  </h3>
+                  <p class="text-sm text-gray-500">
+                    PDF
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>
   
   <Footer />
 </Layout>
-
