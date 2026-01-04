@@ -196,7 +196,6 @@ Un premier entretien permet de :
 
 ## 5) Formulaire (champs conseillés)
 - Classe (select)
-- Établissement (input)
 - Objectif (select : Progression générale /  Préparation au bac / Python)
 - Disponibilités (textarea)
 - Email + téléphone

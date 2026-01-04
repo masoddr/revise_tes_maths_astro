@@ -1,0 +1,46 @@
+---
+// Reading progress indicator component
+---
+
+<div id="reading-progress" class="fixed top-0 left-0 w-0 h-1 bg-gray-900 z-50 transition-all duration-150 ease-out" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+  <span class="sr-only">Progression de lecture</span>
+</div>
+
+<script>
+  // Reading progress indicator
+  const progressBar = document.getElementById('reading-progress');
+  
+  if (progressBar) {
+    const updateProgress = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollableHeight = documentHeight - windowHeight;
+      const progress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
+      
+      progressBar.style.width = `${Math.min(progress, 100)}%`;
+      progressBar.setAttribute('aria-valuenow', Math.round(progress));
+    };
+    
+    // Update on scroll
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    
+    // Initial update
+    updateProgress();
+  }
+</script>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+</style>
+

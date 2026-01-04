@@ -14,18 +14,54 @@
         <a href="/a-propos" class="nav-link text-sm">
           Qui suis-je ?
         </a>
-        <a href="/3eme" class="nav-link text-sm">
-          3ème
+        
+        <!-- Annales -->
+        <a href="/annales" class="nav-link text-sm flex items-center gap-1">
+          <span>Annales</span>
+          <svg class="w-4 h-4 text-yellow-500 fill-current" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
         </a>
-        <a href="/seconde" class="nav-link text-sm">
-          Seconde
-        </a>
-        <a href="/premiere" class="nav-link text-sm">
-          Première
-        </a>
-        <a href="/terminale" class="nav-link text-sm">
-          Terminale
-        </a>
+        
+        <!-- Collège Dropdown -->
+        <div class="relative dropdown-group">
+          <button class="nav-link text-sm flex items-center space-x-1" id="dropdown-college-button">
+            <span>Collège</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dropdown-menu hidden absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50" id="dropdown-college">
+            <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-gray-100">3ème</div>
+            <a href="/3eme/cours" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Cours</a>
+            <a href="/3eme/exercices" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Exercices</a>
+            <a href="/3eme/annales-brevet" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Annales du brevet</a>
+          </div>
+        </div>
+        
+        <!-- Lycée Dropdown -->
+        <div class="relative dropdown-group">
+          <button class="nav-link text-sm flex items-center space-x-1" id="dropdown-lycee-button">
+            <span>Lycée</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dropdown-menu hidden absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50" id="dropdown-lycee">
+            <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-gray-100">Seconde</div>
+            <a href="/seconde/cours" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Cours</a>
+            <a href="/seconde/exercices" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Exercices</a>
+            
+            <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-gray-100 mt-2">Première</div>
+            <a href="/premiere/cours" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Cours</a>
+            <a href="/premiere/exercices" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Exercices</a>
+            
+            <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-gray-100 mt-2">Terminale</div>
+            <a href="/terminale/cours" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Cours</a>
+            <a href="/terminale/exercices" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Exercices</a>
+            <a href="/terminale/annales-bac" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Annales du bac</a>
+          </div>
+        </div>
       </div>
       
       <button 
@@ -44,18 +80,54 @@
         <a href="/a-propos" class="nav-link-mobile block text-sm py-2">
           Qui suis-je ?
         </a>
-        <a href="/3eme" class="nav-link-mobile block text-sm py-2">
-          3ème
+        
+        <!-- Annales Mobile -->
+        <a href="/annales" class="nav-link-mobile block text-sm py-2 flex items-center gap-2">
+          <span>Annales</span>
+          <svg class="w-4 h-4 text-yellow-500 fill-current" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
         </a>
-        <a href="/seconde" class="nav-link-mobile block text-sm py-2">
-          Seconde
-        </a>
-        <a href="/premiere" class="nav-link-mobile block text-sm py-2">
-          Première
-        </a>
-        <a href="/terminale" class="nav-link-mobile block text-sm py-2">
-          Terminale
-        </a>
+        
+        <!-- Collège Mobile -->
+        <div class="mobile-dropdown">
+          <button class="nav-link-mobile block text-sm py-2 w-full text-left flex items-center justify-between" id="mobile-dropdown-college-button">
+            <span>Collège</span>
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden pl-4 mt-2 space-y-2" id="mobile-dropdown-college">
+            <div class="text-xs font-semibold text-gray-500 uppercase mb-1">3ème</div>
+            <a href="/3eme/cours" class="block text-sm py-1 text-gray-600 pl-4">Cours</a>
+            <a href="/3eme/exercices" class="block text-sm py-1 text-gray-600 pl-4">Exercices</a>
+            <a href="/3eme/annales-brevet" class="block text-sm py-1 text-gray-600 pl-4">Annales du brevet</a>
+          </div>
+        </div>
+        
+        <!-- Lycée Mobile -->
+        <div class="mobile-dropdown">
+          <button class="nav-link-mobile block text-sm py-2 w-full text-left flex items-center justify-between" id="mobile-dropdown-lycee-button">
+            <span>Lycée</span>
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden pl-4 mt-2 space-y-2" id="mobile-dropdown-lycee">
+            <div class="text-xs font-semibold text-gray-500 uppercase mb-1">Seconde</div>
+            <a href="/seconde/cours" class="block text-sm py-1 text-gray-600 pl-4">Cours</a>
+            <a href="/seconde/exercices" class="block text-sm py-1 text-gray-600 pl-4">Exercices</a>
+            
+            <div class="text-xs font-semibold text-gray-500 uppercase mb-1 mt-2">Première</div>
+            <a href="/premiere/cours" class="block text-sm py-1 text-gray-600 pl-4">Cours</a>
+            <a href="/premiere/exercices" class="block text-sm py-1 text-gray-600 pl-4">Exercices</a>
+            
+            <div class="text-xs font-semibold text-gray-500 uppercase mb-1 mt-2">Terminale</div>
+            <a href="/terminale/cours" class="block text-sm py-1 text-gray-600 pl-4">Cours</a>
+            <a href="/terminale/exercices" class="block text-sm py-1 text-gray-600 pl-4">Exercices</a>
+            <a href="/terminale/annales-bac" class="block text-sm py-1 text-gray-600 pl-4">Annales du bac</a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -67,6 +139,93 @@
   
   menuButton?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Desktop dropdowns
+  const dropdowns = [
+    { button: 'dropdown-college-button', menu: 'dropdown-college' },
+    { button: 'dropdown-lycee-button', menu: 'dropdown-lycee' }
+  ];
+
+  dropdowns.forEach(({ button, menu }) => {
+    const buttonEl = document.getElementById(button);
+    const menuEl = document.getElementById(menu);
+    
+    if (buttonEl && menuEl) {
+      buttonEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // Close other dropdowns
+        dropdowns.forEach(({ menu: otherMenu }) => {
+          if (otherMenu !== menu) {
+            document.getElementById(otherMenu)?.classList.add('hidden');
+          }
+        });
+        menuEl.classList.toggle('hidden');
+      });
+    }
+  });
+
+  // Close dropdowns when clicking outside or on a link
+  document.addEventListener('click', (e) => {
+    // Don't close if clicking inside a dropdown
+    if (e.target.closest('.dropdown-group')) {
+      return;
+    }
+    dropdowns.forEach(({ menu }) => {
+      document.getElementById(menu)?.classList.add('hidden');
+    });
+  });
+
+  // Close dropdowns when clicking on a link inside
+  dropdowns.forEach(({ menu }) => {
+    const menuEl = document.getElementById(menu);
+    if (menuEl) {
+      menuEl.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          menuEl.classList.add('hidden');
+        }
+      });
+    }
+  });
+
+  // Mobile dropdowns
+  const mobileDropdowns = [
+    { button: 'mobile-dropdown-college-button', menu: 'mobile-dropdown-college' },
+    { button: 'mobile-dropdown-lycee-button', menu: 'mobile-dropdown-lycee' }
+  ];
+
+  mobileDropdowns.forEach(({ button, menu }) => {
+    const buttonEl = document.getElementById(button);
+    const menuEl = document.getElementById(menu);
+    
+    if (buttonEl && menuEl) {
+      buttonEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = menuEl.classList.contains('hidden');
+        
+        // Close other mobile dropdowns
+        mobileDropdowns.forEach(({ menu: otherMenu, button: otherButtonId }) => {
+          if (otherMenu !== menu) {
+            document.getElementById(otherMenu)?.classList.add('hidden');
+            const otherButton = document.getElementById(otherButtonId);
+            if (otherButton) {
+              const otherArrow = otherButton.querySelector('svg');
+              if (otherArrow) {
+                otherArrow.style.transform = 'rotate(0deg)';
+              }
+            }
+          }
+        });
+        
+        menuEl.classList.toggle('hidden');
+        
+        // Rotate arrow
+        const arrow = buttonEl.querySelector('svg');
+        if (arrow) {
+          arrow.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+      });
+    }
   });
 </script>
 

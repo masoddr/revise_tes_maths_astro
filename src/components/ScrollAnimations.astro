@@ -1,0 +1,71 @@
+---
+// Scroll animations utility component
+// Adds fade-in animations when elements come into view
+---
+
+<script>
+  // Intersection Observer for scroll animations
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add fade-in class to elements that should animate
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    animatedElements.forEach((element) => {
+      observer.observe(element);
+    });
+  });
+</script>
+
+<style>
+  /* Fade-in animation classes */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger animation for grid items */
+  .animate-on-scroll-stagger:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .animate-on-scroll-stagger:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .animate-on-scroll-stagger:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .animate-on-scroll-stagger:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+  .animate-on-scroll-stagger:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+
+  .animate-on-scroll-stagger:nth-child(6) {
+    transition-delay: 0.6s;
+  }
+</style>
+

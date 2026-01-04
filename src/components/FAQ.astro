@@ -1,0 +1,149 @@
+---
+// FAQ component with accordion functionality
+// Answers common questions to reduce friction and build trust
+---
+
+<section class="bg-gray-50 py-12 md:py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8 md:mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+          Questions fréquentes
+        </h2>
+        <p class="text-gray-600 text-sm md:text-base">
+          Réponses aux questions les plus courantes sur l'accompagnement
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Question 1 -->
+        <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <button 
+            class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="font-semibold text-gray-900 text-sm md:text-base">
+              Les cours sont-ils en présentiel ou en visio ?
+            </span>
+            <svg class="faq-icon w-5 h-5 text-gray-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-4">
+            <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+              Les deux formats sont possibles selon les situations. Le présentiel est privilégié quand c'est géographiquement faisable, 
+              mais la visio fonctionne très bien pour un suivi régulier. Le format est adapté selon vos contraintes et préférences.
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <button 
+            class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="font-semibold text-gray-900 text-sm md:text-base">
+              Quel est le rythme des cours ?
+            </span>
+            <svg class="faq-icon w-5 h-5 text-gray-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-4">
+            <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+              Les cours sont hebdomadaires et réguliers sur l'année scolaire. Le rythme est ajusté selon les périodes clés 
+              (examens, contrôles, vacances) et les besoins spécifiques de l'élève. L'objectif est un suivi structuré et progressif.
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <button 
+            class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="font-semibold text-gray-900 text-sm md:text-base">
+              Proposez-vous des stages intensifs ?
+            </span>
+            <svg class="faq-icon w-5 h-5 text-gray-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-4">
+            <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+              Oui, des stages intensifs sont proposés pendant les vacances scolaires. Ils permettent une remise à niveau ciblée, 
+              un approfondissement méthodologique ou une préparation aux échéances importantes (brevet, bac, spécialités). 
+              Formats individuels ou mini-groupes très restreints.
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <button 
+            class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="font-semibold text-gray-900 text-sm md:text-base">
+              Cet accompagnement convient-il à tous les niveaux ?
+            </span>
+            <svg class="faq-icon w-5 h-5 text-gray-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-4">
+            <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+              Cet accompagnement s'adresse à des élèves sérieux, investis, avec un fort potentiel, souhaitant progresser durablement. 
+              Il convient particulièrement aux élèves visant des parcours sélectifs. Il ne s'agit pas de soutien scolaire ponctuel, 
+              mais d'un travail structuré, exigeant et progressif qui suppose un engagement réel de l'élève et de sa famille.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Accordion functionality for FAQ items
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach((item) => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+      
+      question?.addEventListener('click', () => {
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other items
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            const otherQuestion = otherItem.querySelector('.faq-question');
+            const otherAnswer = otherItem.querySelector('.faq-answer');
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            
+            otherQuestion?.setAttribute('aria-expanded', 'false');
+            otherAnswer?.classList.add('hidden');
+            otherIcon?.classList.remove('rotate-180');
+          }
+        });
+        
+        // Toggle current item
+        if (isExpanded) {
+          question.setAttribute('aria-expanded', 'false');
+          answer?.classList.add('hidden');
+          icon?.classList.remove('rotate-180');
+        } else {
+          question.setAttribute('aria-expanded', 'true');
+          answer?.classList.remove('hidden');
+          icon?.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>
+

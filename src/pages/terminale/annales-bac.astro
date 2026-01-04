@@ -1,0 +1,497 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// Structure des annales organisées par centre d'examen, date et jour
+interface AnnalesItem {
+  centre: string;
+  date: string;
+  jour: string;
+  sujet: string;
+  corrige: string;
+}
+
+
+// Liste des annales 2024
+const annales2024: AnnalesItem[] = [
+  // Métropole
+  {
+    centre: 'Métropole',
+    date: 'Juin 2024',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2024/Metropole_J1_spe_19_06_2024_VTFK.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige-spe_J1_Metropole_19_06_2024_DV.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Juin 2024',
+    jour: 'Jour 1 (Secours)',
+    sujet: '/pdf/annales-bac/2024/Spe_MetropoleJ1devoile_19_06_2024_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/CorrigeSpe_Metropole_J1_secours_19_06_2024_DV_3.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Juin 2024',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2024/Me_tropole_J2_spe_20_06_2024_VTFK.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige__Me_tropole_J2_spe_20_06_2024_FK.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Juin 2024',
+    jour: 'Jour 2 (Dévoilé)',
+    sujet: '/pdf/annales-bac/2024/Spe_Metropole_devoile_J2_20_06_2024_DV_2.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_spe_Metro_devoile_20_06_2024_DV.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Septembre 2024',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2024/Spe_J1_Metropole_11_09_2024_DV_2.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrrige_Spe_J1_Metropole_11_09_2024_FH.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Septembre 2024',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2024/Spe_J2_12_09_2024_Metropole_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_spe_J2_12_09_2024_Metro_DV_2.pdf'
+  },
+  
+  // Polynésie
+  {
+    centre: 'Polynésie',
+    date: 'Juin 2024',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2024/Spe_Polynesie_J1_19_06_2024_DV__2.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_spe_PolynesieJ1_19_06_2024_DV_2.pdf'
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Juin 2024',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2024/Spe_Polynesie_J2_20_06_2024_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_bis_Polynesie_20_06_2024_DV.pdf'
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Septembre 2024',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2024/Spe_Polynesie_9_09_2024_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_Spe_Polynesie_9_09_2024_FH.pdf'
+  },
+  
+  // Asie
+  {
+    centre: 'Asie',
+    date: 'Juin 2024',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2024/Spe_Asie_J1_10_06_2024_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige__Asie_spe_J1_24_mars_2024_VT_FK.pdf'
+  },
+  {
+    centre: 'Asie',
+    date: 'Juin 2024',
+    jour: 'Jour 1 (Alternatif)',
+    sujet: '/pdf/annales-bac/2024/Spe_Asie_11_06_2024_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_Spe_Asie_11_06_2024_VT.pdf'
+  },
+  
+  // Amérique du Nord
+  {
+    centre: 'Amérique du Nord',
+    date: 'Mai 2024',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2024/Spe_Amerique_Nord21_05_2024_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_spe_Amerique_Nord_J1_2024_DV.pdf'
+  },
+  {
+    centre: 'Amérique du Nord',
+    date: 'Mai 2024',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2024/Spe__Ame_rique_Nord_J2_22_mai_2024.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_spe_Amerique_Nord_22_05_2024_DV.pdf'
+  },
+  
+  // Amérique du Sud
+  {
+    centre: 'Amérique du Sud',
+    date: 'Novembre 2024',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2024/SpeJ1_21_11_2024_Ameri_Sud_DV_2.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_Am_du_Sud_21_11_2024_DVFHYM.pdf'
+  },
+  {
+    centre: 'Amérique du Sud',
+    date: 'Novembre 2024',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2024/SpeJ2_22_11_2024_Am_du_Sud_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_SpeJ2_22_11_2024_Am_du_Sud_FHDV.pdf'
+  },
+  
+  // Centre étranger
+  {
+    centre: 'Centre étranger',
+    date: 'Juin 2024',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2024/Etranger_J1_spe_5_06_2024_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_Spe_cialite_centre_e_trangers_groupe_1_jour_1_5_juin_24_.pdf'
+  },
+  {
+    centre: 'Centre étranger',
+    date: 'Juin 2024',
+    jour: 'Jour 1 (Bis)',
+    sujet: '/pdf/annales-bac/2024/Spe_Suede_7_06_2024_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige__Spe_Centres_e_trangers_J1bis_07_06_2024.pdf'
+  },
+  {
+    centre: 'Centre étranger',
+    date: 'Juin 2024',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2024/Etranger_spe_J2_6_06_2024_DV.pdf',
+    corrige: '/pdf/annales-bac/2024/Corrige_Etranger_spe_J2_6_06_2024_FK_VT.pdf'
+  }
+];
+
+// Liste des annales 2025
+const annales2025: AnnalesItem[] = [
+  // Métropole
+  {
+    centre: 'Métropole',
+    date: 'Septembre 2025',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2025/Metropole_J1_sept_2025_DV_2.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige__Metropole_J1_sept_2025_FK.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Septembre 2025',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2025/Metropole_J2_sept_2025_DV.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_Metropole_spe_J2_10_09_2025_AP3.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Juin 2025',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2025/Metro_J1_17_06_2025_DV.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige__Me_tropole_spe_J1_17_06_2025_VTFK.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Juin 2025',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2025/Metropole__spe_J2_18_06_2025_DV_2.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_spe_Metropole_18_06_2025_DV.pdf'
+  },
+  
+  // Polynésie
+  {
+    centre: 'Polynésie',
+    date: 'Septembre 2025',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2025/Polynesie_spe_J1_02_09_2025_FK_VT_DV_2.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_Polynesie_spe_J1_02_09_2025_FH.pdf'
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Juin 2025',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2025/Polynesie_spe_J1_17_06_2025_DV_2.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige__Polynesie_spe_J1_17_06_2025_VTFK_2.pdf'
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Juin 2025',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2025/Polynesie_spe_J2_18_06_2025_DV.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_Polynesie_spe_J2_18_06_2025_FK.pdf'
+  },
+  
+  // Asie
+  {
+    centre: 'Asie',
+    date: 'Septembre 2025',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2025/Asie_spe_J1_05_09_2025_FK.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_Asie_spe_J1_05_09_2025_FH.pdf'
+  },
+  {
+    centre: 'Asie',
+    date: 'Juin 2025',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2025/Asie_spe_J1_11_06_2025_DV.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige__Asie_J1_11_06_2025_VTFK.pdf'
+  },
+  {
+    centre: 'Asie',
+    date: 'Juin 2025',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2025/Asie_speJ2_12_06_2025_VTFK.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_bis_Asie_spe_J2_12_06_2025_BS.pdf'
+  },
+  
+  // Amérique du Nord
+  {
+    centre: 'Amérique du Nord',
+    date: 'Mai 2025',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2025/Ame_rique_du_Nord_J1_spe_21_05_2025_FK.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_Ame_rique_du_Nord_J1_spe_21_05_2025_FK_VT_2.pdf'
+  },
+  {
+    centre: 'Amérique du Nord',
+    date: 'Mai 2025',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2025/Amerique_du_Nord_J2_spe_22_05_2025_DV_FK.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_Am_du_Nord_J2_2025_DV_2.pdf'
+  },
+  {
+    centre: 'Amérique du Nord',
+    date: 'Mai 2025',
+    jour: 'Jour 2 (Secours)',
+    sujet: '/pdf/annales-bac/2025/Amerique_du_Nord_J2_secours_spe_22_05_2025_FK.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige__Ame_rique_du_Nord_J2_secours_spe_22_05_2025_FK.pdf'
+  },
+  
+  // Amérique du Sud
+  {
+    centre: 'Amérique du Sud',
+    date: 'Novembre 2025',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2025/Ameri_du_Sud_J1__13_11_2025_DV.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_Ameri_du_Sud_J1__13_11_2025_FH.pdf'
+  },
+  {
+    centre: 'Amérique du Sud',
+    date: 'Novembre 2025',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2025/Ame_du_Sud_J2_14_11_2025_DV.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_Am_du_Sud_J2_nov_2025_DV.pdf'
+  },
+  
+  // Nouvelle-Calédonie
+  {
+    centre: 'Nouvelle-Calédonie',
+    date: 'Novembre 2025',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2025/Caledonie_J1_20_11_2025_DV_2.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_EDS_NC_sujet1-20-11_SD_2.pdf'
+  },
+  {
+    centre: 'Nouvelle-Calédonie',
+    date: 'Novembre 2025',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2025/Caledonie_J2_21_11_2025_DV.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_EDS_NC_sujet2-21-11_2025_SD_2.pdf'
+  },
+  
+  // Centre étranger
+  {
+    centre: 'Centre étranger',
+    date: 'Juin 2025',
+    jour: 'Jour 1',
+    sujet: '/pdf/annales-bac/2025/Etranger_spe_J1_12_06_2025_DV.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige__centre_etranger_J1_12_06_2025_VT.pdf'
+  },
+  {
+    centre: 'Centre étranger',
+    date: 'Juin 2025',
+    jour: 'Jour 2',
+    sujet: '/pdf/annales-bac/2025/Etranger_spe_J2_13_06_2025_DV.pdf',
+    corrige: '/pdf/annales-bac/2025/Corrige_Etranger_spe_J2_13_06_2025__RRoux.pdf'
+  }
+];
+
+// Grouper par année et centre d'examen
+function groupByCentre(annales: AnnalesItem[]) {
+  return annales.reduce((acc, item) => {
+    if (!acc[item.centre]) {
+      acc[item.centre] = [];
+    }
+    acc[item.centre].push(item);
+    return acc;
+  }, {} as Record<string, AnnalesItem[]>);
+}
+
+const annales2024ByCentre = groupByCentre(annales2024);
+const annales2025ByCentre = groupByCentre(annales2025);
+
+// Trier les centres pour chaque année
+const centres2024 = Object.keys(annales2024ByCentre).sort();
+const centres2025 = Object.keys(annales2025ByCentre).sort();
+---
+
+<Layout 
+  title="Annales du bac - Mathématiques Terminale | revise-tes-maths.fr"
+  description="Annales du baccalauréat de mathématiques pour la classe de Terminale. Sujets et corrigés des 10 dernières années."
+>
+  <Header />
+  
+  <!-- Breadcrumbs -->
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs items={[
+          { label: 'Terminale', href: '/terminale' },
+          { label: 'Annales du bac' }
+        ]} />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Hero Section -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Annales du Bac - Mathématiques
+        </h1>
+        <p class="text-lg text-gray-700">
+          Sujets et corrigés du baccalauréat par année
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Content Section -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto space-y-12">
+        
+        <!-- Année 2025 -->
+        <div>
+          <div class="mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Année 2025
+            </h2>
+            <p class="text-gray-600">
+              Accédez aux sujets et corrigés du baccalauréat 2025 par centre d'examen.
+            </p>
+          </div>
+          
+          <div class="space-y-8">
+            {centres2025.map((centre) => (
+              <div key={`2025-${centre}`} class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow bg-white">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
+                  {centre}
+                </h3>
+                
+                <div class="space-y-4">
+                  {annales2025ByCentre[centre].map((item, index) => (
+                    <div key={index} class="bg-gray-50 rounded-lg p-4 md:p-5 border border-gray-100 hover:border-gray-300 transition-colors">
+                      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div class="flex-1">
+                          <h4 class="font-semibold text-gray-900 mb-1 text-base md:text-lg">
+                            {item.jour}
+                          </h4>
+                          <p class="text-sm text-gray-600">
+                            {item.date}
+                          </p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3">
+                          <a 
+                            href={item.sujet} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium shadow-sm hover:shadow-md"
+                          >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Sujet
+                          </a>
+                          <a 
+                            href={item.corrige} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-colors text-sm font-medium shadow-sm hover:shadow-md"
+                          >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Corrigé
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Année 2024 -->
+        <div>
+          <div class="mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Année 2024
+            </h2>
+            <p class="text-gray-600">
+              Accédez aux sujets et corrigés du baccalauréat 2024 par centre d'examen.
+            </p>
+          </div>
+          
+          <div class="space-y-8">
+            {centres2024.map((centre) => (
+              <div key={`2024-${centre}`} class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow bg-white">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
+                  {centre}
+                </h3>
+                
+                <div class="space-y-4">
+                  {annales2024ByCentre[centre].map((item, index) => (
+                    <div key={index} class="bg-gray-50 rounded-lg p-4 md:p-5 border border-gray-100 hover:border-gray-300 transition-colors">
+                      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div class="flex-1">
+                          <h4 class="font-semibold text-gray-900 mb-1 text-base md:text-lg">
+                            {item.jour}
+                          </h4>
+                          <p class="text-sm text-gray-600">
+                            {item.date}
+                          </p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3">
+                          <a 
+                            href={item.sujet} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium shadow-sm hover:shadow-md"
+                          >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Sujet
+                          </a>
+                          <a 
+                            href={item.corrige} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-colors text-sm font-medium shadow-sm hover:shadow-md"
+                          >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Corrigé
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

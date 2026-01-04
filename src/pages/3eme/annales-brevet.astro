@@ -1,0 +1,429 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// Structure des annales organisées par centre d'examen, date et type
+interface BrevetItem {
+  centre: string;
+  date: string;
+  type: string; // 'Général' ou 'Professionnel'
+  sujet: string;
+  corrige: string;
+}
+
+// Liste des annales 2024
+const annales2024: BrevetItem[] = [
+  // Métropole
+  {
+    centre: 'Métropole',
+    date: 'Juillet 2024',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2024/Brevet_Metropole_1_07_2024_DV.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_brevet_Metropole_1_07_2024_DV.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Juillet 2024',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2024/Brevet_Metropole_pro_1_juillet_FH.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Metropole_pro_1_juillet_FH.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Septembre 2024',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2024/Brevet_19_09_2024_Metro_Ant__DV_3.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_19_09_2024_Metro_Ant__FH.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Septembre 2024',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2024/Brevet_pro_19_09_2024_DV_2.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_pro_Metro__19_09_2024_FH.pdf'
+  },
+  
+  // Polynésie
+  {
+    centre: 'Polynésie',
+    date: 'Juin 2024',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2024/Brevet_Polynesie_27_06_2024_DV-2.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Polynesie_27_06_2024_DV.pdf'
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Juin 2024',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2024/Brevet_polynesie_pro_juin_2024_FH.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_polynesie_pro_juin_2024_FH.pdf'
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Septembre 2024',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2024/Brevet_Polynesie_sept_2024_DV_2.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Polynesie_sept_2024_FH.pdf'
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Septembre 2024',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2024/Brevet_pro_Polynesie_sept_2024_DV_2.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_pro_Polynesie_sept_2024_FH.pdf'
+  },
+  
+  // Asie
+  {
+    centre: 'Asie',
+    date: 'Juin 2024',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2024/Brevet_Asie_18_06_2024_DV.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige__Asie_18_06_2024_FK.pdf'
+  },
+  
+  // Amérique du Nord
+  {
+    centre: 'Amérique du Nord',
+    date: 'Mai 2024',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2024/Brevet_Ameri_Nord_mai_2024_FK.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Am_du_No_29_05_2024_DV.pdf'
+  },
+  
+  // Amérique du Sud
+  {
+    centre: 'Amérique du Sud',
+    date: 'Décembre 2024',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2024/Brevet__Am_de_Sud_2_12_2024_DVFH_3.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_brevet_Am_Sud_2_12_2024_DV.pdf'
+  },
+  
+  // Martinique
+  {
+    centre: 'Martinique',
+    date: 'Juillet 2024',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2024/Brevet_Martinique_3_07_2024_DV.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Martinique_3_07_2024_DV-2.pdf'
+  },
+  {
+    centre: 'Martinique',
+    date: 'Juillet 2024',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2024/Brevet_Martinique_Pro_3_07_2024_JCS_2.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Martinique_Pro_3_07_2024_FH.pdf'
+  },
+  
+  // Centres étrangers
+  {
+    centre: 'Centres étrangers',
+    date: 'Juin 2024',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2024/Brevet_Centres_Etrangers_juin_2024_FK.pdf',
+    corrige: '/pdf/annales-brevet/2024/Corrige__Brevet_Centres_Etrangers_juin_2024_FK.pdf'
+  }
+];
+
+// Liste des annales 2025
+const annales2025: BrevetItem[] = [
+  // Métropole
+  {
+    centre: 'Métropole',
+    date: 'Juin 2025',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_Me_tropole_26_06_2025_FK.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Metropole_26_06_2025_DV.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Juin 2025',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2025/Brevet_metro_PRO_26_06_2025_DV.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Metro_Pro_juin_2025__DV.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Septembre 2025',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_Metropole_sept_2025_DV.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Metro_sept_2025_DV.pdf'
+  },
+  {
+    centre: 'Métropole',
+    date: 'Septembre 2025',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2025/Brevet_Pro_Metropole_sept_2025_MD_2.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Pro_Metropole_sept_2025_FH.pdf'
+  },
+  
+  // Polynésie
+  {
+    centre: 'Polynésie',
+    date: 'Juin 2025',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_Polynesie_26_06_2025_DV_2.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige__Brevet_Polyne_sie_26_06_2025_FK.pdf'
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Juin 2025',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2025/Brevet_pro_Polynesie_06_2025_DV.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Pro_Polynesie_juin_2025_DV.pdf'
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Septembre 2025',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_8_9_2025_Polynesie_DV.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Polynesie_8_9_2025_DV.pdf'
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Septembre 2025',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2025/Brevet_pro_8_9_2025_Polynesie_DV.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Polynesie_8_9_2025_DV-2.pdf'
+  },
+  
+  // Asie
+  {
+    centre: 'Asie',
+    date: 'Juin 2025',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_Asie_9_06_2025_JCS_FH2.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige__Brevet_Asie_9_06_2025_LGFK.pdf'
+  },
+  
+  // Amérique du Nord
+  {
+    centre: 'Amérique du Nord',
+    date: 'Juin 2025',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_Am_du_Nord_4_06_2025_DV_JCS_PS.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_brevet_Am_du_Nord_juin_2025_DV.pdf'
+  },
+  
+  // Amérique du Sud
+  {
+    centre: 'Amérique du Sud',
+    date: 'Novembre 2025',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_Ameri_du_Sud_27_11_2025_MCB4.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Ameri_Sud_27_11_2025_MCB.pdf'
+  },
+  
+  // Nouvelle-Calédonie
+  {
+    centre: 'Nouvelle-Calédonie',
+    date: 'Décembre 2025',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_Nlle_Cale_donie_11_12_2025_DV.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Nlle_Caledo_dec_2025_DV.pdf'
+  },
+  {
+    centre: 'Nouvelle-Calédonie',
+    date: 'Décembre 2025',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2025/Brevet_pro_Caledonie_11_12_2025_DV_2.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_brevet_pro_Cale_donie_dec_2025_DV.pdf'
+  },
+  
+  // Centre étranger
+  {
+    centre: 'Centre étranger',
+    date: 'Juin 2025',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_etranger_16_06_2025_DV.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_brevet_Etranger_2025_DV.pdf'
+  }
+];
+
+// Grouper par année et centre d'examen
+function groupByCentre(annales: BrevetItem[]) {
+  return annales.reduce((acc, item) => {
+    if (!acc[item.centre]) {
+      acc[item.centre] = [];
+    }
+    acc[item.centre].push(item);
+    return acc;
+  }, {} as Record<string, BrevetItem[]>);
+}
+
+const annales2024ByCentre = groupByCentre(annales2024);
+const annales2025ByCentre = groupByCentre(annales2025);
+
+// Trier les centres pour chaque année
+const centres2024 = Object.keys(annales2024ByCentre).sort();
+const centres2025 = Object.keys(annales2025ByCentre).sort();
+---
+
+<Layout 
+  title="Annales du brevet - Mathématiques 3ème | revise-tes-maths.fr"
+  description="Annales du brevet de mathématiques pour la classe de 3ème. Sujets et corrigés des années précédentes."
+>
+  <Header />
+  
+  <!-- Breadcrumbs -->
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs items={[
+          { label: '3ème', href: '/3eme' },
+          { label: 'Annales du brevet' }
+        ]} />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Hero Section -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Annales du Brevet - Mathématiques
+        </h1>
+        <p class="text-lg text-gray-700">
+          Sujets et corrigés du brevet des collèges par année
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Content Section -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto space-y-12">
+        
+        <!-- Année 2025 -->
+        <div>
+          <div class="mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Année 2025
+            </h2>
+            <p class="text-gray-600">
+              Accédez aux sujets et corrigés du brevet 2025 par centre d'examen.
+            </p>
+          </div>
+          
+          <div class="space-y-8">
+            {centres2025.map((centre) => (
+              <div key={`2025-${centre}`} class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow bg-white">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
+                  {centre}
+                </h3>
+                
+                <div class="space-y-4">
+                  {annales2025ByCentre[centre].map((item, index) => (
+                    <div key={index} class="bg-gray-50 rounded-lg p-4 md:p-5 border border-gray-100 hover:border-gray-300 transition-colors">
+                      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div class="flex-1">
+                          <h4 class="font-semibold text-gray-900 mb-1 text-base md:text-lg">
+                            {item.type} - {item.date}
+                          </h4>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3">
+                          <a 
+                            href={item.sujet} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium shadow-sm hover:shadow-md"
+                          >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Sujet
+                          </a>
+                          <a 
+                            href={item.corrige} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-colors text-sm font-medium shadow-sm hover:shadow-md"
+                          >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Corrigé
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Année 2024 -->
+        <div>
+          <div class="mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Année 2024
+            </h2>
+            <p class="text-gray-600">
+              Accédez aux sujets et corrigés du brevet 2024 par centre d'examen.
+            </p>
+          </div>
+          
+          <div class="space-y-8">
+            {centres2024.map((centre) => (
+              <div key={`2024-${centre}`} class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow bg-white">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
+                  {centre}
+                </h3>
+                
+                <div class="space-y-4">
+                  {annales2024ByCentre[centre].map((item, index) => (
+                    <div key={index} class="bg-gray-50 rounded-lg p-4 md:p-5 border border-gray-100 hover:border-gray-300 transition-colors">
+                      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div class="flex-1">
+                          <h4 class="font-semibold text-gray-900 mb-1 text-base md:text-lg">
+                            {item.type} - {item.date}
+                          </h4>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3">
+                          <a 
+                            href={item.sujet} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium shadow-sm hover:shadow-md"
+                          >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Sujet
+                          </a>
+                          <a 
+                            href={item.corrige} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-colors text-sm font-medium shadow-sm hover:shadow-md"
+                          >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Corrigé
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

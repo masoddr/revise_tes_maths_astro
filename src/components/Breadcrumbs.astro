@@ -1,0 +1,53 @@
+---
+interface Props {
+  items: Array<{ label: string; href?: string }>;
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumbs" aria-label="Fil d'Ariane">
+  <ol class="flex items-center space-x-2 text-sm text-gray-600">
+    <li>
+      <a href="/" class="hover:text-gray-900 transition-colors">Accueil</a>
+    </li>
+    {items.map((item, index) => (
+      <>
+        <li class="flex items-center">
+          <svg class="w-4 h-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </li>
+        <li>
+          {item.href ? (
+            <a href={item.href} class="hover:text-gray-900 transition-colors">
+              {item.label}
+            </a>
+          ) : (
+            <span class="text-gray-900 font-medium" aria-current="page">
+              {item.label}
+            </span>
+          )}
+        </li>
+      </>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs {
+    padding: 0.75rem 0;
+  }
+  
+  .breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .breadcrumbs li {
+    display: inline-flex;
+    align-items: center;
+  }
+</style>
+

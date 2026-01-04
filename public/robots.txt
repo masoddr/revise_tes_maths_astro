@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://revise-tes-maths.fr/sitemap.xml
 
+# Disallow PDFs from being indexed (optional - remove if you want them indexed)
+# Disallow: /pdf/
