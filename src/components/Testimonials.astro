@@ -1,127 +1,406 @@
 ---
 // Testimonials section component
-// Displays social proof through student/parent testimonials
+// Displays social proof through student/parent testimonials with carousel
 ---
 
 <section class="bg-white py-12 md:py-16">
   <div class="container mx-auto px-4">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-4xl mx-auto">
       <div class="text-center mb-8 md:mb-12">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
           Témoignages
         </h2>
         <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-          Retours d'élèves et de familles ayant bénéficié de cet accompagnement
+          Retours d'élèves ayant bénéficié de cet accompagnement
         </p>
       </div>
+      
+      <div class="relative">
+        <!-- Carousel container -->
+        <div id="testimonials-carousel" class="overflow-hidden">
+          <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out">
+            <!-- Testimonial 1: Dina A. -->
+            <div class="testimonial-slide min-w-full px-4">
+              <div class="bg-gray-50 rounded-lg p-6 md:p-8 shadow-sm">
+                <div class="flex items-center mb-4">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                      DA
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="text-lg font-semibold text-gray-900">Dina A.</h3>
+                  </div>
+                </div>
+                <div class="testimonial-content" data-full-text="Je n'aurais jamais pu avoir mon 19/20 à mon épreuve de bac de Spé Maths sans lui ! Massyl était mon prof de mathématiques et physique pendant tout le collège et tout le lycée. Je ne peux que le recommander. Il réussit à expliquer des concepts et théories scientifiques complexes de manière simple et concrète. Il s'assure de vérifier que les connaissances sont réellement acquises et comprises, et non pas juste apprises par cœur. Super sympa, patient et à l'écoute - ce qui rend les cours vraiment agréables !">
+                  <p class="text-gray-700 leading-relaxed testimonial-text">
+                    <span class="testimonial-preview">Je n'aurais jamais pu avoir mon 19/20 à mon épreuve de bac de Spé Maths sans lui ! Massyl était mon prof de mathématiques et physique pendant tout le collège et tout le lycée. Il réussit à expliquer des concepts complexes de manière simple et concrète...</span>
+                    <span class="testimonial-full hidden"></span>
+                  </p>
+                  <button class="testimonial-toggle text-blue-600 hover:text-blue-700 font-medium mt-2 text-sm">
+                    Lire la suite...
+                  </button>
+                </div>
+              </div>
+            </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        <!-- Témoignage 1 -->
-        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300 animate-on-scroll animate-on-scroll-stagger">
-          <div class="flex items-center mb-4">
-            <div class="flex text-yellow-400">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
+            <!-- Testimonial 2: Perrine L. -->
+            <div class="testimonial-slide min-w-full px-4">
+              <div class="bg-gray-50 rounded-lg p-6 md:p-8 shadow-sm">
+                <div class="flex items-center mb-4">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                      PL
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="text-lg font-semibold text-gray-900">Perrine L.</h3>
+                  </div>
+                </div>
+                <div class="testimonial-content" data-full-text="À force de travail avec lui, je suis devenue super à l'aise et j'ai eu d'excellentes moyennes. Grâce à lui, j'ai non seulement progressé, mais j'ai aussi appris à aimer les maths — alors qu'en cours, je ne comprenais rien au début. J'ai eu Massyl comme prof particulier de maths pendant 3 ans, et je le recommande vivement. Il est toujours fiable : jamais de retard, jamais d'annulation de dernière minute. Très pédagogue, il prend vraiment le temps d'expliquer les choses clairement, même lorsqu'on est plusieurs en cours, et il s'assure toujours qu'on a bien compris avant de passer à la suite. En plus d'être vraiment gentil, il est passionné par ce qu'il fait, et ça se ressent dans sa manière d'enseigner. Merci encore Massyl :)">
+                  <p class="text-gray-700 leading-relaxed testimonial-text">
+                    <span class="testimonial-preview">À force de travail avec lui, je suis devenue super à l'aise et j'ai eu d'excellentes moyennes. Grâce à lui, j'ai non seulement progressé, mais j'ai aussi appris à aimer les maths — alors qu'en cours, je ne comprenais rien au début...</span>
+                    <span class="testimonial-full hidden"></span>
+                  </p>
+                  <button class="testimonial-toggle text-blue-600 hover:text-blue-700 font-medium mt-2 text-sm">
+                    Lire la suite...
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-          <p class="text-gray-700 text-sm md:text-base mb-4 leading-relaxed italic">
-            "L'accompagnement de Massyl a été déterminant pour la réussite de notre fils. La rigueur méthodologique et l'exigence ont permis une progression solide et durable."
-          </p>
-          <div class="flex items-center">
-            <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
-              <span class="text-gray-600 font-semibold text-sm">F</span>
+
+            <!-- Testimonial 3: Sarah C. -->
+            <div class="testimonial-slide min-w-full px-4">
+              <div class="bg-gray-50 rounded-lg p-6 md:p-8 shadow-sm">
+                <div class="flex items-center mb-4">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                      SC
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="text-lg font-semibold text-gray-900">Sarah C.</h3>
+                  </div>
+                </div>
+                <div class="testimonial-content" data-full-text="Grâce à lui, j'ai gagné en confiance et j'ai beaucoup progressé. Je le recommande fortement. Très patient, toujours à l'écoute, et avec une super énergie. On apprend dans la bonne humeur, sans pression, et avec une méthode de travail vraiment adaptée à chaque élève.">
+                  <p class="text-gray-700 leading-relaxed testimonial-text">
+                    <span class="testimonial-preview">Grâce à lui, j'ai gagné en confiance et j'ai beaucoup progressé. Je le recommande fortement. Très patient, toujours à l'écoute, et avec une super énergie...</span>
+                    <span class="testimonial-full hidden"></span>
+                  </p>
+                  <button class="testimonial-toggle text-blue-600 hover:text-blue-700 font-medium mt-2 text-sm">
+                    Lire la suite...
+                  </button>
+                </div>
+              </div>
             </div>
-            <div>
-              <p class="text-gray-900 font-semibold text-sm">Famille M.</p>
-              <p class="text-gray-500 text-xs">Parent d'élève - Terminale</p>
+
+            <!-- Testimonial 4: Sofia C. -->
+            <div class="testimonial-slide min-w-full px-4">
+              <div class="bg-gray-50 rounded-lg p-6 md:p-8 shadow-sm">
+                <div class="flex items-center mb-4">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                      SC
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="text-lg font-semibold text-gray-900">Sofia C.</h3>
+                  </div>
+                </div>
+                <div class="testimonial-content" data-full-text="Grâce à lui, je suis devenue parmi les premières de la classe en maths et j'ai eu 19 au bac. Massyl est le meilleur prof du monde. Massyl est quelqu'un de très patient et très pédagogue. De plus, les cours sont toujours un moment agréable qui donne envie d'apprendre ! Je recommande à 100% !">
+                  <p class="text-gray-700 leading-relaxed testimonial-text">
+                    <span class="testimonial-preview">Grâce à lui, je suis devenue parmi les premières de la classe en maths et j'ai eu 19 au bac. Massyl est le meilleur prof du monde. Massyl est quelqu'un de très patient et très pédagogue...</span>
+                    <span class="testimonial-full hidden"></span>
+                  </p>
+                  <button class="testimonial-toggle text-blue-600 hover:text-blue-700 font-medium mt-2 text-sm">
+                    Lire la suite...
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5: Anastasia S. -->
+            <div class="testimonial-slide min-w-full px-4">
+              <div class="bg-gray-50 rounded-lg p-6 md:p-8 shadow-sm">
+                <div class="flex items-center mb-4">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                      AS
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="text-lg font-semibold text-gray-900">Anastasia S.</h3>
+                  </div>
+                </div>
+                <div class="testimonial-content" data-full-text="Massyl is the only reason I passed my high school exams ! Best teacher ever ! Very mindful and clear. Has a unique and very efficient teaching method. Would highly recommend !">
+                  <p class="text-gray-700 leading-relaxed testimonial-text">
+                    <span class="testimonial-preview">Massyl is the only reason I passed my high school exams ! Best teacher ever ! Very mindful and clear. Has a unique and very efficient teaching method...</span>
+                    <span class="testimonial-full hidden"></span>
+                  </p>
+                  <button class="testimonial-toggle text-blue-600 hover:text-blue-700 font-medium mt-2 text-sm">
+                    Lire la suite...
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Témoignage 2 -->
-        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300 animate-on-scroll animate-on-scroll-stagger">
-          <div class="flex items-center mb-4">
-            <div class="flex text-yellow-400">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            </div>
-          </div>
-          <p class="text-gray-700 text-sm md:text-base mb-4 leading-relaxed italic">
-            "Grâce à cet accompagnement, j'ai développé une vraie autonomie dans mon travail. Les méthodes apprises me servent encore aujourd'hui à l'université."
-          </p>
-          <div class="flex items-center">
-            <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
-              <span class="text-gray-600 font-semibold text-sm">É</span>
-            </div>
-            <div>
-              <p class="text-gray-900 font-semibold text-sm">Élève anonyme</p>
-              <p class="text-gray-500 text-xs">Ancien élève - McGill University</p>
-            </div>
-          </div>
-        </div>
+        <!-- Navigation buttons -->
+        <button 
+          id="prev-btn" 
+          class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors z-10"
+          aria-label="Avis précédent"
+        >
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button 
+          id="next-btn" 
+          class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors z-10"
+          aria-label="Avis suivant"
+        >
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
 
-        <!-- Témoignage 3 -->
-        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300 animate-on-scroll animate-on-scroll-stagger">
-          <div class="flex items-center mb-4">
-            <div class="flex text-yellow-400">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            </div>
-          </div>
-          <p class="text-gray-700 text-sm md:text-base mb-4 leading-relaxed italic">
-            "Un suivi personnalisé et exigeant qui a permis à notre fille de gagner en confiance et d'atteindre ses objectifs académiques."
-          </p>
-          <div class="flex items-center">
-            <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
-              <span class="text-gray-600 font-semibold text-sm">P</span>
-            </div>
-            <div>
-              <p class="text-gray-900 font-semibold text-sm">Famille P.</p>
-              <p class="text-gray-500 text-xs">Parent d'élève - Première</p>
-            </div>
-          </div>
+        <!-- Dots indicator -->
+        <div class="flex justify-center gap-2 mt-6">
+          <button 
+            class="carousel-dot w-2 h-2 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-8"
+            data-index="0"
+            aria-label="Afficher l'avis 1"
+          ></button>
+          <button 
+            class="carousel-dot w-2 h-2 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-8"
+            data-index="1"
+            aria-label="Afficher l'avis 2"
+          ></button>
+          <button 
+            class="carousel-dot w-2 h-2 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-8"
+            data-index="2"
+            aria-label="Afficher l'avis 3"
+          ></button>
+          <button 
+            class="carousel-dot w-2 h-2 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-8"
+            data-index="3"
+            aria-label="Afficher l'avis 4"
+          ></button>
+          <button 
+            class="carousel-dot w-2 h-2 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-8"
+            data-index="4"
+            aria-label="Afficher l'avis 5"
+          ></button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<script>
+  // @ts-nocheck
+  // Carousel functionality
+  (function() {
+    let currentIndex = 0;
+    const totalSlides = 5;
+    const track = document.getElementById('testimonials-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    function updateCarousel() {
+      if (track) {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+      
+      // Update dots
+      dots.forEach((dot, index) => {
+        if (index === currentIndex) {
+          dot.classList.add('active');
+          dot.classList.add('bg-gray-700');
+          dot.classList.add('w-8');
+          dot.classList.remove('bg-gray-400');
+        } else {
+          dot.classList.remove('active');
+          dot.classList.remove('bg-gray-700');
+          dot.classList.remove('w-8');
+          dot.classList.add('bg-gray-400');
+        }
+      });
+    }
+
+    /**
+     * @param {number} index
+     */
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    // Event listeners
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextSlide);
+    }
+    
+    if (prevBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index));
+    });
+
+    // Initialize
+    updateCarousel();
+  })();
+
+  // Testimonial expand/collapse functionality
+  (function() {
+    const maxLines = 4; // Maximum number of lines before truncation
+    const lineHeight = 1.75; // Line height in rem (should match leading-relaxed)
+    
+    function setupTestimonials() {
+      const testimonialContents = document.querySelectorAll('.testimonial-content');
+
+      testimonialContents.forEach((content) => {
+        const preview = content.querySelector('.testimonial-preview');
+        const fullText = content.querySelector('.testimonial-full');
+        const toggleBtn = content.querySelector('.testimonial-toggle');
+        const textContainer = content.querySelector('.testimonial-text');
+        
+        if (!preview || !fullText || !toggleBtn || !textContainer) return;
+
+        const fullTextContent = content.getAttribute('data-full-text') || '';
+        
+        // Set full text
+        fullText.textContent = fullTextContent;
+        
+        const previewText = preview.textContent?.trim() || '';
+        const previewTextClean = previewText.replace(/\.\.\.$/, '').trim();
+        
+        // Check if text needs truncation by comparing lengths
+        if (previewTextClean.length >= fullTextContent.length) {
+          toggleBtn.classList.add('hidden');
+          textContainer.classList.add('no-truncate');
+          textContainer.style.maxHeight = 'none';
+          return;
+        }
+
+        // Only set initial state if not already interacted with
+        // Check if this testimonial has been expanded by user
+        const hasBeenInteracted = content.hasAttribute('data-interacted');
+        
+        if (!hasBeenInteracted) {
+          // Set initial state for truncated testimonials
+          preview.classList.remove('hidden');
+          fullText.classList.add('hidden');
+          textContainer.style.maxHeight = `${maxLines * lineHeight}rem`;
+          textContainer.style.overflow = 'hidden';
+          textContainer.classList.remove('no-truncate');
+          textContainer.classList.remove('expanded');
+          toggleBtn.classList.remove('hidden');
+          toggleBtn.textContent = 'Lire la suite...';
+        }
+        // If already interacted, preserve current state (don't reset)
+      });
+    }
+
+    // Event delegation for toggle buttons
+    function handleToggleClick(e) {
+      const toggleBtn = e.target.closest('.testimonial-toggle');
+      if (!toggleBtn) return;
+      
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const content = toggleBtn.closest('.testimonial-content');
+      if (!content) return;
+      
+      // Mark as interacted to prevent reset
+      content.setAttribute('data-interacted', 'true');
+      
+      const preview = content.querySelector('.testimonial-preview');
+      const fullText = content.querySelector('.testimonial-full');
+      const textContainer = content.querySelector('.testimonial-text');
+      
+      if (!preview || !fullText || !textContainer) return;
+      
+      const isCurrentlyExpanded = fullText.classList.contains('hidden') === false;
+      
+      if (isCurrentlyExpanded) {
+        // Currently showing full, switch to preview
+        preview.classList.remove('hidden');
+        fullText.classList.add('hidden');
+        textContainer.style.maxHeight = `${maxLines * lineHeight}rem`;
+        textContainer.style.overflow = 'hidden';
+        toggleBtn.textContent = 'Lire la suite...';
+        textContainer.classList.remove('expanded');
+      } else {
+        // Currently showing preview, switch to full
+        preview.classList.add('hidden');
+        fullText.classList.remove('hidden');
+        textContainer.style.maxHeight = 'none';
+        textContainer.style.overflow = 'visible';
+        toggleBtn.textContent = 'Lire moins...';
+        textContainer.classList.add('expanded');
+      }
+    }
+
+    // Initialize when DOM is ready
+    function init() {
+      setupTestimonials();
+      
+      // Use event delegation on the carousel container
+      const carousel = document.getElementById('testimonials-carousel');
+      if (carousel) {
+        carousel.addEventListener('click', handleToggleClick);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+
+<style>
+  .testimonial-text {
+    transition: max-height 0.3s ease-in-out;
+    position: relative;
+  }
+
+  /* Only show gradient fade when text is truncated and not expanded */
+  .testimonial-text:not(.no-truncate):not(.expanded) .testimonial-preview::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, rgba(249, 250, 251, 1));
+    pointer-events: none;
+  }
+
+  .testimonial-toggle {
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .testimonial-toggle:hover {
+    text-decoration: underline;
+  }
+</style>
