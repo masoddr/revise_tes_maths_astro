@@ -38,7 +38,7 @@ Faire apparaître le site pour les recherches :
 - `professeur maths paris` (correspondance large modifiée)
 - `soutien scolaire maths paris` (correspondance large modifiée)
 
-**Landing page** : `/cours-maths-paris` (à créer - voir section optimisation)
+**Landing page** : `/cours-maths-paris` ✅ (créée et optimisée)
 
 **Ciblage géographique** :
 - Paris (75) : rayon 10km
@@ -60,7 +60,7 @@ Faire apparaître le site pour les recherches :
 - `professeur maths toulouse` (correspondance large modifiée)
 - `soutien scolaire maths toulouse` (correspondance large modifiée)
 
-**Landing page** : `/cours-maths-toulouse` (à créer - voir section optimisation)
+**Landing page** : `/cours-maths-toulouse` ✅ (créée et optimisée)
 
 **Ciblage géographique** :
 - Toulouse (31) : rayon 25km
@@ -178,8 +178,8 @@ Description : Ingénieur systèmes spatiaux. Cours de maths à distance adaptés
 
 ### 1. Landing pages optimisées
 - ✅ `/cours-maths-visio` : Déjà optimisée
-- ❌ `/cours-maths-paris` : À créer
-- ❌ `/cours-maths-toulouse` : À créer
+- ✅ `/cours-maths-paris` : Créée et accessible (liens dans footer et page visio)
+- ✅ `/cours-maths-toulouse` : Créée et accessible (liens dans footer et page visio)
 
 ### 2. Suivi des conversions
 **Objectifs à tracker** :
@@ -241,7 +241,7 @@ Description : Ingénieur systèmes spatiaux. Cours de maths à distance adaptés
 ### Semaine 1 : Configuration
 - [ ] Créer les 3 campagnes
 - [ ] Configurer les groupes d'annonces
-- [ ] Créer les landing pages manquantes
+- [x] Créer les landing pages manquantes ✅ (fait)
 - [ ] Installer le tag de conversion
 - [ ] Configurer les extensions
 
@@ -283,7 +283,7 @@ Description : Ingénieur systèmes spatiaux. Cours de maths à distance adaptés
 
 ## 📞 Prochaines étapes
 
-1. **Créer les landing pages manquantes** (`/cours-maths-paris`, `/cours-maths-toulouse`)
+1. ✅ **Créer les landing pages manquantes** (`/cours-maths-paris`, `/cours-maths-toulouse`) - **FAIT**
 2. **Configurer Google Ads** selon cette stratégie
 3. **Installer le tag de conversion** sur le site
 4. **Lancer en mode test** avec budget réduit
