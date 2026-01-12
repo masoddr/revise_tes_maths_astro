@@ -78,7 +78,7 @@ Pages dédiées à créer pour :
 - ⚠️ `préparation bac maths` → Page annales-bac existe
 - ⚠️ `annales bac maths corrigées` → Page annales-bac existe
 - ❌ `cours de maths à Paris` → **PAGE MANQUANTE**
-- ❌ `cours de maths en visio` → **PAGE MANQUANTE**
+- ✅ `cours de maths en visio` → **PAGE CRÉÉE** (`/cours-maths-visio`)
 
 ### Mapping pages ↔ mots-clés
 
@@ -147,7 +147,7 @@ Ajouter du contenu pédagogique (≥ 600 mots) sur :
 ### 3. **IMPORTANT - Pages manquantes pour mots-clés**
 Créer des pages dédiées pour :
 - `cours de maths à Paris`
-- `cours de maths en visio`
+- ✅ `cours de maths en visio` → **CRÉÉE** (`/cours-maths-visio`)
 
 ### 4. **MOYEN - Google Search Console**
 - Créer/vérifier le compte

@@ -86,13 +86,18 @@ const exercices: ExerciceItem[] = [
   <Header />
   
   <!-- Breadcrumbs -->
-  <Breadcrumbs 
-    items={[
-      { label: 'Accueil', href: '/' },
-      { label: '3ème', href: '/3eme' },
-      { label: 'Exercices', href: '/3eme/exercices' }
-    ]}
-  />
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: '3ème', href: '/3eme' },
+            { label: 'Exercices' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
   
   <!-- Hero Section -->
   <section class="bg-white py-12 md:py-16">
