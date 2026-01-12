@@ -28,7 +28,7 @@
 ## 2) Copywriting final (texte exact à intégrer)
 ### 2.1 HERO
 **Titre (H1)**  
-Accompagnement académique exigeant en mathématiques et sciences
+Cours de maths et sciences
 
 **Sous-titre**  
 Collège & lycée – suivi individuel
