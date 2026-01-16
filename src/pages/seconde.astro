@@ -2,6 +2,310 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+// Types
+type Theme = 'algèbre' | 'analyse' | 'probabilités';
+type ContentType = 'cours' | 'exercices';
+
+interface ContentItem {
+  titre: string;
+  fichier: string;
+  type: ContentType;
+  theme: Theme;
+}
+
+// Mapping des contenus avec leurs thèmes
+const contenus: ContentItem[] = [
+  // Cours - Analyse
+  {
+    titre: 'Fonction de référence',
+    fichier: '/pdf/seconde/cours/Fonction_de_référence.pdf',
+    type: 'cours',
+    theme: 'analyse'
+  },
+  {
+    titre: 'Fonctions affines',
+    fichier: '/pdf/seconde/cours/Fonctions_affines.pdf',
+    type: 'cours',
+    theme: 'analyse'
+  },
+  {
+    titre: 'Étude qualitative de fonctions',
+    fichier: '/pdf/seconde/cours/Étude_qualitative_de_fonctions.pdf',
+    type: 'cours',
+    theme: 'analyse'
+  },
+  {
+    titre: 'Généralités sur les fonctions',
+    fichier: '/pdf/seconde/cours/Généralités_sur_les_fonctions.pdf',
+    type: 'cours',
+    theme: 'analyse'
+  },
+  {
+    titre: 'Pourcentage et taux d\'évolution',
+    fichier: '/pdf/seconde/cours/Pourcentage_et_taux_d\'évolution.pdf',
+    type: 'cours',
+    theme: 'analyse'
+  },
+  {
+    titre: 'Pourcentage et proportion',
+    fichier: '/pdf/seconde/cours/Pourcentage_et_proportion.pdf',
+    type: 'cours',
+    theme: 'analyse'
+  },
+  // Cours - Algèbre
+  {
+    titre: 'Système d\'équations',
+    fichier: '/pdf/seconde/cours/Système d\'équations.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Equations de droites',
+    fichier: '/pdf/seconde/cours/Equations de droites.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Équations et Inéquations 2',
+    fichier: '/pdf/seconde/cours/Équations_et_Inéquations_2.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Calcul vectoriel - Colinéarité',
+    fichier: '/pdf/seconde/cours/Calcul_vectoriel_-_Colinéarité.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Projeté orthogonal',
+    fichier: '/pdf/seconde/cours/Projeté_orthogonal.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Inéquations',
+    fichier: '/pdf/seconde/cours/Inéquations.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Expressions algébriques',
+    fichier: '/pdf/seconde/cours/Expressions_algébriques.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Équations',
+    fichier: '/pdf/seconde/cours/Équations.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Repérage dans le plan',
+    fichier: '/pdf/seconde/cours/Repérage_dans_le_plan.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Configurations du plan et de l\'espace',
+    fichier: '/pdf/seconde/cours/Configurations_du_plan_..._et_de_l\'espace.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Généralités sur les vecteurs',
+    fichier: '/pdf/seconde/cours/Généralités_sur_les_vecteurs.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Nombres 1',
+    fichier: '/pdf/seconde/cours/Nombres_1.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Nombres 2',
+    fichier: '/pdf/seconde/cours/Nombres_2.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Nombres 3',
+    fichier: '/pdf/seconde/cours/Nombres_3.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  // Cours - Probabilités
+  {
+    titre: 'Échantillonnage',
+    fichier: '/pdf/seconde/cours/Échantillonnage.pdf',
+    type: 'cours',
+    theme: 'probabilités'
+  },
+  {
+    titre: 'Probabilités',
+    fichier: '/pdf/seconde/cours/Probabilités.pdf',
+    type: 'cours',
+    theme: 'probabilités'
+  },
+  {
+    titre: 'Statistiques descriptives',
+    fichier: '/pdf/seconde/cours/Statistiques_descriptives.pdf',
+    type: 'cours',
+    theme: 'probabilités'
+  },
+  // Exercices - Analyse
+  {
+    titre: 'Fonction de référence',
+    fichier: '/pdf/seconde/exercices/Exo - Fonction_de_référence.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: 'Fonctions affines',
+    fichier: '/pdf/seconde/exercices/Exo - Fonctions_affines.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: 'Étude qualitative de fonctions',
+    fichier: '/pdf/seconde/exercices/Exo - Étude_qualitative_de_fonctions.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: 'Généralités sur les fonctions',
+    fichier: '/pdf/seconde/exercices/Exo - Généralités_sur_les_fonctions.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: 'Pourcentage et taux d\'évolution',
+    fichier: '/pdf/seconde/exercices/Exo - Pourcentage_et_taux_d\'évolution.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: 'Pourcentage, proportion et inclusion',
+    fichier: '/pdf/seconde/exercices/Exo - Pourcentage,_proportion_et_inclusion.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  // Exercices - Algèbre
+  {
+    titre: 'Système d\'équation',
+    fichier: '/pdf/seconde/exercices/Exo - Système_d\'équation.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Equation de droite',
+    fichier: '/pdf/seconde/exercices/Exo - Equation_de_droite.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Équations et Inéquations 2',
+    fichier: '/pdf/seconde/exercices/Exo - Équations_et_Inéquations_2.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Calcul vectoriel - Colinéarité',
+    fichier: '/pdf/seconde/exercices/Exo - Calcul_vectoriel_-_Colinéarité.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Inéquations',
+    fichier: '/pdf/seconde/exercices/Exo - Inéquations.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Expressions algébriques',
+    fichier: '/pdf/seconde/exercices/Exo - Expressions_algébriques.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Équations',
+    fichier: '/pdf/seconde/exercices/Exo - Équations.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Repérage dans le plan',
+    fichier: '/pdf/seconde/exercices/Exo - Repérage_dans_le_plan.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Généralités sur les vecteurs',
+    fichier: '/pdf/seconde/exercices/Exo - Généralités_sur_les_vecteurs.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Nombres 1',
+    fichier: '/pdf/seconde/exercices/Exo - Nombres_1.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Nombres 2',
+    fichier: '/pdf/seconde/exercices/Exo - Nombres_2.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: 'Nombres 3',
+    fichier: '/pdf/seconde/exercices/Exo - Nombres_3.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  // Exercices - Probabilités
+  {
+    titre: 'Échantillonnage',
+    fichier: '/pdf/seconde/exercices/Exo - Échantillonnage.pdf',
+    type: 'exercices',
+    theme: 'probabilités'
+  },
+  {
+    titre: 'Probabilités',
+    fichier: '/pdf/seconde/exercices/Exo - Probabilités.pdf',
+    type: 'exercices',
+    theme: 'probabilités'
+  },
+  {
+    titre: 'Statistiques descriptives',
+    fichier: '/pdf/seconde/exercices/Exo - Statistiques_descriptives.pdf',
+    type: 'exercices',
+    theme: 'probabilités'
+  }
+];
+
+// Theme colors mapping
+const themeColors: Record<Theme, { bg: string; text: string; border: string }> = {
+  'algèbre': {
+    bg: 'bg-blue-50',
+    text: 'text-blue-700',
+    border: 'border-blue-200'
+  },
+  'analyse': {
+    bg: 'bg-purple-50',
+    text: 'text-purple-700',
+    border: 'border-purple-200'
+  },
+  'probabilités': {
+    bg: 'bg-emerald-50',
+    text: 'text-emerald-700',
+    border: 'border-emerald-200'
+  }
+};
 ---
 
 <Layout 
@@ -11,65 +315,306 @@ import Footer from '../components/Footer.astro';
   <Header />
   
   <!-- Hero Section -->
-  <section class="bg-white py-12 md:py-16">
+  <section class="bg-gradient-to-b from-gray-50 via-white to-white py-16 md:py-20">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
           Mathématiques - Seconde
         </h1>
-        <p class="text-lg text-gray-700">
-          Cours et exercices pour la classe de Seconde
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Parcourez nos cours et exercices par thème. Progressez à votre rythme avec des contenus structurés et ciblés.
         </p>
       </div>
     </div>
   </section>
   
-  <!-- Cours Section -->
-  <section class="bg-white py-12 md:py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Cours
-        </h2>
-        <p class="text-gray-600 mb-8">
-          Cours structurés par chapitre pour la classe de Seconde, couvrant l'ensemble du programme officiel.
-        </p>
-        <a 
-          href="/seconde/cours"
-          class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
-        >
-          Voir tous les cours
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
+  <!-- Filters Section -->
+  <section class="bg-white border-b border-gray-100 sticky top-0 z-10 backdrop-blur-sm bg-white/95">
+    <div class="container mx-auto px-4 py-6">
+      <div class="max-w-7xl mx-auto">
+        <!-- Search Bar -->
+        <div class="mb-6">
+          <div class="relative max-w-md">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Rechercher un cours ou un exercice..."
+              class="w-full px-4 py-2.5 pl-10 pr-4 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+            />
+            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+          <!-- Type Filter -->
+          <div class="flex flex-wrap gap-3 items-center">
+            <span class="text-sm font-semibold text-gray-700">Type :</span>
+            <div class="flex gap-2">
+              <button 
+                data-filter-type="all"
+                class="filter-type-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-gray-900 text-white shadow-sm hover:bg-gray-800"
+              >
+                Tout
+              </button>
+              <button 
+                data-filter-type="cours"
+                class="filter-type-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                📖 Cours
+              </button>
+              <button 
+                data-filter-type="exercices"
+                class="filter-type-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                ✏️ Exercices
+              </button>
+            </div>
+          </div>
+          
+          <!-- Theme Filter -->
+          <div class="flex flex-wrap gap-3 items-center">
+            <span class="text-sm font-semibold text-gray-700">Thème :</span>
+            <div class="flex gap-2">
+              <button 
+                data-filter-theme="all"
+                class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-gray-900 text-white shadow-sm hover:bg-gray-800"
+              >
+                Tous
+              </button>
+              <button 
+                data-filter-theme="algèbre"
+                class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                Algèbre
+              </button>
+              <button 
+                data-filter-theme="analyse"
+                class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                Analyse
+              </button>
+              <button 
+                data-filter-theme="probabilités"
+                class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                Probabilités
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   
-  <!-- Exercices Section -->
+  <!-- Content Grid Section -->
   <section class="bg-white py-12 md:py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Exercices
-        </h2>
-        <p class="text-gray-600 mb-8">
-          Exercices ciblés par chapitre pour la classe de Seconde, avec corrigés détaillés.
-        </p>
-        <a 
-          href="/seconde/exercices"
-          class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
-        >
-          Voir tous les exercices
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
+      <div class="max-w-7xl mx-auto">
+        <!-- Results count -->
+        <div class="mb-8">
+          <p class="text-gray-600">
+            <span id="results-count" class="font-semibold text-gray-900">{contenus.length}</span> contenu{contenus.length > 1 ? 's' : ''} disponible{contenus.length > 1 ? 's' : ''}
+          </p>
+        </div>
+        
+        <!-- Content Grid -->
+        <div id="content-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {contenus.map((contenu) => {
+            const themeColor = themeColors[contenu.theme];
+            return (
+              <a
+                href={contenu.fichier}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-type={contenu.type}
+                data-theme={contenu.theme}
+                class="content-card group block p-6 bg-white border border-gray-200 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="text-3xl flex-shrink-0 filter drop-shadow-sm">
+                    {contenu.type === 'cours' ? '📖' : '✏️'}
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-snug">
+                      {contenu.titre}
+                    </h3>
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${themeColor.bg} ${themeColor.text} ${themeColor.border} border`}>
+                        {contenu.theme}
+                      </span>
+                      <span class="text-xs text-gray-500 capitalize font-medium">
+                        {contenu.type}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+        
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden text-center py-16">
+          <div class="text-6xl mb-4">🔍</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Aucun contenu trouvé</h3>
+          <p class="text-gray-600">Essayez de modifier vos filtres</p>
+        </div>
       </div>
     </div>
   </section>
   
   <Footer />
-</Layout>
 
+  <script>
+    // Get initial filter from URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialTypeFilter = urlParams.get('type') || 'all';
+    
+    // Filter state
+    let currentTypeFilter = initialTypeFilter;
+    let currentThemeFilter = 'all';
+    let currentSearchQuery = '';
+
+    // Get all elements
+    const typeButtons = document.querySelectorAll('.filter-type-btn');
+    const themeButtons = document.querySelectorAll('.filter-theme-btn');
+    const contentCards = document.querySelectorAll('.content-card');
+    const resultsCount = document.getElementById('results-count');
+    const emptyState = document.getElementById('empty-state');
+    const contentGrid = document.getElementById('content-grid');
+    const searchInput = document.getElementById('search-input');
+
+    // Update button styles
+    function updateButtonStyles() {
+      typeButtons.forEach(btn => {
+        const filterValue = btn.getAttribute('data-filter-type');
+        if (filterValue === currentTypeFilter) {
+          btn.className = 'filter-type-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-gray-900 text-white shadow-sm hover:bg-gray-800';
+        } else {
+          btn.className = 'filter-type-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300';
+        }
+      });
+
+      themeButtons.forEach(btn => {
+        const filterValue = btn.getAttribute('data-filter-theme');
+        if (filterValue === currentThemeFilter) {
+          btn.className = 'filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-gray-900 text-white shadow-sm hover:bg-gray-800';
+        } else {
+          btn.className = 'filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300';
+        }
+      });
+    }
+
+    // Filter content
+    function filterContent() {
+      let visibleCount = 0;
+      const searchQuery = currentSearchQuery.toLowerCase().trim();
+
+      contentCards.forEach(card => {
+        const cardType = card.getAttribute('data-type');
+        const cardTheme = card.getAttribute('data-theme');
+        const cardTitle = card.querySelector('h3')?.textContent?.toLowerCase() || '';
+        
+        const typeMatch = currentTypeFilter === 'all' || cardType === currentTypeFilter;
+        const themeMatch = currentThemeFilter === 'all' || cardTheme === currentThemeFilter;
+        const searchMatch = searchQuery === '' || cardTitle.includes(searchQuery);
+        
+        if (typeMatch && themeMatch && searchMatch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update results count
+      if (resultsCount) {
+        resultsCount.textContent = visibleCount.toString();
+        const countText = visibleCount > 1 ? 's' : '';
+        const parent = resultsCount.parentElement;
+        if (parent) {
+          parent.innerHTML = `<span id="results-count" class="font-semibold text-gray-900">${visibleCount}</span> contenu${countText} disponible${countText}`;
+          // Re-attach reference
+          const newResultsCount = document.getElementById('results-count');
+          if (newResultsCount) {
+            Object.assign(resultsCount, newResultsCount);
+          }
+        }
+      }
+
+      // Show/hide empty state
+      if (emptyState && contentGrid) {
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          contentGrid.classList.add('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+          contentGrid.classList.remove('hidden');
+        }
+      }
+    }
+
+    // Type filter event listeners
+    typeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filterValue = btn.getAttribute('data-filter-type');
+        if (filterValue) {
+          currentTypeFilter = filterValue;
+          updateButtonStyles();
+          filterContent();
+        }
+      });
+    });
+
+    // Theme filter event listeners
+    themeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filterValue = btn.getAttribute('data-filter-theme');
+        if (filterValue) {
+          currentThemeFilter = filterValue;
+          updateButtonStyles();
+          filterContent();
+        }
+      });
+    });
+
+    // Search input event listener
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentSearchQuery = (e.target as HTMLInputElement).value;
+        filterContent();
+      });
+    }
+
+    // Apply initial filter from URL
+    if (initialTypeFilter !== 'all') {
+      updateButtonStyles();
+    }
+    
+    // Initial filter
+    filterContent();
+  </script>
+
+  <style>
+    .content-card {
+      will-change: transform;
+    }
+    
+    .content-card:hover {
+      border-color: #d1d5db;
+    }
+
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Filter buttons active state enhancement */
+    .filter-type-btn:active,
+    .filter-theme-btn:active {
+      transform: scale(0.98);
+    }
+  </style>
+</Layout>

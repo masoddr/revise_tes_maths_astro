@@ -2,74 +2,555 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+// Types
+type Theme = 'algèbre' | 'analyse' | 'probabilités';
+type ContentType = 'cours' | 'exercices';
+
+interface ContentItem {
+  titre: string;
+  fichier: string;
+  type: ContentType;
+  theme: Theme;
+}
+
+// Helper function to categorize content by theme
+function categorizeTheme(titre: string): Theme {
+  const titreLower = titre.toLowerCase();
+  
+  // Probabilités
+  if (titreLower.includes('probabilité') || titreLower.includes('statistique') || titreLower.includes('échantillonnage')) {
+    return 'probabilités';
+  }
+  
+  // Analyse
+  if (titreLower.includes('fonction') || titreLower.includes('trigonométrie') || titreLower.includes('calcul numérique')) {
+    return 'analyse';
+  }
+  
+  // Algèbre (default for geometry, equations, etc.)
+  return 'algèbre';
+}
+
+// Mapping des contenus avec leurs thèmes
+const contenus: ContentItem[] = [
+  // Cours
+  {
+    titre: '01. Nombres entiers',
+    fichier: '/pdf/troisieme/cours/01. Nombres entiers.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: '02. Théorème de Thalès',
+    fichier: '/pdf/troisieme/cours/02. Théorème de Thalès.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: '03. Calculs numériques',
+    fichier: '/pdf/troisieme/cours/03. Calculs numériques.pdf',
+    type: 'cours',
+    theme: 'analyse'
+  },
+  {
+    titre: '04. Statistiques',
+    fichier: '/pdf/troisieme/cours/04. Statistiques.pdf',
+    type: 'cours',
+    theme: 'probabilités'
+  },
+  {
+    titre: '05. Trigonométrie',
+    fichier: '/pdf/troisieme/cours/05. Trigonométrie.pdf',
+    type: 'cours',
+    theme: 'analyse'
+  },
+  {
+    titre: '06. Notions de fonctions',
+    fichier: '/pdf/troisieme/cours/06. Notions de fonctions.pdf',
+    type: 'cours',
+    theme: 'analyse'
+  },
+  {
+    titre: '07. Expressions algébriques',
+    fichier: '/pdf/troisieme/cours/07. Expressions algebriques.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: '08. Sections de solides',
+    fichier: '/pdf/troisieme/cours/08. Sections de solides.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: '08. Espace - Sections de solides',
+    fichier: '/pdf/troisieme/cours/08. Espace - sections de solides.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: '08. Espace - Aires et volumes',
+    fichier: '/pdf/troisieme/cours/08. Espace - Aires et volumes.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: '09. Factorisation et Equation',
+    fichier: '/pdf/troisieme/cours/09. Factoristion et Equation.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  {
+    titre: '10. Probabilités',
+    fichier: '/pdf/troisieme/cours/10. Probabilités.pdf',
+    type: 'cours',
+    theme: 'probabilités'
+  },
+  {
+    titre: '10. Proba',
+    fichier: '/pdf/troisieme/cours/10. Proba.pdf',
+    type: 'cours',
+    theme: 'probabilités'
+  },
+  {
+    titre: '11. Fonctions linéaires',
+    fichier: '/pdf/troisieme/cours/11. Fonctions linéaires.pdf',
+    type: 'cours',
+    theme: 'analyse'
+  },
+  {
+    titre: '12. Triangles semblables',
+    fichier: '/pdf/troisieme/cours/12. Triangles semblables.pdf',
+    type: 'cours',
+    theme: 'algèbre'
+  },
+  // Exercices
+  {
+    titre: '01. Nombres entiers',
+    fichier: '/pdf/troisieme/exercices/01. Exo-Nombres entiers.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: '02. Théorème de Thalès',
+    fichier: '/pdf/troisieme/exercices/02. Exo-Théorème de Thales.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: '03. Calculs numériques',
+    fichier: '/pdf/troisieme/exercices/03. Exo-Calculs numériques.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: '03.1. Calculs numériques',
+    fichier: '/pdf/troisieme/exercices/03.1. Exo-Calculs numériques.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: '03.2. Calculs numériques',
+    fichier: '/pdf/troisieme/exercices/03.2. Exo-Calculs numériques.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: '03.3. Calculs numériques',
+    fichier: '/pdf/troisieme/exercices/03.3. Exo-Calculs numériques.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: '04. Statistiques',
+    fichier: '/pdf/troisieme/exercices/04. Exo-Statistiques.pdf',
+    type: 'exercices',
+    theme: 'probabilités'
+  },
+  {
+    titre: '05. Trigonométrie',
+    fichier: '/pdf/troisieme/exercices/05. Exo-Trigonométrie.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: '06. Notion de fonctions',
+    fichier: '/pdf/troisieme/exercices/06. Exo-Notion de fonctions.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: '06.1. Notion de fonctions',
+    fichier: '/pdf/troisieme/exercices/06.1. Exo-Notion de fonctions.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: '06.2. Notion de fonctions',
+    fichier: '/pdf/troisieme/exercices/06.2. Exo-Notion de fonctions.pdf',
+    type: 'exercices',
+    theme: 'analyse'
+  },
+  {
+    titre: '07. Expressions algébriques',
+    fichier: '/pdf/troisieme/exercices/07. Exo-Expressions algébriques.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: '08. Espaces - Sections de solides',
+    fichier: '/pdf/troisieme/exercices/08. Exo-Espaces - Sections de solides.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: '09. Factorisation et Equation',
+    fichier: '/pdf/troisieme/exercices/09. Exo-Factoristion et Equation.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  },
+  {
+    titre: '10. Probabilités',
+    fichier: '/pdf/troisieme/exercices/10. Exo-Probabilités.pdf',
+    type: 'exercices',
+    theme: 'probabilités'
+  },
+  {
+    titre: '12. Triangles semblables',
+    fichier: '/pdf/troisieme/exercices/12. Exo-Triangles semblables.pdf',
+    type: 'exercices',
+    theme: 'algèbre'
+  }
+];
+
+// Theme colors mapping
+const themeColors: Record<Theme, { bg: string; text: string; border: string }> = {
+  'algèbre': {
+    bg: 'bg-blue-50',
+    text: 'text-blue-700',
+    border: 'border-blue-200'
+  },
+  'analyse': {
+    bg: 'bg-purple-50',
+    text: 'text-purple-700',
+    border: 'border-purple-200'
+  },
+  'probabilités': {
+    bg: 'bg-emerald-50',
+    text: 'text-emerald-700',
+    border: 'border-emerald-200'
+  }
+};
 ---
 
 <Layout 
-  title="Cours et exercices de mathématiques - 3ème | revise-tes-maths.fr"
-  description="Cours et exercices de mathématiques pour la classe de 3ème. Révisions, annales et préparation au brevet."
+  title="Maths 3ème - Cours & exercices | revise-tes-maths.fr"
+  description="Cours et exercices de mathématiques pour la classe de 3ème. Révisions et préparation au brevet."
 >
   <Header />
   
   <!-- Hero Section -->
-  <section class="bg-white py-12 md:py-16">
+  <section class="bg-gradient-to-b from-gray-50 via-white to-white py-16 md:py-20">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
           Mathématiques - 3ème
         </h1>
-        <p class="text-lg text-gray-700">
-          Cours et exercices pour la classe de 3ème
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Parcourez nos cours et exercices par thème. Progressez à votre rythme avec des contenus structurés et ciblés.
         </p>
       </div>
     </div>
   </section>
   
-  <!-- Cours Section -->
-  <section class="bg-white py-12 md:py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Cours
-        </h2>
-        <p class="text-gray-600 mb-8">
-          Cours structurés par chapitre pour la classe de 3ème, couvrant l'ensemble du programme officiel.
-        </p>
-        <a 
-          href="/3eme/cours"
-          class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
-        >
-          Voir tous les cours
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
+  <!-- Filters Section -->
+  <section class="bg-white border-b border-gray-100 sticky top-0 z-10 backdrop-blur-sm bg-white/95">
+    <div class="container mx-auto px-4 py-6">
+      <div class="max-w-7xl mx-auto">
+        <!-- Search Bar -->
+        <div class="mb-6">
+          <div class="relative max-w-md">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Rechercher un cours ou un exercice..."
+              class="w-full px-4 py-2.5 pl-10 pr-4 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+            />
+            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+          <!-- Type Filter -->
+          <div class="flex flex-wrap gap-3 items-center">
+            <span class="text-sm font-semibold text-gray-700">Type :</span>
+            <div class="flex gap-2">
+              <button 
+                data-filter-type="all"
+                class="filter-type-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-gray-900 text-white shadow-sm hover:bg-gray-800"
+              >
+                Tout
+              </button>
+              <button 
+                data-filter-type="cours"
+                class="filter-type-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                📖 Cours
+              </button>
+              <button 
+                data-filter-type="exercices"
+                class="filter-type-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                ✏️ Exercices
+              </button>
+            </div>
+          </div>
+          
+          <!-- Theme Filter -->
+          <div class="flex flex-wrap gap-3 items-center">
+            <span class="text-sm font-semibold text-gray-700">Thème :</span>
+            <div class="flex gap-2">
+              <button 
+                data-filter-theme="all"
+                class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-gray-900 text-white shadow-sm hover:bg-gray-800"
+              >
+                Tous
+              </button>
+              <button 
+                data-filter-theme="algèbre"
+                class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                Algèbre
+              </button>
+              <button 
+                data-filter-theme="analyse"
+                class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                Analyse
+              </button>
+              <button 
+                data-filter-theme="probabilités"
+                class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                Probabilités
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   
-  <!-- Exercices Section -->
+  <!-- Content Grid Section -->
   <section class="bg-white py-12 md:py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Exercices
-        </h2>
-        <p class="text-gray-600 mb-8">
-          Exercices ciblés par chapitre pour la classe de 3ème, avec corrigés détaillés.
-        </p>
-        <a 
-          href="/3eme/exercices"
-          class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
-        >
-          Voir tous les exercices
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
+      <div class="max-w-7xl mx-auto">
+        <!-- Results count -->
+        <div class="mb-8">
+          <p class="text-gray-600">
+            <span id="results-count" class="font-semibold text-gray-900">{contenus.length}</span> contenu{contenus.length > 1 ? 's' : ''} disponible{contenus.length > 1 ? 's' : ''}
+          </p>
+        </div>
+        
+        <!-- Content Grid -->
+        <div id="content-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {contenus.map((contenu) => {
+            const themeColor = themeColors[contenu.theme];
+            return (
+              <a
+                href={contenu.fichier}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-type={contenu.type}
+                data-theme={contenu.theme}
+                class="content-card group block p-6 bg-white border border-gray-200 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="text-3xl flex-shrink-0 filter drop-shadow-sm">
+                    {contenu.type === 'cours' ? '📖' : '✏️'}
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-snug">
+                      {contenu.titre}
+                    </h3>
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${themeColor.bg} ${themeColor.text} ${themeColor.border} border`}>
+                        {contenu.theme}
+                      </span>
+                      <span class="text-xs text-gray-500 capitalize font-medium">
+                        {contenu.type}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+        
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden text-center py-16">
+          <div class="text-6xl mb-4">🔍</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Aucun contenu trouvé</h3>
+          <p class="text-gray-600">Essayez de modifier vos filtres</p>
+        </div>
       </div>
     </div>
   </section>
   
   <Footer />
-</Layout>
 
+  <script>
+    // Get initial filter from URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialTypeFilter = urlParams.get('type') || 'all';
+    
+    // Filter state
+    let currentTypeFilter = initialTypeFilter;
+    let currentThemeFilter = 'all';
+    let currentSearchQuery = '';
+
+    // Get all elements
+    const typeButtons = document.querySelectorAll('.filter-type-btn');
+    const themeButtons = document.querySelectorAll('.filter-theme-btn');
+    const contentCards = document.querySelectorAll('.content-card');
+    const resultsCount = document.getElementById('results-count');
+    const emptyState = document.getElementById('empty-state');
+    const contentGrid = document.getElementById('content-grid');
+    const searchInput = document.getElementById('search-input');
+
+    // Update button styles
+    function updateButtonStyles() {
+      typeButtons.forEach(btn => {
+        const filterValue = btn.getAttribute('data-filter-type');
+        if (filterValue === currentTypeFilter) {
+          btn.className = 'filter-type-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-gray-900 text-white shadow-sm hover:bg-gray-800';
+        } else {
+          btn.className = 'filter-type-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300';
+        }
+      });
+
+      themeButtons.forEach(btn => {
+        const filterValue = btn.getAttribute('data-filter-theme');
+        if (filterValue === currentThemeFilter) {
+          btn.className = 'filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-gray-900 text-white shadow-sm hover:bg-gray-800';
+        } else {
+          btn.className = 'filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300';
+        }
+      });
+    }
+
+    // Filter content
+    function filterContent() {
+      let visibleCount = 0;
+      const searchQuery = currentSearchQuery.toLowerCase().trim();
+
+      contentCards.forEach(card => {
+        const cardType = card.getAttribute('data-type');
+        const cardTheme = card.getAttribute('data-theme');
+        const cardTitle = card.querySelector('h3')?.textContent?.toLowerCase() || '';
+        
+        const typeMatch = currentTypeFilter === 'all' || cardType === currentTypeFilter;
+        const themeMatch = currentThemeFilter === 'all' || cardTheme === currentThemeFilter;
+        const searchMatch = searchQuery === '' || cardTitle.includes(searchQuery);
+        
+        if (typeMatch && themeMatch && searchMatch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update results count
+      if (resultsCount) {
+        resultsCount.textContent = visibleCount.toString();
+        const countText = visibleCount > 1 ? 's' : '';
+        const parent = resultsCount.parentElement;
+        if (parent) {
+          parent.innerHTML = `<span id="results-count" class="font-semibold text-gray-900">${visibleCount}</span> contenu${countText} disponible${countText}`;
+          // Re-attach reference
+          const newResultsCount = document.getElementById('results-count');
+          if (newResultsCount) {
+            Object.assign(resultsCount, newResultsCount);
+          }
+        }
+      }
+
+      // Show/hide empty state
+      if (emptyState && contentGrid) {
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          contentGrid.classList.add('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+          contentGrid.classList.remove('hidden');
+        }
+      }
+    }
+
+    // Type filter event listeners
+    typeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filterValue = btn.getAttribute('data-filter-type');
+        if (filterValue) {
+          currentTypeFilter = filterValue;
+          updateButtonStyles();
+          filterContent();
+        }
+      });
+    });
+
+    // Theme filter event listeners
+    themeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filterValue = btn.getAttribute('data-filter-theme');
+        if (filterValue) {
+          currentThemeFilter = filterValue;
+          updateButtonStyles();
+          filterContent();
+        }
+      });
+    });
+
+    // Search input event listener
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentSearchQuery = (e.target as HTMLInputElement).value;
+        filterContent();
+      });
+    }
+
+    // Apply initial filter from URL
+    if (initialTypeFilter !== 'all') {
+      updateButtonStyles();
+    }
+    
+    // Initial filter
+    filterContent();
+  </script>
+
+  <style>
+    .content-card {
+      will-change: transform;
+    }
+    
+    .content-card:hover {
+      border-color: #d1d5db;
+    }
+
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Filter buttons active state enhancement */
+    .filter-type-btn:active,
+    .filter-theme-btn:active {
+      transform: scale(0.98);
+    }
+  </style>
+</Layout>
