@@ -31,39 +31,135 @@
           </svg>
         </a>
         
-        <!-- Collège Dropdown -->
-        <div class="relative dropdown-group">
-          <button class="nav-link text-sm flex items-center space-x-1" id="dropdown-college-button">
+        <!-- Collège Mega Menu -->
+        <div class="relative mega-menu-group" data-menu="college">
+          <button class="mega-menu-trigger nav-link text-sm flex items-center space-x-1" id="dropdown-college-button">
             <span>Collège</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="mega-menu-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div class="dropdown-menu hidden absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50" id="dropdown-college">
-            <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-gray-100">3ème</div>
-            <a href="/3eme" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Cours & Exercices</a>
-            <a href="/3eme/annales-brevet" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Annales du brevet</a>
+          <div class="mega-menu-panel hidden fixed z-50" id="dropdown-college" data-trigger-id="dropdown-college-button" style="left: 50%; transform: translateX(-50%);">
+            <!-- Caret/Triangle -->
+            <div class="mega-menu-caret" data-caret-for="dropdown-college-button"></div>
+            <!-- Panel Content -->
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden min-w-[600px]">
+              <div class="p-8">
+                <div class="grid grid-cols-1 gap-8">
+                  <!-- 3ème Column -->
+                  <div>
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">3ème</h3>
+                    <div class="space-y-2">
+                      <a href="/3eme" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours & Exercices</span>
+                      </a>
+                      <a href="/3eme/annales-brevet" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Annales du brevet</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
-        <!-- Lycée Dropdown -->
-        <div class="relative dropdown-group">
-          <button class="nav-link text-sm flex items-center space-x-1" id="dropdown-lycee-button">
+        <!-- Lycée Mega Menu -->
+        <div class="relative mega-menu-group" data-menu="lycee">
+          <button class="mega-menu-trigger nav-link text-sm flex items-center space-x-1" id="dropdown-lycee-button">
             <span>Lycée</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="mega-menu-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div class="dropdown-menu hidden absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50" id="dropdown-lycee">
-            <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-gray-100">Seconde</div>
-            <a href="/seconde" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Cours & Exercices</a>
-            
-            <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-gray-100 mt-2">Première</div>
-            <a href="/premiere" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Cours & Exercices</a>
-            
-            <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-gray-100 mt-2">Terminale</div>
-            <a href="/terminale" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Cours & Exercices</a>
-            <a href="/terminale/annales-bac" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 pl-8">Annales du bac</a>
+          <div class="mega-menu-panel hidden fixed z-50" id="dropdown-lycee" data-trigger-id="dropdown-lycee-button" style="left: 50%; transform: translateX(-50%);">
+            <!-- Caret/Triangle -->
+            <div class="mega-menu-caret" data-caret-for="dropdown-lycee-button"></div>
+            <!-- Panel Content -->
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden min-w-[800px]">
+              <div class="p-8">
+                <div class="grid grid-cols-4 gap-8">
+                  <!-- Seconde Column -->
+                  <div>
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Seconde</h3>
+                    <div class="space-y-2">
+                      <a href="/seconde" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours & Exercices</span>
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <!-- Première Column -->
+                  <div>
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Première</h3>
+                    <div class="space-y-2">
+                      <a href="/premiere" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours & Exercices</span>
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <!-- Terminale Column -->
+                  <div>
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Terminale</h3>
+                    <div class="space-y-2">
+                      <a href="/terminale" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Terminale Générale</span>
+                      </a>
+                      <a href="/terminale/annales-bac" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Annales du bac</span>
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <!-- BAC Column with Callout Cards -->
+                  <div>
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">BAC</h3>
+                    <div class="space-y-3">
+                      <!-- Prépa Bac 2025 Card -->
+                      <a href="/terminale/prepa-bac-2025" class="mega-menu-card block p-4 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        <div class="flex items-start gap-3">
+                          <div class="text-2xl">🎯</div>
+                          <div>
+                            <h4 class="font-semibold text-sm mb-1">Prépa Bac 2025</h4>
+                            <p class="text-xs text-purple-100 opacity-90">Réussissez votre bac avec nos ressources dédiées</p>
+                          </div>
+                        </div>
+                      </a>
+                      
+                      <!-- Spé Maths Card -->
+                      <a href="/terminale/spe-maths" class="mega-menu-card block p-4 rounded-xl bg-gradient-to-br from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        <div class="flex items-start gap-3">
+                          <div class="text-2xl">📐</div>
+                          <div>
+                            <h4 class="font-semibold text-sm mb-1">Spé Maths</h4>
+                            <p class="text-xs text-red-100 opacity-90">Contenus spécialisés pour la spécialité</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -158,48 +254,163 @@
     mobileMenu?.classList.toggle('hidden');
   });
 
-  // Desktop dropdowns
-  const dropdowns = [
-    { button: 'dropdown-college-button', menu: 'dropdown-college' },
-    { button: 'dropdown-lycee-button', menu: 'dropdown-lycee' }
-  ];
-
-  dropdowns.forEach(({ button, menu }) => {
-    const buttonEl = document.getElementById(button);
-    const menuEl = document.getElementById(menu);
+  // Function to position panel and caret
+  function positionPanelAndCaret(panel, triggerId, beforeShow = false) {
+    const header = document.getElementById('main-header');
+    const trigger = document.getElementById(triggerId);
+    const caret = panel.querySelector('.mega-menu-caret');
     
-    if (buttonEl && menuEl) {
-      buttonEl.addEventListener('click', (e) => {
-        e.stopPropagation();
-        // Close other dropdowns
-        dropdowns.forEach(({ menu: otherMenu }) => {
-          if (otherMenu !== menu) {
-            document.getElementById(otherMenu)?.classList.add('hidden');
-          }
-        });
-        menuEl.classList.toggle('hidden');
+    if (!header || !trigger || !caret) return;
+
+    // If positioning before show, panel is already in DOM but hidden
+    // Just ensure it's positioned correctly before making visible
+    if (beforeShow) {
+      // Keep transform for centering
+      panel.style.left = '50%';
+      panel.style.transform = 'translateX(-50%)';
+    }
+
+    // Force a reflow to ensure dimensions are calculated
+    void panel.offsetHeight;
+
+    // Calculate header bottom position
+    const headerRect = header.getBoundingClientRect();
+    const headerBottom = headerRect.bottom;
+    
+    // Position panel below header
+    panel.style.top = `${headerBottom + 12}px`; // 12px = mt-3
+    
+    // Force another reflow after setting top
+    void panel.offsetHeight;
+    
+    // Calculate trigger center position relative to panel
+    const triggerRect = trigger.getBoundingClientRect();
+    const panelRect = panel.getBoundingClientRect();
+    
+    // Calculate trigger center position relative to panel
+    const triggerCenterX = triggerRect.left + triggerRect.width / 2;
+    const panelLeft = panelRect.left;
+    
+    // Position caret to point at trigger center
+    const caretLeft = triggerCenterX - panelLeft;
+    caret.style.left = `${Math.max(24, Math.min(caretLeft, panelRect.width - 24))}px`;
+
+    // If positioning before show, positioning is done
+    // The hidden class will be removed after this function returns
+    // which will make it visible with the correct position already set
+  }
+
+  // Mega Menu functionality
+  const megaMenuGroups = document.querySelectorAll('.mega-menu-group');
+  let hoverTimeout = null;
+  let isHovering = false;
+
+  megaMenuGroups.forEach((group) => {
+    const trigger = group.querySelector('.mega-menu-trigger');
+    const panel = group.querySelector('.mega-menu-panel');
+    const chevron = group.querySelector('.mega-menu-chevron');
+    const triggerId = panel?.getAttribute('data-trigger-id');
+    
+    if (!trigger || !panel || !triggerId) return;
+
+    // Click handler
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = !panel.classList.contains('hidden');
+      
+      // Close all other menus
+      megaMenuGroups.forEach((otherGroup) => {
+        if (otherGroup !== group) {
+          const otherPanel = otherGroup.querySelector('.mega-menu-panel');
+          const otherTrigger = otherGroup.querySelector('.mega-menu-trigger');
+          const otherChevron = otherGroup.querySelector('.mega-menu-chevron');
+          if (otherPanel) otherPanel.classList.add('hidden');
+          if (otherTrigger) otherTrigger.classList.remove('mega-menu-active');
+          if (otherChevron) otherChevron.classList.remove('rotate-180');
+        }
+      });
+      
+      // Toggle current menu
+      if (isOpen) {
+        panel.classList.add('hidden');
+        trigger.classList.remove('mega-menu-active');
+        if (chevron) chevron.classList.remove('rotate-180');
+      } else {
+        // Position panel and caret BEFORE showing it
+        positionPanelAndCaret(panel, triggerId, true);
+        // Remove hidden class after positioning
+        panel.classList.remove('hidden');
+        trigger.classList.add('mega-menu-active');
+        if (chevron) chevron.classList.add('rotate-180');
+      }
+    });
+
+    // Hover handlers
+    group.addEventListener('mouseenter', () => {
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+        hoverTimeout = null;
+      }
+      isHovering = true;
+      
+      // Close other menus
+      megaMenuGroups.forEach((otherGroup) => {
+        if (otherGroup !== group) {
+          const otherPanel = otherGroup.querySelector('.mega-menu-panel');
+          const otherTrigger = otherGroup.querySelector('.mega-menu-trigger');
+          const otherChevron = otherGroup.querySelector('.mega-menu-chevron');
+          if (otherPanel) otherPanel.classList.add('hidden');
+          if (otherTrigger) otherTrigger.classList.remove('mega-menu-active');
+          if (otherChevron) otherChevron.classList.remove('rotate-180');
+        }
+      });
+      
+      // Position panel and caret BEFORE showing it
+      positionPanelAndCaret(panel, triggerId, true);
+      // Remove hidden class after positioning
+      panel.classList.remove('hidden');
+      trigger.classList.add('mega-menu-active');
+      if (chevron) chevron.classList.add('rotate-180');
+    });
+
+    group.addEventListener('mouseleave', () => {
+      isHovering = false;
+      hoverTimeout = setTimeout(() => {
+        if (!isHovering) {
+          panel.classList.add('hidden');
+          trigger.classList.remove('mega-menu-active');
+          if (chevron) chevron.classList.remove('rotate-180');
+        }
+      }, 150);
+    });
+  });
+
+  // Close menus when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.mega-menu-group')) {
+      megaMenuGroups.forEach((group) => {
+        const panel = group.querySelector('.mega-menu-panel');
+        const trigger = group.querySelector('.mega-menu-trigger');
+        const chevron = group.querySelector('.mega-menu-chevron');
+        if (panel) panel.classList.add('hidden');
+        if (trigger) trigger.classList.remove('mega-menu-active');
+        if (chevron) chevron.classList.remove('rotate-180');
       });
     }
   });
 
-  // Close dropdowns when clicking outside or on a link
-  document.addEventListener('click', (e) => {
-    // Don't close if clicking inside a dropdown
-    if (e.target.closest('.dropdown-group')) {
-      return;
-    }
-    dropdowns.forEach(({ menu }) => {
-      document.getElementById(menu)?.classList.add('hidden');
-    });
-  });
-
-  // Close dropdowns when clicking on a link inside
-  dropdowns.forEach(({ menu }) => {
-    const menuEl = document.getElementById(menu);
-    if (menuEl) {
-      menuEl.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') {
-          menuEl.classList.add('hidden');
+  // Close menus when clicking on a link inside
+  megaMenuGroups.forEach((group) => {
+    const panel = group.querySelector('.mega-menu-panel');
+    if (panel) {
+      panel.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.tagName === 'A' || target.closest('a')) {
+          const trigger = group.querySelector('.mega-menu-trigger');
+          const chevron = group.querySelector('.mega-menu-chevron');
+          panel.classList.add('hidden');
+          if (trigger) trigger.classList.remove('mega-menu-active');
+          if (chevron) chevron.classList.remove('rotate-180');
         }
       });
     }
@@ -291,6 +502,27 @@
 
   // Check initial scroll position
   handleScroll();
+
+  // Update panel positions on scroll and resize
+  window.addEventListener('scroll', () => {
+    megaMenuGroups.forEach((group) => {
+      const panel = group.querySelector('.mega-menu-panel');
+      const triggerId = panel?.getAttribute('data-trigger-id');
+      if (panel && !panel.classList.contains('hidden') && triggerId) {
+        positionPanelAndCaret(panel, triggerId);
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    megaMenuGroups.forEach((group) => {
+      const panel = group.querySelector('.mega-menu-panel');
+      const triggerId = panel?.getAttribute('data-trigger-id');
+      if (panel && !panel.classList.contains('hidden') && triggerId) {
+        positionPanelAndCaret(panel, triggerId);
+      }
+    });
+  });
 </script>
 
 <style>
@@ -377,5 +609,104 @@
   /* CTA button styles */
   #header-cta {
     white-space: nowrap;
+  }
+
+  /* Mega Menu Styles */
+  .mega-menu-trigger {
+    position: relative;
+  }
+
+  .mega-menu-trigger.mega-menu-active {
+    color: #2563eb; /* blue-600 */
+    background-color: #eff6ff; /* blue-50 */
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    margin: -0.5rem -0.75rem;
+  }
+
+  .mega-menu-chevron {
+    transition: transform 0.2s ease;
+  }
+
+  .mega-menu-chevron.rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .mega-menu-panel {
+    animation: fadeInDown 0.2s ease-out;
+    contain: layout style paint;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .mega-menu-panel.hidden {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    display: block !important;
+  }
+  
+  /* Ensure smooth appearance without shift */
+  .mega-menu-panel:not(.hidden) {
+    will-change: opacity;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .mega-menu-caret {
+    position: absolute;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+    filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.05));
+    z-index: 1;
+    transition: left 0.2s ease;
+  }
+
+  .mega-menu-link {
+    text-decoration: none;
+  }
+
+  .mega-menu-card {
+    text-decoration: none;
+  }
+
+  /* Ensure mega menu panel doesn't overflow on mobile */
+  @media (max-width: 768px) {
+    .mega-menu-panel {
+      position: fixed;
+      left: 1rem;
+      right: 1rem;
+      width: auto;
+      min-width: auto;
+      transform: none;
+    }
+    
+    .mega-menu-panel > div {
+      min-width: auto;
+    }
+    
+    .mega-menu-caret {
+      left: 24px !important;
+    }
+  }
+
+  /* Adjust panel position on smaller desktop screens if needed */
+  @media (max-width: 1200px) {
+    .mega-menu-panel {
+      max-width: calc(100vw - 2rem);
+    }
   }
 </style>
