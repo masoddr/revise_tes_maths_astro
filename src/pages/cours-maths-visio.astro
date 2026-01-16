@@ -15,7 +15,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
   <!-- Breadcrumbs -->
   <section class="bg-white border-b border-gray-100">
     <div class="container mx-auto px-4 py-3">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-5xl mx-auto">
         <Breadcrumbs 
           items={[
             { label: 'Cours de maths en visio' }
@@ -25,294 +25,237 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
     </div>
   </section>
   
-  <!-- Hero Section -->
-  <section class="bg-white py-12 md:py-16">
+  <!-- Hero Section avec photo et CTA visible -->
+  <section class="bg-white py-6 md:py-8">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-8">
-          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Cours de maths en visio : accompagnement personnalisé en ligne
-          </h1>
-          <p class="text-lg md:text-xl text-gray-700 mb-4 leading-relaxed">
-            Vous recherchez un <strong>prof maths visio</strong> expérimenté pour des <strong>cours de maths en ligne</strong> ? Je propose des <strong>cours de maths à distance</strong> adaptés à votre niveau, de la 3ème à la terminale, avec un suivi rigoureux et personnalisé en visioconférence.
-          </p>
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+          <!-- Photo -->
+          <div class="flex-shrink-0">
+            <img 
+              src="/massyl.jpg" 
+              alt="Massyl - Professeur de mathématiques en visio, ingénieur systèmes spatiaux" 
+              class="w-24 h-24 md:w-40 md:h-40 rounded-full object-contain shadow-lg border-2 border-black"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+          
+          <!-- Contenu texte -->
+          <div class="flex-1 text-center md:text-left">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              Cours de maths en visio
+            </h1>
+            
+            <p class="text-sm md:text-base text-gray-700 mb-2">
+              Collège – Lycée – Accompagnement personnalisé en visioconférence
+            </p>
+            
+            <p class="text-xs md:text-sm text-gray-600 mb-4 leading-relaxed">
+              <strong>10+ ans d'expérience</strong> depuis 2015. J'aide des élèves investis à progresser en mathématiques grâce à un accompagnement exigeant, structuré et personnalisé en visio.
+            </p>
+            
+            <!-- CTA visible immédiatement -->
+            <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+              <a 
+                href="#contact" 
+                class="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors text-center text-sm md:text-base shadow-lg"
+              >
+                Demander un premier échange
+              </a>
+              
+              <a 
+                href="/a-propos" 
+                class="inline-block border-2 border-gray-900 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition-colors text-center text-sm md:text-base"
+              >
+                Qui suis-je ?
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Avantages des cours en visio -->
-  <section class="bg-gray-50 py-12 md:py-16">
+  <!-- Bénéfices clés - version compacte -->
+  <section class="bg-gray-50 py-8 md:py-10">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Pourquoi choisir des cours de maths en visio ?
-        </h2>
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-          Les <strong>cours de maths en ligne</strong> offrent de nombreux avantages pour les élèves et leurs familles. En tant que <strong>prof maths visio</strong>, je mets à votre disposition une plateforme de visioconférence performante qui permet un accompagnement de qualité, où que vous soyez en France.
-        </p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-start mb-4">
-              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <h3 class="text-xl font-semibold text-gray-900">Flexibilité géographique</h3>
-            </div>
-            <p class="text-gray-700 leading-relaxed">
-              Suivez vos <strong>cours de maths à distance</strong> depuis chez vous, sans contrainte de déplacement. Idéal pour les familles éloignées des grandes villes ou ayant des emplois du temps chargés.
-            </p>
-          </div>
-          
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-start mb-4">
-              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
-              <h3 class="text-xl font-semibold text-gray-900">Horaires adaptés</h3>
             </div>
-            <p class="text-gray-700 leading-relaxed">
-              Les <strong>cours de maths en visio</strong> s'adaptent à votre emploi du temps. Créneaux disponibles 7j/7, y compris le week-end, pour un suivi régulier et efficace.
-            </p>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Horaires flexibles</h3>
+            <p class="text-sm text-gray-700">Créneaux disponibles 7j/7, adaptés à votre emploi du temps</p>
           </div>
           
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-start mb-4">
-              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Suivi régulier</h3>
+            <p class="text-sm text-gray-700">Accompagnement hebdomadaire ou bihebdomadaire pour une progression constante</p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
               </svg>
-              <h3 class="text-xl font-semibold text-gray-900">Outils interactifs</h3>
             </div>
-            <p class="text-gray-700 leading-relaxed">
-              Tableau blanc numérique, partage d'écran, envoi de documents en temps réel : tous les outils nécessaires pour un <strong>cours de maths en ligne</strong> efficace et interactif.
-            </p>
-          </div>
-          
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-start mb-4">
-              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-              </svg>
-              <h3 class="text-xl font-semibold text-gray-900">Même qualité qu'en présentiel</h3>
-            </div>
-            <p class="text-gray-700 leading-relaxed">
-              En tant que <strong>prof maths visio</strong>, je garantis la même rigueur pédagogique et le même niveau d'exigence que pour mes cours en présentiel. L'accompagnement reste personnalisé et structuré.
-            </p>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Méthode rigoureuse</h3>
+            <p class="text-sm text-gray-700">Structure claire : révision, exercices guidés, puis autonomes</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Comment se déroulent les cours -->
-  <section class="bg-white py-12 md:py-16">
+  <!-- Pour qui - version compacte -->
+  <section class="bg-white py-8 md:py-10">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Comment se déroulent les cours de maths en visio ?
-        </h2>
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-          Mes <strong>cours de maths à distance</strong> suivent une méthodologie éprouvée, adaptée à la visioconférence. Chaque séance est préparée en amont et structurée pour maximiser votre progression.
-        </p>
-        
-        <div class="space-y-6 mb-8">
-          <div class="flex items-start">
-            <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
-              1
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Avant le cours</h3>
-              <p class="text-gray-700 leading-relaxed">
-                Je vous envoie les documents nécessaires (cours, exercices) avant chaque séance. Vous pouvez les imprimer ou les consulter sur votre écran pendant le <strong>cours de maths en ligne</strong>.
-              </p>
-            </div>
-          </div>
-          
-          <div class="flex items-start">
-            <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
-              2
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Pendant le cours</h3>
-              <p class="text-gray-700 leading-relaxed">
-                Nous utilisons une plateforme de visioconférence sécurisée avec tableau blanc partagé. Je vous guide étape par étape, vous posez vos questions en direct, et nous travaillons ensemble sur les exercices. L'interaction est fluide et naturelle, comme si nous étions dans la même pièce.
-              </p>
-            </div>
-          </div>
-          
-          <div class="flex items-start">
-            <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
-              3
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Après le cours</h3>
-              <p class="text-gray-700 leading-relaxed">
-                Je vous envoie un récapitulatif de la séance, les corrections des exercices, et les points à retravailler. Vous avez également accès à une bibliothèque de ressources (cours PDF, annales corrigées) pour approfondir entre les séances.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pour qui -->
-  <section class="bg-gray-50 py-12 md:py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
           Pour qui sont ces cours de maths en visio ?
         </h2>
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-          Mes <strong>cours de maths en ligne</strong> s'adressent à tous les élèves du collège et du lycée, de la 3ème à la terminale, qui souhaitent progresser durablement en mathématiques.
-        </p>
         
-        <div class="bg-white rounded-lg p-6 md:p-8 shadow-sm mb-6">
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Niveaux concernés</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <span class="text-gray-700"><strong>3ème</strong> : préparation au Brevet et renforcement des bases</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <span class="text-gray-700"><strong>Seconde</strong> : consolidation des fondamentaux et adaptation au lycée</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <span class="text-gray-700"><strong>Première</strong> : spécialité mathématiques et préparation aux épreuves</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <span class="text-gray-700"><strong>Terminale</strong> : préparation intensive au Baccalauréat et aux parcours sélectifs</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded">
-          <p class="text-gray-800 text-base md:text-lg leading-relaxed mb-4">
-            Que vous habitiez Paris, Toulouse, Lyon, Marseille ou une ville plus petite, les <strong>cours de maths à distance</strong> vous permettent d'accéder à un accompagnement de qualité, sans contrainte géographique.
+        <div class="bg-gray-50 rounded-lg p-6 md:p-8 mb-6">
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4 text-center">
+            Mes cours de maths en visio s'adressent aux élèves du <strong>collège et lycée</strong> (3ème à terminale) qui souhaitent progresser durablement en mathématiques.
           </p>
-          <div class="flex flex-wrap gap-3 mt-4">
-            <a href="/cours-maths-paris" class="inline-flex items-center px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium border border-gray-300">
-              Cours de maths à Paris
-            </a>
-            <a href="/cours-maths-toulouse" class="inline-flex items-center px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium border border-gray-300">
-              Cours de maths à Toulouse
-            </a>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-blue-600 mb-1">3ème</div>
+              <p class="text-xs text-gray-600">Préparation Brevet</p>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-blue-600 mb-1">Seconde</div>
+              <p class="text-xs text-gray-600">Adaptation lycée</p>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-blue-600 mb-1">Première</div>
+              <p class="text-xs text-gray-600">Spécialité maths</p>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-blue-600 mb-1">Terminale</div>
+              <p class="text-xs text-gray-600">Préparation Bac</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Mon approche en tant que prof maths visio -->
-  <section class="bg-white py-12 md:py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Mon approche en tant que prof maths visio
-        </h2>
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-          En tant que <strong>prof maths visio</strong> expérimenté, je m'adapte à chaque élève pour proposer un accompagnement sur mesure. Mon approche repose sur trois piliers essentiels.
-        </p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div class="bg-gray-50 rounded-lg p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-3">1. Diagnostic personnalisé</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Lors du premier <strong>cours de maths en visio</strong>, j'évalue votre niveau, identifie vos points forts et vos difficultés, puis je construis un programme adapté à vos objectifs.
-            </p>
-          </div>
-          
-          <div class="bg-gray-50 rounded-lg p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-3">2. Suivi régulier</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Les <strong>cours de maths à distance</strong> sont programmés de manière régulière (hebdomadaire ou bihebdomadaire) pour assurer une progression constante et éviter les oublis.
-            </p>
-          </div>
-          
-          <div class="bg-gray-50 rounded-lg p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-3">3. Méthode rigoureuse</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Chaque séance suit une structure claire : révision des notions, exercices guidés, puis exercices autonomes. L'objectif est de développer votre autonomie et votre confiance.
-            </p>
-          </div>
-        </div>
-        
-        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg p-6 md:p-8 text-white">
-          <p class="text-base md:text-lg leading-relaxed mb-4">
-            <strong>Ingénieur de formation</strong>, spécialisé en systèmes spatiaux, j'ai accompagné plus de 30 élèves depuis 2015, avec un taux de réussite de 100% au Brevet et au Baccalauréat.
-          </p>
-          <p class="text-base md:text-lg leading-relaxed">
-            Certains de mes élèves ont intégré des universités internationales prestigieuses comme <strong>McGill University</strong>, <strong>Bocconi University</strong> et <strong>King's College London</strong>.
+        <!-- Rareté - Créneaux limités -->
+        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded">
+          <p class="text-gray-800 text-base md:text-lg leading-relaxed text-center">
+            <strong>⚠️ Créneaux limités</strong> : Je ne prends qu'un nombre restreint d'élèves pour garantir un suivi de qualité. Contactez-moi rapidement pour réserver votre place.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Matériel nécessaire -->
-  <section class="bg-gray-50 py-12 md:py-16">
+  <!-- Crédibilité - version compacte -->
+  <section class="bg-gradient-to-r from-blue-600 to-indigo-600 py-8 md:py-10">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Matériel nécessaire pour les cours de maths en visio
+      <div class="max-w-5xl mx-auto text-white text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">
+          Pourquoi me choisir pour vos cours de maths en visio ?
         </h2>
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-          Pour suivre mes <strong>cours de maths en ligne</strong>, vous avez besoin d'un équipement minimal, que la plupart des familles possèdent déjà.
-        </p>
         
-        <div class="bg-white rounded-lg p-6 md:p-8 shadow-sm">
-          <ul class="space-y-4">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <div>
-                <strong class="text-gray-900">Ordinateur, tablette ou smartphone</strong> avec connexion internet stable
-              </div>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <div>
-                <strong class="text-gray-900">Microphone et caméra</strong> (intégrés dans la plupart des appareils modernes)
-              </div>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <div>
-                <strong class="text-gray-900">Cahier et stylo</strong> pour prendre des notes pendant le cours
-              </div>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <div>
-                <strong class="text-gray-900">Espace calme</strong> pour suivre le <strong>cours de maths en visio</strong> sans distraction
-              </div>
-            </li>
-          </ul>
-          
-          <div class="mt-6 p-4 bg-blue-50 rounded-lg">
-            <p class="text-gray-800 text-sm md:text-base">
-              <strong>Conseil pratique :</strong> Je vous guide pour installer la plateforme de visioconférence lors du premier échange. C'est très simple et ne prend que quelques minutes !
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div>
+            <div class="text-3xl font-bold mb-2">10+ ans</div>
+            <p class="text-blue-100">d'expérience depuis 2015</p>
           </div>
+          <div>
+            <div class="text-3xl font-bold mb-2">100%</div>
+            <p class="text-blue-100">de réussite au Brevet et Bac</p>
+          </div>
+          <div>
+            <div class="text-3xl font-bold mb-2">30+</div>
+            <p class="text-blue-100">élèves accompagnés</p>
+          </div>
+          <div>
+            <div class="text-3xl font-bold mb-2">Ingénieur</div>
+            <p class="text-blue-100">systèmes spatiaux</p>
+          </div>
+        </div>
+        
+        <p class="mt-6 text-lg text-blue-100">
+          Certains de mes élèves ont intégré <strong>McGill University</strong>, <strong>Bocconi University</strong> et <strong>King's College London</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comment ça marche - version ultra-compacte -->
+  <section class="bg-white py-8 md:py-10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+          Comment se déroulent les cours en visio ?
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+              1
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Avant le cours</h3>
+            <p class="text-sm text-gray-700">Documents envoyés à l'avance (cours, exercices)</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+              2
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Pendant le cours</h3>
+            <p class="text-sm text-gray-700">Visioconférence avec tableau blanc partagé, interaction en direct</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+              3
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Après le cours</h3>
+            <p class="text-sm text-gray-700">Récapitulatif, corrections et ressources pour approfondir</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Liens vers autres pages importantes -->
+  <section class="bg-gray-50 py-8 md:py-10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">
+          Ressources complémentaires
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a href="/terminale/annales-bac" class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+            <div class="text-2xl mb-2">📚</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Annales du Bac</h3>
+            <p class="text-sm text-gray-600">Sujets et corrigés complets</p>
+          </a>
+          
+          <a href="/3eme/annales-brevet" class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+            <div class="text-2xl mb-2">📝</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Annales du Brevet</h3>
+            <p class="text-sm text-gray-600">Préparation efficace</p>
+          </a>
+          
+          <a href="/tarifs" class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+            <div class="text-2xl mb-2">💰</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Tarifs</h3>
+            <p class="text-sm text-gray-600">Transparence totale</p>
+          </a>
         </div>
       </div>
     </div>
@@ -327,7 +270,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
             Commencez vos cours de maths en visio dès maintenant
           </h2>
           <p class="text-lg text-gray-700 mb-6">
-            Contactez-moi pour discuter de vos besoins et planifier votre premier <strong>cours de maths en ligne</strong>.
+            Contactez-moi pour discuter de vos besoins et planifier votre premier cours en visio.
           </p>
         </div>
         
@@ -335,7 +278,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
           <!-- Colonne gauche : Texte -->
           <div>
             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-              Pourquoi choisir mes cours de maths à distance ?
+              Pourquoi choisir mes cours de maths en visio ?
             </h3>
             
             <ul class="space-y-2 mb-4">
@@ -396,4 +339,3 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
   
   <Footer />
 </Layout>
-

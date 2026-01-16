@@ -9,3 +9,4 @@ Placez ici les logos des universités au format SVG :
 Si les logos ne sont pas présents, les noms des universités seront affichés en texte stylisé.
 
 
+
