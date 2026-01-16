@@ -25,53 +25,24 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
     </div>
   </section>
   
-  <!-- Hero Section avec photo et CTA visible -->
-  <section class="bg-white py-6 md:py-8">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-          <!-- Photo -->
-          <div class="flex-shrink-0">
-            <img 
-              src="/massyl.jpg" 
-              alt="Massyl - Professeur de mathématiques en visio, ingénieur systèmes spatiaux" 
-              class="w-24 h-24 md:w-40 md:h-40 rounded-full object-contain shadow-lg border-2 border-black"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
-          
-          <!-- Contenu texte -->
-          <div class="flex-1 text-center md:text-left">
-            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              Cours de maths en visio
-            </h1>
-            
-            <p class="text-sm md:text-base text-gray-700 mb-2">
-              Collège – Lycée – Accompagnement personnalisé en visioconférence
-            </p>
-            
-            <p class="text-xs md:text-sm text-gray-600 mb-4 leading-relaxed">
-              <strong>10+ ans d'expérience</strong> depuis 2015. J'aide des élèves investis à progresser en mathématiques grâce à un accompagnement exigeant, structuré et personnalisé en visio.
-            </p>
-            
-            <!-- CTA visible immédiatement -->
-            <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-              <a 
-                href="#contact" 
-                class="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors text-center text-sm md:text-base shadow-lg"
-              >
-                Demander un premier échange
-              </a>
-              
-              <a 
-                href="/a-propos" 
-                class="inline-block border-2 border-gray-900 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition-colors text-center text-sm md:text-base"
-              >
-                Qui suis-je ?
-              </a>
-            </div>
-          </div>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-blue-50 via-blue-50/50 to-white py-12 md:py-16 overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-200/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-10 w-64 h-64 bg-yellow-200/20 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Cours de maths en visio : accompagnement personnalisé en ligne
+          </h1>
+          <p class="text-lg md:text-xl text-gray-700 mb-4 leading-relaxed">
+            Vous recherchez un <strong>prof maths visio</strong> expérimenté pour des <strong>cours de maths en ligne</strong> ? Je propose des <strong>cours de maths à distance</strong> adaptés à votre niveau, de la 3ème à la terminale, avec un suivi rigoureux et personnalisé en visioconférence.
+          </p>
         </div>
       </div>
     </div>

@@ -1,0 +1,397 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<Layout 
+  title="Professeur Particulier Maths | Cours Personnalisés | revise-tes-maths.fr"
+  description="Professeur particulier de maths expérimenté. Cours personnalisés pour collège et lycée. Disponible à Paris et en visio. Accompagnement rigoureux et structuré."
+>
+  <Header />
+  
+  <!-- Breadcrumbs -->
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Professeur particulier maths' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-blue-50 via-blue-50/50 to-white py-12 md:py-16 overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-200/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-10 w-64 h-64 bg-yellow-200/20 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Professeur Particulier de Maths : Accompagnement Personnalisé
+          </h1>
+          <p class="text-lg md:text-xl text-gray-700 mb-4 leading-relaxed">
+            Vous recherchez un <strong>professeur particulier maths</strong> expérimenté pour un accompagnement personnalisé ? En tant que <strong>professeur particulier de mathématiques</strong>, je propose des cours adaptés à votre niveau, de la 3ème à la terminale, avec une méthode rigoureuse et structurée.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pourquoi choisir un professeur particulier -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Pourquoi choisir un professeur particulier de maths ?
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Un <strong>professeur particulier maths</strong> offre un accompagnement sur mesure que les cours collectifs ne peuvent pas fournir. Voici les avantages d'un <strong>cours particulier de mathématiques</strong> :
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-start mb-4">
+              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-gray-900">Programme personnalisé</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              Contrairement aux cours collectifs, un <strong>professeur particulier maths</strong> adapte son enseignement à votre rythme, vos difficultés et vos objectifs. Chaque séance est construite spécifiquement pour vous faire progresser.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-start mb-4">
+              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-gray-900">Flexibilité des horaires</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              Un <strong>professeur particulier de mathématiques</strong> s'adapte à votre emploi du temps. Les cours peuvent être programmés selon vos disponibilités, y compris le week-end, pour un suivi régulier et efficace.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-start mb-4">
+              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-gray-900">Attention individuelle</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              Avec un <strong>professeur particulier maths</strong>, vous bénéficiez de 100% de l'attention du professeur. Toutes vos questions sont traitées immédiatement, sans attendre votre tour comme dans une classe.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-start mb-4">
+              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-gray-900">Méthode adaptée à votre profil</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              Un bon <strong>professeur particulier de mathématiques</strong> identifie votre style d'apprentissage et adapte sa pédagogie en conséquence. Que vous soyez visuel, kinesthésique ou auditif, la méthode est ajustée pour maximiser votre compréhension.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mon approche -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Mon approche en tant que professeur particulier de maths
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          En tant que <strong>professeur particulier maths</strong> expérimenté, j'ai développé une méthode pédagogique structurée qui a fait ses preuves auprès de plus de 30 élèves depuis 2015. Mon approche repose sur trois piliers essentiels :
+        </p>
+        
+        <div class="space-y-6 mb-8">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
+              1
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Diagnostic approfondi</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Lors du premier cours avec votre <strong>professeur particulier de mathématiques</strong>, j'évalue précisément votre niveau, identifie vos points forts et vos difficultés, puis je construis un programme sur mesure adapté à vos objectifs (préparation au Brevet, au Bac, renforcement des bases, etc.).
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
+              2
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Suivi régulier et structuré</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Les cours avec votre <strong>professeur particulier maths</strong> sont programmés de manière régulière (hebdomadaire ou bihebdomadaire) pour assurer une progression constante. Chaque séance suit une structure claire : révision des notions précédentes, apprentissage de nouvelles compétences, exercices guidés puis autonomes.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
+              3
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Développement de l'autonomie</h3>
+              <p class="text-gray-700 leading-relaxed">
+                L'objectif d'un bon <strong>professeur particulier de mathématiques</strong> n'est pas seulement de faire réussir l'élève, mais de lui donner les outils pour devenir autonome. Je vous apprends à analyser un problème, choisir la bonne méthode et vérifier vos résultats.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg p-6 md:p-8 text-white">
+          <p class="text-base md:text-lg leading-relaxed mb-4">
+            <strong>Ingénieur de formation</strong>, spécialisé en systèmes spatiaux, j'ai accompagné plus de 30 élèves depuis 2015, avec un taux de réussite de 100% au Brevet et au Baccalauréat. Certains de mes élèves ont intégré des universités internationales prestigieuses comme <strong>McGill University</strong>, <strong>Bocconi University</strong> et <strong>King's College London</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Différences avec cours collectifs -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Professeur particulier maths vs cours collectifs : quelles différences ?
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Si vous hésitez entre un <strong>professeur particulier maths</strong> et des cours collectifs, voici les principales différences :
+        </p>
+        
+        <div class="bg-white rounded-lg p-6 md:p-8 shadow-sm mb-8">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="border-b border-gray-200">
+                  <th class="pb-4 pr-4 font-semibold text-gray-900">Critère</th>
+                  <th class="pb-4 pr-4 font-semibold text-gray-900">Professeur particulier maths</th>
+                  <th class="pb-4 font-semibold text-gray-900">Cours collectifs</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 pr-4 font-medium">Attention individuelle</td>
+                  <td class="py-4 pr-4">100% de l'attention du professeur</td>
+                  <td class="py-4">Attention partagée entre plusieurs élèves</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 pr-4 font-medium">Programme</td>
+                  <td class="py-4 pr-4">Personnalisé selon vos besoins</td>
+                  <td class="py-4">Programme fixe pour tous</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 pr-4 font-medium">Rythme</td>
+                  <td class="py-4 pr-4">Adapté à votre vitesse d'apprentissage</td>
+                  <td class="py-4">Rythme imposé par le groupe</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 pr-4 font-medium">Questions</td>
+                  <td class="py-4 pr-4">Toutes vos questions sont traitées immédiatement</td>
+                  <td class="py-4">Temps limité pour poser des questions</td>
+                </tr>
+                <tr>
+                  <td class="py-4 pr-4 font-medium">Flexibilité</td>
+                  <td class="py-4 pr-4">Horaires adaptés à votre emploi du temps</td>
+                  <td class="py-4">Horaires fixes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded">
+          <p class="text-gray-800 text-base md:text-lg leading-relaxed">
+            Un <strong>professeur particulier maths</strong> est particulièrement recommandé si vous avez des difficultés spécifiques, si vous préparez un examen important (Brevet, Bac) ou si vous souhaitez progresser rapidement. L'investissement est plus élevé, mais les résultats sont généralement supérieurs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pour qui -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Pour qui sont ces cours avec un professeur particulier de maths ?
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Mes cours avec un <strong>professeur particulier maths</strong> s'adressent à tous les élèves du collège et du lycée qui souhaitent progresser en mathématiques :
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Élèves en difficulté</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Si vous avez des lacunes ou des difficultés en mathématiques, un <strong>professeur particulier de mathématiques</strong> peut vous aider à combler vos retards et reprendre confiance en vous.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Préparation aux examens</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Pour le Brevet ou le Bac, un <strong>professeur particulier maths</strong> vous accompagne dans votre préparation avec des méthodes éprouvées et un suivi personnalisé.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Élèves performants</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Même si vous avez de bons résultats, un <strong>professeur particulier de mathématiques</strong> peut vous aider à viser l'excellence et préparer des parcours sélectifs (prépas, universités internationales).
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Renforcement des bases</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Un <strong>professeur particulier maths</strong> peut vous aider à consolider vos fondamentaux pour aborder sereinement les années suivantes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disponibilité géographique -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Où trouver un professeur particulier de maths ?
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          En tant que <strong>professeur particulier maths</strong>, je propose des cours en deux formats pour m'adapter à vos contraintes :
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Cours en visio</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Les cours avec votre <strong>professeur particulier de mathématiques</strong> peuvent se dérouler en visioconférence, où que vous soyez en France. Cette solution offre une grande flexibilité et la même qualité pédagogique qu'en présentiel.
+            </p>
+            <a href="/cours-maths-visio" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1">
+              En savoir plus sur les cours en visio
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Cours à Paris</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Si vous habitez Paris ou la région parisienne, je propose également des cours en visioconférence adaptés aux contraintes parisiennes. Disponible pour tous les arrondissements de Paris.
+            </p>
+            <a href="/cours-maths-paris" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1">
+              En savoir plus sur les cours à Paris
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-white py-8 md:py-10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Commencez vos cours avec un professeur particulier de maths
+          </h2>
+          <p class="text-lg text-gray-700 mb-6">
+            Contactez-moi pour discuter de vos besoins et planifier votre premier cours avec votre <strong>professeur particulier maths</strong>.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+          <!-- Colonne gauche : Texte -->
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+              Pourquoi choisir mes cours avec un professeur particulier de maths ?
+            </h3>
+            
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-gray-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700 text-sm md:text-base">Réponse garantie sous 24h</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-gray-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700 text-sm md:text-base">Premier échange gratuit pour évaluer vos besoins</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-gray-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700 text-sm md:text-base">Programme personnalisé adapté à votre niveau</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-gray-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700 text-sm md:text-base">Horaires flexibles 7j/7</span>
+              </li>
+            </ul>
+            
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <svg class="w-4 h-4 text-gray-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <p class="text-gray-700 text-sm md:text-base">
+                  Vous pouvez aussi m'écrire directement à <a href="mailto:contact@revise-tes-maths.fr" class="text-gray-900 hover:text-gray-700 underline font-medium">contact@revise-tes-maths.fr</a>
+                </p>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-4 h-4 text-[#25D366] mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                <p class="text-gray-700 text-sm md:text-base">
+                  Ou me contacter sur <a href="https://wa.me/33616635187?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20cours%20avec%20un%20professeur%20particulier%20de%20maths." target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:text-[#20BA5A] underline font-semibold">WhatsApp</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Colonne droite : Formulaire -->
+          <div>
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
