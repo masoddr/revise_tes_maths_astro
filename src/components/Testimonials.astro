@@ -167,32 +167,42 @@
         </button>
 
         <!-- Dots indicator -->
-        <div class="flex justify-center gap-2 mt-6">
+        <div class="flex justify-center gap-3 mt-6">
           <button 
-            class="carousel-dot w-2 h-2 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-8"
+            class="carousel-dot w-12 h-12 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-16 flex items-center justify-center"
             data-index="0"
             aria-label="Afficher l'avis 1"
-          ></button>
+          >
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+          </button>
           <button 
-            class="carousel-dot w-2 h-2 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-8"
+            class="carousel-dot w-12 h-12 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-16 flex items-center justify-center"
             data-index="1"
             aria-label="Afficher l'avis 2"
-          ></button>
+          >
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+          </button>
           <button 
-            class="carousel-dot w-2 h-2 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-8"
+            class="carousel-dot w-12 h-12 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-16 flex items-center justify-center"
             data-index="2"
             aria-label="Afficher l'avis 3"
-          ></button>
+          >
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+          </button>
           <button 
-            class="carousel-dot w-2 h-2 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-8"
+            class="carousel-dot w-12 h-12 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-16 flex items-center justify-center"
             data-index="3"
             aria-label="Afficher l'avis 4"
-          ></button>
+          >
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+          </button>
           <button 
-            class="carousel-dot w-2 h-2 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-8"
+            class="carousel-dot w-12 h-12 rounded-full bg-gray-400 transition-all duration-300 active:bg-gray-700 active:w-16 flex items-center justify-center"
             data-index="4"
             aria-label="Afficher l'avis 5"
-          ></button>
+          >
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+          </button>
         </div>
       </div>
     </div>
@@ -220,13 +230,15 @@
         if (index === currentIndex) {
           dot.classList.add('active');
           dot.classList.add('bg-gray-700');
-          dot.classList.add('w-8');
+          dot.classList.add('w-16');
           dot.classList.remove('bg-gray-400');
+          dot.classList.remove('w-12');
         } else {
           dot.classList.remove('active');
           dot.classList.remove('bg-gray-700');
-          dot.classList.remove('w-8');
+          dot.classList.remove('w-16');
           dot.classList.add('bg-gray-400');
+          dot.classList.add('w-12');
         }
       });
     }
@@ -402,5 +414,22 @@
 
   .testimonial-toggle:hover {
     text-decoration: underline;
+  }
+
+  /* Carousel dots accessibility improvements */
+  .carousel-dot {
+    min-width: 48px;
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+
+  .carousel-dot:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  .carousel-dot.active .w-2 {
+    width: 0.5rem;
+    height: 0.5rem;
   }
 </style>
