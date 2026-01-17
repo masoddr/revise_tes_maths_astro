@@ -19,9 +19,51 @@
           Blog
         </a>
         
-        <a href="/cours-maths-visio" class="nav-link text-sm">
-          Cours en visio
-        </a>
+        <!-- Cours particuliers Mega Menu -->
+        <div class="relative mega-menu-group" data-menu="cours">
+          <button class="mega-menu-trigger nav-link text-sm flex items-center space-x-1" id="dropdown-cours-button">
+            <span>Cours particuliers</span>
+            <svg class="mega-menu-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="mega-menu-panel hidden fixed z-50" id="dropdown-cours" data-trigger-id="dropdown-cours-button" style="left: 50%; transform: translateX(-50%);">
+            <!-- Caret/Triangle -->
+            <div class="mega-menu-caret" data-caret-for="dropdown-cours-button"></div>
+            <!-- Panel Content -->
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden min-w-[400px]">
+              <div class="p-8">
+                <div class="grid grid-cols-1 gap-6">
+                  <div>
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Modalités de cours</h3>
+                    <div class="space-y-2">
+                      <a href="/cours-maths-visio" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours en visio</span>
+                      </a>
+                      <a href="/cours-maths-paris" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours à Paris</span>
+                      </a>
+                      <a href="/cours-maths-toulouse" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours à Toulouse</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <a href="/tarifs" class="nav-link text-sm">
           Tarifs
@@ -177,9 +219,20 @@
           Blog
         </a>
         
-        <a href="/cours-maths-visio" class="nav-link-mobile block text-sm py-2">
-          Cours en visio
-        </a>
+        <!-- Cours particuliers Mobile -->
+        <div class="mobile-dropdown">
+          <button class="nav-link-mobile block text-sm py-2 w-full text-left flex items-center justify-between" id="mobile-dropdown-cours-button">
+            <span>Cours particuliers</span>
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden pl-4 mt-2 space-y-2" id="mobile-dropdown-cours">
+            <a href="/cours-maths-visio" class="block text-sm py-1 text-gray-600 pl-4">Cours en visio</a>
+            <a href="/cours-maths-paris" class="block text-sm py-1 text-gray-600 pl-4">Cours à Paris</a>
+            <a href="/cours-maths-toulouse" class="block text-sm py-1 text-gray-600 pl-4">Cours à Toulouse</a>
+          </div>
+        </div>
         
         <a href="/tarifs" class="nav-link-mobile block text-sm py-2">
           Tarifs
@@ -406,7 +459,8 @@
   // Mobile dropdowns
   const mobileDropdowns = [
     { button: 'mobile-dropdown-college-button', menu: 'mobile-dropdown-college' },
-    { button: 'mobile-dropdown-lycee-button', menu: 'mobile-dropdown-lycee' }
+    { button: 'mobile-dropdown-lycee-button', menu: 'mobile-dropdown-lycee' },
+    { button: 'mobile-dropdown-cours-button', menu: 'mobile-dropdown-cours' }
   ];
 
   mobileDropdowns.forEach(({ button, menu }) => {
