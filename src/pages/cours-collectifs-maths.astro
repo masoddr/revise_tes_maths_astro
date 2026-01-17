@@ -1,0 +1,570 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<Layout 
+  title="Cours collectifs de maths | Groupes 3-4 élèves | Tarifs réduits"
+  description="Cours collectifs de mathématiques en petits groupes (3-4 élèves) pour collège et lycée. Tarif réduit : 35-40€/h au lieu de 50€/h. Dynamique de groupe motivante, même niveau scolaire. Disponible en présentiel Paris et visioconférence."
+>
+  <Header />
+  
+  <!-- Breadcrumbs -->
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Cours collectifs de maths' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-blue-50 via-blue-50/50 to-white py-12 md:py-16 overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-200/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-10 w-64 h-64 bg-yellow-200/20 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Cours collectifs de maths : petits groupes pour un tarif réduit
+          </h1>
+          <p class="text-lg md:text-xl text-gray-700 mb-4 leading-relaxed">
+            Vous recherchez des <strong>cours collectifs de maths</strong> à un tarif plus accessible ? Je propose des <strong>cours de mathématiques en petits groupes</strong> (3-4 élèves) pour collège et lycée. <strong>Tarif réduit : 35-40€/h</strong> au lieu de 50€/h en cours particulier. Dynamique de groupe motivante, même niveau scolaire, disponible en présentiel à Paris et en visioconférence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pourquoi choisir les cours collectifs -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Pourquoi choisir des cours collectifs de maths ?
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Les <strong>cours collectifs de mathématiques</strong> en petits groupes offrent de nombreux avantages par rapport aux cours particuliers. En tant que professeur expérimenté, je propose des <strong>cours de maths en groupe</strong> qui combinent qualité pédagogique, tarif réduit et dynamique motivante.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-start mb-4">
+              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-gray-900">Tarif réduit</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              <strong>35-40€/h par élève</strong> au lieu de 50€/h en cours particulier. Les <strong>cours collectifs de maths</strong> permettent d'accéder à un accompagnement de qualité à un tarif plus accessible pour les familles, tout en conservant une attention personnalisée grâce aux petits groupes (3-4 élèves maximum).
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-start mb-4">
+              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-gray-900">Dynamique de groupe</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              Les <strong>cours de maths en groupe</strong> créent une émulation positive entre élèves du même niveau. Les échanges, les questions des autres et la correction collective enrichissent l'apprentissage et rendent les séances plus interactives et motivantes.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-start mb-4">
+              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-gray-900">Attention personnalisée</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              Avec seulement <strong>3-4 élèves par groupe</strong>, chaque élève bénéficie d'une attention personnalisée. Je peux suivre les progrès individuels, répondre aux questions spécifiques et adapter le rythme aux besoins du groupe tout en veillant à ce que chacun progresse.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-start mb-4">
+              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-gray-900">Même niveau scolaire</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              Les groupes sont constitués d'élèves du <strong>même niveau</strong> (3ème, Seconde, Première, Terminale) et avec des objectifs similaires (Brevet, Bac, remise à niveau). Cela garantit un rythme adapté et une progression cohérente pour tous les participants.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarifs cours collectifs -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+          Tarifs des cours collectifs de maths
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8 text-center">
+          Tarifs transparents et dégressifs selon le nombre d'élèves dans le groupe. Les <strong>cours collectifs de mathématiques</strong> sont facturés par élève et par heure.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border-2 border-blue-200">
+            <div class="text-center mb-4">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Groupe de 3 élèves</h3>
+              <div class="text-3xl font-bold text-blue-600 mb-2">40€/h</div>
+              <p class="text-sm text-gray-600">par élève</p>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>3 élèves maximum</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Attention personnalisée</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>-20% vs cours particulier</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg p-6 border-2 border-orange-300 shadow-lg transform scale-105">
+            <div class="text-center mb-4">
+              <div class="inline-block bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-2">RECOMMANDÉ</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Groupe de 4 élèves</h3>
+              <div class="text-3xl font-bold text-orange-600 mb-2">35€/h</div>
+              <p class="text-sm text-gray-600">par élève</p>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>4 élèves maximum</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Dynamique de groupe optimale</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>-30% vs cours particulier</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 border-2 border-gray-200">
+            <div class="text-center mb-4">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Cours particulier</h3>
+              <div class="text-3xl font-bold text-gray-600 mb-2">50€/h</div>
+              <p class="text-sm text-gray-600">pour comparaison</p>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>1 élève</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Attention 100% individuelle</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Tarif de référence</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organisation des cours collectifs -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Comment sont organisés les cours collectifs de maths ?
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Les <strong>cours de maths en groupe</strong> sont structurés pour garantir une progression efficace tout en maintenant une attention personnalisée à chaque élève. Voici comment se déroulent les séances de <strong>cours collectifs de mathématiques</strong>.
+        </p>
+        
+        <div class="bg-white rounded-lg p-6 md:p-8 shadow-sm mb-8">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            Structure d'une séance type (2 heures)
+          </h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                1
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Correction des devoirs (15 min)</h4>
+                <p class="text-gray-700 text-sm">Correction collective des exercices donnés la semaine précédente, avec explications détaillées.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                2
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Cours théorique (30 min)</h4>
+                <p class="text-gray-700 text-sm">Explication du nouveau chapitre avec exemples concrets et questions-réponses interactives.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                3
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Exercices en groupe (45 min)</h4>
+                <p class="text-gray-700 text-sm">Travail sur des exercices progressifs, avec aide individuelle et échanges entre élèves.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                4
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Correction collective et questions (30 min)</h4>
+                <p class="text-gray-700 text-sm">Correction au tableau avec explications détaillées, puis temps dédié aux questions individuelles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Groupes homogènes
+            </h3>
+            <p class="text-gray-700 leading-relaxed text-sm">
+              Les groupes sont constitués d'élèves du <strong>même niveau scolaire</strong> (3ème, Seconde, Première, Terminale) et avec des objectifs similaires. Cela garantit un rythme adapté et une progression cohérente pour tous.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Suivi personnalisé
+            </h3>
+            <p class="text-gray-700 leading-relaxed text-sm">
+              Même en <strong>cours collectif</strong>, chaque élève bénéficie d'un suivi individuel. Je note les points à travailler pour chacun et adapte les exercices selon les besoins spécifiques.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Disponibilités
+            </h3>
+            <p class="text-gray-700 leading-relaxed text-sm">
+              Les <strong>cours collectifs de maths</strong> sont disponibles en <strong>présentiel à Paris</strong> (paiement CESU accepté) et en <strong>visioconférence</strong> pour toute la France. Horaires flexibles, y compris le week-end.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Matériel pédagogique
+            </h3>
+            <p class="text-gray-700 leading-relaxed text-sm">
+              Tous les supports de cours (fiches, exercices, corrigés) sont fournis et partagés avec le groupe. En visio, utilisation d'un tableau blanc numérique interactif.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Groupes disponibles -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+          Groupes de cours collectifs disponibles
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8 text-center">
+          Je propose des <strong>cours collectifs de mathématiques</strong> pour tous les niveaux, de la 3ème à la Terminale. Les groupes sont formés selon les demandes et les disponibilités.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border-2 border-blue-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">3ème - Préparation Brevet</h3>
+            <p class="text-gray-700 text-sm mb-4">
+              <strong>Cours collectifs de maths 3ème</strong> pour préparer efficacement le Brevet des collèges. Révision des chapitres clés, entraînement sur annales, méthodologie.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Révision complète du programme</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Annales Brevet corrigées</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Méthodologie de l'examen</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-6 border-2 border-green-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Seconde - Remise à niveau</h3>
+            <p class="text-gray-700 text-sm mb-4">
+              <strong>Cours collectifs de maths Seconde</strong> pour consolider les bases et s'adapter au rythme du lycée. Renforcement des fondamentaux, préparation à la Première.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Consolidation des bases</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Adaptation au lycée</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Préparation à la spécialité</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 border-2 border-purple-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Première - Spécialité Maths</h3>
+            <p class="text-gray-700 text-sm mb-4">
+              <strong>Cours collectifs de maths Première</strong> pour maîtriser la spécialité mathématiques. Approfondissement des concepts, préparation au contrôle continu.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Spécialité mathématiques</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Contrôle continu</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Approfondissement des concepts</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-lg p-6 border-2 border-orange-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Terminale - Préparation Bac</h3>
+            <p class="text-gray-700 text-sm mb-4">
+              <strong>Cours collectifs de maths Terminale</strong> pour réussir le Baccalauréat. Révisions intensives, annales corrigées, stratégies d'examen.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Révisions complètes</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Annales Bac corrigées</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-4 h-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Stratégies d'examen</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-8 bg-blue-50 rounded-lg p-6 border-2 border-blue-200">
+          <p class="text-gray-700 leading-relaxed text-center">
+            <strong>Les groupes sont formés selon les demandes.</strong> Si vous êtes intéressé(e) par un <strong>cours collectif de maths</strong> pour un niveau spécifique, contactez-moi pour connaître les disponibilités et les horaires des groupes existants ou en formation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Colonne gauche : Informations -->
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              Inscrivez-vous à un cours collectif de maths
+            </h2>
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+              Vous souhaitez intégrer un <strong>cours collectif de mathématiques</strong> ? Remplissez le formulaire ci-contre ou contactez-moi directement. Je vous indiquerai les groupes disponibles pour votre niveau et les horaires possibles.
+            </p>
+            
+            <div class="space-y-4 mb-6">
+              <div class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <p class="text-gray-700 text-sm md:text-base">
+                  Par email : <a href="mailto:contact@revise-tes-maths.fr" class="text-blue-600 hover:text-blue-700 underline font-semibold">contact@revise-tes-maths.fr</a>
+                </p>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-4 h-4 text-[#25D366] mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                <p class="text-gray-700 text-sm md:text-base">
+                  Ou me contacter sur <a href="https://wa.me/33616635187?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20cours%20collectifs%20de%20maths." target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:text-[#20BA5A] underline font-semibold">WhatsApp</a>
+                </p>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+              <h3 class="font-semibold text-gray-900 mb-2">💡 Avant de vous inscrire</h3>
+              <ul class="text-sm text-gray-700 space-y-1">
+                <li>• Vérifiez que votre niveau correspond au groupe</li>
+                <li>• Assurez-vous que les horaires vous conviennent</li>
+                <li>• Les groupes sont limités à 3-4 élèves maximum</li>
+                <li>• Engagement sur la durée (minimum 1 trimestre recommandé)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Colonne droite : Formulaire -->
+          <div>
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
+<!-- Schema.org Service for SEO -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Cours collectifs de mathématiques - Groupes 3-4 élèves",
+  "description": "Cours collectifs de maths en petits groupes (3-4 élèves) pour collège et lycée. Tarif réduit : 35-40€/h. Dynamique de groupe motivante, même niveau scolaire. Disponible en présentiel Paris et visioconférence.",
+  "serviceType": "Cours collectifs de mathématiques",
+  "url": "https://revise-tes-maths.fr/cours-collectifs-maths",
+  "provider": {
+    "@type": "Person",
+    "name": "Professeur particulier de mathématiques",
+    "telephone": "+33616635187",
+    "email": "contact@revise-tes-maths.fr"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "France"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "35",
+    "priceCurrency": "EUR",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "35",
+      "priceCurrency": "EUR",
+      "unitCode": "HUR",
+      "valueAddedTaxIncluded": true
+    },
+    "description": "Cours collectif de mathématiques - Groupe de 4 élèves : 35€/h par élève"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Cours collectifs de mathématiques",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cours collectifs maths 3ème",
+          "description": "Cours collectifs de mathématiques pour élèves de 3ème - Préparation Brevet"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cours collectifs maths Seconde",
+          "description": "Cours collectifs de mathématiques pour élèves de Seconde - Remise à niveau"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cours collectifs maths Première",
+          "description": "Cours collectifs de mathématiques pour élèves de Première - Spécialité Maths"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cours collectifs maths Terminale",
+          "description": "Cours collectifs de mathématiques pour élèves de Terminale - Préparation Bac"
+        }
+      }
+    ]
+  }
+})} />

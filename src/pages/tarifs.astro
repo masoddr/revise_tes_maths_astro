@@ -9,125 +9,200 @@ import Footer from '../components/Footer.astro';
   description="Découvrez nos tarifs pour les cours de mathématiques et sciences. Paiement par CESU accepté avec réduction d'impôt de 50%."
 >
   <Header />
-  
-  <!-- HERO Section -->
-  <section class="relative bg-gradient-to-b from-blue-50 via-blue-50/50 to-white py-12 md:py-16 overflow-hidden">
-    <!-- Background decorative elements -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-200/30 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-10 right-20 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-10 w-64 h-64 bg-yellow-200/20 rounded-full blur-3xl"></div>
-    </div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-8">
-          <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Tarifs et modalités de paiement
-          </h1>
-          <p class="text-lg md:text-xl text-gray-700 mb-4">
-            Transparence et avantages fiscaux pour votre accompagnement
-          </p>
-          <p class="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            Des tarifs clairs et transparents, avec la possibilité de bénéficier d'avantages fiscaux significatifs grâce au CESU et au crédit d'impôt.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Tarifs -->
   <section class="bg-gray-50 py-12 md:py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
-          Nos tarifs
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 text-center">
+          Mes tarifs
         </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8 text-center">
+          Tarifs transparents et dégressifs selon le format choisi. Les <strong>cours collectifs de mathématiques</strong> offrent un tarif réduit tout en conservant une attention personnalisée.
+        </p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <!-- Cours individuels -->
-          <div class="bg-white rounded-lg p-6 md:p-8 shadow-sm border border-gray-200">
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-xl font-semibold text-gray-900">Cours individuels</h3>
-              <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
+        <!-- Cours collectifs -->
+        <div class="mb-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 md:p-6 border-2 border-blue-200">
+              <div class="text-center mb-3 md:mb-4">
+                <h4 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Groupe de 3 élèves</h4>
+                <div class="text-2xl md:text-3xl font-bold text-blue-600 mb-2">40€/h</div>
+                <p class="text-xs md:text-sm text-gray-600">par élève</p>
+              </div>
+              <ul class="space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-700">
+                <li class="flex items-start">
+                  <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>3 élèves maximum</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>Attention personnalisée</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>-20% vs cours particulier</span>
+                </li>
+              </ul>
             </div>
-            <p class="text-gray-600 mb-4 text-sm md:text-base">
-              Suivi personnalisé adapté à votre niveau et vos objectifs
-            </p>
-            <div class="mb-4">
-              <p class="text-3xl font-bold text-gray-900 mb-2">
-                À partir de 50€
-              </p>
-              <p class="text-sm text-gray-500">par heure de cours</p>
+            
+            <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg p-4 md:p-6 border-2 border-orange-300 shadow-lg md:transform md:scale-105">
+              <div class="text-center mb-3 md:mb-4">
+                <div class="inline-block bg-orange-500 text-white text-xs font-bold px-2 md:px-3 py-1 rounded-full mb-2">RECOMMANDÉ</div>
+                <h4 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Groupe de 4 élèves</h4>
+                <div class="text-2xl md:text-3xl font-bold text-orange-600 mb-2">35€/h</div>
+                <p class="text-xs md:text-sm text-gray-600">par élève</p>
+              </div>
+              <ul class="space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-700">
+                <li class="flex items-start">
+                  <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>4 élèves maximum</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>Dynamique de groupe optimale</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>-30% vs cours particulier</span>
+                </li>
+              </ul>
             </div>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Suivi personnalisé et adapté</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Horaires flexibles</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Présentiel ou visio</span>
-              </li>
-            </ul>
+            
+            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 md:p-6 border-2 border-gray-200">
+              <div class="text-center mb-3 md:mb-4">
+                <h4 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Cours particulier</h4>
+                <div class="text-2xl md:text-3xl font-bold text-gray-600 mb-2">50€/h</div>
+                <p class="text-xs md:text-sm text-gray-600">pour comparaison</p>
+              </div>
+              <ul class="space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-700">
+                <li class="flex items-start">
+                  <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>1 élève</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>Attention 100% individuelle</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>Tarif de référence</span>
+                </li>
+              </ul>
+            </div>
           </div>
-
-          <!-- Stages intensifs -->
-          <div class="bg-white rounded-lg p-6 md:p-8 shadow-sm border border-gray-200">
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-xl font-semibold text-gray-900">Stages intensifs</h3>
-              <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-              </svg>
-            </div>
-            <p class="text-gray-600 mb-4 text-sm md:text-base">
-              Remise à niveau ou préparation intensive pendant les vacances
+          
+          <div class="bg-blue-50 rounded-lg p-6 border-2 border-blue-200 mb-6">
+            <h4 class="text-lg font-semibold text-gray-900 mb-3">
+              💡 Exemple de calcul pour un groupe de 4 élèves
+            </h4>
+            <p class="text-gray-700 leading-relaxed mb-3">
+              Pour un <strong>cours collectif de maths</strong> de 2 heures avec 4 élèves :
             </p>
-            <div class="mb-4">
-              <p class="text-3xl font-bold text-gray-900 mb-2">
-                Sur devis
-              </p>
-              <p class="text-sm text-gray-500">selon la durée et le format</p>
-            </div>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Formats individuels ou mini-groupes</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Pendant les vacances scolaires</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Préparation aux examens</span>
-              </li>
+            <ul class="space-y-2 text-gray-700 mb-4">
+              <li>• <strong>Par élève</strong> : 35€/h × 2h = <strong>70€</strong></li>
+              <li>• <strong>Économie par élève</strong> : (50€ - 35€) × 2h = <strong>30€ économisés</strong> par séance</li>
             </ul>
+            <p class="text-gray-700 leading-relaxed">
+              Les <strong>cours collectifs de mathématiques</strong> permettent d'accéder à un accompagnement de qualité à un tarif réduit, tout en bénéficiant d'une dynamique de groupe motivante. <a href="/cours-collectifs-maths" class="text-blue-600 hover:text-blue-700 underline font-semibold">En savoir plus sur les cours collectifs</a>
+            </p>
+          </div>
+        </div>
+        
+        <!-- Cours individuels et stages -->
+        <div class="mb-8">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 text-center">
+            Autres formats de cours
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Cours particuliers -->
+            <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-lg p-6 border-2 border-indigo-200">
+              <div class="text-center mb-4">
+                <h4 class="text-xl font-bold text-gray-900 mb-2">Cours particuliers</h4>
+                <div class="text-3xl font-bold text-indigo-600 mb-2">50€/h</div>
+                <p class="text-sm text-gray-600">par heure de cours</p>
+              </div>
+              <p class="text-gray-700 text-sm mb-4 text-center">
+                Suivi personnalisé adapté à votre niveau et vos objectifs
+              </p>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>Suivi personnalisé et adapté</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>Horaires flexibles</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>Présentiel ou visio</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Stages intensifs -->
+            <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 border-2 border-purple-200">
+              <div class="text-center mb-4">
+                <h4 class="text-xl font-bold text-gray-900 mb-2">Stages intensifs</h4>
+                <div class="text-3xl font-bold text-purple-600 mb-2">Sur devis</div>
+                <p class="text-sm text-gray-600">selon la durée et le format</p>
+              </div>
+              <p class="text-gray-700 text-sm mb-4 text-center">
+                Remise à niveau ou préparation intensive pendant les vacances
+              </p>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>Formats individuels ou mini-groupes</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>Pendant les vacances scolaires</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>Préparation aux examens</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div class="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 rounded">
           <p class="text-gray-800 text-base md:text-lg">
             <strong>Note :</strong> Les tarifs peuvent varier selon le niveau (collège, lycée, post-bac), la fréquence des cours et le format (présentiel/visio). 
-            Contactez-moi pour obtenir un devis personnalisé adapté à vos besoins.
+            Les <strong>cours collectifs</strong> sont disponibles en groupes de 3-4 élèves du même niveau. Contactez-moi pour obtenir un devis personnalisé adapté à vos besoins.
           </p>
         </div>
       </div>
