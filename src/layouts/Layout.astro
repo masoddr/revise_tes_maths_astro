@@ -12,6 +12,8 @@ const {
   title, 
   description = "Cours de maths et sciences pour collège et lycée. Accompagnement personnalisé et rigoureux."
 } = Astro.props;
+
+const ADS_ID = import.meta.env.PUBLIC_GOOGLE_ADS_ID;
 ---
 
 <!doctype html>
@@ -84,6 +86,19 @@ const {
     
     <!-- Preload critical resources -->
     <link rel="preload" href="/images/logo_revise_tes_maths.png" as="image" />
+
+    {ADS_ID && (
+      <>
+        <!-- Google tag (gtag.js) -->
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`}></script>
+        <script is:inline define:vars={{ ADS_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', ADS_ID);
+        </script>
+      </>
+    )}
     
     <title>{title}</title>
   </head>
