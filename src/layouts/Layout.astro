@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import ScrollToTop from '../components/ScrollToTop.astro';
 import ReadingProgress from '../components/ReadingProgress.astro';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title: string;
@@ -86,6 +87,9 @@ const {
     <link rel="preload" href="/images/logo_revise_tes_maths.png" as="image" />
     
     <title>{title}</title>
+    
+    <!-- Vercel Web Analytics -->
+    <Analytics />
   </head>
   <body class="font-sans antialiased bg-white">
     <ReadingProgress />
