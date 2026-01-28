@@ -157,14 +157,14 @@ Ce document liste tous les **mots-clés et expressions clés** pour lesquels le 
 
 ---
 
-### **Cours de Maths à Toulouse**
-**Page** : `/cours-maths-toulouse`
+### **(Section locale supprimée)**
+**Page** : `/`
 
 **Mots-clés ciblés** :
-- ✅ **"cours de maths à Toulouse"**
-- ✅ **"cours de maths Toulouse"**
-- ✅ **"prof maths Toulouse"**
-- ✅ **"professeur particulier maths Toulouse"**
+- ✅ *(section désactivée, ancien ciblage local supprimé)*
+- ✅ *(section désactivée, ancien ciblage local supprimé)*
+- ✅ *(section désactivée, ancien ciblage local supprimé)*
+- ✅ *(section désactivée, ancien ciblage local supprimé)*
 
 **Volume** : Moyen à élevé
 **Concurrence : Moyenne à forte
@@ -250,7 +250,6 @@ Ces expressions sont intégrées naturellement dans les contenus des pages :
 | **maths première** | `/premiere` | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ Optimisé |
 | **maths seconde** | `/seconde` | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ Optimisé |
 | **maths 3ème** | `/3eme` | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ Optimisé |
-| **cours de maths à Toulouse** | `/cours-maths-toulouse` | ⭐⭐⭐ | ⭐⭐⭐ | ✅ Optimisé |
 
 ---
 
@@ -274,7 +273,6 @@ Ces expressions sont intégrées naturellement dans les contenus des pages :
 - "cours de maths à Paris"
 - "professeur particulier maths Paris"
 - "cours maths 75"
-- "cours de maths à Toulouse"
 
 ### 4. **Recherches par Niveau** (Spécifiques)
 - "maths terminale"
@@ -312,7 +310,7 @@ Le site optimise également pour des mots-clés sémantiquement liés :
 - **Niveaux** : "collège", "lycée", "3ème", "seconde", "première", "terminale"
 - **Examens** : "brevet", "bac", "baccalauréat", "spécialité"
 - **Méthodes** : "visio", "visioconférence", "en ligne", "à distance", "présentiel"
-- **Localisation** : "Paris", "Toulouse", "75", "région parisienne"
+- **Localisation** : "Paris", "75", "région parisienne"
 - **Ressources** : "annales", "exercices", "cours", "corrigés", "sujets"
 
 ---
@@ -320,7 +318,7 @@ Le site optimise également pour des mots-clés sémantiquement liés :
 ## ✅ Points Forts de l'Optimisation Actuelle
 
 1. ✅ **Couverture complète** des niveaux scolaires (3ème à terminale)
-2. ✅ **Pages dédiées** pour les mots-clés géographiques (Paris, Toulouse)
+2. ✅ **Pages dédiées** pour les mots-clés géographiques (Paris)
 3. ✅ **Page dédiée** pour la visioconférence
 4. ✅ **Pages dédiées** pour les annales (Brevet et Bac)
 5. ✅ **Page dédiée** pour "professeur particulier maths"
@@ -347,7 +345,7 @@ Le site optimise également pour des mots-clés sémantiquement liés :
 Le site **revise-tes-maths.fr** est **bien optimisé** pour une large gamme de mots-clés liés aux cours de mathématiques, couvrant :
 
 - ✅ **Mots-clés génériques** : "cours de maths", "professeur particulier maths"
-- ✅ **Mots-clés géographiques** : "cours de maths à Paris", "cours de maths à Toulouse"
+- ✅ **Mots-clés géographiques** : "cours de maths à Paris"
 - ✅ **Mots-clés par niveau** : "maths terminale", "maths première", etc.
 - ✅ **Mots-clés par type** : "annales bac maths", "cours en visio"
 - ✅ **Mots-clés longue traîne** : intégrés naturellement dans les contenus

@@ -1,7 +1,7 @@
 # Guide complet Google Ads - revise-tes-maths.fr
 
 ## 🎯 Objectif
-Faire apparaître le site pour : "cours de maths paris", "cours de maths toulouse", "cours de maths visio"
+Faire apparaître le site pour : "cours de maths paris", "cours de maths visio"
 
 ---
 
@@ -11,7 +11,6 @@ Faire apparaître le site pour : "cours de maths paris", "cours de maths toulous
 |----------|-------------|---------|--------------|---------|
 | **Visio** | 100-200€ | 3€ | `/cours-maths-visio` | Toute la France |
 | **Paris** | 100-200€ | 4€ | `/cours-maths-paris` | Paris + région (rayon 10-15km) |
-| **Toulouse** | 100-200€ | 3€ | `/cours-maths-toulouse` | Toulouse + région (rayon 20-25km) |
 
 **Budget total** : 300-600€/mois (15-21€/jour)
 
@@ -107,36 +106,6 @@ Faire apparaître le site pour : "cours de maths paris", "cours de maths toulous
 
 ---
 
-## 🏙️ Campagne Toulouse (dupliquer Paris)
-
-### Modifications
-- **Nom** : `Cours de maths Toulouse`
-- **Budget** : `5-7€/jour`, CPC max : `3€`
-- **Ciblage** : Toulouse (31) 25km, agglomération 20km
-
-**Mots-clés** :
-```
-[cours de maths toulouse]
-[prof maths toulouse]
-```
-
-**Annonce 1** :
-- Titre 1 : `Cours de Maths à Toulouse`
-- Titre 2 : `En Visio | Prof Expérimenté`
-- Titre 3 : `Premier Échange Gratuit`
-- Description 1 : `Cours de maths en visioconférence pour Toulouse. Collège & Lycée. Accompagnement personnalisé.`
-- Description 2 : `100% de réussite au Brevet et Bac. Horaires flexibles. Réponse sous 24h.`
-- URL : `https://revise-tes-maths.fr/cours-maths-toulouse`
-
-**Annonce 2** :
-- Titre 1 : `Prof Maths Toulouse`
-- Titre 2 : `Cours en Ligne | Flexible`
-- Titre 3 : `7j/7 | Accompagnement Personnalisé`
-- Description 1 : `Ingénieur systèmes spatiaux. Cours de maths à distance adaptés. Réponse garantie sous 24h.`
-- Description 2 : `Premier échange gratuit. Disponible pour Toulouse et région. Collège & Lycée.`
-- URL : `https://revise-tes-maths.fr/cours-maths-toulouse`
-
----
 
 ## ⚙️ Configuration avancée
 
@@ -219,7 +188,6 @@ télécharger
 
 ### Concurrence
 - **Paris** : Très concurrentiel, enchères élevées
-- **Toulouse** : Moins concurrentiel, meilleur rapport qualité/prix
 - **Visio** : Niche moins saturée, opportunité
 
 ### Saisonnalité
@@ -238,7 +206,7 @@ télécharger
 
 ## ✅ Résumé rapide
 
-**3 campagnes** : Visio, Paris, Toulouse  
+**3 campagnes** : Visio, Paris  
 **Budget** : 15-21€/jour (450-630€/mois)  
 **Mots-clés** : Correspondance exacte uniquement  
 **Annonces** : 2 par groupe minimum  
