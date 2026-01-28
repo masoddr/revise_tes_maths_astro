@@ -1,0 +1,97 @@
+---
+// Header hybride pour landing page Google Ads
+// Logo à gauche, liens discrets à droite
+---
+
+<header class="bg-gradient-to-b from-blue-50/95 via-blue-50/90 to-white/95 backdrop-blur-sm border-b border-blue-100/50 sticky top-0 z-50">
+  <nav class="container mx-auto px-4 py-2 md:py-3">
+    <div class="flex items-center justify-between max-w-6xl mx-auto">
+      <!-- Logo à gauche avec style de la home page -->
+      <a href="/" class="logo-link flex items-center space-x-2 text-xl font-bold">
+        <img src="/images/logo_revise_tes_maths.png" alt="Logo Révise Tes Maths" class="logo-image h-8 w-8 object-contain" />
+        <span class="logo-text">Révise Tes Maths</span>
+      </a>
+      
+      <!-- Liens discrets à droite -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="/annales" class="text-sm text-gray-500 hover:text-gray-700 transition-colors">
+          Annales
+        </a>
+        <a href="/terminale/exercices" class="text-sm text-gray-500 hover:text-gray-700 transition-colors">
+          Exercices
+        </a>
+        <a href="/blog" class="text-sm text-gray-500 hover:text-gray-700 transition-colors">
+          Blog
+        </a>
+      </div>
+      
+      <!-- Mobile menu button -->
+      <button 
+        id="mobile-menu-button-landing"
+        class="md:hidden text-gray-600 hover:text-gray-900 transition-colors"
+        aria-label="Menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu-landing" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100">
+      <div class="space-y-3 pt-4">
+        <a href="/annales" class="block text-sm text-gray-500 hover:text-gray-700 py-2">
+          Annales
+        </a>
+        <a href="/terminale/exercices" class="block text-sm text-gray-500 hover:text-gray-700 py-2">
+          Exercices
+        </a>
+        <a href="/blog" class="block text-sm text-gray-500 hover:text-gray-700 py-2">
+          Blog
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuButton = document.getElementById('mobile-menu-button-landing');
+  const mobileMenu = document.getElementById('mobile-menu-landing');
+  
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
+
+<style>
+  /* Logo animation styles - same as home page */
+  .logo-link {
+    transition: all 0.3s ease;
+  }
+
+  .logo-link:hover {
+    transform: scale(1.05);
+  }
+
+  .logo-text {
+    color: #1e40af; /* blue-800 */
+    transition: color 0.3s ease;
+  }
+
+  .logo-link:hover .logo-text {
+    color: #2563eb; /* blue-600 */
+  }
+
+  .logo-image {
+    animation: bounce-soft 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce-soft {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+</style>
