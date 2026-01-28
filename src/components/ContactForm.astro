@@ -12,6 +12,11 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
   method="POST"
   action="https://api.web3forms.com/submit"
 >
+  <!-- Hidden field for Web3Forms access key (required) -->
+  <input type="hidden" name="access_key" value={accessKey} />
+  <!-- Honeypot field for spam protection -->
+  <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off" />
+  
   <!-- Web3Forms fields are handled in JavaScript -->
   <div>
     <label for="nom" class="block text-gray-700 font-medium mb-2 text-sm">
@@ -96,11 +101,11 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
 </style>
 
 <script>
-  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const form = document.getElementById('contact-form');
   const messageDiv = document.getElementById('form-message');
   const messageText = document.getElementById('form-message-text');
   const formIcon = document.getElementById('form-icon');
-  const submitButton = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+  const submitButton = form?.querySelector('button[type="submit"]');
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -108,9 +113,9 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
     const messageDiv = document.getElementById('form-message');
     const messageText = document.getElementById('form-message-text');
     const formIcon = document.getElementById('form-icon');
-    const submitButton = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const submitButton = form?.querySelector('button[type="submit"]');
     
-    if (!messageDiv || !messageText || !formIcon) return;
+    if (!messageDiv || !messageText || !formIcon || !form) return;
     
     const originalText = submitButton?.textContent || 'Demander un premier échange';
     
@@ -121,28 +126,36 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
     }
     
     // Get form data and prepare for Web3Forms
-    // Create new FormData to avoid duplicate fields from hidden inputs
-    const formData = new FormData();
+    // Use FormData from the form element to include all fields including hidden access_key
+    const formData = new FormData(form);
     
-    // Add access key (required)
-    formData.append('access_key', '6afff405-0be2-4bd7-8388-d94686c2329b');
+    // Add/override fields for Web3Forms format
+    const nomInput = form.querySelector('[name="nom"]');
+    const emailInput = form.querySelector('[name="email"]');
+    const telephoneInput = form.querySelector('[name="telephone"]');
+    const classeInput = form.querySelector('[name="classe"]');
+    const messageInput = form.querySelector('[name="message"]');
     
-    // Add form fields
-    const nom = (form.querySelector('[name="nom"]') as HTMLInputElement)?.value || '';
-    const email = (form.querySelector('[name="email"]') as HTMLInputElement)?.value || '';
-    const telephone = (form.querySelector('[name="telephone"]') as HTMLInputElement)?.value || '';
-    const classe = (form.querySelector('[name="classe"]') as HTMLSelectElement)?.value || '';
-    const message = (form.querySelector('[name="message"]') as HTMLTextAreaElement)?.value || '';
+    const nom = nomInput?.value || '';
+    const email = emailInput?.value || '';
+    const telephone = telephoneInput?.value || '';
+    const classe = classeInput?.value || '';
+    const message = messageInput?.value || '';
     
     // Map to Web3Forms format (they accept any field names, but we'll use standard ones)
-    formData.append('name', nom);
-    formData.append('email', email);
-    formData.append('telephone', telephone);
-    formData.append('classe', classe);
-    formData.append('message', message);
-    formData.append('subject', 'Nouveau contact depuis Revise Tes Maths');
-    formData.append('from_name', 'Revise Tes Maths');
-    formData.append('botcheck', ''); // Honeypot - must be empty
+    formData.set('name', nom);
+    if (email) formData.set('email', email);
+    formData.set('telephone', telephone);
+    if (classe) formData.set('classe', classe);
+    formData.set('message', message);
+    formData.set('subject', 'Nouveau contact depuis Revise Tes Maths');
+    formData.set('from_name', 'Revise Tes Maths');
+    
+    // Verify access_key is present
+    if (!formData.get('access_key')) {
+      console.error('Web3Forms access key is missing. Please set PUBLIC_WEB3FORMS_ACCESS_KEY environment variable.');
+      throw new Error('Configuration error: access key missing');
+    }
     
     try {
       // Submit to Web3Forms
