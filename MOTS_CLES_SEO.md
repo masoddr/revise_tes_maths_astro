@@ -141,7 +141,7 @@ Ce document liste tous les **mots-clés et expressions clés** pour lesquels le 
 ## 🌐 Mots-Clés Géographiques
 
 ### **Cours de Maths à Paris**
-**Page** : `/cours-maths-paris`
+**Page** : `/cours-paris`
 
 **Mots-clés ciblés** :
 - ✅ **"cours de maths à Paris"**
@@ -240,8 +240,8 @@ Ces expressions sont intégrées naturellement dans les contenus des pages :
 | **cours de maths collège** | `/` | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ Optimisé |
 | **cours de maths lycée** | `/` | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ Optimisé |
 | **professeur particulier maths** | `/professeur-particulier-maths` | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ✅ Optimisé |
-| **cours de maths à Paris** | `/cours-maths-paris` | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ✅ Optimisé |
-| **professeur particulier maths Paris** | `/cours-maths-paris` | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ✅ Optimisé |
+| **cours de maths à Paris** | `/cours-paris` | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ✅ Optimisé |
+| **professeur particulier maths Paris** | `/cours-paris` | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ✅ Optimisé |
 | **cours de maths en visio** | `/cours-maths-visio` | ⭐⭐⭐⭐ | ⭐⭐⭐ | ✅ Optimisé |
 | **cours maths visio** | `/cours-maths-visio` | ⭐⭐⭐ | ⭐⭐⭐ | ✅ Optimisé |
 | **annales bac maths** | `/terminale/annales-bac` | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ✅ Optimisé |

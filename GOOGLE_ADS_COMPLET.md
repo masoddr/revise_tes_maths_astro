@@ -10,7 +10,7 @@ Faire apparaître le site pour : "cours de maths paris", "cours de maths visio"
 | Campagne | Budget/mois | CPC max | Landing page | Ciblage |
 |----------|-------------|---------|--------------|---------|
 | **Visio** | 100-200€ | 3€ | `/cours-maths-visio` | Toute la France |
-| **Paris** | 100-200€ | 4€ | `/cours-maths-paris` | Paris + région (rayon 10-15km) |
+| **Paris** | 100-200€ | 4€ | `/cours-paris` | Paris + région (rayon 10-15km) |
 
 **Budget total** : 300-600€/mois (15-21€/jour)
 
@@ -94,7 +94,7 @@ Faire apparaître le site pour : "cours de maths paris", "cours de maths visio"
 - Titre 3 : `Prof Expérimenté | 100% Réussite`
 - Description 1 : `Cours de maths en visioconférence pour Paris et région. Accompagnement personnalisé collège & lycée.`
 - Description 2 : `Premier échange gratuit. Réponse sous 24h. Horaires flexibles 7j/7.`
-- URL : `https://revise-tes-maths.fr/cours-maths-paris`
+- URL : `https://revise-tes-maths.fr/cours-paris`
 
 **Annonce 2** :
 - Titre 1 : `Prof Maths Paris`
@@ -102,7 +102,7 @@ Faire apparaître le site pour : "cours de maths paris", "cours de maths visio"
 - Titre 3 : `Disponible Paris & Région`
 - Description 1 : `Accompagnement rigoureux en visio. Disponible pour Paris et toute la France. Premier échange gratuit.`
 - Description 2 : `Ingénieur systèmes spatiaux. Cours adaptés à votre niveau. Réponse garantie sous 24h.`
-- URL : `https://revise-tes-maths.fr/cours-maths-paris`
+- URL : `https://revise-tes-maths.fr/cours-paris`
 
 ---
 

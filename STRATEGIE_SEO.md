@@ -9,11 +9,11 @@
    - ⚠️ À optimiser : Enrichir le contenu (actuellement ~2000 mots, viser 2500-3000)
 
 2. **"cours maths paris"** (Volume élevé, concurrence forte)
-   - ✅ Page existante : `/cours-maths-paris`
+   - ✅ Page existante : `/cours-paris`
    - ⚠️ À optimiser : Ajouter contenu local (arrondissements, quartiers), enrichir (actuellement ~2000 mots)
 
 3. **"professeur particulier maths paris"** (Volume moyen-élevé, concurrence forte)
-   - ⚠️ Page partielle : Mentionné sur `/cours-maths-paris`
+   - ⚠️ Page partielle : Mentionné sur `/cours-paris`
    - ✅ Action : Créer section dédiée ou enrichir la page existante
 
 4. **"professeur particulier maths"** (Volume très élevé, concurrence très forte)
@@ -186,8 +186,8 @@ Ajouter des questions-réponses ciblant les mots-clés longue traîne :
 | Mots-Clés | Page Cible | Statut | Action |
 |-----------|------------|--------|--------|
 | "cours maths visio" | `/cours-maths-visio` | ✅ Existe | Enrichir (2000→3000 mots) |
-| "cours maths paris" | `/cours-maths-paris` | ✅ Existe | Enrichir + local SEO |
-| "professeur particulier maths paris" | `/cours-maths-paris` | ⚠️ Partiel | Ajouter section dédiée |
+| "cours maths paris" | `/cours-paris` | ✅ Existe | Enrichir + local SEO |
+| "professeur particulier maths paris" | `/cours-paris` | ⚠️ Partiel | Ajouter section dédiée |
 | "professeur particulier maths" | `/professeur-particulier-maths` | ❌ Manque | **CRÉER** (priorité) |
 | "annales bac maths" | `/terminale/annales-bac` | ✅ Existe | **ENRICHIR** (priorité absolue) |
 
@@ -205,7 +205,7 @@ Ajouter des questions-réponses ciblant les mots-clés longue traîne :
 - ⚠️ Ajouter témoignages spécifiques aux cours en visio
 
 ### 2. "cours maths paris"
-**Page** : `/cours-maths-paris`
+**Page** : `/cours-paris`
 **Actions** :
 - ✅ H1 optimisé
 - ⚠️ Ajouter mentions d'arrondissements (ex: "cours maths 16ème", "cours maths 15ème")
@@ -214,7 +214,7 @@ Ajouter des questions-réponses ciblant les mots-clés longue traîne :
 - ⚠️ Mentionner "professeur particulier maths paris" plusieurs fois
 
 ### 3. "professeur particulier maths paris"
-**Page** : `/cours-maths-paris` (section dédiée)
+**Page** : `/cours-paris` (section dédiée)
 **Actions** :
 - ⚠️ Créer section H2 "Professeur Particulier de Maths à Paris"
 - ⚠️ Utiliser le terme exact "professeur particulier maths paris" 3-5 fois dans le contenu
