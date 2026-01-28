@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import ScrollToTop from '../components/ScrollToTop.astro';
 import ReadingProgress from '../components/ReadingProgress.astro';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title: string;
@@ -93,6 +94,7 @@ const {
       <slot />
     </main>
     <ScrollToTop />
+    <Analytics />
   </body>
 </html>
 
