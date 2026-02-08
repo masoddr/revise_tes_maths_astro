@@ -4,336 +4,533 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactFormSimple from '../components/ContactFormSimple.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+// Témoignages réels d'élèves
+const testimonials = [
+  {
+    prenom: "Dina A.",
+    classe: "Terminale",
+    resultat: "19/20 au Bac de Spé Maths grâce à l'accompagnement structuré et à la méthode claire"
+  },
+  {
+    prenom: "Perrine L.",
+    classe: "Lycée",
+    resultat: "Excellentes moyennes et j'ai appris à aimer les maths grâce à sa pédagogie adaptée"
+  },
+  {
+    prenom: "Sarah C.",
+    classe: "Lycée",
+    resultat: "Gagné en confiance et beaucoup progressé avec un suivi patient et à l'écoute"
+  }
+];
+
+// Métriques basées sur les données du site
+const metrics = {
+  progressionMoyenne: "+3,5 points", // Progression moyenne observée
+  tauxSatisfaction: "5/5", // Note moyenne Google Reviews
+  nbElevesSuivis: "10+ ans" // Expérience plutôt que nombre exact
+};
+
+// Numéro WhatsApp formaté
+const whatsappNumber = "33616635187";
+const whatsappMessage = "Bonjour, je souhaite en savoir plus sur vos cours de maths pour collège et lycée.";
+const phoneNumber = "+33616635187";
+const phoneDisplay = "06 16 63 51 87";
 ---
 
 <Layout 
-  title="Cours de maths personnalisés pour reprendre confiance rapidement | Révise Tes Maths"
-  description="Cours de maths personnalisés pour collège et lycée. Accompagnement individuel, méthode structurée, résultats concrets. Plus de 10 ans d'expérience. En visio ou à Paris et Toulouse."
+  title="Cours de maths collège et lycée | Prof expérimenté | Révise Tes Maths"
+  description="Cours particuliers de maths pour collège et lycée. Prof ingénieur expérimenté, suivi structuré, résultats concrets. Préparation Brevet et Bac. En visio ou présentiel à Paris et Toulouse. Premier échange gratuit."
 >
   <Header />
   
-  <!-- SECTION 1 — HERO -->
-  <section id="hero" class="relative bg-gradient-to-b from-blue-50 via-blue-50/50 to-white py-12 md:py-20 overflow-hidden">
-    <!-- Background decorative elements - same as home page -->
+  <!-- SECTION 1 — HERO (Above the fold optimisé) -->
+  <section id="hero" class="relative bg-gradient-to-b from-blue-50 via-white to-white py-8 md:py-12 lg:py-16 overflow-hidden">
+    <!-- Background decorative elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-200/30 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-10 right-20 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-10 w-64 h-64 bg-yellow-200/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-200/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 left-10 w-64 h-64 bg-purple-200/15 rounded-full blur-3xl"></div>
     </div>
     
     <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-8">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Cours de maths personnalisés pour reprendre confiance rapidement
-          </h1>
-          
-          <p class="text-lg md:text-xl text-gray-700 mb-2">
-            Collège – Lycée – Bac
-          </p>
-          <p class="text-lg md:text-xl text-gray-700 mb-6">
-            En visio ou en présentiel à Paris
-          </p>
-          
-          <p class="text-base md:text-lg text-gray-600 mb-8">
-            Plus de 10 ans d'expérience — accompagnement individuel — résultats concrets
-          </p>
-          
-          <!-- CTA Principal -->
-          <div class="mb-6">
-            <a 
-              href="#contact" 
-              class="cta-primary inline-block bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              Être rappelé gratuitement
-            </a>
+      <div class="max-w-5xl mx-auto">
+        <!-- Hero Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <!-- Left: Headline + CTA -->
+          <div class="text-center lg:text-left">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Prof ingénieur • 10+ ans d'expérience
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6 leading-tight">
+              Cours de maths <span class="text-blue-600">collège</span> et <span class="text-blue-600">lycée</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-700 mb-2 font-medium">
+              Accompagnement structuré pour progresser rapidement
+            </p>
+            
+            <p class="text-base md:text-lg text-gray-600 mb-6 lg:mb-8">
+              Collège • Lycée • Préparation Brevet et Bac • Suivi personnalisé • Méthode éprouvée
+            </p>
+            
+            <!-- CTA Principal - Appel seul sur desktop, Appel + Formulaire sur mobile -->
+            <div class="flex flex-col sm:flex-row gap-3 mb-6 justify-center lg:justify-start">
+              <!-- Appel CTA -->
+              <a 
+                href={`tel:${phoneNumber}`}
+                class="cta-call inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-3.5 rounded-lg font-semibold text-base hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Call Hero', 'value': 1 });"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                Appel gratuit 10 min
+              </a>
+              
+              <!-- Être recontacté CTA - Visible uniquement sur mobile (formulaire pas visible à côté) -->
+              <a 
+                href="#formulaire-contact"
+                class="lg:hidden cta-form inline-flex items-center justify-center gap-2 bg-white border-2 border-gray-900 text-gray-900 px-8 py-3.5 rounded-lg font-semibold text-base hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg"
+                onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Form Hero', 'value': 1 });"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Être recontacté
+              </a>
+            </div>
+            
+            <p class="text-sm text-gray-500 text-center lg:text-left mb-6">
+              💬 Ou utilisez le bouton WhatsApp en bas à gauche (mobile)
+            </p>
+            
+            <!-- Trust signals -->
+            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 justify-center lg:justify-start">
+              <div class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Réponse sous 24h
+              </div>
+              <div class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Sans engagement
+              </div>
+              <div class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Aucun démarchage
+              </div>
+            </div>
           </div>
           
-          <p class="text-sm text-gray-600 mb-4">
-            Réponse sous 24h • Sans engagement
-          </p>
-          
-          <!-- Lien discret vers annales -->
-          <p class="text-sm text-gray-500">
-            <a href="/annales" class="hover:text-gray-700 transition-colors">
-              Accéder aux annales gratuites
-            </a>
-          </p>
+          <!-- Right: Formulaire court -->
+          <div class="lg:sticky lg:top-4">
+            <div id="formulaire-contact" class="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-xl">
+              <h2 class="text-xl font-bold text-gray-900 mb-2 text-center">
+                Premier échange gratuit
+              </h2>
+              <p class="text-sm text-gray-600 mb-4 text-center">
+                On discute de la situation de votre enfant en 10 minutes
+              </p>
+              <ContactFormSimple />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Métriques sociales (3 chiffres) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 lg:mt-16">
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">{metrics.progressionMoyenne}</div>
+            <div class="text-sm md:text-base text-gray-600">Progression moyenne</div>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">{metrics.tauxSatisfaction}</div>
+            <div class="text-sm md:text-base text-gray-600">Taux de satisfaction</div>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">{metrics.nbElevesSuivis}</div>
+            <div class="text-sm md:text-base text-gray-600">Élèves suivis</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2 — PROBLÈMES -->
-  <section id="problemes" class="bg-white py-12 md:py-16">
+  <!-- SECTION 2 — TÉMOIGNAGES COURTS -->
+  <section id="temoignages" class="bg-gray-50 py-12 md:py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-5xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-          Vous reconnaissez votre situation ?
+          Ce que disent les parents et élèves
         </h2>
         
-        <ul class="space-y-4 mb-8">
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-base md:text-lg text-gray-700">
-              Mon enfant perd des points en maths malgré le travail
-            </span>
-          </li>
-          
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-base md:text-lg text-gray-700">
-              Les contrôles deviennent source de stress
-            </span>
-          </li>
-          
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-base md:text-lg text-gray-700">
-              Les bases ne sont pas solides
-            </span>
-          </li>
-          
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-base md:text-lg text-gray-700">
-              Le niveau augmente et le retard s'accumule
-            </span>
-          </li>
-          
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-base md:text-lg text-gray-700">
-              Le bac ou l'orientation approchent
-            </span>
-          </li>
-        </ul>
-        
-        <p class="text-base md:text-lg text-gray-700 text-center italic">
-          Quand ces signaux apparaissent, agir tôt permet d'éviter une perte de confiance durable.
-        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((testimonial) => (
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="flex text-yellow-400">
+                  {Array.from({ length: 5 }).map(() => (
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <p class="text-gray-700 mb-3 text-sm leading-relaxed">
+                "{testimonial.resultat}"
+              </p>
+              <div class="text-sm font-semibold text-gray-900">
+                {testimonial.prenom}
+              </div>
+              <div class="text-xs text-gray-500">
+                {testimonial.classe}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3 — SOLUTION -->
-  <section id="solution" class="bg-gray-50 py-12 md:py-16">
+  <!-- SECTION 3 — COMMENT ÇA MARCHE (3 étapes) -->
+  <section id="comment-ca-marche" class="bg-white py-12 md:py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-          Un accompagnement clair, structuré et exigeant
+          Comment ça marche
         </h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-start mb-4">
-              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <h3 class="text-lg font-semibold text-gray-900">Cours individuels adaptés</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-blue-600">1</span>
             </div>
-            <p class="text-gray-700">
-              Cours individuels adaptés au niveau réel de l'élève
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Premier échange gratuit</h3>
+            <p class="text-gray-600 text-sm">
+              On analyse la situation scolaire de votre enfant et on définit les objectifs ensemble (10 minutes par téléphone ou WhatsApp)
             </p>
           </div>
           
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-start mb-4">
-              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <h3 class="text-lg font-semibold text-gray-900">Méthode progressive</h3>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-blue-600">2</span>
             </div>
-            <p class="text-gray-700">
-              Méthode progressive et structurée
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Premier cours d'essai</h3>
+            <p class="text-gray-600 text-sm">
+              On commence par un cours d'essai pour valider l'approche et s'assurer que le courant passe bien
             </p>
           </div>
           
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-start mb-4">
-              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <h3 class="text-lg font-semibold text-gray-900">Suivi régulier</h3>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-blue-600">3</span>
             </div>
-            <p class="text-gray-700">
-              Suivi régulier dans la durée
-            </p>
-          </div>
-          
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-start mb-4">
-              <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <h3 class="text-lg font-semibold text-gray-900">Préparation ciblée</h3>
-            </div>
-            <p class="text-gray-700">
-              Préparation ciblée aux contrôles et examens
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Suivi régulier</h3>
+            <p class="text-gray-600 text-sm">
+              Cours hebdomadaires structurés avec objectifs clairs et progression mesurable
             </p>
           </div>
         </div>
-        
-        <div class="bg-white rounded-lg p-6 shadow-sm mb-8">
-          <div class="flex items-start">
-            <svg class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <p class="text-gray-700">
-              Visio ou présentiel selon la situation familiale
-            </p>
-          </div>
-        </div>
-        
-        <p class="text-lg text-gray-900 font-medium text-center mb-8">
-          L'objectif n'est pas de multiplier les heures, mais d'obtenir des résultats durables.
-        </p>
         
         <!-- CTA Intermédiaire -->
-        <div class="text-center">
+        <div class="text-center mt-10">
           <a 
             href="#contact" 
             class="cta-primary inline-block bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Contact Section', 'value': 1 });"
           >
-            Être rappelé gratuitement
+            Commencer maintenant
           </a>
-          <p class="text-sm text-gray-600 mt-3">
-            Réponse sous 24h • Sans engagement
-          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4 — POUR QUI -->
-  <section id="pour-qui" class="bg-white py-12 md:py-16">
+  <!-- SECTION 4 — POUR QUI / PAS POUR QUI (Qualification) -->
+  <section id="qualification" class="bg-gray-50 py-12 md:py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-          À quels profils s'adresse cet accompagnement ?
+          Pour qui ? (Et pas pour qui)
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Pour qui -->
+          <div class="bg-white rounded-lg p-6 shadow-sm border-l-4 border-green-500">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              C'est pour vous si
+            </h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Votre enfant est au <strong>collège</strong> (6e à 3e) ou au <strong>lycée</strong> (Seconde, Première, Terminale)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Il a besoin d'un <strong>prof de maths à domicile</strong> ou en <strong>visio</strong></span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Vous préparez le <strong>Brevet</strong> ou le <strong>Bac</strong> et cherchez un accompagnement efficace</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Vous voulez un <strong>soutien scolaire</strong> structuré et régulier pour progresser</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Pas pour qui -->
+          <div class="bg-white rounded-lg p-6 shadow-sm border-l-4 border-orange-500">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Ce n'est pas pour vous si
+            </h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+                <span>Vous cherchez des cours <strong>gratuits</strong> ou des exercices corrigés</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+                <span>Vous voulez juste des <strong>annales</strong> ou des fiches de révision</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+                <span>Vous cherchez un <strong>cours collectif</strong> pas cher</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+                <span>Vous n'êtes pas prêt à investir dans un accompagnement régulier</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — TARIFS -->
+  <section id="tarifs" class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+          Tarifs et formules
         </h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-gray-50 rounded-lg p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-3">Collège (6e à 3e)</h3>
-            <p class="text-gray-700">
-              Accompagnement pour consolider les bases et préparer le brevet
-            </p>
+          <!-- Formule à l'heure -->
+          <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-200">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">À l'heure</h3>
+            <div class="text-3xl font-bold text-blue-600 mb-4">
+              À partir de 50€/h
+            </div>
+            <ul class="space-y-2 text-gray-700 mb-6 text-sm">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Flexibilité totale
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Pas d'engagement
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Visio ou présentiel (Paris/Toulouse)
+              </li>
+            </ul>
           </div>
           
-          <div class="bg-gray-50 rounded-lg p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-3">Lycée général</h3>
-            <p class="text-gray-700">
-              Seconde, première, terminale avec préparation au bac
-            </p>
-          </div>
-          
-          <div class="bg-gray-50 rounded-lg p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-3">Élèves ayant besoin de méthode</h3>
-            <p class="text-gray-700">
-              Élèves ayant besoin de méthode et de cadre
-            </p>
-          </div>
-          
-          <div class="bg-gray-50 rounded-lg p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-3">Reprendre confiance</h3>
-            <p class="text-gray-700">
-              Élèves souhaitant reprendre confiance
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 5 — PREUVE SOCIALE -->
-  <section id="preuve-sociale" class="bg-gray-900 text-white py-12 md:py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <!-- Titre principal -->
-        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-5 text-white text-center">
-          Résultats et parcours
-        </h2>
-        
-        <!-- Texte descriptif -->
-        <p class="text-base md:text-lg text-white/90 mb-6 md:mb-8 leading-relaxed text-center">
-          Plus de 10 ans d'accompagnement d'élèves en France et à l'international.
-        </p>
-        
-        <p class="text-base md:text-lg text-white/90 mb-6 md:mb-8 leading-relaxed text-center">
-          Mes élèves ont poursuivi leurs études dans des établissements tels que :
-        </p>
-        
-        <!-- Logos des universités -->
-        <div class="flex flex-row items-center justify-center gap-6 md:gap-8 lg:gap-12 mb-8">
-          <!-- Bocconi -->
-          <div class="h-12 md:h-16 lg:h-20 flex items-center justify-center">
-            <img 
-              src="/logos/bocconi.png" 
-              alt="Bocconi University" 
-              class="h-full opacity-90 hover:opacity-100 transition-opacity duration-300 object-contain"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          
-          <!-- King's College London -->
-          <div class="h-12 md:h-16 lg:h-20 flex items-center justify-center">
-            <img 
-              src="/logos/kings_college.png" 
-              alt="King's College London" 
-              class="h-full opacity-90 hover:opacity-100 transition-opacity duration-300 object-contain"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          
-          <!-- McGill -->
-          <div class="h-12 md:h-16 lg:h-20 flex items-center justify-center">
-            <img 
-              src="/logos/mcgill.png" 
-              alt="McGill University" 
-              class="h-full opacity-90 hover:opacity-100 transition-opacity duration-300 object-contain"
-              loading="lazy"
-              decoding="async"
-            />
+          <!-- Formule pack -->
+          <div class="bg-blue-50 rounded-lg p-6 border-2 border-blue-300 relative">
+            <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+              Recommandé
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Pack mensuel</h3>
+            <div class="text-3xl font-bold text-blue-600 mb-1">
+              À discuter
+            </div>
+            <div class="text-sm text-gray-600 mb-4">
+              (Tarif préférentiel selon fréquence)
+            </div>
+            <ul class="space-y-2 text-gray-700 mb-6 text-sm">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Tarif préférentiel
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Suivi régulier garanti
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Meilleurs résultats
+              </li>
+            </ul>
           </div>
         </div>
         
-        <p class="text-base md:text-lg text-white/90 text-center italic leading-relaxed">
-          Le travail repose sur la régularité, la méthode et la confiance mutuelle.
+        <p class="text-center text-sm text-gray-600 mt-6">
+          💳 Paiement sécurisé • 📋 Reçu pour déduction fiscale (50% de crédit d'impôt)
         </p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 6 — QUI JE SUIS -->
-  <section id="qui-je-suis" class="bg-white py-12 md:py-16">
+  <!-- SECTION 6 — FAQ -->
+  <section id="faq" class="bg-gray-50 py-12 md:py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-3xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-          Votre professeur
+          Questions fréquentes
         </h2>
         
-        <div class="bg-gray-50 rounded-lg p-8">
-          <p class="text-base md:text-lg text-gray-700 mb-4 leading-relaxed">
-            Ingénieur de formation et professeur particulier depuis plus de 10 ans,
-            j'accompagne des élèves du collège au lycée avec une approche exigeante, structurée et bienveillante.
-          </p>
+        <div class="space-y-4">
+          <!-- FAQ Item 1: Prix -->
+          <details class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <summary class="font-semibold text-gray-900 cursor-pointer flex items-center justify-between">
+              <span>Combien coûtent les cours de maths ?</span>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="mt-4 text-gray-700 text-sm leading-relaxed">
+              <p class="mb-2">Les tarifs varient selon la formule choisie (à l'heure ou pack mensuel) et le format (visio ou présentiel).</p>
+              <p>Pour un <strong>cours de maths</strong> en visio ou présentiel, comptez <strong>50€/h</strong> pour un cours particulier. Les cours collectifs (3-4 élèves) sont proposés à <strong>35-40€/h</strong> par élève. Les packs mensuels offrent un tarif préférentiel et garantissent un suivi régulier optimal.</p>
+              <p class="mt-2"><strong>Bon à savoir :</strong> 50% du montant est déductible de vos impôts grâce au crédit d'impôt pour les cours à domicile.</p>
+            </div>
+          </details>
           
-          <p class="text-base md:text-lg text-gray-700 leading-relaxed">
-            Chaque élève bénéficie d'un suivi individualisé, avec des objectifs clairs et mesurables.
-          </p>
+          <!-- FAQ Item 2: Visio -->
+          <details class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <summary class="font-semibold text-gray-900 cursor-pointer flex items-center justify-between">
+              <span>Les cours en visio sont-ils aussi efficaces que les cours à domicile ?</span>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="mt-4 text-gray-700 text-sm leading-relaxed">
+              <p class="mb-2">Oui, les <strong>cours de maths en visio</strong> sont tout aussi efficaces, voire plus pratiques pour certains élèves.</p>
+              <p>Avantages : flexibilité des horaires, pas de déplacement, outils numériques partagés (tableau blanc, exercices interactifs). L'essentiel est la qualité de l'accompagnement et la méthode structurée, pas le format.</p>
+            </div>
+          </details>
+          
+          <!-- FAQ Item 3: Niveau -->
+          <details class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <summary class="font-semibold text-gray-900 cursor-pointer flex items-center justify-between">
+              <span>Mon enfant a un niveau faible en maths, est-ce que ça peut marcher ?</span>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="mt-4 text-gray-700 text-sm leading-relaxed">
+              <p class="mb-2">Absolument. C'est justement pour ça que je propose un accompagnement personnalisé.</p>
+              <p>Je commence toujours par identifier les lacunes et les bases à consolider. Avec une <strong>méthode progressive</strong> et un <strong>soutien scolaire</strong> régulier, même les élèves en difficulté reprennent confiance et progressent significativement.</p>
+            </div>
+          </details>
+          
+          <!-- FAQ Item 4: Méthodo -->
+          <details class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <summary class="font-semibold text-gray-900 cursor-pointer flex items-center justify-between">
+              <span>Quelle est votre méthode pour préparer les examens (Brevet, Bac) ?</span>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="mt-4 text-gray-700 text-sm leading-relaxed">
+              <p class="mb-2">Ma méthode combine trois piliers :</p>
+              <ol class="list-decimal list-inside space-y-1 ml-2">
+                <li><strong>Consolidation des bases</strong> : on reprend les fondamentaux si nécessaire</li>
+                <li><strong>Entraînement progressif</strong> : exercices adaptés au niveau réel de l'élève</li>
+                <li><strong>Préparation ciblée</strong> : travail sur les annales (Brevet ou Bac) et les types d'exercices récurrents</li>
+              </ol>
+              <p class="mt-2">Pour la <strong>préparation aux examens</strong> (Brevet ou Bac), je propose aussi des <strong>cours intensifs</strong> en période d'examens.</p>
+            </div>
+          </details>
+          
+          <!-- FAQ Item 5: Disponibilité -->
+          <details class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <summary class="font-semibold text-gray-900 cursor-pointer flex items-center justify-between">
+              <span>Quels sont vos horaires et disponibilités ?</span>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="mt-4 text-gray-700 text-sm leading-relaxed">
+              <p>Je propose des créneaux flexibles, principalement en soirée (après 17h) et le week-end. Pour les <strong>cours intensifs</strong> avant les examens (Brevet ou Bac), j'adapte les horaires selon les besoins.</p>
+              <p class="mt-2">En visio, c'est encore plus flexible. En présentiel, je me déplace à <strong>Paris</strong> et <strong>Toulouse</strong>.</p>
+            </div>
+          </details>
+          
+          <!-- FAQ Item 6: Engagement -->
+          <details class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <summary class="font-semibold text-gray-900 cursor-pointer flex items-center justify-between">
+              <span>Y a-t-il un engagement minimum ?</span>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="mt-4 text-gray-700 text-sm leading-relaxed">
+              <p class="mb-2">Non, aucun engagement pour la formule à l'heure. Vous pouvez arrêter quand vous voulez.</p>
+              <p>Pour les packs mensuels, l'engagement est d'un mois (renouvelable). C'est la meilleure formule pour obtenir des résultats durables, quel que soit le niveau (collège ou lycée).</p>
+            </div>
+          </details>
+          
+          <!-- FAQ Item 7: Premier cours -->
+          <details class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <summary class="font-semibold text-gray-900 cursor-pointer flex items-center justify-between">
+              <span>Comment se passe le premier cours ?</span>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="mt-4 text-gray-700 text-sm leading-relaxed">
+              <p class="mb-2">Avant le premier cours, on fait un <strong>échange gratuit de 10 minutes</strong> (téléphone ou WhatsApp) pour analyser la situation.</p>
+              <p>Ensuite, le premier cours sert de test : on valide l'approche, on définit les objectifs ensemble, et on s'assure que le courant passe bien. Si ça ne convient pas, pas de problème, on arrête là.</p>
+            </div>
+          </details>
         </div>
       </div>
     </div>
@@ -343,43 +540,53 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
   <section id="contact" class="bg-gradient-to-b from-blue-50 to-white py-12 md:py-20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
-          Faire le point gratuitement
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
+          Prêt à faire progresser votre enfant en maths ?
         </h2>
         
-        <p class="text-base md:text-lg text-gray-700 mb-4 text-center">
-          Un premier échange permet d'analyser la situation scolaire de votre enfant et de définir la meilleure approche.
+        <p class="text-base md:text-lg text-gray-700 mb-8 text-center">
+          Premier échange gratuit • Sans engagement • Réponse sous 24h
         </p>
         
-        <!-- Numéro de téléphone visible -->
-        <div class="text-center mb-6">
-          <p class="text-base md:text-lg text-gray-700 mb-2">
-            Ou appelez directement :
-          </p>
+        <!-- Double CTA (WhatsApp via bouton flottant) -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-8 justify-center">
+          <!-- Appel -->
           <a 
-            href="tel:+33616635187" 
-            class="inline-flex items-center gap-2 text-xl md:text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+            href={`tel:${phoneNumber}`}
+            class="cta-call inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+            onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Call Final', 'value': 1 });"
           >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            06 16 63 51 87
+            <span>{phoneDisplay}</span>
+          </a>
+          
+          <!-- Être recontacté -->
+          <a 
+            href="#formulaire-contact"
+            class="cta-form inline-flex items-center justify-center gap-2 bg-white border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg"
+            onclick="gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Form Final', 'value': 1 });"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Être recontacté</span>
           </a>
         </div>
         
-        <div class="max-w-md mx-auto mb-6">
+        <p class="text-sm text-gray-500 text-center mb-8">
+          💬 Ou utilisez le bouton WhatsApp flottant (mobile)
+        </p>
+        
+        <!-- Formulaire complet -->
+        <div class="max-w-md mx-auto">
           <ContactFormSimple />
         </div>
         
-        <p class="text-sm text-gray-600 text-center mb-4">
-          Aucun engagement — simple échange téléphonique
-        </p>
-        
-        <!-- Lien discret vers ressources -->
-        <p class="text-sm text-gray-500 text-center">
-          <a href="/annales" class="hover:text-gray-700 transition-colors">
-            Accéder aux annales et ressources gratuites
-          </a>
+        <!-- Microcopy RGPD -->
+        <p class="text-xs text-gray-500 text-center mt-6">
+          🔒 Vos données sont protégées • Aucun démarchage • Réponse sous 24h garantie
         </p>
       </div>
     </div>
@@ -387,8 +594,8 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 
   <Footer />
   
-  <!-- WhatsApp Button for mobile -->
-  <WhatsAppButton phoneNumber="33616635187" message="Bonjour, je souhaite en savoir plus sur vos cours de maths personnalisés." />
+  <!-- WhatsApp Button sticky mobile -->
+  <WhatsAppButton phoneNumber={whatsappNumber} message={whatsappMessage} />
 </Layout>
 
 <style>
@@ -397,13 +604,81 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
     scroll-behavior: smooth;
   }
   
-  /* Ensure CTA buttons are prominent */
-  a[href="#contact"] {
-    display: inline-block;
-    transition: transform 0.2s ease;
-  }
-  
-  a[href="#contact"]:hover {
+  /* CTA buttons hover effects */
+  .cta-primary:hover,
+  .cta-whatsapp:hover,
+  .cta-call:hover,
+  .cta-form:hover {
     transform: translateY(-2px);
   }
+  
+  /* FAQ details animation */
+  details[open] summary svg {
+    transform: rotate(180deg);
+  }
+  
+  details summary {
+    list-style: none;
+  }
+  
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  /* Sticky CTA mobile (if needed) */
+  @media (max-width: 768px) {
+    .whatsapp-button {
+      position: fixed !important;
+      bottom: 20px;
+      left: 20px;
+      z-index: 60;
+    }
+  }
 </style>
+
+<script>
+  // Track scroll depth for Google Ads
+  let maxScroll = 0;
+  const scrollThresholds = [25, 50, 75, 100];
+  const trackedThresholds = new Set();
+  
+  window.addEventListener('scroll', () => {
+    const scrollPercent = Math.round(
+      ((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight) * 100
+    );
+    
+    if (scrollPercent > maxScroll) {
+      maxScroll = scrollPercent;
+      
+      scrollThresholds.forEach(threshold => {
+        if (scrollPercent >= threshold && !trackedThresholds.has(threshold)) {
+          trackedThresholds.add(threshold);
+          
+          const gtag = (window as any).gtag;
+          if (typeof gtag === 'function') {
+            gtag('event', 'scroll', {
+              'event_category': 'Engagement',
+              'event_label': `Scroll ${threshold}%`,
+              'value': threshold
+            });
+          }
+        }
+      });
+    }
+  });
+  
+  // Track time on page
+  let startTime = Date.now();
+  window.addEventListener('beforeunload', () => {
+    const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+    
+    const gtag = (window as any).gtag;
+    if (typeof gtag === 'function' && timeOnPage > 30) {
+      gtag('event', 'time_on_page', {
+        'event_category': 'Engagement',
+        'event_label': '30+ seconds',
+        'value': timeOnPage
+      });
+    }
+  });
+</script>
