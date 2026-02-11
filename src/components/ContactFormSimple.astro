@@ -61,11 +61,11 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
     id="submit-button-simple"
     class="w-full bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 text-sm shadow-lg hover:shadow-xl transform hover:scale-105"
   >
-    Être rappelé gratuitement
+    Demander un premier échange gratuit
   </button>
   
   <p class="text-xs text-gray-500 text-center mt-2">
-    Réponse sous 24h • Sans engagement
+    Réponse sous 24h • Sans engagement • Par WhatsApp ou email
   </p>
 </form>
 
@@ -99,7 +99,7 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
     if (!messageDiv || !messageText || !formIcon || !form) return;
     
     const formElement = form as HTMLFormElement;
-    const originalText = submitButton?.textContent || 'Être rappelé gratuitement';
+    const originalText = submitButton?.textContent || 'Demander un premier échange gratuit';
     
     // Show loading state
     if (submitButton) {
@@ -169,7 +169,7 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
         formIcon.classList.add('text-green-600');
         formIcon.classList.remove('text-red-600');
         
-        messageText.textContent = "Merci ! Je vous rappelle sous 24h pour un premier échange gratuit.";
+        messageText.textContent = "Merci ! Je vous contacte sous 24h par WhatsApp ou email pour un premier échange gratuit.";
         messageText.className = 'text-sm font-medium text-green-800';
         
         formElement.reset();
