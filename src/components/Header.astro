@@ -31,9 +31,10 @@
             <!-- Caret/Triangle -->
             <div class="mega-menu-caret" data-caret-for="dropdown-cours-button"></div>
             <!-- Panel Content -->
-            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden min-w-[400px]">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden min-w-[720px]">
               <div class="p-8">
-                <div class="grid grid-cols-1 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <!-- Modalités de cours -->
                   <div>
                     <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Modalités de cours</h3>
                     <div class="space-y-2">
@@ -45,7 +46,7 @@
                       </a>
                       <a href="/cours-paris" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
                         <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 111.314 0z" />
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                         <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours à Paris</span>
@@ -59,6 +60,56 @@
                       </a>
                     </div>
                   </div>
+
+                  <!-- Collège -->
+                  <div>
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Collège</h3>
+                    <div class="space-y-2">
+                      <a href="/3eme" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">3ème – Cours & Exercices</span>
+                      </a>
+                      <a href="/3eme/annales-brevet" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">3ème – Annales du brevet</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Lycée -->
+                  <div>
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Lycée</h3>
+                    <div class="space-y-2">
+                      <a href="/seconde" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Seconde – Cours & Exercices</span>
+                      </a>
+                      <a href="/premiere" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Première – Cours & Exercices</span>
+                      </a>
+                      <a href="/terminale" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Terminale – Cours & Exercices</span>
+                      </a>
+                      <a href="/terminale/annales-bac" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">BAC – Annales</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -68,125 +119,14 @@
         <a href="/tarifs" class="nav-link text-sm">
           Tarifs
         </a>
-        
-        <!-- Annales -->
-        <a href="/annales" class="nav-link text-sm flex items-center gap-1">
-          <span>Annales</span>
-          <svg class="w-4 h-4 text-yellow-500 fill-current" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
+
+        <!-- Python (enseignement supérieur) -->
+        <a 
+          href="/enseignement-python" 
+          class="nav-link text-sm"
+        >
+          Python
         </a>
-        
-        <!-- Collège Mega Menu -->
-        <div class="relative mega-menu-group" data-menu="college">
-          <button class="mega-menu-trigger nav-link text-sm flex items-center space-x-1" id="dropdown-college-button">
-            <span>Collège</span>
-            <svg class="mega-menu-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="mega-menu-panel hidden fixed z-50" id="dropdown-college" data-trigger-id="dropdown-college-button" style="left: 50%; transform: translateX(-50%);">
-            <!-- Caret/Triangle -->
-            <div class="mega-menu-caret" data-caret-for="dropdown-college-button"></div>
-            <!-- Panel Content -->
-            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden min-w-[600px]">
-              <div class="p-8">
-                <div class="grid grid-cols-1 gap-8">
-                  <!-- 3ème Column -->
-                  <div>
-                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">3ème</h3>
-                    <div class="space-y-2">
-                      <a href="/3eme" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours & Exercices</span>
-                      </a>
-                      <a href="/3eme/annales-brevet" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Annales du brevet</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Lycée Mega Menu -->
-        <div class="relative mega-menu-group" data-menu="lycee">
-          <button class="mega-menu-trigger nav-link text-sm flex items-center space-x-1" id="dropdown-lycee-button">
-            <span>Lycée</span>
-            <svg class="mega-menu-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="mega-menu-panel hidden fixed z-50" id="dropdown-lycee" data-trigger-id="dropdown-lycee-button" style="left: 50%; transform: translateX(-50%);">
-            <!-- Caret/Triangle -->
-            <div class="mega-menu-caret" data-caret-for="dropdown-lycee-button"></div>
-            <!-- Panel Content -->
-            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden min-w-[800px]">
-              <div class="p-8">
-                <div class="grid grid-cols-4 gap-8">
-                  <!-- Seconde Column -->
-                  <div>
-                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Seconde</h3>
-                    <div class="space-y-2">
-                      <a href="/seconde" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours & Exercices</span>
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <!-- Première Column -->
-                  <div>
-                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Première</h3>
-                    <div class="space-y-2">
-                      <a href="/premiere" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours & Exercices</span>
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <!-- Terminale Column -->
-                  <div>
-                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Terminale</h3>
-                    <div class="space-y-2">
-                      <a href="/terminale" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Cours & Exercices</span>
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <!-- BAC Column -->
-                  <div>
-                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">BAC</h3>
-                    <div class="space-y-2">
-                      <a href="/terminale/annales-bac" class="mega-menu-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        <span class="text-sm text-gray-700 group-hover:text-blue-600 font-medium">Annales du bac</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       
       <!-- CTA Button - appears on scroll -->
@@ -230,56 +170,28 @@
           <div class="hidden pl-4 mt-2 space-y-2" id="mobile-dropdown-cours">
             <a href="/cours-maths-visio" class="block text-sm py-1 text-gray-600 pl-4">Cours en visio</a>
             <a href="/cours-paris" class="block text-sm py-1 text-gray-600 pl-4">Cours à Paris</a>
+            <a href="/cours-collectifs-maths" class="block text-sm py-1 text-gray-600 pl-4">Cours collectifs</a>
+
+            <div class="text-xs font-semibold text-gray-500 uppercase mb-1 mt-3">Collège</div>
+            <a href="/3eme" class="block text-sm py-1 text-gray-600 pl-4">3ème – Cours & Exercices</a>
+            <a href="/3eme/annales-brevet" class="block text-sm py-1 text-gray-600 pl-4">3ème – Annales du brevet</a>
+
+            <div class="text-xs font-semibold text-gray-500 uppercase mb-1 mt-3">Lycée</div>
+            <a href="/seconde" class="block text-sm py-1 text-gray-600 pl-4">Seconde – Cours & Exercices</a>
+            <a href="/premiere" class="block text-sm py-1 text-gray-600 pl-4">Première – Cours & Exercices</a>
+            <a href="/terminale" class="block text-sm py-1 text-gray-600 pl-4">Terminale – Cours & Exercices</a>
+            <a href="/terminale/annales-bac" class="block text-sm py-1 text-gray-600 pl-4">BAC – Annales</a>
           </div>
         </div>
         
         <a href="/tarifs" class="nav-link-mobile block text-sm py-2">
           Tarifs
         </a>
-        
-        <!-- Annales Mobile -->
-        <a href="/annales" class="nav-link-mobile block text-sm py-2 flex items-center gap-2">
-          <span>Annales</span>
-          <svg class="w-4 h-4 text-yellow-500 fill-current" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
+
+        <!-- Enseignement supérieur Mobile -->
+        <a href="/enseignement-python" class="nav-link-mobile block text-sm py-2">
+          Python
         </a>
-        
-        <!-- Collège Mobile -->
-        <div class="mobile-dropdown">
-          <button class="nav-link-mobile block text-sm py-2 w-full text-left flex items-center justify-between" id="mobile-dropdown-college-button">
-            <span>Collège</span>
-            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="hidden pl-4 mt-2 space-y-2" id="mobile-dropdown-college">
-            <div class="text-xs font-semibold text-gray-500 uppercase mb-1">3ème</div>
-            <a href="/3eme" class="block text-sm py-1 text-gray-600 pl-4">Cours & Exercices</a>
-            <a href="/3eme/annales-brevet" class="block text-sm py-1 text-gray-600 pl-4">Annales du brevet</a>
-          </div>
-        </div>
-        
-        <!-- Lycée Mobile -->
-        <div class="mobile-dropdown">
-          <button class="nav-link-mobile block text-sm py-2 w-full text-left flex items-center justify-between" id="mobile-dropdown-lycee-button">
-            <span>Lycée</span>
-            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="hidden pl-4 mt-2 space-y-2" id="mobile-dropdown-lycee">
-            <div class="text-xs font-semibold text-gray-500 uppercase mb-1">Seconde</div>
-            <a href="/seconde" class="block text-sm py-1 text-gray-600 pl-4">Cours & Exercices</a>
-            
-            <div class="text-xs font-semibold text-gray-500 uppercase mb-1 mt-2">Première</div>
-            <a href="/premiere" class="block text-sm py-1 text-gray-600 pl-4">Cours & Exercices</a>
-            
-            <div class="text-xs font-semibold text-gray-500 uppercase mb-1 mt-2">Terminale</div>
-            <a href="/terminale" class="block text-sm py-1 text-gray-600 pl-4">Cours & Exercices</a>
-            <a href="/terminale/annales-bac" class="block text-sm py-1 text-gray-600 pl-4">Annales du bac</a>
-          </div>
-        </div>
       </div>
     </div>
   </nav>
@@ -457,8 +369,6 @@
 
   // Mobile dropdowns
   const mobileDropdowns = [
-    { button: 'mobile-dropdown-college-button', menu: 'mobile-dropdown-college' },
-    { button: 'mobile-dropdown-lycee-button', menu: 'mobile-dropdown-lycee' },
     { button: 'mobile-dropdown-cours-button', menu: 'mobile-dropdown-cours' }
   ];
 

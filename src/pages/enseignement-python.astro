@@ -1,0 +1,544 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<Layout 
+  title="Enseignement Python pour l'enseignement supérieur | revise-tes-maths.fr"
+  description="Enseignant indépendant en Python pour l'enseignement supérieur. Modules débutant et intermédiaire, orientés cas concrets et projets pour des étudiants de niveau Licence et Master."
+>
+  <Header />
+  
+  <!-- Breadcrumbs -->
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Enseignement supérieur' },
+            { label: 'Python & SQL' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white py-14 md:py-20 overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-20 right-10 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 right-1/3 w-64 h-64 bg-emerald-400/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-[1.4fr,1fr] gap-10 items-center">
+        <div>
+          <p class="inline-flex items-center text-xs font-semibold tracking-wide uppercase text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 px-3 py-1 rounded-full mb-4">
+            Enseignement supérieur • Python
+          </p>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+            Enseignant indépendant en Python<br class="hidden md:block" />
+            pour l'enseignement supérieur
+          </h1>
+          <p class="text-base md:text-lg text-slate-200/90 leading-relaxed mb-5">
+            J'accompagne des <strong>étudiants de niveau Licence et Master</strong> dans l'appropriation de Python et SQL,
+            avec une approche <strong>résolument pragmatique</strong> : cas réels, projets guidés et mise en pratique
+            immédiate pour le <strong>marketing digital</strong>, la <strong>modélisation financière</strong> et
+            l'<strong>analyse des risques</strong>.
+          </p>
+          <p class="text-sm md:text-base text-slate-200/90 leading-relaxed mb-6">
+            Les modules sont pensés pour des <strong>business schools</strong> et écoles proposant des cursus 
+            BBS / MBA, en cohérence avec les attentes académiques (Licence, Master) et les contraintes opérationnelles des étudiants.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-7">
+            <div class="bg-slate-900/60 border border-slate-700 rounded-xl p-4">
+              <p class="text-xs font-semibold text-slate-400 mb-1 uppercase tracking-wide">
+                Domaines couverts
+              </p>
+              <p class="text-sm text-slate-50">
+                Python débutant & intermédiaire<br />SQL débutant & intermédiaire
+              </p>
+            </div>
+            <div class="bg-slate-900/60 border border-slate-700 rounded-xl p-4">
+              <p class="text-xs font-semibold text-slate-400 mb-1 uppercase tracking-wide">
+                Public cible
+              </p>
+              <p class="text-sm text-slate-50">
+                Étudiants Licence & Master<br />Programmes BBS / MBA
+              </p>
+            </div>
+            <div class="bg-slate-900/60 border border-slate-700 rounded-xl p-4">
+              <p class="text-xs font-semibold text-slate-400 mb-1 uppercase tracking-wide">
+                Format d'intervention
+              </p>
+              <p class="text-sm text-slate-50">
+                Prestataire indépendant • Temps partiel<br />Présentiel en Île-de-France
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+            <a 
+              href="#contact"
+              class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-emerald-400 text-slate-950 font-semibold text-sm md:text-base shadow-lg shadow-emerald-500/30 hover:bg-emerald-300 transition-all duration-200"
+            >
+              Discuter d'un module Python / SQL
+              <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <p class="text-xs md:text-sm text-slate-300">
+              Compatibilité avec un <strong>contrat de prestation de service</strong> (statut indépendant / freelance).
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-700 rounded-2xl p-5 md:p-6 shadow-2xl shadow-black/40">
+          <h2 class="text-sm font-semibold text-slate-200 uppercase tracking-wide mb-4">
+            Profil en synthèse
+          </h2>
+          <ul class="space-y-3 text-sm text-slate-100">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-0.5 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>
+                <strong>Ingénieur de formation (Bac+5)</strong>, spécialisé en systèmes complexes et analyse de données.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-0.5 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>
+                <strong>Plusieurs années d'utilisation quotidienne de Python et SQL</strong> dans des contextes de data, simulation et analyse.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-0.5 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>
+                <strong>Expérience significative de l'enseignement</strong> : accompagnement individuel et petits groupes depuis 2015, du lycée à l'enseignement supérieur.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-0.5 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>
+                <strong>Pédagogie adaptée à des publics non-informaticiens</strong> : étudiants en marketing digital, finance, management, etc.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-0.5 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>
+                <strong>Approche orientée compétences</strong> : objectifs mesurables à chaque module, évaluation continue et projets finaux notés.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approche pédagogique -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Une approche pragmatique, structurée et adaptée à l'enseignement supérieur
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          L'objectif des modules Python et SQL n'est pas de former des ingénieurs logiciels, mais de donner aux étudiants 
+          des <strong>outils opérationnels</strong> pour analyser des données, automatiser des tâches et dialoguer efficacement
+          avec des équipes techniques. Mon approche repose sur quatre principes :
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-2">
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              1. Cas réels issus du marketing, de la finance et des risques
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Chaque notion est introduite à partir d'un <strong>cas métier concret</strong> : analyse de campagnes webmarketing,
+              suivi de performance d'un portefeuille, étude de scénarios de risque. Les étudiants manipulent des jeux de données
+              proches de ceux qu'ils rencontreront en entreprise.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              2. Progression graduelle et sécurisante
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Les modules débutants posent des <strong>bases solides</strong> (syntaxe, types, structures de données) avant
+              d'aller vers des sujets plus techniques. Les étudiants sont accompagnés pas à pas, avec des feuilles d'exercices
+              progressives et des corrections détaillées.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              3. Pédagogie active et projets de groupe
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Les séances alternent <strong>mini-apports théoriques</strong>, <strong>coding live</strong>, travaux individuels
+              et projets de groupe. Les étudiants construisent progressivement un projet fil rouge qui sert de support à 
+              l'évaluation finale.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              4. Adaptation au niveau de chaque promotion
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              En début de module, un <strong>diagnostic de niveau</strong> est réalisé (quiz, mini-exercices). Il permet
+              d'ajuster les attentes, le rythme et la difficulté des projets aux profils des étudiants (BBS, MBA, spécialisations).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parcours professionnel & expérience d'enseignement -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Pourquoi je suis légitime pour enseigner Python et SQL en Licence / Master
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Mon positionnement repose sur un double ancrage : <strong>une pratique quotidienne de Python et SQL dans des projets exigeants</strong>
+          (simulation scientifique, data, backend) et <strong>une expérience solide de l'enseignement</strong> auprès de nombreux élèves,
+          du lycée à l'enseignement supérieur.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Parcours académique compatible avec l'enseignement supérieur
+            </h3>
+            <ul class="list-disc pl-5 text-sm md:text-base text-gray-700 space-y-1">
+              <li><strong>Bac+5</strong> : Master 2 « Outils et Systèmes de l'Astronomie et de l'Espace » à Sorbonne Université.</li>
+              <li>Maîtrise de physique fondamentale avec fort contenu en <strong>mathématiques appliquées</strong> (probabilités, statistiques, optimisation).</li>
+              <li>Licence de mathématiques et classes préparatoires scientifiques (MPSI–MP).</li>
+              <li>Formation scientifique rigoureuse, parfaitement alignée avec les attentes de programmes Licence / Master.</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              Pratique avancée de Python & SQL au quotidien
+            </h3>
+            <ul class="list-disc pl-5 text-sm md:text-base text-gray-700 space-y-1">
+              <li>Plusieurs années en tant que <strong>développeur backend Python / ingénieur R&D</strong> sur des simulateurs complexes (spatial, télécom, hyperspectral).</li>
+              <li>Utilisation intensive de <strong>Python</strong> (NumPy, pandas, SciPy, FastAPI, tests Pytest, dataclasses, typage) pour le calcul scientifique, la data et les API.</li>
+              <li>Pratique de <strong>bases de données relationnelles</strong> (PostgreSQL, SQLite) et d'ORM (SQLAlchemy) pour des applications de production.</li>
+              <li>Expérience de CI/CD, revue de code et qualité logicielle, utile pour transmettre des bonnes pratiques aux étudiants.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">
+            Expérience d'enseignement et d'accompagnement d'élèves en Python et en mathématiques
+          </h3>
+          <ul class="list-disc pl-5 text-sm md:text-base text-gray-700 space-y-1">
+            <li>Plus de <strong>dix ans d'accompagnement</strong> d'élèves et d'étudiants, en mathématiques et en programmation (Python).</li>
+            <li>Suivi individuel de nombreux élèves de lycée ayant ensuite intégré des formations sélectives (universités internationales, classes préparatoires, écoles d'ingénieurs).</li>
+            <li>Accompagnement d'élèves ayant poursuivi leurs études dans des établissements comme <strong>ESADE</strong>, <strong>Bocconi University</strong> ou <strong>McGill University</strong>, ce qui donne une bonne compréhension des attentes de l'enseignement supérieur international.</li>
+            <li>Mise en place de <strong>programmes structurés</strong> : diagnostic initial, feuille de route, exercices progressifs, projets finaux.</li>
+            <li>Capacité à vulgariser des notions techniques pour des publics non-informaticiens (marketing digital, finance, management).</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 rounded-r-xl p-5">
+          <p class="text-sm md:text-base text-gray-800 leading-relaxed">
+            Concrètement, ce profil me permet d'intervenir auprès d'étudiants de <strong>niveau Licence et Master</strong>, en France ou dans un contexte international,
+            avec une vraie compréhension des exigences académiques et des attentes des écoles de commerce et d'ingénierie.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenus des modules Python / SQL -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Contenu des modules : Python débutant / intermédiaire & SQL débutant / intermédiaire
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8">
+          Les modules sont construits pour couvrir les compétences attendues chez des étudiants de <strong>niveau Licence et Master</strong>,
+          tout en restant accessibles à des profils orientés métier (marketing, finance, gestion de projet, data for business).
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <!-- Python débutant -->
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Python débutant
+            </h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Objectif : rendre les étudiants autonomes sur les bases indispensables à toute utilisation de Python en business.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• Installation de l'environnement (VS Code, notebooks) et bonnes pratiques de base</li>
+              <li>• Types fondamentaux, variables, expressions, structures de contrôle (conditions, boucles)</li>
+              <li>• Listes, dictionnaires, ensembles, tuples et manipulation de collections</li>
+              <li>• Fonctions, organisation d'un script, lisibilité et commentaires</li>
+              <li>• Initiation à <strong>NumPy</strong> et <strong>pandas</strong> pour la manipulation de données tabulaires</li>
+              <li>• Lecture / écriture de fichiers CSV et Excel</li>
+            </ul>
+          </div>
+
+          <!-- Python intermédiaire -->
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Python intermédiaire
+            </h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Objectif : utiliser Python comme <strong>outil d'analyse et d'automatisation</strong> pour des cas métiers.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• Nettoyage de données, gestion des valeurs manquantes, filtrage et agrégations avec pandas</li>
+              <li>• Visualisation de données (matplotlib / seaborn) pour le marketing et la finance</li>
+              <li>• Notions de base sur les API et le web scraping léger (ex : récupérer des données de campagnes)</li>
+              <li>• Structuration de petits projets : arborescence, modules, réutilisation de code</li>
+              <li>• Introduction à la modélisation simple (régressions basiques, scoring) avec scikit-learn</li>
+              <li>• Bonnes pratiques de versionning (Git) pour des travaux de groupe</li>
+            </ul>
+          </div>
+
+          <!-- SQL débutant -->
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              SQL débutant
+            </h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Objectif : comprendre et interroger une base de données relationnelle en autonomie.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• Modèle relationnel, tables, clés primaires et étrangères</li>
+              <li>• Requêtes simples : <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">SELECT</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">WHERE</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">ORDER BY</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">LIMIT</code></li>
+              <li>• Filtres, conditions composées et opérateurs logiques</li>
+              <li>• Agrégations simples : <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">COUNT</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">SUM</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">AVG</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">GROUP BY</code></li>
+              <li>• Introduction aux <strong>JOINS</strong> (INNER, LEFT) à partir d'exemples concrets</li>
+            </ul>
+          </div>
+
+          <!-- SQL intermédiaire -->
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              SQL intermédiaire
+            </h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Objectif : être capable de construire des requêtes avancées pour le reporting et l'analyse.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• JOINS multiples et sous-requêtes corrélées</li>
+              <li>• Fenêtres analytiques simples (window functions) selon le niveau de la promotion</li>
+              <li>• Création de vues pour le reporting marketing ou financier</li>
+              <li>• Optimisation basique des requêtes (indices, bonnes pratiques)</li>
+              <li>• Cas pratiques : indicateurs de performance, cohortes, scoring de risque</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 rounded-r-xl p-5">
+          <p class="text-sm md:text-base text-gray-800 leading-relaxed">
+            Les volumes horaires sont adaptés aux contraintes des programmes (par exemple
+            <strong>18 à 30 heures</strong> par module). Chaque enseignement peut être décliné en 
+            <strong>version intensive</strong> (semaines bloquées) ou <strong>version étalée</strong> 
+            (2–3h hebdomadaires).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exemples de projets et d'évaluation -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Projets, évaluation et livrables attendus
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Pour ancrer les apprentissages, chaque module est organisé autour d'un <strong>projet fil rouge</strong> 
+          évalué, complété par des quiz et contrôles continus. Quelques exemples de dispositifs possibles :
+        </p>
+
+        <div class="space-y-5">
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Projet Python – analyse de données
+            </h3>
+            <p class="text-gray-700 text-sm md:text-base leading-relaxed mb-2">
+              Projet fil rouge simple et concret autour d'un jeu de données (marketing, finance ou autre cas métier) :
+            </p>
+            <ul class="list-disc pl-5 text-sm md:text-base text-gray-700 space-y-1">
+              <li>Chargement et nettoyage d'un jeu de données (CSV ou Excel).</li>
+              <li>Exploration des données : filtrage, regroupements, premiers indicateurs descriptifs.</li>
+              <li>Construction de quelques graphiques lisibles (évolutions, comparaisons, répartitions).</li>
+              <li>Rédaction d'un court support (quelques slides ou un notebook commenté) avec conclusions et pistes d'action.</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Modalités d'évaluation possibles
+            </h3>
+            <ul class="list-disc pl-5 text-sm md:text-base text-gray-700 space-y-1">
+              <li>Quiz réguliers pour valider les acquis techniques (syntaxe, concepts clés)</li>
+              <li>Évaluations pratiques en salle informatique (résolution d'exercices sur machine)</li>
+              <li>Notation de projets individuels et de groupe (code, documentation, restitution orale)</li>
+              <li>Prise en compte de la participation et de la progression de chaque étudiant</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modalités d'intervention -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Modalités d'intervention et organisation
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Statut et contrat
+            </h3>
+            <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+              <li>Intervention en tant que <strong>prestataire indépendant / freelance</strong></li>
+              <li>Contrat de prestation de service avec l'établissement</li>
+              <li>Adaptation aux procédures administratives de l'école (feuilles d'émargement, relevés de notes, etc.)</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Format et calendrier
+            </h3>
+            <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+              <li>Interventions sur une période de quelques semaines à plusieurs mois</li>
+              <li>Possibilité de blocs intensifs (1–2 journées consécutives) ou séances hebdomadaires</li>
+              <li>Volume horaire ajusté en fonction du nombre d'ECTS et du niveau de la promotion</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Lieu d'intervention
+            </h3>
+            <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+              <li>Interventions en <strong>présentiel en Île-de-France</strong>, notamment à Paris et proche couronne</li>
+              <li>Possibilité de combiner présentiel et distanciel si l'organisation le nécessite</li>
+              <li>Cours réalisés en français, avec supports en français ou en anglais selon le programme</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Rémunération
+            </h3>
+            <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+              <li>Facturation horaire ou forfaitaire selon le module</li>
+              <li>Fourchette de rémunération en cohérence avec les pratiques du secteur (environ <strong>45–55 € / heure</strong> en prestation)</li>
+              <li>Devis détaillé possible pour chaque module (préparation, face-à-face pédagogique, correction)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section contact dédiée établissements -->
+  <section id="contact" class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-8 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Échanger sur un futur module Python / SQL pour vos étudiants
+          </h2>
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
+            Vous êtes responsable pédagogique, directeur de programme ou chargé de planification des enseignements 
+            en école de commerce ou d'ingénierie ? Je serais ravi d'échanger sur les besoins de vos promotions
+            (BBS, MBA, masters spécialisés) en <strong>Python</strong> et <strong>SQL</strong>.
+          </p>
+          <p class="text-sm md:text-base text-gray-600">
+            Le premier échange permet de clarifier le niveau des étudiants, les objectifs pédagogiques et les 
+            contraintes de planning, afin de proposer un <strong>module clé en main</strong>.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+          <div>
+            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
+              Informations utiles à préciser lors du premier contact
+            </h3>
+            <ul class="space-y-2 text-sm md:text-base text-gray-700">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gray-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v4a1 1 0 00.293.707l2 2a1 1 0 101.414-1.414L11 10.586V7z" clip-rule="evenodd" />
+                </svg>
+                <span>Type de programme concerné (BBS, MBA, master spécialisé, etc.).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gray-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 2a6 6 0 00-6 6v2a3 3 0 00-2 2.83V15a1 1 0 001 1h1a3 3 0 006 0h2a3 3 0 006 0h1a1 1 0 001-1v-2.17A3 3 0 0016 10V8a6 6 0 00-6-6z" clip-rule="evenodd" />
+                </svg>
+                <span>Nombre d'étudiants, niveau de départ estimé en programmation / bases de données.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gray-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3 3a1 1 0 000 2h1v11a1 1 0 001 1h10a1 1 0 001-1V5h1a1 1 0 100-2H3zm3 2h8v10H6V5z" clip-rule="evenodd" />
+                </svg>
+                <span>Volumes horaires envisagés, période du calendrier académique, attentes en termes d'évaluation.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gray-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M4 4a1 1 0 011.707-.707L10 7.586l4.293-4.293A1 1 0 0116 4v9a4 4 0 01-4 4H8a4 4 0 01-4-4V4z" clip-rule="evenodd" />
+                </svg>
+                <span>Contraintes éventuelles : salle informatique, outils imposés, langue d'enseignement, etc.</span>
+              </li>
+            </ul>
+
+            <div class="mt-5 space-y-2 text-sm text-gray-700">
+              <p>
+                Vous pouvez également me contacter directement par email à 
+                <a href="mailto:contact@revise-tes-maths.fr" class="text-gray-900 underline font-medium">
+                  contact@revise-tes-maths.fr
+                </a>
+                pour un premier échange.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
