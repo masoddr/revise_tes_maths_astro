@@ -14,6 +14,36 @@ interface BrevetItem {
   themes?: string[]; // Thèmes des exercices (Ex1 : Intégration, Ex2: Probabilités, etc.)
 }
 
+// Liste des annales 2026 (sujets 0A et 0B)
+const annales2026: BrevetItem[] = [
+  {
+    centre: 'Métropole',
+    date: 'Sujet 0A 2026',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_0_A_2026_DV.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_0_A_2026_DV.pdf',
+    themes: [
+      'Ex1: Statistiques',
+      'Ex2: Littéral',
+      'Ex3: Fonctions',
+      'Ex4: Calcul'
+    ]
+  },
+  {
+    centre: 'Métropole',
+    date: 'Sujet 0B 2026',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2025/Brevet_0_B_2026_DV.pdf',
+    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_0_B_2026_DV.pdf',
+    themes: [
+      'Ex1: Géométrie',
+      'Ex2: Probabilités',
+      'Ex3: Calcul',
+      'Ex4: Fonctions'
+    ]
+  }
+];
+
 // Liste des annales 2024
 const annales2024: BrevetItem[] = [
   // Métropole
@@ -23,15 +53,13 @@ const annales2024: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2024/Brevet_Metropole_1_07_2024_DV.pdf',
     corrige: '/pdf/annales-brevet/2024/Corrige_brevet_Metropole_1_07_2024_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
-  },
-  {
-    centre: 'Métropole',
-    date: 'Juillet 2024',
-    type: 'Professionnel',
-    sujet: '/pdf/annales-brevet/2024/Brevet_Metropole_pro_1_juillet_FH.pdf',
-    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Metropole_pro_1_juillet_FH.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Probabilités',
+      'Ex2: Littéral',
+      'Ex2: Algorithmique',
+      'Ex3: Géométrie',
+      'Ex4: Calcul'
+    ]
   },
   {
     centre: 'Métropole',
@@ -39,14 +67,6 @@ const annales2024: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2024/Brevet_19_09_2024_Metro_Ant__DV_3.pdf',
     corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_19_09_2024_Metro_Ant__FH.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
-  },
-  {
-    centre: 'Métropole',
-    date: 'Septembre 2024',
-    type: 'Professionnel',
-    sujet: '/pdf/annales-brevet/2024/Brevet_pro_19_09_2024_DV_2.pdf',
-    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_pro_Metro__19_09_2024_FH.pdf',
     themes: [] // À remplir manuellement après consultation du PDF
   },
   
@@ -57,15 +77,16 @@ const annales2024: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2024/Brevet_Polynesie_27_06_2024_DV-2.pdf',
     corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Polynesie_27_06_2024_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
-  },
-  {
-    centre: 'Polynésie',
-    date: 'Juin 2024',
-    type: 'Professionnel',
-    sujet: '/pdf/annales-brevet/2024/Brevet_polynesie_pro_juin_2024_FH.pdf',
-    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_polynesie_pro_juin_2024_FH.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Géométrie',
+      'Ex1: Fonctions',
+      'Ex1: Calcul',
+      'Ex2: Statistiques',
+      'Ex2: Calcul',
+      'Ex3: Géométrie',
+      'Ex3: Trigonométrie',
+      'Ex4: Algorithmique'
+    ]
   },
   {
     centre: 'Polynésie',
@@ -73,15 +94,17 @@ const annales2024: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2024/Brevet_Polynesie_sept_2024_DV_2.pdf',
     corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Polynesie_sept_2024_FH.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
-  },
-  {
-    centre: 'Polynésie',
-    date: 'Septembre 2024',
-    type: 'Professionnel',
-    sujet: '/pdf/annales-brevet/2024/Brevet_pro_Polynesie_sept_2024_DV_2.pdf',
-    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_pro_Polynesie_sept_2024_FH.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Calcul',
+      'Ex1: Littéral',
+      'Ex1: Fonctions',
+      'Ex1: Géométrie',
+      'Ex2: Statistiques',
+      'Ex2: Probabilités',
+      'Ex3: Trigonométrie',
+      'Ex3: Géométrie',
+      'Ex4: Algorithmique'
+    ]
   },
   
   // Asie
@@ -91,7 +114,17 @@ const annales2024: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2024/Brevet_Asie_18_06_2024_DV.pdf',
     corrige: '/pdf/annales-brevet/2024/Corrige__Asie_18_06_2024_FK.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Calcul',
+      'Ex1: Littéral',
+      'Ex1: Statistiques',
+      'Ex2: Géométrie',
+      'Ex2: Probabilités',
+      'Ex3: Géométrie',
+      'Ex3: Trigonométrie',
+      'Ex4: Fonctions',
+      'Ex4: Calcul'
+    ]
   },
   
   // Amérique du Nord
@@ -101,7 +134,18 @@ const annales2024: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2024/Brevet_Ameri_Nord_mai_2024_FK.pdf',
     corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Am_du_No_29_05_2024_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Statistiques',
+      'Ex1: Probabilités',
+      'Ex1: Géométrie',
+      'Ex2: Littéral',
+      'Ex3: Fonctions',
+      'Ex3: Calcul',
+      'Ex4: Géométrie',
+      'Ex4: Calcul',
+      'Ex5: Géométrie',
+      'Ex5: Algorithmique'
+    ]
   },
   
   // Amérique du Sud
@@ -111,7 +155,15 @@ const annales2024: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2024/Brevet__Am_de_Sud_2_12_2024_DVFH_3.pdf',
     corrige: '/pdf/annales-brevet/2024/Corrige_brevet_Am_Sud_2_12_2024_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Probabilités',
+      'Ex1: Géométrie',
+      'Ex2: Fonctions',
+      'Ex2: Littéral',
+      'Ex3: Probabilités',
+      'Ex3: Calcul',
+      'Ex4: Géométrie'
+    ]
   },
   
   // Martinique
@@ -121,15 +173,14 @@ const annales2024: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2024/Brevet_Martinique_3_07_2024_DV.pdf',
     corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Martinique_3_07_2024_DV-2.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
-  },
-  {
-    centre: 'Martinique',
-    date: 'Juillet 2024',
-    type: 'Professionnel',
-    sujet: '/pdf/annales-brevet/2024/Brevet_Martinique_Pro_3_07_2024_JCS_2.pdf',
-    corrige: '/pdf/annales-brevet/2024/Corrige_Brevet_Martinique_Pro_3_07_2024_FH.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Probabilités',
+      'Ex1: Calcul',
+      'Ex2: Calcul',
+      'Ex2: Statistiques',
+      'Ex2: Fonctions',
+      'Ex3: Géométrie'
+    ]
   },
   
   // Centres étrangers
@@ -139,7 +190,19 @@ const annales2024: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2024/Brevet_Centres_Etrangers_juin_2024_FK.pdf',
     corrige: '/pdf/annales-brevet/2024/Corrige__Brevet_Centres_Etrangers_juin_2024_FK.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Calcul',
+      'Ex1: Statistiques',
+      'Ex1: Probabilités',
+      'Ex2: Calcul',
+      'Ex3: Littéral',
+      'Ex3: Fonctions',
+      'Ex3: Algorithmique',
+      'Ex4: Géométrie',
+      'Ex4: Trigonométrie',
+      'Ex5: Géométrie',
+      'Ex5: Calcul'
+    ]
   }
 ];
 
@@ -152,15 +215,15 @@ const annales2025: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2025/Brevet_Me_tropole_26_06_2025_FK.pdf',
     corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Metropole_26_06_2025_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
-  },
-  {
-    centre: 'Métropole',
-    date: 'Juin 2025',
-    type: 'Professionnel',
-    sujet: '/pdf/annales-brevet/2025/Brevet_metro_PRO_26_06_2025_DV.pdf',
-    corrige: '/pdf/annales-brevet/2025/Corrige_Metro_Pro_juin_2025__DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Probabilités',
+      'Ex2: Géométrie',
+      'Ex2: Trigonométrie',
+      'Ex3: Calcul',
+      'Ex3: Littéral',
+      'Ex3: Géométrie',
+      'Ex4: Littéral'
+    ]
   },
   {
     centre: 'Métropole',
@@ -168,15 +231,15 @@ const annales2025: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2025/Brevet_Metropole_sept_2025_DV.pdf',
     corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Metro_sept_2025_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
-  },
-  {
-    centre: 'Métropole',
-    date: 'Septembre 2025',
-    type: 'Professionnel',
-    sujet: '/pdf/annales-brevet/2025/Brevet_Pro_Metropole_sept_2025_MD_2.pdf',
-    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Pro_Metropole_sept_2025_FH.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Statistiques',
+      'Ex1: Probabilités',
+      'Ex2: Calcul',
+      'Ex2: Littéral',
+      'Ex3: Géométrie',
+      'Ex3: Trigonométrie',
+      'Ex4: Fonctions'
+    ]
   },
   
   // Polynésie
@@ -186,15 +249,15 @@ const annales2025: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2025/Brevet_Polynesie_26_06_2025_DV_2.pdf',
     corrige: '/pdf/annales-brevet/2025/Corrige__Brevet_Polyne_sie_26_06_2025_FK.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
-  },
-  {
-    centre: 'Polynésie',
-    date: 'Juin 2025',
-    type: 'Professionnel',
-    sujet: '/pdf/annales-brevet/2025/Brevet_pro_Polynesie_06_2025_DV.pdf',
-    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Pro_Polynesie_juin_2025_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Statistiques',
+      'Ex2: Géométrie',
+      'Ex2: Trigonométrie',
+      'Ex3: Calcul',
+      'Ex3: Littéral',
+      'Ex4: Fonctions',
+      'Ex4: Littéral'
+    ]
   },
   {
     centre: 'Polynésie',
@@ -202,15 +265,16 @@ const annales2025: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2025/Brevet_8_9_2025_Polynesie_DV.pdf',
     corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Polynesie_8_9_2025_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
-  },
-  {
-    centre: 'Polynésie',
-    date: 'Septembre 2025',
-    type: 'Professionnel',
-    sujet: '/pdf/annales-brevet/2025/Brevet_pro_8_9_2025_Polynesie_DV.pdf',
-    corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Polynesie_8_9_2025_DV-2.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Fonctions',
+      'Ex1: Calcul',
+      'Ex2: Calcul',
+      'Ex2: Trigonométrie',
+      'Ex3: Géométrie',
+      'Ex3: Algorithmique',
+      'Ex4: Calcul',
+      'Ex4: Statistiques'
+    ]
   },
   
   // Asie
@@ -220,7 +284,16 @@ const annales2025: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2025/Brevet_Asie_9_06_2025_JCS_FH2.pdf',
     corrige: '/pdf/annales-brevet/2025/Corrige__Brevet_Asie_9_06_2025_LGFK.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Probabilités',
+      'Ex1: Statistiques',
+      'Ex1: Fonctions',
+      'Ex1: Calcul',
+      'Ex2: Géométrie',
+      'Ex2: Trigonométrie',
+      'Ex3: Littéral',
+      'Ex4: Algorithmique'
+    ]
   },
   
   // Amérique du Nord
@@ -230,7 +303,17 @@ const annales2025: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2025/Brevet_Am_du_Nord_4_06_2025_DV_JCS_PS.pdf',
     corrige: '/pdf/annales-brevet/2025/Corrige_brevet_Am_du_Nord_juin_2025_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Probabilités',
+      'Ex1: Statistiques',
+      'Ex1: Calcul',
+      'Ex2: Géométrie',
+      'Ex2: Trigonométrie',
+      'Ex3: Littéral',
+      'Ex4: Fonctions',
+      'Ex4: Calcul',
+      'Ex5: Algorithmique'
+    ]
   },
   
   // Amérique du Sud
@@ -240,7 +323,16 @@ const annales2025: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2025/Brevet_Ameri_du_Sud_27_11_2025_MCB4.pdf',
     corrige: '/pdf/annales-brevet/2025/Corrige_Ameri_Sud_27_11_2025_MCB.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Calcul',
+      'Ex1: Trigonométrie',
+      'Ex1: Probabilités',
+      'Ex1: Fonctions',
+      'Ex1: Littéral',
+      'Ex2: Statistiques',
+      'Ex3: Algorithmique',
+      'Ex4: Géométrie'
+    ]
   },
   
   // Nouvelle-Calédonie
@@ -250,15 +342,16 @@ const annales2025: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2025/Brevet_Nlle_Cale_donie_11_12_2025_DV.pdf',
     corrige: '/pdf/annales-brevet/2025/Corrige_Brevet_Nlle_Caledo_dec_2025_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
-  },
-  {
-    centre: 'Nouvelle-Calédonie',
-    date: 'Décembre 2025',
-    type: 'Professionnel',
-    sujet: '/pdf/annales-brevet/2025/Brevet_pro_Caledonie_11_12_2025_DV_2.pdf',
-    corrige: '/pdf/annales-brevet/2025/Corrige_brevet_pro_Cale_donie_dec_2025_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Calcul',
+      'Ex1: Fonctions',
+      'Ex2: Géométrie',
+      'Ex2: Trigonométrie',
+      'Ex3: Fonctions',
+      'Ex3: Littéral',
+      'Ex4: Probabilités',
+      'Ex5: Géométrie'
+    ]
   },
   
   // Centre étranger
@@ -268,12 +361,23 @@ const annales2025: BrevetItem[] = [
     type: 'Général',
     sujet: '/pdf/annales-brevet/2025/Brevet_etranger_16_06_2025_DV.pdf',
     corrige: '/pdf/annales-brevet/2025/Corrige_brevet_Etranger_2025_DV.pdf',
-    themes: [] // À remplir manuellement après consultation du PDF
+    themes: [
+      'Ex1: Calcul',
+      'Ex1: Littéral',
+      'Ex1: Géométrie',
+      'Ex2: Statistiques',
+      'Ex2: Probabilités',
+      'Ex3: Fonctions',
+      'Ex3: Littéral',
+      'Ex4: Géométrie',
+      'Ex4: Trigonométrie'
+    ]
   }
 ];
 
 // Flatten all annales for grid display
 const allAnnales = [
+  ...annales2026.map(item => ({ ...item, annee: '2026' })),
   ...annales2025.map(item => ({ ...item, annee: '2025' })),
   ...annales2024.map(item => ({ ...item, annee: '2024' }))
 ];
@@ -307,6 +411,8 @@ const allThemes = Array.from(
     </div>
   </section>
   
+  
+
   <!-- Hero Section -->
   <section class="relative bg-gradient-to-b from-blue-50 via-blue-50/50 to-white py-12 md:py-16 overflow-hidden">
     <!-- Background decorative elements -->
@@ -336,6 +442,54 @@ const allThemes = Array.from(
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA séances intensives juste après le header -->
+  <section class="bg-slate-900 text-white py-10 md:py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-[1.4fr,1fr] gap-8 items-start">
+        <div>
+          <p class="inline-flex items-center text-xs font-semibold tracking-wide uppercase text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 px-3 py-1 rounded-full mb-3">
+            Le brevet approche
+          </p>
+          <h2 class="text-2xl md:text-3xl font-bold mb-3">
+            Travailler les annales du brevet avec un prof
+          </h2>
+          <p class="text-sm md:text-base text-slate-100/90 mb-3">
+            On choisit <strong>une annale de cette page</strong> et on la fait ensemble&nbsp;: méthode, rédaction, gestion du temps.
+          </p>
+          <div class="mb-4">
+            <a 
+              href="/#contact"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber-400 text-slate-950 font-semibold text-sm md:text-base shadow-lg shadow-amber-500/40 hover:bg-amber-300 transition-all duration-200"
+            >
+              Le brevet approche&nbsp;: réserver une séance
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+          <ul class="text-sm md:text-base text-slate-100/90 space-y-1 mb-4">
+            <li>• Séances ciblées de 1h ou 1h30</li>
+            <li>• Possible en <strong>petit groupe</strong> (2 à 4 élèves)</li>
+          </ul>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 md:p-6 shadow-2xl shadow-black/40">
+          <p class="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-2">
+            Pour qui&nbsp;?
+          </p>
+          <ul class="space-y-1.5 text-sm text-slate-100">
+            <li>• Élèves de 3ème qui veulent sécuriser le brevet</li>
+            <li>• Collégiens déjà sérieux qui visent une très bonne note</li>
+            <li>• Parents qui souhaitent un cadre clair de révisions jusqu'à l'examen</li>
+          </ul>
+          <p class="text-xs text-slate-300 mt-4">
+            Indiquez simplement dans le message « révision annales brevet » et, si besoin, 
+            le nom de 2 ou 3 camarades pour organiser une séance en petit groupe.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -482,19 +636,32 @@ const allThemes = Array.from(
           <p class="text-base md:text-lg leading-relaxed mb-4">
             Si vous rencontrez des difficultés avec les <strong>annales brevet maths</strong> ou si vous souhaitez un accompagnement personnalisé pour votre préparation au brevet, je propose des cours particuliers de mathématiques adaptés à vos besoins. Nous pouvons travailler ensemble sur les <strong>sujets brevet maths</strong> et approfondir les points qui vous posent problème.
           </p>
-          <a 
-            href="/#contact" 
-            class="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-          >
-            Demander un premier échange
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a 
+              href="/#contact" 
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Réserver une séance individuelle
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <a 
+              href="/#contact" 
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-white/70 text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              Organiser une révision en petit groupe
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
+  
+  
   
   <!-- Filters Section -->
   <section class="bg-white border-b border-gray-100 sticky top-0 z-10 backdrop-blur-sm bg-white/95">
@@ -527,6 +694,12 @@ const allThemes = Array.from(
                 Toutes
               </button>
               <button 
+                data-filter-year="2026"
+                class="filter-year-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              >
+                2026
+              </button>
+              <button 
                 data-filter-year="2025"
                 class="filter-year-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
               >
@@ -542,34 +715,39 @@ const allThemes = Array.from(
           </div>
           
           <!-- Theme Filter -->
-          <div class="flex flex-wrap gap-3 items-center">
-            <span class="text-sm font-semibold text-gray-700">Thème :</span>
-            <div class="flex gap-2 flex-wrap">
-              <button 
-                data-filter-theme="all"
-                class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-gray-900 text-white shadow-sm hover:bg-gray-800"
-              >
-                Tous
-              </button>
-              {allThemes.map(theme => (
+          <div class="flex flex-col gap-4 w-full">
+            <div class="flex flex-wrap gap-3 items-center">
+              <span class="text-sm font-semibold text-gray-700">Thème :</span>
+              <div class="flex gap-2 flex-wrap">
                 <button 
-                  data-filter-theme={theme}
-                  class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+                  data-filter-theme="all"
+                  class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-gray-900 text-white shadow-sm hover:bg-gray-800"
                 >
-                  {theme}
+                  Tous
                 </button>
-              ))}
+                {allThemes.map(theme => (
+                  <button 
+                    data-filter-theme={theme}
+                    class="filter-theme-btn px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+                  >
+                    {theme}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
 
   <!-- Content Section -->
   <section id="annales" class="bg-gray-50 py-12 md:py-16 scroll-mt-20">
     <div class="container mx-auto px-4">
       <div class="max-w-7xl mx-auto">
+          
+        
         <!-- Results count -->
         <div class="mb-8">
           <p class="text-gray-600">
@@ -608,20 +786,33 @@ const allThemes = Array.from(
                   
                   {themesList.length > 0 && (
                     <div class="mb-2 md:mb-4">
-                      <p class="text-[10px] md:text-xs font-semibold text-gray-700 mb-1 md:mb-2">Thèmes :</p>
+                      <p class="text-[10px] md:text-xs font-semibold text-gray-700 mb-1 md:mb-2">Thèmes par exercice :</p>
                       <div class="flex flex-wrap gap-1 md:gap-1.5">
-                        {themesList.map((theme, idx) => {
-                          const [exNum, themeName] = theme.split(':').map(s => s.trim());
-                          return (
-                            <span 
-                              key={idx}
-                              class="inline-flex items-center px-1 md:px-2 py-0.5 rounded text-[9px] md:text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200"
-                              data-theme={themeName}
+                        {(() => {
+                          const themesByEx = {};
+                          for (const theme of themesList) {
+                            const parts = theme.split(':').map((s) => s.trim());
+                            const exNumRaw = parts[0];
+                            const themeNameRaw = parts[1];
+                            if (!exNumRaw || !themeNameRaw) continue;
+                            const exKey = exNumRaw;
+                            if (!themesByEx[exKey]) {
+                              themesByEx[exKey] = [];
+                            }
+                            if (!themesByEx[exKey].includes(themeNameRaw)) {
+                              themesByEx[exKey].push(themeNameRaw);
+                            }
+                          }
+                          return Object.entries(themesByEx).map(([exNum, themeNames]) => (
+                            <span
+                              key={exNum}
+                              class="inline-flex items-center px-1.5 md:px-2.5 py-0.5 rounded text-[9px] md:text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200"
+                              data-theme={themeNames.join(' ')}
                             >
-                              {exNum}: {themeName}
+                              {exNum}: {themeNames.join(', ')}
                             </span>
-                          );
-                        })}
+                          ));
+                        })()}
                       </div>
                     </div>
                   )}
