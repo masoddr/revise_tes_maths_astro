@@ -387,44 +387,7 @@ const allThemes = Array.from(
       <div class="absolute top-1/2 left-10 w-64 h-64 bg-yellow-200/20 rounded-full blur-3xl"></div>
     </div>
     
-    <div class="container mx-auto px-4 relative z-10">
-      <!-- Bandeau top-page révisions annales bac -->
-      <div class="max-w-4xl mx-auto mb-6">
-        <a 
-          href="/#contact" 
-          class="block bg-slate-900 text-white rounded-2xl px-4 py-4 md:px-6 md:py-4 shadow-lg shadow-slate-900/40 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-0.5 transition-all duration-200"
-        >
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-            <div class="flex items-start gap-3">
-              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400 text-slate-950 text-xs font-extrabold flex-shrink-0">
-                +
-              </span>
-              <div>
-                <p class="text-xs font-semibold tracking-wide uppercase text-emerald-300 mb-1">
-                  Transformer ces annales bac en points le jour J
-                </p>
-                <p class="text-sm md:text-base text-slate-100/95">
-                  On choisit <strong>une annale de cette page</strong> et on la travaille ensemble&nbsp;: stratégie, rédaction, 
-                  gestion du temps et analyse fine des raisonnements pour ne plus perdre de points bêtement.
-                </p>
-              </div>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-2 md:gap-3 md:items-center">
-              <span class="text-[11px] md:text-xs text-slate-300 md:text-right">
-                Créneaux limités à l’approche du bac.<br class="hidden md:block" />
-                Possible seul(e) ou avec 1 à 3 camarades.
-              </span>
-              <span class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-emerald-400 text-slate-950 text-xs md:text-sm font-semibold">
-                Je veux préparer le bac avec ces annales
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-      
+    <div class="container mx-auto px-4 relative z-10">      
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Annales Bac Maths - Sujets et Corrigés
@@ -432,22 +395,83 @@ const allThemes = Array.from(
         <p class="text-lg text-gray-700 mb-6">
           Accédez aux annales bac maths avec sujets et corrigés détaillés pour une préparation efficace au baccalauréat de mathématiques
         </p>
-        <a 
-          href="#annales" 
-          class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-          Accéder directement aux annales
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </a>
+        <div class="flex flex-col sm:inline-flex sm:flex-row items-center justify-center gap-3">
+          <a 
+            href="#annales" 
+            class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Accéder directement aux annales
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+
+          <a 
+            href="/#contact" 
+            class="inline-flex items-center gap-2 px-6 py-3 bg-amber-400 text-slate-950 rounded-lg font-semibold hover:bg-amber-300 transition-colors shadow-lg hover:shadow-xl"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+            Être accompagné pour le bac
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
+    <!-- CTA séances intensives juste après le header (adapté pour le bac) -->
+    <section class="bg-slate-900 text-white py-10 md:py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-[1.4fr,1fr] gap-8 items-start">
+          <div>
+            <p class="inline-flex items-center text-xs font-semibold tracking-wide uppercase text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 px-3 py-1 rounded-full mb-3">
+              Le bac approche
+            </p>
+            <h2 class="text-2xl md:text-3xl font-bold mb-3">
+              Travailler les annales du bac avec un prof
+            </h2>
+            <p class="text-sm md:text-base text-slate-100/90 mb-3">
+              On choisit <strong>une annale de cette page</strong> et on la fait ensemble&nbsp;: méthode, rédaction, gestion du temps.
+            </p>
+            <div class="mb-4">
+              <a 
+                href="/#contact"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber-400 text-slate-950 font-semibold text-sm md:text-base shadow-lg shadow-amber-500/40 hover:bg-amber-300 transition-all duration-200"
+              >
+                Le bac approche&nbsp;: réserver une séance
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            </div>
+            <ul class="text-sm md:text-base text-slate-100/90 space-y-1 mb-4">
+              <li>• Séances ciblées de 1h30 à 2h</li>
+              <li>• Possible en <strong>petit groupe</strong> (2 à 4 élèves de terminale)</li>
+            </ul>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 md:p-6 shadow-2xl shadow-black/40">
+            <p class="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-2">
+              Pour qui&nbsp;?
+            </p>
+            <ul class="space-y-1.5 text-sm text-slate-100">
+              <li>• Élèves de terminale qui veulent sécuriser le bac</li>
+              <li>• Lycéens déjà sérieux qui visent une très bonne note ou une mention</li>
+              <li>• Parents qui souhaitent un cadre clair de révisions jusqu'à l'examen</li>
+            </ul>
+            <p class="text-xs text-slate-300 mt-4">
+              Indiquez simplement dans le message « révision annales bac » et, si besoin, 
+              le nom de 2 ou 3 camarades pour organiser une séance en petit groupe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
   <!-- Introduction Section -->
   <section class="bg-white py-12 md:py-16">
     <div class="container mx-auto px-4">
@@ -618,58 +642,45 @@ const allThemes = Array.from(
   <!-- CTA séances intensives juste avant la liste des annales -->
   <section class="bg-slate-900 text-white py-10 md:py-12">
     <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto grid md:grid-cols-[1.4fr,1fr] gap-8 items-center">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-[1.4fr,1fr] gap-8 items-start">
         <div>
-          <p class="inline-flex items-center text-xs font-semibold tracking-wide uppercase text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 px-3 py-1 rounded-full mb-4">
+          <p class="inline-flex items-center text-xs font-semibold tracking-wide uppercase text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 px-3 py-1 rounded-full mb-3">
             Le bac approche
           </p>
           <h2 class="text-2xl md:text-3xl font-bold mb-3">
-            Séances de révision intensive sur les annales de maths
+            Travailler les annales du bac avec un prof
           </h2>
           <p class="text-sm md:text-base text-slate-100/90 mb-3">
-            Vous utilisez déjà ces <strong>annales bac maths</strong> pour vous entraîner ? Je peux vous aider à passer un cap 
-            sur la méthode, la rédaction et la gestion du temps.
+            On choisit <strong>une annale de cette page</strong> et on la fait ensemble&nbsp;: méthode, rédaction, gestion du temps.
           </p>
-          <p class="text-sm md:text-base text-slate-100/90 mb-4">
-            Nous travaillons <strong>sur les sujets ci-dessous</strong>, en conditions d'examen : stratégie de résolution, 
-            organisation de la copie, et correction fine de vos raisonnements.
-          </p>
-          <ul class="text-sm md:text-base text-slate-100/90 space-y-1.5 mb-5">
-            <li>• Séances ciblées « annales bac » de 1h30 à 2h</li>
-            <li>• Possibilité de <strong>petits groupes</strong> (2 à 4 élèves de terminale)</li>
-            <li>• Focus sur la spécialité maths et la prise de points rapides</li>
-          </ul>
-          <div class="flex flex-col sm:flex-row gap-3">
+          <div class="mb-4">
             <a 
-              href="/#contact" 
-              class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-400 text-slate-950 font-semibold text-sm md:text-base shadow-lg shadow-emerald-500/30 hover:bg-emerald-300 transition-all duration-200"
+              href="/#contact"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber-400 text-slate-950 font-semibold text-sm md:text-base shadow-lg shadow-amber-500/40 hover:bg-amber-300 transition-all duration-200"
             >
-              Me parler de révisions bac
+              Le bac approche&nbsp;: réserver une séance
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
-            <button 
-              type="button"
-              onclick="document.querySelector('#annales')?.scrollIntoView({ behavior: 'smooth' });"
-              class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-slate-500 text-slate-50 font-semibold text-sm md:text-base hover:bg-slate-800/70 transition-all duration-200"
-            >
-              Choisir une annale pour travailler ensemble
-            </button>
           </div>
+          <ul class="text-sm md:text-base text-slate-100/90 space-y-1 mb-4">
+            <li>• Séances ciblées de 1h30 à 2h</li>
+            <li>• Possible en <strong>petit groupe</strong> (2 à 4 élèves de terminale)</li>
+          </ul>
         </div>
         <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 md:p-6 shadow-2xl shadow-black/40">
-          <p class="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-3">
+          <p class="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-2">
             Pour qui&nbsp;?
           </p>
-          <ul class="space-y-2 text-sm text-slate-100">
-            <li>• Élèves de terminale spécialité maths</li>
-            <li>• Lycéens qui visent une mention ou un dossier post-bac solide</li>
-            <li>• Parents qui veulent un cadre structuré de révisions jusqu'au bac</li>
+          <ul class="space-y-1.5 text-sm text-slate-100">
+            <li>• Élèves de terminale qui veulent sécuriser le bac</li>
+            <li>• Lycéens déjà sérieux qui visent une très bonne note ou une mention</li>
+            <li>• Parents qui souhaitent un cadre clair de révisions jusqu'à l'examen</li>
           </ul>
           <p class="text-xs text-slate-300 mt-4">
-            Dans votre message, précisez « révision annales bac » et, si besoin, 
-            le nom de 2 ou 3 camarades intéressés pour monter un petit groupe.
+            Indiquez simplement dans le message « révision annales bac » et, si besoin, 
+            le nom de 2 ou 3 camarades pour organiser une séance en petit groupe.
           </p>
         </div>
       </div>
