@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import WhatsAppBrevetStickyButton from '../../components/WhatsAppBrevetStickyButton.astro';
 
 // Structure des annales organisées par centre d'examen, date et type
 interface BrevetItem {
@@ -391,6 +392,13 @@ const allThemes = Array.from(
       .filter(Boolean)
   )
 ).sort();
+
+const whatsappNumber = "33616635187";
+const whatsappMessageBrevetAnnales =
+  "Bonjour, je cherche un accompagnement pour préparer le brevet de maths. J’ai vu votre page sur les annales.";
+const whatsappBrevetAnnalesUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessageBrevetAnnales)}`;
+const contactHref = "/#contact";
+const coursParticuliersHref = "/professeur-particulier-maths";
 ---
 
 <Layout 
@@ -428,7 +436,7 @@ const allThemes = Array.from(
           Annales Brevet Maths - Sujets et Corrigés
         </h1>
         <p class="text-lg text-gray-700 mb-6">
-          Accédez aux annales brevet maths avec sujets et corrigés détaillés pour une préparation efficace au brevet des collèges
+          Accédez aux <strong>annales corrigées 2024-2025</strong> et progressez avec une <strong>vraie méthode</strong> : exercices, rédaction, et gestion du temps.
         </p>
         <div class="flex flex-col sm:inline-flex sm:flex-row items-center justify-center gap-3">
           <a 
@@ -445,62 +453,167 @@ const allThemes = Array.from(
           </a>
 
           <a 
-            href="/#contact" 
+            href={whatsappBrevetAnnalesUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-6 py-3 bg-amber-400 text-slate-950 rounded-lg font-semibold hover:bg-amber-300 transition-colors shadow-lg hover:shadow-xl"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-            Être accompagné pour le brevet
+            Bloqué sur un exercice ? Écris-moi
           </a>
         </div>
+
+        <p class="mt-5 text-sm text-gray-600">
+          Parents et élèves : vous pouvez réserver une séance ciblée à partir d’une annale de cette page.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- CTA séances intensives juste après le header -->
+  <!-- Bloc conversion (après le header) -->
   <section class="bg-slate-900 text-white py-10 md:py-12">
     <div class="container mx-auto px-4">
       <div class="max-w-5xl mx-auto grid md:grid-cols-[1.4fr,1fr] gap-8 items-start">
         <div>
           <p class="inline-flex items-center text-xs font-semibold tracking-wide uppercase text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 px-3 py-1 rounded-full mb-3">
-            Le brevet approche
+            Entraînement guidé
           </p>
           <h2 class="text-2xl md:text-3xl font-bold mb-3">
-            Travailler les annales du brevet avec un prof
+            Passez de l’entraînement seul à une vraie méthode sur les annales
           </h2>
           <p class="text-sm md:text-base text-slate-100/90 mb-3">
-            On choisit <strong>une annale de cette page</strong> et on la fait ensemble&nbsp;: méthode, rédaction, gestion du temps.
+            On choisit <strong>une annale de cette page</strong>, on la travaille ensemble&nbsp;: méthode, rédaction, gestion du temps.
+            <span class="block mt-1">
+              Une séance ciblée peut suffire pour débloquer les exercices les plus classiques du brevet.
+            </span>
           </p>
-          <div class="mb-4">
-            <a 
-              href="/#contact"
-              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber-400 text-slate-950 font-semibold text-sm md:text-base shadow-lg shadow-amber-500/40 hover:bg-amber-300 transition-all duration-200"
+
+          <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center mb-4">
+            <a
+              href={contactHref}
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-amber-400 text-slate-950 font-semibold shadow-lg shadow-amber-500/40 hover:bg-amber-300 transition-all duration-200"
             >
-              Le brevet approche&nbsp;: réserver une séance
+              Réserver une séance annales brevet
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+
+            <a
+              href={whatsappBrevetAnnalesUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-transparent border border-white/70 text-white font-semibold hover:bg-white/10 transition-colors"
+            >
+              WhatsApp : aide rapide
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
           </div>
-          <ul class="text-sm md:text-base text-slate-100/90 space-y-1 mb-4">
-            <li>• Séances ciblées de 1h ou 1h30</li>
-            <li>• Possible en <strong>petit groupe</strong> (2 à 4 élèves)</li>
-          </ul>
+
+          <p class="text-xs text-slate-300">
+            Format possible : individuel ou petit groupe (2 à 4 élèves). En pratique, on part de votre annale, puis on corrige ce qui bloque.
+          </p>
         </div>
         <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 md:p-6 shadow-2xl shadow-black/40">
           <p class="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-2">
-            Pour qui&nbsp;?
+            Ce que vous gagnez concrètement
           </p>
           <ul class="space-y-1.5 text-sm text-slate-100">
-            <li>• Élèves de 3ème qui veulent sécuriser le brevet</li>
-            <li>• Collégiens déjà sérieux qui visent une très bonne note</li>
-            <li>• Parents qui souhaitent un cadre clair de révisions jusqu'à l'examen</li>
+            <li>• Améliorer la note : on repère et corrige les “points perdus”</li>
+            <li>• Gagner en méthode : quoi faire, dans quel ordre, et pourquoi</li>
+            <li>• Apprendre à rédiger : une copie claire et conforme au brevet</li>
+            <li>• Gérer son temps : travailler un sujet complet (2h)</li>
+            <li>• Identifier les exercices classiques du brevet</li>
           </ul>
           <p class="text-xs text-slate-300 mt-4">
-            Indiquez simplement dans le message « révision annales brevet » et, si besoin, 
-            le nom de 2 ou 3 camarades pour organiser une séance en petit groupe.
+            Parents : vous repartez avec un plan de révision clair pour les semaines qui précèdent l’examen.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Réassurance -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Un accompagnement sérieux, orienté résultats
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+            <h3 class="font-semibold text-gray-900 mb-2">Ingénieur de formation, professeur de maths</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              Une approche rigoureuse : on structure la démarche, on travaille les erreurs, et on rend la méthode réutilisable.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+            <h3 class="font-semibold text-gray-900 mb-2">Séances ciblées sur vos annales</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              On choisit un sujet de cette page, puis on corrige la rédaction et la méthode pour progresser rapidement.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+            <h3 class="font-semibold text-gray-900 mb-2">Visio ou à Paris (selon disponibilité)</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              Pour que l’organisation soit simple : en visio, ou en présentiel selon votre localisation.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+            <h3 class="font-semibold text-gray-900 mb-2">Un plan clair après la séance</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              Vous savez exactement quoi refaire, quoi revoir, et comment enchaîner avec les prochains sujets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pour qui ? -->
+  <section class="bg-gray-50 py-10 md:py-14 border-y border-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Pour qui ?
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6">
+            <h3 class="font-semibold text-gray-900 mb-2">Élève de 3ème</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              Pour sécuriser le brevet : méthode, rédaction, et repères sur les exercices les plus fréquents.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-gray-100 p-6">
+            <h3 class="font-semibold text-gray-900 mb-2">Élève qui vise une très bonne note</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              Pour gagner des points : travailler les “détails” qui font la différence (présentation, étapes, timing).
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-gray-100 p-6">
+            <h3 class="font-semibold text-gray-900 mb-2">Parent</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              Pour un cadre de révision clair : un rythme simple, des objectifs concrets, et un suivi après chaque séance.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-gray-100 p-6">
+            <h3 class="font-semibold text-gray-900 mb-2">Individuel ou petit groupe</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              Séances possibles en individuel ou en petit groupe (2 à 4 élèves), à partir d’une annale ciblée.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -599,6 +712,49 @@ const allThemes = Array.from(
     </div>
   </section>
 
+  <!-- Micro-CTA (après la méthode) -->
+  <section class="bg-emerald-50 border-y border-emerald-100 py-8 md:py-10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto rounded-2xl bg-white border border-emerald-100 p-6 md:p-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+              Tu bloques sur un exercice ?
+            </h2>
+            <p class="text-gray-700 leading-relaxed">
+              Écris-moi et je te dis comment l’aborder, à partir du <strong>sujet</strong> ou du <strong>corrigé</strong> de ton annale.
+              Une séance ciblée peut suffire pour débloquer les exercices les plus classiques.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={whatsappBrevetAnnalesUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-lg font-semibold hover:bg-[#20BA5A] transition-colors shadow-sm"
+            >
+              Écrire sur WhatsApp
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+
+            <a
+              href={contactHref}
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors shadow-sm"
+            >
+              Réserver une séance annales
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Conseils pour réussir -->
   <section class="bg-white py-12 md:py-16">
     <div class="container mx-auto px-4">
@@ -644,30 +800,39 @@ const allThemes = Array.from(
         </div>
         
         <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg p-6 md:p-8 text-white">
-          <h3 class="text-xl font-bold mb-4">Besoin d'aide pour préparer le brevet de maths ?</h3>
+          <h3 class="text-xl font-bold mb-3">On travaille ensemble une annale complète</h3>
           <p class="text-base md:text-lg leading-relaxed mb-4">
-            Si vous rencontrez des difficultés avec les <strong>annales brevet maths</strong> ou si vous souhaitez un accompagnement personnalisé pour votre préparation au brevet, je propose des cours particuliers de mathématiques adaptés à vos besoins. Nous pouvons travailler ensemble sur les <strong>sujets brevet maths</strong> et approfondir les points qui vous posent problème.
+            Parents et élèves : on choisit un sujet de cette page, on travaille la méthode et la rédaction, puis on corrige précisément les points qui bloquent.
+            Objectif&nbsp;: progresser vite et être plus à l’aise le jour J.
           </p>
+
           <div class="flex flex-col sm:flex-row gap-3">
-            <a 
-              href="/#contact" 
+            <a
+              href={contactHref}
               class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              Réserver une séance individuelle
+              Réserver une séance annales brevet
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
-            <a 
-              href="/#contact" 
+
+            <a
+              href={whatsappBrevetAnnalesUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-white/70 text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Organiser une révision en petit groupe
+              WhatsApp : “je bloque sur…”
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
           </div>
+
+          <p class="text-xs text-white/90 mt-4">
+            Petit groupe possible (2 à 4). Si vous cherchez plus d’infos sur le suivi : <a href={coursParticuliersHref} class="underline font-semibold hover:text-white">voir les cours particuliers</a>.
+          </p>
         </div>
       </div>
     </div>
@@ -773,7 +938,6 @@ const allThemes = Array.from(
             const themesList = item.themes || [];
             return (
               <div
-                key={index}
                 data-year={item.annee}
                 data-themes={themesList.map(t => t.split(':')[1]?.trim()).filter(Boolean).join(' ')}
                 data-centre={item.centre.toLowerCase()}
@@ -801,7 +965,7 @@ const allThemes = Array.from(
                       <p class="text-[10px] md:text-xs font-semibold text-gray-700 mb-1 md:mb-2">Thèmes par exercice :</p>
                       <div class="flex flex-wrap gap-1 md:gap-1.5">
                         {(() => {
-                          const themesByEx = {};
+                          const themesByEx: { [key: string]: string[] } = {};
                           for (const theme of themesList) {
                             const parts = theme.split(':').map((s) => s.trim());
                             const exNumRaw = parts[0];
@@ -817,7 +981,6 @@ const allThemes = Array.from(
                           }
                           return Object.entries(themesByEx).map(([exNum, themeNames]) => (
                             <span
-                              key={exNum}
                               class="inline-flex items-center px-1.5 md:px-2.5 py-0.5 rounded text-[9px] md:text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200"
                               data-theme={themeNames.join(' ')}
                             >
@@ -875,6 +1038,115 @@ const allThemes = Array.from(
     </div>
   </section>
   
+  <!-- Micro-CTA fin de page -->
+  <section class="bg-white py-12 md:py-16 border-t border-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div class="max-w-2xl">
+              <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                Avant de refaire seul : demandez une aide ciblée
+              </h2>
+              <p class="text-gray-700 leading-relaxed">
+                Vous choisissez une annale, vous m’expliquez le point qui bloque, et on transforme l’entraînement en méthode.
+                Une séance ciblée peut suffire pour progresser rapidement.
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a
+                href={contactHref}
+                class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors shadow-sm"
+              >
+                Réserver une séance annales brevet
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+
+              <a
+                href={whatsappBrevetAnnalesUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-lg font-semibold hover:bg-[#20BA5A] transition-colors shadow-sm"
+              >
+                Aide sur WhatsApp
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <p class="text-xs text-gray-500 mt-5">
+            Vous pouvez aussi découvrir le cadre complet de suivi sur la page <a href={coursParticuliersHref} class="underline hover:text-gray-700 font-semibold">cours particuliers</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-gray-50 py-12 md:py-16 border-y border-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          FAQ - Annales du brevet et accompagnement
+        </h2>
+
+        <div class="space-y-3">
+          <details class="bg-white border border-gray-100 rounded-2xl p-5">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Comment utiliser les annales pour réviser le brevet ?
+            </summary>
+            <p class="text-gray-700 mt-3 leading-relaxed">
+              D’abord sans corrigé pour mesurer ton niveau, puis analyse du corrigé pour comprendre la méthode attendue. Ensuite, refais les exercices difficiles en reprenant les étapes et la rédaction.
+            </p>
+          </details>
+
+          <details class="bg-white border border-gray-100 rounded-2xl p-5">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              À partir de quand commencer les annales ?
+            </summary>
+            <p class="text-gray-700 mt-3 leading-relaxed">
+              Idéalement au moins 2 mois avant l’examen, avec un sujet complet par semaine. Les annales te donnent un rythme et une progression.
+            </p>
+          </details>
+
+          <details class="bg-white border border-gray-100 rounded-2xl p-5">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Peut-on réserver une séance uniquement sur un sujet d’annale ?
+            </summary>
+            <p class="text-gray-700 mt-3 leading-relaxed">
+              Oui. Vous choisissez l’annale, et on travaille dessus : méthode, rédaction, et correction des points qui te font perdre des points.
+            </p>
+          </details>
+
+          <details class="bg-white border border-gray-100 rounded-2xl p-5">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Proposez-vous des cours en ligne ?
+            </summary>
+            <p class="text-gray-700 mt-3 leading-relaxed">
+              Oui, en visio. C’est pratique pour organiser des séances régulières, tout en gardant le même niveau d’exigence.
+            </p>
+          </details>
+
+          <details class="bg-white border border-gray-100 rounded-2xl p-5">
+            <summary class="cursor-pointer font-semibold text-gray-900">
+              Les cours sont-ils possibles en petit groupe ?
+            </summary>
+            <p class="text-gray-700 mt-3 leading-relaxed">
+              Oui, en petit groupe (2 à 4 élèves). C’est idéal pour progresser ensemble, tout en gardant un cadre clair et une correction attentive.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <WhatsAppBrevetStickyButton phoneNumber={whatsappNumber} message={whatsappMessageBrevetAnnales} label="Aide rapide brevet" />
+
   <Footer />
 
   <script>
