@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<Layout 
+  title="Stage préparation bac maths | Stage intensif terminale en visio"
+  description="Stage préparation bac maths pour élèves de Terminale : révision ciblée, annales, méthodologie et gestion du temps en épreuve. Stage intensif de maths en visio, en petits effectifs ou individuel."
+>
+  <Header />
+  
+  <!-- Breadcrumbs -->
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Stage préparation bac maths' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-blue-50 via-blue-50/50 to-white py-12 md:py-16 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-200/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-10 w-64 h-64 bg-yellow-200/20 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+          Stage préparation bac maths : consolider les notions clés avant l'épreuve
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700 mb-4 leading-relaxed">
+          Un <strong>stage intensif de maths spécial bac</strong> pour revoir les chapitres qui tombent le plus, s'entraîner sur des <strong>annales corrigées</strong> et apprendre à gérer le temps le jour J. Idéal pour les élèves de Terminale qui veulent transformer leurs révisions en points au bac.
+        </p>
+        <p class="text-base md:text-lg text-gray-600">
+          Format en visio, séances courtes mais régulières, avec un <strong>professeur particulier de maths</strong> qui suit déjà des Terminales toute l'année.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Pour qui et objectifs -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Pour qui est ce stage de préparation au bac de maths ?
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Ce <strong>stage préparation bac maths</strong> s'adresse aux élèves de <strong>Terminale générale</strong> qui préparent l'épreuve de spécialité mathématiques, ainsi qu'aux élèves qui ont gardé les maths en option. Il est conçu pour les élèves qui :
+        </p>
+        <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+          <li>ont travaillé dans l'année mais veulent <strong>structurer les dernières semaines</strong> avant l'épreuve ;</li>
+          <li>se sentent noyés dans la quantité de chapitres et ne savent pas <strong>quoi prioriser</strong> ;</li>
+          <li>souhaitent s'entraîner sur des <strong>annales bac maths</strong> avec un retour détaillé ;</li>
+          <li>ont besoin d'un <strong>cadre de travail</strong> pour ne pas repousser les révisions au lendemain.</li>
+        </ul>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+          L'objectif n'est pas de refaire tout le programme en quelques jours, mais de se concentrer sur les <strong>leviers les plus rentables</strong> pour l'épreuve : automatiser les techniques indispensables et clarifier les méthodes à utiliser selon les questions.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contenu du stage -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Contenu d'un stage bac maths type
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Le contenu précis est adapté au niveau de l'élève, mais un <strong>stage bac maths</strong> se structure en général autour de :
+        </p>
+        
+        <div class="space-y-6 mb-8">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">1. Diagnostic rapide et plan de révision</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Première séance : point sur les chapitres du programme, difficultés majeures, résultats blancs éventuels. On dresse ensemble une <strong>liste de priorités</strong> (fonctions, suites, probabilités, dérivation, primitives, etc.) et on construit un plan de stage réaliste sur la période disponible.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">2. Révision ciblée par thèmes qui tombent souvent</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Chaque séance aborde 1 à 2 <strong>thèmes centraux du bac</strong> (par exemple : étude de fonction + probabilités conditionnelles) avec rappel de cours, exercices types puis questions issues d'<strong>annales bac maths</strong>. L'objectif est de retrouver rapidement les réflexes attendus par les sujets.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">3. Travail sur la rédaction et la gestion du temps</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Un stage de préparation efficace ne se limite pas au calcul : on travaille aussi la <strong>rédaction mathématique</strong>, l'enchaînement des questions sur un exercice long, et la <strong>gestion du temps</strong> sur des extraits d'annales. Savoir quand passer à la question suivante fait partie de la préparation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Organisation pratique -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Organisation d'un stage de maths pour le bac
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Les <strong>stages préparation bac maths</strong> se déroulent en <strong>visioconférence</strong>, afin de s'adapter facilement à votre emploi du temps et d'éviter les déplacements pendant une période déjà chargée.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Format type</h3>
+            <ul class="list-disc pl-5 space-y-1 text-gray-700 text-sm md:text-base">
+              <li>Stage individuel en visio (ou petit groupe sur demande) ;</li>
+              <li>Sessions de 1h à 1h30 selon le niveau et la période ;</li>
+              <li>Fréquence resserrée (par exemple 3 à 5 séances sur 1 à 2 semaines).</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Matériel nécessaire</h3>
+            <ul class="list-disc pl-5 space-y-1 text-gray-700 text-sm md:text-base">
+              <li>Ordinateur ou tablette avec connexion stable ;</li>
+              <li>Caméra orientée vers la copie ou tablette graphique (si possible) ;</li>
+              <li>Cahier dédié au stage, pour centraliser méthodes et erreurs à éviter.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+          Lors du premier contact, nous définissons ensemble le <strong>nombre de séances</strong>, les créneaux possibles et les <strong>chapitres prioritaires</strong> à traiter pendant le stage.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Résultats attendus -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Ce qu'un stage bac maths peut réellement changer
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          Utilisé correctement, un <strong>stage intensif de préparation au bac de maths</strong> peut faire la différence sur :
+        </p>
+        <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+          <li>la <strong>maîtrise des exercices types</strong> qui reviennent régulièrement d'une session à l'autre ;</li>
+          <li>la capacité à <strong>identifier rapidement</strong> le bon chapitre et la bonne méthode face à une question ;</li>
+          <li>la réduction du <strong>stress le jour de l'épreuve</strong>, grâce à des simulations d'extraits d'annales ;</li>
+          <li>la mise en place d'une <strong>stratégie de gestion du temps</strong> adaptée à votre profil.</li>
+        </ul>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+          Le stage ne remplace pas tout le travail de l'année, mais il permet de <strong>rentabiliser les dernières semaines</strong> et d'arriver au bac avec un plan clair plutôt qu'avec un simple empilement de fiches.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact / CTA -->
+  <section id="contact" class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10">
+          <div class="mb-8 text-center md:text-left">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Discutons de votre stage de préparation bac maths
+            </h2>
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+              Expliquez-moi votre situation (spécialité choisie, notes actuelles, difficultés, délais avant le bac) et je vous proposerai un <strong>stage préparation bac maths</strong> adapté : nombre de séances, contenus prioritaires et organisation en visio.
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+              <h3 class="text-lg md:text-xl font-semibold text-gray-900">
+                Ce que vous pouvez attendre du stage
+              </h3>
+              <ul class="space-y-2 text-gray-700 text-sm md:text-base">
+                <li>Un diagnostic rapide de vos priorités avant le bac ;</li>
+                <li>Un plan de séances clair, avec annales bac maths ciblées ;</li>
+                <li>Des corrections détaillées pour comprendre vos erreurs ;</li>
+                <li>Une méthode pour continuer à travailler entre les séances.</li>
+              </ul>
+              <p class="text-gray-700 text-sm md:text-base">
+                Vous pouvez aussi m'écrire directement à 
+                <a href="mailto:contact@revise-tes-maths.fr" class="text-gray-900 hover:text-gray-700 underline font-medium">
+                  contact@revise-tes-maths.fr
+                </a>
+                ou via WhatsApp si vous préférez un premier échange rapide.
+              </p>
+            </div>
+            
+            <div>
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
