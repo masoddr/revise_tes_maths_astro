@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import WhatsAppBrevetStickyButton from '../../components/WhatsAppBrevetStickyButton.astro';
+import ContactForm from '../../components/ContactForm.astro';
 
 // Structure des annales organisées par centre d'examen, date et type
 interface BrevetItem {
@@ -395,10 +396,32 @@ const allThemes = Array.from(
 
 const whatsappNumber = "33616635187";
 const whatsappMessageBrevetAnnales =
-  "Bonjour, je cherche un accompagnement pour préparer le brevet de maths. J’ai vu votre page sur les annales.";
+  "Bonjour, je prépare le brevet de maths et j'aimerais des cours (éventuellement pendant les vacances) pour gratter des points. J'ai vu votre page sur les annales.";
 const whatsappBrevetAnnalesUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessageBrevetAnnales)}`;
-const contactHref = "/#contact";
+const contactHref = "#formulaire-contact";
 const coursParticuliersHref = "/professeur-particulier-maths";
+
+/** Approx. DNB written tests window — update when rebuilding for a new session year. */
+const brevetExamApprox = new Date(Date.UTC(2026, 5, 24));
+const daysUntilBrevet = Math.ceil(
+  (brevetExamApprox.getTime() - Date.now()) / (1000 * 60 * 60 * 24)
+);
+
+function formatBrevetCountdown(days: number): string {
+  if (days <= 14) {
+    const d = Math.max(1, days);
+    return `dans environ ${d} jour${d > 1 ? "s" : ""}`;
+  }
+  if (days <= 50) return `dans environ ${Math.round(days / 7)} semaines`;
+  const months = Math.round(days / 30);
+  if (months <= 1) return "dans environ 1 mois";
+  return `dans environ ${months} mois`;
+}
+
+const showBrevetUrgencyBanner = daysUntilBrevet > 0 && daysUntilBrevet <= 100;
+const brevetUrgencyCountdownLabel = showBrevetUrgencyBanner
+  ? formatBrevetCountdown(daysUntilBrevet)
+  : null;
 ---
 
 <Layout 
@@ -435,8 +458,20 @@ const coursParticuliersHref = "/professeur-particulier-maths";
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Annales Brevet Maths - Sujets et Corrigés
         </h1>
+
+        {brevetUrgencyCountdownLabel && (
+          <div class="mb-6 text-left rounded-2xl border-2 border-amber-400 bg-amber-50 p-4 md:p-5 shadow-md max-w-3xl mx-auto">
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-900 mb-2">
+              Brevet maths — il reste du temps, mais plus beaucoup
+            </p>
+            <p class="text-gray-900 font-semibold text-base md:text-lg leading-snug mb-2">
+              Le brevet approche <span class="text-amber-900">({brevetUrgencyCountdownLabel})</span> : ce n’est <strong>pas trop tard</strong> pour prendre un cours — notamment <strong>pendant les vacances</strong>, pour sécuriser la méthode et <strong>gratter des points</strong> sur une annale réelle (épreuve 2h).
+            </p>
+          </div>
+        )}
+
         <p class="text-lg text-gray-700 mb-6">
-          Accédez aux <strong>annales corrigées 2024-2025</strong> et progressez avec une <strong>vraie méthode</strong> : exercices, rédaction, et gestion du temps.
+          Accédez aux <strong>annales corrigées</strong> et progressez avec une <strong>vraie méthode</strong> : exercices, rédaction, et gestion du temps. Si le calendrier te stresse, une séance ciblée sur <strong>une annale de cette page</strong> peut déjà débloquer des points.
         </p>
         <div class="flex flex-col sm:inline-flex sm:flex-row items-center justify-center gap-3">
           <a 
@@ -453,20 +488,18 @@ const coursParticuliersHref = "/professeur-particulier-maths";
           </a>
 
           <a 
-            href={whatsappBrevetAnnalesUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={contactHref}
             class="inline-flex items-center gap-2 px-6 py-3 bg-amber-400 text-slate-950 rounded-lg font-semibold hover:bg-amber-300 transition-colors shadow-lg hover:shadow-xl"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-            Bloqué sur un exercice ? Écris-moi
+            Besoin d’aide avant le brevet ? Clique ici pour qu’on débloque la situation ensemble !
           </a>
         </div>
 
         <p class="mt-5 text-sm text-gray-600">
-          Parents et élèves : vous pouvez réserver une séance ciblée à partir d’une annale de cette page.
+          Parents et élèves : une séance sur une annale de cette page peut suffire pour corriger la méthode avant le brevet — créneaux vacances possibles selon disponibilité. Aide rapide aussi via le bouton WhatsApp.
         </p>
       </div>
     </div>
@@ -485,6 +518,11 @@ const coursParticuliersHref = "/professeur-particulier-maths";
           </h2>
           <p class="text-sm md:text-base text-slate-100/90 mb-3">
             On choisit <strong>une annale de cette page</strong>, on la travaille ensemble&nbsp;: méthode, rédaction, gestion du temps.
+            {brevetUrgencyCountdownLabel && (
+              <span class="block mt-2 font-semibold text-amber-200">
+                Le brevet arrive vite ({brevetUrgencyCountdownLabel}) : les vacances restent un bon créneau pour une ou deux séances ciblées.
+              </span>
+            )}
             <span class="block mt-1">
               Une séance ciblée peut suffire pour débloquer les exercices les plus classiques du brevet.
             </span>
@@ -723,7 +761,12 @@ const coursParticuliersHref = "/professeur-particulier-maths";
             </h2>
             <p class="text-gray-700 leading-relaxed">
               Écris-moi et je te dis comment l’aborder, à partir du <strong>sujet</strong> ou du <strong>corrigé</strong> de ton annale.
-              Une séance ciblée peut suffire pour débloquer les exercices les plus classiques.
+              {brevetUrgencyCountdownLabel && (
+                <span class="block mt-2 text-emerald-900 font-medium">
+                  Le brevet arrive vite ({brevetUrgencyCountdownLabel}) : les vacances sont un bon créneau pour une ou deux séances ciblées et gratter des points sans attendre la dernière ligne droite.
+                </span>
+              )}
+              Une séance ciblée peut suffire pour débloquer les exercices les plus classiques du brevet.
             </p>
           </div>
 
@@ -801,6 +844,11 @@ const coursParticuliersHref = "/professeur-particulier-maths";
         
         <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg p-6 md:p-8 text-white">
           <h3 class="text-xl font-bold mb-3">On travaille ensemble une annale complète</h3>
+          {brevetUrgencyCountdownLabel && (
+            <p class="text-sm md:text-base font-semibold bg-white/15 rounded-lg px-3 py-2 mb-3 border border-white/30">
+              Rappel : le brevet approche ({brevetUrgencyCountdownLabel}). Ce n’est pas trop tard pour un ou deux créneaux pendant les vacances — objectif points concrets sur ta copie, pas seulement « faire des annales ».
+            </p>
+          )}
           <p class="text-base md:text-lg leading-relaxed mb-4">
             Parents et élèves : on choisit un sujet de cette page, on travaille la méthode et la rédaction, puis on corrige précisément les points qui bloquent.
             Objectif&nbsp;: progresser vite et être plus à l’aise le jour J.
@@ -837,9 +885,26 @@ const coursParticuliersHref = "/professeur-particulier-maths";
       </div>
     </div>
   </section>
+
+  {brevetUrgencyCountdownLabel && (
+    <section class="bg-amber-100/80 border-y border-amber-200 py-4 md:py-5" aria-label="Rappel brevet et contact">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-center md:text-left">
+          <p class="text-sm md:text-base text-amber-950 font-medium">
+            Tu es venu pour les <strong>annales gratuites</strong> — parfait. Pour convertir ça en points sur l’épreuve ({brevetUrgencyCountdownLabel}), un cours sur <strong>ton</strong> annale change souvent plus que trois sujets faits « en solo ».
+          </p>
+          <a
+            href="#formulaire-contact"
+            class="shrink-0 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-900 text-white rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors"
+          >
+            Proposer des dates (formulaire)
+          </a>
   
-  
-  
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Filters Section -->
   <section class="bg-white border-b border-gray-100 sticky top-0 z-10 backdrop-blur-sm bg-white/95">
     <div class="container mx-auto px-4 py-6">
@@ -1141,6 +1206,21 @@ const coursParticuliersHref = "/professeur-particulier-maths";
             </p>
           </details>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-page anchor: hero CTA & reservation links -->
+  <section id="formulaire-contact" class="scroll-mt-24 bg-gray-50 py-12 md:py-16 border-t border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="max-w-xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2 text-center">
+          Contact — préparation brevet / annales
+        </h2>
+        <p class="text-gray-600 text-center text-sm md:text-base mb-6 leading-relaxed">
+          Décris ton niveau, ton créneau (vacances ou semaine) et l’annale sur laquelle tu veux travailler : je te réponds pour qu’on débloque la situation ensemble.
+        </p>
+        <ContactForm />
       </div>
     </div>
   </section>

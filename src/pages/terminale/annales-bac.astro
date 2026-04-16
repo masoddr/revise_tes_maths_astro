@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import WhatsAppBrevetStickyButton from '../../components/WhatsAppBrevetStickyButton.astro';
+import ContactForm from '../../components/ContactForm.astro';
 
 // Structure des annales organisées par centre d'examen, date et jour
 interface AnnalesItem {
@@ -361,11 +362,30 @@ const allThemes = Array.from(
 ).sort();
 
 const whatsappNumber = "33616635187";
-const whatsappMessageBacAnnales =
-  "Bonjour, je cherche un accompagnement pour préparer le bac de maths. J'ai vu votre page sur les annales.";
+const whatsappMessageBacAnnales =  "Bonjour, je cherche un accompagnement pour préparer le bac de maths. J'ai vu votre page sur les annales.";
 const whatsappBacAnnalesUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessageBacAnnales)}`;
 const contactHref = "/#contact";
 const coursParticuliersHref = "/professeur-particulier-maths";
+
+/** Approx. first bac maths slot (Métropole) — update when rebuilding for a new session year. */
+const bacMathsApprox = new Date(Date.UTC(2026, 5, 16));
+const daysUntilBac = Math.ceil(
+  (bacMathsApprox.getTime() - Date.now()) / (1000 * 60 * 60 * 24)
+);
+
+function formatBacCountdown(days: number): string {
+  if (days <= 14) {
+    const d = Math.max(1, days);
+    return `dans environ ${d} jour${d > 1 ? "s" : ""}`;
+  }
+  if (days <= 50) return `dans environ ${Math.round(days / 7)} semaines`;
+  const months = Math.round(days / 30);
+  if (months <= 1) return "dans environ 1 mois";
+  return `dans environ ${months} mois`;
+}
+
+const showBacUrgencyBanner = daysUntilBac > 0 && daysUntilBac <= 100;
+const bacUrgencyCountdownLabel = showBacUrgencyBanner ? formatBacCountdown(daysUntilBac) : null;
 ---
 
 <Layout 
@@ -400,8 +420,20 @@ const coursParticuliersHref = "/professeur-particulier-maths";
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Annales Bac Maths - Sujets et Corrigés
         </h1>
+
+        {bacUrgencyCountdownLabel && (
+          <div class="mb-6 text-left rounded-2xl border-2 border-amber-400 bg-amber-50 p-4 md:p-5 shadow-md max-w-3xl mx-auto">
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-900 mb-2">
+              Bac maths — il reste du temps, mais plus beaucoup
+            </p>
+            <p class="text-gray-900 font-semibold text-base md:text-lg leading-snug mb-2">
+              Le bac approche <span class="text-amber-900">({bacUrgencyCountdownLabel})</span> : ce n’est <strong>pas trop tard</strong> pour prendre un cours — notamment <strong>pendant les vacances</strong>, pour sécuriser la méthode et <strong>gratter des points</strong> sur une annale réelle.
+            </p>
+          </div>
+        )}
+
         <p class="text-lg text-gray-700 mb-6">
-          Accédez aux <strong>annales corrigées 2024-2025</strong> et progressez avec une <strong>vraie méthode</strong> : exercices, rédaction, et gestion du temps (4h d’épreuve).
+          Accédez aux <strong>annales corrigées 2024-2025</strong> et progressez avec une <strong>vraie méthode</strong> : exercices, rédaction, et gestion du temps (4h d’épreuve). Si le calendrier te stresse, une séance ciblée sur <strong>une annale de cette page</strong> peut déjà débloquer des points.
         </p>
         <div class="flex flex-col sm:inline-flex sm:flex-row items-center justify-center gap-3">
           <a 
@@ -418,86 +450,20 @@ const coursParticuliersHref = "/professeur-particulier-maths";
           </a>
 
           <a 
-            href={whatsappBacAnnalesUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#formulaire-contact"
             class="inline-flex items-center gap-2 px-6 py-3 bg-amber-400 text-slate-950 rounded-lg font-semibold hover:bg-amber-300 transition-colors shadow-lg hover:shadow-xl"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-            Bloqué sur un exercice ? Écris-moi
+            Besoin d’aide avant le bac ? Clique ici pour qu’on débloque la situation ensemble !
           </a>
+
         </div>
 
         <p class="mt-5 text-sm text-gray-600">
-          Parents et élèves : vous pouvez réserver une séance ciblée à partir d’une annale de cette page.
+          Parents et élèves : une séance sur une annale de cette page peut suffire pour corriger la méthode avant le bac — créneaux vacances possibles selon disponibilité.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bloc conversion (après le header) -->
-  <section class="bg-slate-900 text-white py-10 md:py-12">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto grid md:grid-cols-[1.4fr,1fr] gap-8 items-start">
-        <div>
-          <p class="inline-flex items-center text-xs font-semibold tracking-wide uppercase text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 px-3 py-1 rounded-full mb-3">
-            Entraînement guidé
-          </p>
-          <h2 class="text-2xl md:text-3xl font-bold mb-3">
-            Passez de l’entraînement seul à une vraie méthode sur les annales
-          </h2>
-          <p class="text-sm md:text-base text-slate-100/90 mb-3">
-            On choisit <strong>une annale de cette page</strong>, on la travaille ensemble&nbsp;: méthode, rédaction, gestion du temps (4h).
-            <span class="block mt-1">
-              Une séance ciblée peut suffire pour débloquer les exercices les plus classiques du bac.
-            </span>
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center mb-4">
-            <a
-              href={contactHref}
-              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-amber-400 text-slate-950 font-semibold shadow-lg shadow-amber-500/40 hover:bg-amber-300 transition-all duration-200"
-            >
-              Réserver une séance annales bac
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-
-            <a
-              href={whatsappBacAnnalesUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-transparent border border-white/70 text-white font-semibold hover:bg-white/10 transition-colors"
-            >
-              WhatsApp : aide rapide
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-          </div>
-
-          <p class="text-xs text-slate-300">
-            Format possible : individuel ou petit groupe (2 à 4 élèves). En pratique, on part de votre annale, puis on corrige ce qui bloque.
-          </p>
-        </div>
-        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 md:p-6 shadow-2xl shadow-black/40">
-          <p class="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-2">
-            Ce que vous gagnez concrètement
-          </p>
-          <ul class="space-y-1.5 text-sm text-slate-100">
-            <li>• Améliorer la note : on repère et corrige les “points perdus”</li>
-            <li>• Gagner en méthode : quoi faire, dans quel ordre, et pourquoi</li>
-            <li>• Apprendre à rédiger : une copie claire et conforme au bac</li>
-            <li>• Gérer son temps : travailler un sujet complet (4h)</li>
-            <li>• Identifier les exercices classiques du bac maths</li>
-          </ul>
-          <p class="text-xs text-slate-300 mt-4">
-            Parents : vous repartez avec un plan de révision clair pour les semaines qui précèdent l’examen.
-          </p>
-        </div>
       </div>
     </div>
   </section>
@@ -688,6 +654,11 @@ const coursParticuliersHref = "/professeur-particulier-maths";
             </h2>
             <p class="text-gray-700 leading-relaxed">
               Écris-moi et je te dis comment l’aborder, à partir du <strong>sujet</strong> ou du <strong>corrigé</strong> de ton annale.
+              {bacUrgencyCountdownLabel && (
+                <span class="block mt-2 text-emerald-900 font-medium">
+                  Le bac arrive vite ({bacUrgencyCountdownLabel}) : les vacances sont un bon créneau pour une ou deux séances ciblées et gratter des points sans attendre la dernière ligne droite.
+                </span>
+              )}
               Une séance ciblée peut suffire pour débloquer les exercices les plus classiques du bac.
             </p>
           </div>
@@ -766,6 +737,11 @@ const coursParticuliersHref = "/professeur-particulier-maths";
         
         <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg p-6 md:p-8 text-white">
           <h3 class="text-xl font-bold mb-3">On travaille ensemble une annale complète</h3>
+          {bacUrgencyCountdownLabel && (
+            <p class="text-sm md:text-base font-semibold bg-white/15 rounded-lg px-3 py-2 mb-3 border border-white/30">
+              Rappel : le bac approche ({bacUrgencyCountdownLabel}). Ce n’est pas trop tard pour un ou deux créneaux pendant les vacances — objectif points concrets sur ta copie, pas seulement “faire des annales”.
+            </p>
+          )}
           <p class="text-base md:text-lg leading-relaxed mb-4">
             Parents et élèves : on choisit un sujet de cette page, on travaille la méthode et la rédaction, puis on corrige précisément les points qui bloquent.
             Objectif&nbsp;: progresser vite et être plus à l’aise le jour J (épreuve 4h).
@@ -1083,6 +1059,21 @@ const coursParticuliersHref = "/professeur-particulier-maths";
             </p>
           </details>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-page anchor: hero CTA "Besoin d'aide avant le bac" -->
+  <section id="formulaire-contact" class="scroll-mt-24 bg-gray-50 py-12 md:py-16 border-t border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="max-w-xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2 text-center">
+          Contact — préparation bac / annales
+        </h2>
+        <p class="text-gray-600 text-center text-sm md:text-base mb-6 leading-relaxed">
+          Décris ton niveau, ton créneau (vacances ou semaine) et l’annale sur laquelle tu veux travailler : je te réponds pour qu’on débloque la situation ensemble.
+        </p>
+        <ContactForm />
       </div>
     </div>
   </section>
