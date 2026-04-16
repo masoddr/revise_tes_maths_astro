@@ -1,0 +1,222 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout 
+  title="Cours de maths en visio ou en présentiel : comment choisir ? | Blog"
+  description="Comparer cours de mathématiques en ligne et en présentiel selon votre profil : concentration, matériel, trajets, autonomie et objectifs scolaires pour décider sereinement."
+>
+  <Header />
+  
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Blog', href: '/blog' },
+            { label: 'Visio ou présentiel pour les cours de maths' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <article class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <header class="mb-8 md:mb-12">
+          <div class="flex items-center gap-3 mb-4 flex-wrap">
+            <span class="px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-50 rounded-full">
+              Conseils pratiques
+            </span>
+            <span class="text-sm text-gray-500">
+              9 avril 2026
+            </span>
+            <span class="text-sm text-gray-500">•</span>
+            <span class="text-sm text-gray-500">10 min de lecture</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Cours de maths en visio ou en présentiel : comment choisir selon votre profil ?
+          </h1>
+          
+          <p class="text-xl text-gray-700 leading-relaxed">
+            Le débat "en ligne vs en personne" n'a pas de gagnant universel : ce qui compte, c'est la <strong>qualité pédagogique</strong>, la <strong>régularité</strong> et l'<strong>adéquation</strong> avec votre mode d'attention, votre emploi du temps et vos objectifs. Voici des critères concrets pour trancher sans clichés.
+          </p>
+        </header>
+        
+        <div class="mb-8 md:mb-12">
+          <img 
+            src="/images/blog/cours-visio-presentiel-hero.jpg" 
+            alt="Cours de mathématiques en visioconférence ou en présentiel : avantages selon le profil de l'élève" 
+            class="w-full h-auto rounded-2xl shadow-lg object-cover"
+            loading="eager"
+            decoding="async"
+            width="1200"
+            height="630"
+          />
+        </div>
+        
+        <div class="prose prose-lg max-w-none">
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ce qui compte plus que le canal vidéo</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Que le cours soit à distance ou chez vous, les facteurs qui expliquent le plus une progression sont souvent les mêmes : <strong>objectifs clairs</strong> dès le début, <strong>devoirs courts</strong> entre les séances, <strong>corrections expliquées</strong> (pas seulement annotées), et un rythme hebdomadaire stable. Un bon cours en visio bat un mauvais cours en présentiel — et inversement.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              La littérature sur le tutorat (méta-analyses) met surtout en avant l'individualisation et le feedback rapide plutôt que le support physique<sup>1</sup>. Autrement dit : posez-vous moins "visio ou pas visio ?" que "est-ce que j'ai de la place pour travailler entre deux séances ?".
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">La visio : les avantages réels (et les conditions)</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              La visioconférence fonctionne particulièrement bien lorsque :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li>Les déplacements sont coûteux en temps (agglomération, emploi du temps chargé, activités sportives).</li>
+              <li>L'élève est à l'aise avec un <strong>espace de travail dédié</strong> (tablette ou table, feuille, stylo, casque correct).</li>
+              <li>On veut des séances plus courtes mais plus fréquentes : la friction logistique est plus faible.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Le risque principal n'est pas "l'écran", c'est la <strong>distraction domestique</strong> (notifications, fratrie, deuxième onglet). Un protocole simple — téléphone hors de la pièce, session plein écran — règle souvent une grande partie du problème.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Le présentiel : quand le contact direct aide</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Le présentiel peut être préférable lorsque :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li>L'élève a besoin d'un cadre très "scolaire" pour entrer dans la concentration.</li>
+              <li>On travaille beaucoup de <strong>matériel manipulatoire</strong> ou de schémas géométriques au papier/crayon en binôme.</li>
+              <li>La connexion ou l'équipement audio est une source de stress récurrente.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Pour les mathématiques du secondaire, une tablette avec stylet ou une caméra orientée vers la feuille permet pourtant de reproduire une grande partie de l'efficacité du présentiel, à condition que le professeur maîtrise le flux (zoom sur la copie, dictée d'étapes claire).
+            </p>
+            <div class="mb-6">
+              <img 
+                src="/images/blog/setup-cours-maths-visio.jpg" 
+                alt="Exemple de poste de travail pour un cours de maths en visio : caméra, feuille et espace calme" 
+                class="w-full h-auto rounded-xl shadow-md object-cover"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="450"
+              />
+            </div>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Tableau décisionnel rapide</h2>
+            <div class="overflow-x-auto mb-6">
+              <table class="min-w-full text-left text-gray-700 border border-gray-200 rounded-lg text-sm md:text-base">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="p-3 border-b border-gray-200 font-semibold text-gray-900">Critère</th>
+                    <th class="p-3 border-b border-gray-200 font-semibold text-gray-900">Visio</th>
+                    <th class="p-3 border-b border-gray-200 font-semibold text-gray-900">Présentiel</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="p-3 border-b border-gray-100">Gain de temps</td>
+                    <td class="p-3 border-b border-gray-100">Souvent favorable</td>
+                    <td class="p-3 border-b border-gray-100">Dépend des trajets</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border-b border-gray-100">Cadre attention</td>
+                    <td class="p-3 border-b border-gray-100">À structurer à la maison</td>
+                    <td class="p-3 border-b border-gray-100">Cadre extérieur fort</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border-b border-gray-100">Flexibilité</td>
+                    <td class="p-3 border-b border-gray-100">Élevée</td>
+                    <td class="p-3 border-b border-gray-100">Moyenne</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Tester plutôt que théoriser</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Une approche pragmatique consiste à faire <strong>deux ou trois séances</strong> dans un format, puis à évaluer honnêtement : charge mentale, compréhension, devoirs réalisés entre les cours. Le bon format est celui qui maximise la <strong>régularité</strong> sur plusieurs mois — pas celui qui impressionne sur une séance.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Références et sources</h2>
+            <ol class="list-decimal pl-6 space-y-2 text-gray-700 text-sm">
+              <li>VanLehn, K., "The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems", <em>Educational Psychologist</em>, 2011.</li>
+            </ol>
+          </section>
+          
+        </div>
+        
+        <section class="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Cours de maths en visio avec un suivi personnalisé
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Je propose des cours de mathématiques du collège au lycée en visioconférence, avec des exercices entre les séances et des corrections détaillées pour ancrer les méthodes.
+          </p>
+          <a 
+            href="#contact" 
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-all duration-300"
+          >
+            Demander un premier échange
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </section>
+        
+      </div>
+    </div>
+  </article>
+  
+  <section id="contact" class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+  }
+  .prose p {
+    margin-bottom: 1rem;
+  }
+  .prose strong {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  .prose sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+</style>

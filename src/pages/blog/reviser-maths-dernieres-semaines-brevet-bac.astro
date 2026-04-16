@@ -1,0 +1,218 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout 
+  title="Réviser les maths dans les dernières semaines avant le Brevet ou le Bac | Blog"
+  description="Plan de révision réaliste pour les maths en fin d'année : prioriser les notions, travailler les annales sans s'épuiser, gérer le stress et éviter les erreurs classiques avant le Brevet ou le Bac."
+>
+  <Header />
+  
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Blog', href: '/blog' },
+            { label: 'Réviser les maths avant Brevet / Bac' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <article class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <header class="mb-8 md:mb-12">
+          <div class="flex items-center gap-3 mb-4 flex-wrap">
+            <span class="px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-50 rounded-full">
+              Examens & Révisions
+            </span>
+            <span class="text-sm text-gray-500">
+              18 février 2026
+            </span>
+            <span class="text-sm text-gray-500">•</span>
+            <span class="text-sm text-gray-500">12 min de lecture</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Réviser les maths dans les dernières semaines avant le Brevet ou le Bac : plan réaliste et pièges à éviter
+          </h1>
+          
+          <p class="text-xl text-gray-700 leading-relaxed">
+            À quelques semaines d'un examen national, la tentation est grande de tout vouloir refaire, tout relire, tout refaire en une nuit. En mathématiques, une fin de préparation structurée fait souvent plus de différence qu'un sprint de volume. Voici un cadre réaliste pour consolider sans s'épuiser.
+          </p>
+        </header>
+        
+        <div class="mb-8 md:mb-12">
+          <img 
+            src="/images/blog/reviser-maths-examens-hero.jpg" 
+            alt="Révision des mathématiques avant le Brevet ou le Bac : planning, annales et gestion du stress" 
+            class="w-full h-auto rounded-2xl shadow-lg object-cover"
+            loading="eager"
+            decoding="async"
+            width="1200"
+            height="630"
+          />
+        </div>
+        
+        <div class="prose prose-lg max-w-none">
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ce qui change vraiment à l'approche de l'examen</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Les mathématiques restent la même matière, mais <strong>l'objectif</strong> change : on ne cherche plus seulement à "comprendre le chapitre", mais à <strong>reproduire des compétences sous contrainte</strong> (temps limité, énoncé imposé, stress). Les élèves qui progressent le mieux à ce stade sont souvent ceux qui alternent trois types d'activités : rappel ciblé du cours, exercices types, sujets complets chronométrés.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Une synthèse du <strong>Cnesco</strong> sur l'accompagnement et les dispositifs de soutien insiste sur l'importance d'une pratique régulière et d'un retour rapide sur les erreurs plutôt que sur une accumulation passive de contenus<sup>1</sup>. En pratique, cela veut dire : moins de pages relues, plus d'actions qui ressemblent à l'examen.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Prioriser sans se mentir : la règle des trois niveaux</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Listez vos chapitres et classez-les en trois niveaux :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>Niveau A — fragiles mais centraux</strong> (souvent : équations, pourcentages, fonctions, géométrie plane, statistiques/probabilités selon le niveau) : ce sont vos priorités numéro 1.</li>
+              <li><strong>Niveau B — corrects mais irréguliers</strong> : vous y revenez après les A, surtout via des exercices mélangés.</li>
+              <li><strong>Niveau C — solides</strong> : entretien léger (questions courtes, rappels de formules) pour ne pas perdre l'automatisme.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              L'erreur classique est d'inverser A et C : on révise ce qu'on aime déjà, parce que ça rassure. Or c'est sur le niveau A que le temps investi rapporte le plus de points au bac ou au brevet.
+            </p>
+            <div class="mb-6">
+              <img 
+                src="/images/blog/priorites-revision-maths.jpg" 
+                alt="Schéma mental : prioriser les chapitres fragiles avant un examen de mathématiques" 
+                class="w-full h-auto rounded-xl shadow-md object-cover"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="450"
+              />
+            </div>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Un rythme hebdomadaire réaliste (sans mythologie du "full time")</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Une semaine type peut ressembler à ceci (à adapter selon votre emploi du temps et votre niveau) :
+            </p>
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 mb-6">
+              <ul class="space-y-2 text-gray-700">
+                <li><strong>3 séances courtes (45–60 min)</strong> : exercices ciblés niveau A + correction immédiate.</li>
+                <li><strong>1 séance moyenne (75–90 min)</strong> : demi-sujet ou sujet court, avec chronomètre.</li>
+                <li><strong>1 séance légère (30 min)</strong> : fiches "formules + pièges" + relecture d'erreurs de la semaine.</li>
+              </ul>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              L'idée n'est pas d'ajouter des heures impossibles à tenir, mais de <strong>rendre la semaine prévisible</strong>. La régularité bat presque toujours le surmenage du week-end.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Les annales : comment les utiliser sans se décourager</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Un sujet complet trop tôt peut être brutal. Une progression simple fonctionne bien :
+            </p>
+            <ol class="list-decimal pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>Extraits</strong> : quelques exercices isolés issus de sujets, chronométrés.</li>
+              <li><strong>Blocs</strong> : partie I ou II seule, avec temps majoré au début.</li>
+              <li><strong>Sujet entier</strong> : temps officiel, conditions "examen" (téléphone ailleurs, pause unique si autorisée).</li>
+            </ol>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Après chaque sujet, consacrez au moins 20 minutes à une <strong>fiche d'erreur</strong> : "où j'ai bloqué", "quelle méthode du cours j'aurais dû activer", "quelle erreur de calcul ou de lecture". C'est cette étape qui transforme une annale en progrès durable.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Gestion du stress : rester performant le jour J</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Le stress modéré peut aider à se concentrer ; le stress élevé dégrade la mémoire de travail et la précision. Des travaux en psychologie cognitive montrent l'intérêt de techniques simples (respiration, organisation du temps de copie, stratégie "je passe et je reviens") pour limiter les blocages en situation d'évaluation<sup>2</sup>.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Côté maths, une habitude utile est d'annoncer clairement sur la copie votre plan : "je pose X, j'utilise Y, donc…". Même si le calcul coince, la structure peut sauver des points et réduit l'angoisse du blanc.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Quand un accompagnement ciblé aide vraiment</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              À court terme, un professeur ou un tuteur peut accélérer le diagnostic : repérer la lacune exacte derrière une série d'échecs, proposer un enchaînement d'exercices pertinent, corriger des automatismes faux avant qu'ils ne se cristallisent. Ce n'est pas magique : c'est surtout du <strong>gain de temps</strong> et de la <strong>clarification</strong>.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Références et sources</h2>
+            <ol class="list-decimal pl-6 space-y-2 text-gray-700 text-sm">
+              <li>Conseil national d'évaluation du système scolaire (Cnesco), travaux sur l'accompagnement scolaire et les dispositifs de soutien (synthèses publiées sur cnesco.fr).</li>
+              <li>Beilock, S. L., <em>Choke</em> / travaux sur le stress en situation d'évaluation et la performance sous pression (psychologie cognitive).</li>
+            </ol>
+          </section>
+          
+        </div>
+        
+        <section class="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Besoin d'un plan de révision sur mesure pour les maths ?
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Je peux vous aider à structurer les dernières semaines avant le Brevet ou le Bac : priorités, annales, méthode de correction et gestion du temps en épreuve.
+          </p>
+          <a 
+            href="#contact" 
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-all duration-300"
+          >
+            Demander un premier échange
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </section>
+        
+      </div>
+    </div>
+  </article>
+  
+  <section id="contact" class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+  }
+  .prose p {
+    margin-bottom: 1rem;
+  }
+  .prose strong {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  .prose sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+</style>

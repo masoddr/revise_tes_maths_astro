@@ -1,0 +1,217 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout 
+  title="Comment travailler les annales de maths efficacement | Blog"
+  description="Méthode concrète pour utiliser les annales de mathématiques : découpage des sujets, correction active, fiches d'erreurs, progression du collège au lycée sans gaspiller son temps."
+>
+  <Header />
+  
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Blog', href: '/blog' },
+            { label: 'Travailler les annales de maths' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <article class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <header class="mb-8 md:mb-12">
+          <div class="flex items-center gap-3 mb-4 flex-wrap">
+            <span class="px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-50 rounded-full">
+              Méthodologie
+            </span>
+            <span class="text-sm text-gray-500">
+              20 mars 2026
+            </span>
+            <span class="text-sm text-gray-500">•</span>
+            <span class="text-sm text-gray-500">11 min de lecture</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Comment travailler les annales de maths efficacement (sans se décourager)
+          </h1>
+          
+          <p class="text-xl text-gray-700 leading-relaxed">
+            Les annales sont l'un des meilleurs outils pour se préparer aux épreuves : elles reflètent le format réel, le niveau de difficulté et les habitudes des concepteurs de sujets. Mais mal utilisées, elles deviennent une suite de copies "ratées" qui érodent la confiance. Voici une méthode progressive, orientée compétences.
+          </p>
+        </header>
+        
+        <div class="mb-8 md:mb-12">
+          <img 
+            src="/images/blog/annales-maths-methode-hero.jpg" 
+            alt="Méthode de travail sur les annales de mathématiques : sujets, correction et analyse des erreurs" 
+            class="w-full h-auto rounded-2xl shadow-lg object-cover"
+            loading="eager"
+            decoding="async"
+            width="1200"
+            height="630"
+          />
+        </div>
+        
+        <div class="prose prose-lg max-w-none">
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Pourquoi les annales surpassent souvent les exercices de fin de chapitre</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Dans un manuel, les exercices sont généralement alignés sur la leçon du jour : le "bon outil" est souvent évident. Dans une annale, les notions sont <strong>mélangées</strong>, les questions enchaînent des idées ("on admet que…", "en déduire…") et le temps est compté. C'est exactement cette compétence de <strong>sélection</strong> qu'il faut entraîner.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Les recherches sur l'<strong>intercalage</strong> (mélanger les types de problèmes) suggèrent qu'il peut être plus lent au début, mais qu'il favorise ensuite le transfert vers de nouveaux exercices, comparé à un entraînement uniquement par blocs homogènes<sup>1</sup>.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">La règle 20/40/40 : lecture, exécution, analyse</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Pour chaque session d'annales, répartissez mentalement votre énergie :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>20 % — lecture active</strong> : surligner les données, nommer les objets (triangle, fonction, suite…), repérer les questions indépendantes pour gérer l'ordre.</li>
+              <li><strong>40 % — rédaction</strong> : même brouillon propre, étapes reliées par des connecteurs logiques.</li>
+              <li><strong>40 % — analyse post-correction</strong> : sans cette part, l'annale ne sert presque à rien.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Beaucoup d'élèves font 80 % d'exécution et 5 % d'analyse : ils "refont le sujet" sans transformer l'erreur en règle personnelle. L'analyse, c'est écrire : <em>quelle habitude je change pour la prochaine fois ?</em>
+            </p>
+            <div class="mb-6">
+              <img 
+                src="/images/blog/correction-annales-active.jpg" 
+                alt="Correction active d'une annale de maths : annoter les erreurs et les causes" 
+                class="w-full h-auto rounded-xl shadow-md object-cover"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="450"
+              />
+            </div>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Trois modes de travail à alterner</h2>
+            <div class="bg-green-50 border-l-4 border-green-600 p-6 mb-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">Mode découverte (aide autorisée)</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Cours ouvert au début, objectif : comprendre la chaîne logique. Pas de pression chronométrique maximale.
+              </p>
+            </div>
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-6 mb-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">Mode entraînement (aide partielle)</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Indices après un premier blocage, ou correction intermédiaire tous les 15 minutes. Objectif : réduire progressivement l'aide.
+              </p>
+            </div>
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 mb-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">Mode examen (conditions réelles)</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Chrono, feuille vierge, règles strictes. Objectif : mesurer, pas apprendre.
+              </p>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              L'échec fréquent est de tout faire en mode examen trop tôt : on apprend peu, on stresse beaucoup. Alternez les trois modes selon la difficulté du sujet et votre niveau actuel.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">La fiche d'erreur : un outil simple et puissant</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Après correction, pour chaque erreur majeure, notez en quatre lignes :
+            </p>
+            <ol class="list-decimal pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>Type d'erreur</strong> : calcul, lecture, raisonnement, oubli d'hypothèse…</li>
+              <li><strong>Signal avant l'erreur</strong> : "j'ai sauté une étape", "je n'ai pas vérifié l'unité"…</li>
+              <li><strong>Règle de cours associée</strong> : théorème, formule, définition.</li>
+              <li><strong>Micro-exercice de rappel</strong> : un exercice court du même type, à refaire le lendemain.</li>
+            </ol>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Cette méthode rapproche le travail des annales de ce que la recherche en apprentissage appelle la <strong>pratique de récupération</strong> : on force le cerveau à ressortir l'information au bon moment<sup>2</sup>.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Brevet, bac : même logique, autre échelle</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Au collège, les sujets mettent souvent en avant la <strong>maîtrise des bases</strong> et la clarté. Au lycée, la longueur et la technicité augmentent : il devient crucial de savoir <strong>choisir</strong> où investir les minutes. Dans tous les cas, la régularité sur les annales bat l'accumulation de sujets "avalés" sans analyse.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Références et sources</h2>
+            <ol class="list-decimal pl-6 space-y-2 text-gray-700 text-sm">
+              <li>Rohrer, D., & Taylor, K., "The shuffling of mathematics problems improves learning", <em>Instructional Science</em>, 2007.</li>
+              <li>Dunlosky, J. et al., "Improving Students' Learning With Effective Learning Techniques", <em>Psychological Science in the Public Interest</em>, 2013.</li>
+            </ol>
+          </section>
+          
+        </div>
+        
+        <section class="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Vous voulez une méthode d'annales adaptée à votre niveau ?
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Je peux vous guider sur le choix des sujets, la correction et la priorisation des thèmes à partir de vos copies.
+          </p>
+          <a 
+            href="#contact" 
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-all duration-300"
+          >
+            Demander un premier échange
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </section>
+        
+      </div>
+    </div>
+  </article>
+  
+  <section id="contact" class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+  }
+  .prose p {
+    margin-bottom: 1rem;
+  }
+  .prose strong {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  .prose sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+</style>
