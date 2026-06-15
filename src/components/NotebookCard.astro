@@ -1,0 +1,47 @@
+---
+import {
+  notebookColabUrl,
+  notebookDownloadPath,
+  type PythonNotebook,
+} from "../data/python-notebooks";
+
+interface Props {
+  notebook: PythonNotebook;
+}
+
+const { notebook } = Astro.props;
+const downloadHref = notebookDownloadPath(notebook.filename);
+const colabHref = notebookColabUrl(notebook.filename);
+---
+
+<article class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex flex-col h-full hover:border-emerald-200 hover:shadow-md transition-all duration-200">
+  <h4 class="text-base font-semibold text-gray-900 leading-snug mb-2">
+    {notebook.title}
+  </h4>
+  <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-1">
+    {notebook.description}
+  </p>
+  <div class="flex flex-col sm:flex-row gap-2 mt-auto">
+    <a
+      href={downloadHref}
+      download={notebook.filename}
+      class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-sm font-medium text-gray-800 hover:bg-gray-50 transition-colors"
+    >
+      <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+      </svg>
+      Télécharger
+    </a>
+    <a
+      href={colabHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-500 text-sm font-semibold text-white hover:bg-emerald-400 transition-colors"
+    >
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M14.24 12.32 19.32 9a.71.71 0 0 0 0-1.24l-5.08-3.31a.71.71 0 0 0-1.08.62v6.63a.71.71 0 0 0 1.08.62Zm-4.48 0V5.69a.71.71 0 0 0-1.08-.62L3.6 8.76a.71.71 0 0 0 0 1.24l5.08 3.31a.71.71 0 0 0 1.08-.62v6.63a.71.71 0 0 0 1.08.62l5.08-3.31a.71.71 0 0 0 0-1.24l-5.08-3.31a.71.71 0 0 0-1.08.62Z" />
+      </svg>
+      Ouvrir dans Colab
+    </a>
+  </div>
+</article>
