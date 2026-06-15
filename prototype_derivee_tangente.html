@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dérivée — tangente comme limite du taux d'accroissement</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a2332;
+      --text: #e8edf4;
+      --muted: #8b9cb3;
+      --curve: #5b8def;
+      --secant: #f59e0b;
+      --tangent: #34d399;
+      --point-a: #f472b6;
+      --point-b: #a78bfa;
+      --grid: #243044;
+      --accent: #6366f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1b2740 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    header h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.45rem;
+      font-weight: 650;
+    }
+
+    header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .card {
+      background: color-mix(in srgb, var(--panel) 92%, white 8%);
+      border: 1px solid #2a3850;
+      border-radius: 14px;
+      padding: 1rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    canvas {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      background: #111822;
+      touch-action: none;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    select,
+    input[type="range"] {
+      width: 100%;
+    }
+
+    select {
+      background: #111822;
+      color: var(--text);
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 0.55rem 0.65rem;
+      font: inherit;
+    }
+
+    .value {
+      font-variant-numeric: tabular-nums;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .metric {
+      background: #111822;
+      border: 1px solid #2a3850;
+      border-radius: 10px;
+      padding: 0.75rem 0.85rem;
+    }
+
+    .metric .name {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .metric .num {
+      font-size: 1.15rem;
+      font-variant-numeric: tabular-nums;
+      font-weight: 650;
+    }
+
+    .metric.highlight .num {
+      color: var(--tangent);
+    }
+
+    .metric.warn .num {
+      color: var(--secant);
+    }
+
+    .hint {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .hint strong {
+      color: var(--text);
+    }
+
+    @media (max-width: 640px) {
+      header h1 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <header>
+      <h1>Tangente = limite du taux d'accroissement</h1>
+      <p>
+        Déplacez le point <strong>A</strong>, puis rapprochez <strong>h → 0</strong> :
+        la sécante (orange) se confond avec la tangente (verte), et le quotient
+        <em>(f(x+h) − f(x)) / h</em> tend vers <em>f′(x)</em>.
+      </p>
+    </header>
+
+    <section class="card" aria-label="Graphique interactif">
+      <canvas id="plot" width="960" height="520" role="img" aria-label="Courbe, sécante et tangente"></canvas>
+      <div class="legend">
+        <span><i class="dot" style="background: var(--curve)"></i>Courbe f</span>
+        <span><i class="dot" style="background: var(--secant)"></i>Sécante (taux d'accroissement)</span>
+        <span><i class="dot" style="background: var(--tangent)"></i>Tangente (dérivée)</span>
+        <span><i class="dot" style="background: var(--point-a)"></i>A = (x, f(x))</span>
+        <span><i class="dot" style="background: var(--point-b)"></i>B = (x+h, f(x+h))</span>
+      </div>
+    </section>
+
+    <section class="card controls" aria-label="Contrôles">
+      <div>
+        <label for="functionSelect">Fonction f(x)</label>
+        <select id="functionSelect">
+          <option value="quadratic">f(x) = x²</option>
+          <option value="cubic">f(x) = x³ − 2x</option>
+          <option value="sine">f(x) = sin(x)</option>
+          <option value="gaussian">f(x) = e^(−x²/4)</option>
+        </select>
+      </div>
+      <div>
+        <label for="xSlider">Abscisse x de A : <span class="value" id="xValue">0.00</span></label>
+        <input id="xSlider" type="range" min="-4" max="4" step="0.05" value="1" />
+      </div>
+      <div>
+        <label for="hSlider">Pas h (B = A + h) : <span class="value" id="hValue">1.50</span></label>
+        <input id="hSlider" type="range" min="-3" max="3" step="0.01" value="1.5" />
+      </div>
+    </section>
+
+    <section class="card metrics" aria-label="Calculs">
+      <div class="metric warn">
+        <div class="name">Taux d'accroissement</div>
+        <div class="num" id="rateValue">—</div>
+        <div class="hint">(f(x+h) − f(x)) / h</div>
+      </div>
+      <div class="metric highlight">
+        <div class="name">Dérivée f′(x)</div>
+        <div class="num" id="derivValue">—</div>
+        <div class="hint">Pente de la tangente</div>
+      </div>
+      <div class="metric">
+        <div class="name">Écart |Δpente|</div>
+        <div class="num" id="gapValue">—</div>
+        <div class="hint">|sécante − tangente|</div>
+      </div>
+      <div class="metric">
+        <div class="name">f(x) et f(x+h)</div>
+        <div class="num" id="fxValue">—</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="hint" id="narration">
+        <strong>Idée clé :</strong> quand h devient très petit, la sécante « zoome » sur la courbe
+        et devient la tangente.
+      </p>
+    </section>
+  </div>
+
+  <script>
+    // Function catalog: f, derivative, LaTeX label, and y-range for plotting.
+    const FUNCTIONS = {
+      quadratic: {
+        label: "x²",
+        f: (x) => x * x,
+        df: (x) => 2 * x,
+        yMin: -1,
+        yMax: 8,
+      },
+      cubic: {
+        label: "x³ − 2x",
+        f: (x) => x ** 3 - 2 * x,
+        df: (x) => 3 * x ** 2 - 2,
+        yMin: -6,
+        yMax: 6,
+      },
+      sine: {
+        label: "sin(x)",
+        f: (x) => Math.sin(x),
+        df: (x) => Math.cos(x),
+        yMin: -1.4,
+        yMax: 1.4,
+      },
+      gaussian: {
+        label: "e^(−x²/4)",
+        f: (x) => Math.exp(-(x * x) / 4),
+        df: (x) => (-x / 2) * Math.exp(-(x * x) / 4),
+        yMin: -0.2,
+        yMax: 1.2,
+      },
+    };
+
+    const canvas = document.getElementById("plot");
+    const ctx = canvas.getContext("2d");
+    const functionSelect = document.getElementById("functionSelect");
+    const xSlider = document.getElementById("xSlider");
+    const hSlider = document.getElementById("hSlider");
+    const xValue = document.getElementById("xValue");
+    const hValue = document.getElementById("hValue");
+    const rateValue = document.getElementById("rateValue");
+    const derivValue = document.getElementById("derivValue");
+    const gapValue = document.getElementById("gapValue");
+    const fxValue = document.getElementById("fxValue");
+    const narration = document.getElementById("narration");
+
+    const VIEW = {
+      xMin: -5,
+      xMax: 5,
+      padding: 42,
+    };
+
+    function currentFunction() {
+      return FUNCTIONS[functionSelect.value];
+    }
+
+    function formatNumber(value, digits = 3) {
+      if (!Number.isFinite(value)) {
+        return "∞";
+      }
+      return value.toFixed(digits);
+    }
+
+    function worldToScreen(x, y, yMin, yMax) {
+      const { padding } = VIEW;
+      const width = canvas.width;
+      const height = canvas.height;
+      const plotW = width - padding * 2;
+      const plotH = height - padding * 2;
+
+      const sx = padding + ((x - VIEW.xMin) / (VIEW.xMax - VIEW.xMin)) * plotW;
+      const sy = height - padding - ((y - yMin) / (yMax - yMin)) * plotH;
+      return { x: sx, y: sy };
+    }
+
+    function drawGrid(yMin, yMax) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#111822";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.strokeStyle = "#243044";
+      ctx.lineWidth = 1;
+
+      for (let x = Math.ceil(VIEW.xMin); x <= VIEW.xMax; x += 1) {
+        const p1 = worldToScreen(x, yMin, yMin, yMax);
+        const p2 = worldToScreen(x, yMax, yMin, yMax);
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.stroke();
+      }
+
+      const yStep = (yMax - yMin) / 8;
+      for (let y = yMin; y <= yMax + 1e-9; y += yStep) {
+        const p1 = worldToScreen(VIEW.xMin, y, yMin, yMax);
+        const p2 = worldToScreen(VIEW.xMax, y, yMin, yMax);
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.stroke();
+      }
+
+      // Axes
+      ctx.strokeStyle = "#475569";
+      ctx.lineWidth = 1.5;
+      const xAxisY = worldToScreen(0, 0, yMin, yMax).y;
+      const yAxisX = worldToScreen(0, 0, yMin, yMax).x;
+      ctx.beginPath();
+      ctx.moveTo(VIEW.padding, xAxisY);
+      ctx.lineTo(canvas.width - VIEW.padding, xAxisY);
+      ctx.moveTo(yAxisX, VIEW.padding);
+      ctx.lineTo(yAxisX, canvas.height - VIEW.padding);
+      ctx.stroke();
+    }
+
+    function drawCurve(fn, yMin, yMax, color, lineWidth = 2.5) {
+      ctx.strokeStyle = color;
+      ctx.lineWidth = lineWidth;
+      ctx.beginPath();
+      let started = false;
+      const steps = 600;
+
+      for (let i = 0; i <= steps; i += 1) {
+        const x = VIEW.xMin + (i / steps) * (VIEW.xMax - VIEW.xMin);
+        const y = fn(x);
+        if (!Number.isFinite(y) || y < yMin - 2 || y > yMax + 2) {
+          started = false;
+          continue;
+        }
+        const p = worldToScreen(x, y, yMin, yMax);
+        if (!started) {
+          ctx.moveTo(p.x, p.y);
+          started = true;
+        } else {
+          ctx.lineTo(p.x, p.y);
+        }
+      }
+      ctx.stroke();
+    }
+
+    function drawLineThroughPoint(slope, x0, y0, color, dash = []) {
+      const fn = currentFunction();
+      const yMin = fn.yMin;
+      const yMax = fn.yMax;
+      const xLeft = VIEW.xMin;
+      const xRight = VIEW.xMax;
+      const yLeft = y0 + slope * (xLeft - x0);
+      const yRight = y0 + slope * (xRight - x0);
+      const p1 = worldToScreen(xLeft, yLeft, yMin, yMax);
+      const p2 = worldToScreen(xRight, yRight, yMin, yMax);
+
+      ctx.save();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2;
+      ctx.setLineDash(dash);
+      ctx.beginPath();
+      ctx.moveTo(p1.x, p1.y);
+      ctx.lineTo(p2.x, p2.y);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawPoint(x, y, color, label) {
+      const fn = currentFunction();
+      const p = worldToScreen(x, y, fn.yMin, fn.yMax);
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "#e8edf4";
+      ctx.font = "600 13px Segoe UI, sans-serif";
+      ctx.fillText(label, p.x + 10, p.y - 10);
+    }
+
+    function secantSlope(x, h, fn) {
+      if (Math.abs(h) < 1e-6) {
+        return fn.df(x);
+      }
+      return (fn.f(x + h) - fn.f(x)) / h;
+    }
+
+    function updateMetrics(x, h, fn, derivative, rate, gap) {
+      xValue.textContent = formatNumber(x, 2);
+      hValue.textContent = formatNumber(h, 2);
+      rateValue.textContent = formatNumber(rate, 4);
+      derivValue.textContent = formatNumber(derivative, 4);
+      gapValue.textContent = formatNumber(gap, 4);
+      fxValue.textContent = `${formatNumber(fn.f(x), 3)} → ${formatNumber(fn.f(x + h), 3)}`;
+
+      const absH = Math.abs(h);
+      if (absH < 0.05) {
+        narration.innerHTML =
+          "<strong>Presque tangente :</strong> |h| est très petit, le taux d'accroissement ≈ f′(x). " +
+          "C'est la définition de la dérivée comme limite.";
+      } else if (absH < 0.3) {
+        narration.innerHTML =
+          "<strong>On se rapproche :</strong> la sécante se rapproche de la tangente. " +
+          "Observez l'écart |Δpente| diminuer.";
+      } else {
+        narration.innerHTML =
+          "<strong>Idée clé :</strong> la sécante joint A et B. Diminuez |h| pour voir le quotient " +
+          "(f(x+h)−f(x))/h converger vers f′(x).";
+      }
+    }
+
+    function render() {
+      const fn = currentFunction();
+      const x = Number(xSlider.value);
+      let h = Number(hSlider.value);
+
+      // Avoid division by zero while keeping the limit intuitive.
+      if (Math.abs(h) < 0.02) {
+        h = h >= 0 ? 0.02 : -0.02;
+        hSlider.value = String(h);
+      }
+
+      const yA = fn.f(x);
+      const yB = fn.f(x + h);
+      const derivative = fn.df(x);
+      const rate = secantSlope(x, h, fn);
+      const gap = Math.abs(rate - derivative);
+
+      drawGrid(fn.yMin, fn.yMax);
+      drawCurve(fn.f, fn.yMin, fn.yMax, "#5b8def");
+      drawLineThroughPoint(rate, x, yA, "#f59e0b");
+      drawLineThroughPoint(derivative, x, yA, "#34d399", [8, 6]);
+      drawPoint(x, yA, "#f472b6", "A");
+      drawPoint(x + h, yB, "#a78bfa", "B");
+
+      updateMetrics(x, h, fn, derivative, rate, gap);
+    }
+
+    function bindEvents() {
+      [functionSelect, xSlider, hSlider].forEach((el) => {
+        el.addEventListener("input", render);
+      });
+
+      // Click on canvas to move point A.
+      canvas.addEventListener("click", (event) => {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const xPixel = (event.clientX - rect.left) * scaleX;
+        const { padding } = VIEW;
+        const plotW = canvas.width - padding * 2;
+        const ratio = (xPixel - padding) / plotW;
+        const x = VIEW.xMin + ratio * (VIEW.xMax - VIEW.xMin);
+        const clamped = Math.max(Number(xSlider.min), Math.min(Number(xSlider.max), x));
+        xSlider.value = String(Math.round(clamped * 20) / 20);
+        render();
+      });
+    }
+
+    bindEvents();
+    render();
+  </script>
+</body>
+</html>
