@@ -1,0 +1,270 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+
+<Layout
+  title="Surveillance de fréquence cardiaque fœtale | revise-tes-maths.fr"
+  description="Démonstration interactive : analyser une fréquence cardiaque avec moyenne, histogramme et seuils d'alerte. Outil pédagogique inspiré des défis MathAData, niveau Seconde."
+>
+  <Header />
+
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-5xl mx-auto">
+        <Breadcrumbs
+          items={[
+            { label: 'Démos interactives' },
+            { label: 'Fréquence cardiaque fœtale' },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-to-b from-rose-50 via-white to-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-10 md:py-14">
+      <div class="max-w-5xl mx-auto">
+        <span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-rose-700 bg-rose-100 rounded-full mb-4">
+          Démo interactive · Seconde · Statistiques & IA
+        </span>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+          Détecter un rythme cardiaque suspect avec les stats
+        </h1>
+        <p class="text-lg text-gray-700 leading-relaxed max-w-3xl">
+          Explorez un enregistrement de fréquence cardiaque fœtale : choisissez une période,
+          construisez un <strong class="text-gray-900">histogramme</strong>, calculez la
+          <strong class="text-gray-900">moyenne</strong> et décidez si une
+          <strong class="text-gray-900">alerte</strong> est nécessaire — comme dans les défis MathAData
+          sur la surveillance de la santé du fœtus.
+        </p>
+        <p id="stepIndicator" class="mt-3 text-sm font-medium text-rose-700">
+          Étape 1 / 3 — Observer le signal
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main class="bg-gray-50 py-10 md:py-14">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto space-y-6">
+
+        <section class="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 md:p-6">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <h2 class="text-lg font-semibold text-gray-900">1. Signal de fréquence cardiaque</h2>
+            <span
+              id="alertBadge"
+              class="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-800"
+            >
+              Aucune alerte
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div class="md:col-span-1">
+              <label for="scenarioSelect" class="block text-sm font-medium text-gray-700 mb-2">
+                Scénario clinique
+              </label>
+              <select
+                id="scenarioSelect"
+                class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-gray-900 text-sm shadow-sm focus:border-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-500/20"
+              ></select>
+              <p id="scenarioDescription" class="mt-2 text-xs text-gray-500"></p>
+            </div>
+            <div>
+              <label for="windowStart" class="block text-sm font-medium text-gray-700 mb-2">
+                Début de fenêtre :
+                <span id="windowStartValue" class="tabular-nums font-semibold text-rose-700">0:00</span>
+              </label>
+              <input id="windowStart" type="range" min="0" max="540" step="15" value="0" class="demo-range" />
+            </div>
+            <div>
+              <label for="windowEnd" class="block text-sm font-medium text-gray-700 mb-2">
+                Fin de fenêtre :
+                <span id="windowEndValue" class="tabular-nums font-semibold text-rose-700">10:00</span>
+              </label>
+              <input id="windowEnd" type="range" min="60" max="600" step="15" value="600" class="demo-range" />
+            </div>
+          </div>
+
+          <div class="rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-900">
+            <canvas
+              id="signalPlot"
+              width="920"
+              height="340"
+              role="img"
+              aria-label="Courbe de fréquence cardiaque dans le temps"
+              class="w-full h-auto block"
+            ></canvas>
+          </div>
+          <div class="flex flex-wrap gap-x-5 gap-y-2 mt-4 text-sm text-gray-600">
+            <span class="inline-flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>Fréquence mesurée
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>Zone normale
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-indigo-400"></span>Fenêtre analysée
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-orange-400"></span>Mesures hors seuils
+            </span>
+          </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 md:p-6">
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <h2 class="text-lg font-semibold text-gray-900">2. Histogramme des fréquences</h2>
+              <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Répartition</span>
+            </div>
+
+            <label for="binCount" class="block text-sm font-medium text-gray-700 mb-2">
+              Nombre de classes :
+              <span id="binCountValue" class="tabular-nums font-semibold text-rose-700">8</span>
+            </label>
+            <input id="binCount" type="range" min="4" max="16" step="1" value="8" class="demo-range mb-4" />
+
+            <div class="rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-900">
+              <canvas
+                id="histogramPlot"
+                width="520"
+                height="320"
+                role="img"
+                aria-label="Histogramme des fréquences cardiaques"
+                class="w-full h-auto block"
+              ></canvas>
+            </div>
+            <p class="mt-3 text-xs text-gray-500">
+              Les barres orange correspondent à des classes en dehors de l'intervalle de référence.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 md:p-6">
+              <h2 class="text-lg font-semibold text-gray-900 mb-4">3. Seuils et statistiques</h2>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label for="normalMin" class="block text-sm font-medium text-gray-700 mb-2">
+                    Seuil bas (bpm) :
+                    <span id="normalMinValue" class="tabular-nums font-semibold text-rose-700">110</span>
+                  </label>
+                  <input id="normalMin" type="range" min="90" max="130" step="1" value="110" class="demo-range" />
+                </div>
+                <div>
+                  <label for="normalMax" class="block text-sm font-medium text-gray-700 mb-2">
+                    Seuil haut (bpm) :
+                    <span id="normalMaxValue" class="tabular-nums font-semibold text-rose-700">160</span>
+                  </label>
+                  <input id="normalMax" type="range" min="140" max="180" step="1" value="160" class="demo-range" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="rounded-xl border border-gray-200 p-3">
+                  <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">Moyenne</p>
+                  <p id="meanValue" class="text-xl font-bold tabular-nums text-rose-600">—</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-3">
+                  <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">Médiane</p>
+                  <p id="medianValue" class="text-xl font-bold tabular-nums text-gray-900">—</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-3">
+                  <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">Écart-type</p>
+                  <p id="stdDevValue" class="text-xl font-bold tabular-nums text-gray-900">—</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-3">
+                  <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">Hors seuils</p>
+                  <p id="abnormalValue" class="text-xl font-bold tabular-nums text-orange-600">—</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-3">
+                  <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">Minimum</p>
+                  <p id="minValue" class="text-xl font-bold tabular-nums text-gray-900">—</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-3">
+                  <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">Maximum</p>
+                  <p id="maxValue" class="text-xl font-bold tabular-nums text-gray-900">—</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-rose-50 border-l-4 border-rose-600 rounded-r-xl p-5 md:p-6">
+          <p id="narration" class="text-gray-700 leading-relaxed m-0">
+            <strong class="text-gray-900">Défi :</strong> surveiller la santé d'un fœtus à partir d'un signal réel.
+            Les mathématiques du chapitre « moyenne et histogramme » aident à décider s'il faut alerter l'équipe médicale.
+          </p>
+        </section>
+
+        <section class="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 md:p-6">
+          <h2 class="text-lg font-semibold text-gray-900 mb-3">Quelles maths ?</h2>
+          <div class="prose prose-sm max-w-none text-gray-700">
+            <ul class="space-y-2">
+              <li>
+                <strong>Seconde — moyenne :</strong> résumer une série de mesures pour caractériser le rythme global.
+              </li>
+              <li>
+                <strong>Seconde — histogramme :</strong> regrouper les valeurs en classes pour visualiser la répartition.
+              </li>
+              <li>
+                <strong>Seconde — médiane et écart-type :</strong> compléter l'analyse quand la série est irrégulière.
+              </li>
+              <li>
+                <strong>Lien IA :</strong> un algorithme de surveillance automatise exactement ce raisonnement sur de longues durées.
+              </li>
+            </ul>
+            <p class="leading-relaxed mt-4 mb-0">
+              Prototype inspiré du TP MathAData
+              <em>« Statistiques pour surveiller la santé des fœtus »</em> :
+              un défi médical traité avec les outils statistiques du lycée.
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  import { initFrequenceCardiaqueDemo } from '../../scripts/frequence-cardiaque';
+
+  initFrequenceCardiaqueDemo();
+</script>
+
+<style>
+  .demo-range {
+    width: 100%;
+    height: 0.5rem;
+    appearance: none;
+    border-radius: 9999px;
+    background: #e5e7eb;
+    cursor: pointer;
+  }
+
+  .demo-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 9999px;
+    background: #e11d48;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .demo-range::-moz-range-thumb {
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 9999px;
+    background: #e11d48;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+</style>
