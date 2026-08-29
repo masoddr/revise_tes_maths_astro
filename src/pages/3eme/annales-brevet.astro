@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import WhatsAppBrevetStickyButton from '../../components/WhatsAppBrevetStickyButton.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import CommercialBridge from '../../components/CommercialBridge.astro';
 
 // Structure des annales organisées par centre d'examen, date et type
 interface BrevetItem {
@@ -399,7 +400,7 @@ const whatsappMessageBrevetAnnales =
   "Bonjour, je prépare le brevet de maths et j'aimerais des cours (éventuellement pendant les vacances) pour gratter des points. J'ai vu votre page sur les annales.";
 const whatsappBrevetAnnalesUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessageBrevetAnnales)}`;
 const contactHref = "#formulaire-contact";
-const coursParticuliersHref = "/professeur-particulier-maths";
+const coursParticuliersHref = "/cours-paris";
 
 /** Approx. DNB written tests window — update when rebuilding for a new session year. */
 const brevetExamApprox = new Date(Date.UTC(2026, 5, 24));
@@ -1209,6 +1210,8 @@ const brevetUrgencyCountdownLabel = showBrevetUrgencyBanner
       </div>
     </div>
   </section>
+
+  <CommercialBridge variant="brevet" ctaHref="#formulaire-contact" />
 
   <!-- In-page anchor: hero CTA & reservation links -->
   <section id="formulaire-contact" class="scroll-mt-24 bg-gray-50 py-12 md:py-16 border-t border-gray-200">

@@ -47,7 +47,7 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://revise-tes-maths.fr" />
+    <meta property="og:url" content={`https://revise-tes-maths.fr${Astro.url.pathname}`} />
     <meta property="og:image" content="https://revise-tes-maths.fr/images/logo_revise_tes_maths.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -70,10 +70,13 @@ const {
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
+      "@id": "https://revise-tes-maths.fr/#organization",
       "name": "Révise Tes Maths",
       "description": description,
       "url": "https://revise-tes-maths.fr",
       "logo": "https://revise-tes-maths.fr/images/logo_revise_tes_maths.png",
+      "telephone": "+33616635187",
+      "email": "contact@revise-tes-maths.fr",
       "founder": {
         "@type": "Person",
         "name": "Massyl",
@@ -81,7 +84,6 @@ const {
         "description": "Ingénieur Systèmes Spatiaux spécialisé en mathématiques appliquées"
       },
       "areaServed": "FR",
-      "educationalCredentialAwarded": "Baccalauréat",
       "audience": {
         "@type": "EducationalAudience",
         "educationalRole": "student"

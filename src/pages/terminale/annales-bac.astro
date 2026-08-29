@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import WhatsAppBrevetStickyButton from '../../components/WhatsAppBrevetStickyButton.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import CommercialBridge from '../../components/CommercialBridge.astro';
 
 // Structure des annales organisées par centre d'examen, date et jour
 interface AnnalesItem {
@@ -365,7 +366,7 @@ const whatsappNumber = "33616635187";
 const whatsappMessageBacAnnales =  "Bonjour, je cherche un accompagnement pour préparer le bac de maths. J'ai vu votre page sur les annales.";
 const whatsappBacAnnalesUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessageBacAnnales)}`;
 const contactHref = "/#contact";
-const coursParticuliersHref = "/professeur-particulier-maths";
+const coursParticuliersHref = "/cours-paris";
 
 /** Approx. first bac maths slot (Métropole) — update when rebuilding for a new session year. */
 const bacMathsApprox = new Date(Date.UTC(2026, 5, 16));
@@ -1069,6 +1070,8 @@ const bacUrgencyCountdownLabel = showBacUrgencyBanner ? formatBacCountdown(daysU
       </div>
     </div>
   </section>
+
+  <CommercialBridge variant="bac" ctaHref="#formulaire-contact" />
 
   <!-- In-page anchor: hero CTA "Besoin d'aide avant le bac" -->
   <section id="formulaire-contact" class="scroll-mt-24 bg-gray-50 py-12 md:py-16 border-t border-gray-200">

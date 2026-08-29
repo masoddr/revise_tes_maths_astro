@@ -1,0 +1,42 @@
+---
+interface Props {
+  variant?: 'brevet' | 'bac' | 'general';
+  ctaHref?: string;
+}
+
+const { variant = 'general', ctaHref = '/cours-paris#contact' } = Astro.props;
+
+const copy = {
+  brevet: {
+    title: 'Vous cherchez un accompagnement personnalisé ?',
+    text: 'Je propose également des cours particuliers de mathématiques à Paris, à domicile ou en visioconférence, pour préparer le brevet et les contrôles de l’année.',
+  },
+  bac: {
+    title: 'Vous cherchez un accompagnement personnalisé ?',
+    text: 'Je propose également des cours particuliers de mathématiques à Paris, à domicile ou en visioconférence, pour préparer le bac, la spécialité maths et les contrôles de l’année.',
+  },
+  general: {
+    title: 'Vous cherchez un accompagnement personnalisé ?',
+    text: 'Je propose également des cours particuliers de mathématiques à Paris, à domicile ou en visioconférence, pour préparer le brevet, le bac et les contrôles de l’année.',
+  },
+}[variant];
+---
+
+<section class="bg-white py-10 md:py-12 border-t border-gray-100">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto border border-gray-200 rounded-xl p-6 md:p-8">
+      <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+        {copy.title}
+      </h2>
+      <p class="text-gray-700 leading-relaxed mb-5">
+        {copy.text}
+      </p>
+      <a
+        href={ctaHref}
+        class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-colors"
+      >
+        Demander un entretien
+      </a>
+    </div>
+  </div>
+</section>

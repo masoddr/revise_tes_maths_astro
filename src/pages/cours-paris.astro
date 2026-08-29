@@ -4,11 +4,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactForm from '../components/ContactForm.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
 ---
 
 <Layout 
-  title="Cours de maths à Paris | Prof maths Paris | Présentiel & Visio | CESU"
-  description="Cours de maths à Paris en présentiel et visioconférence pour tous les arrondissements (1er au 20ème). Prof expérimenté pour collège et lycée. Paiement CESU accepté. Disponible Paris 75 et région parisienne."
+  title="Prof de maths à Paris | Cours particuliers à domicile & visio"
+  description="Professeur particulier de maths à Paris pour le collège et le lycée. Cours à domicile ou en visio, accompagnement personnalisé et CESU. Demander un entretien."
 >
   <Header />
   
@@ -38,11 +39,17 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-8">
           <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Cours de maths et physique chimie à Paris, à domicile ou en visio
+            Professeur particulier de maths à Paris
           </h1>
-          <p class="text-lg md:text-xl text-gray-700 mb-4 leading-relaxed">
-            Vous cherchez un <strong>professeur particulier de maths ou de physique chimie à Paris</strong> pour aider votre enfant au collège ou au lycée ? Je propose des <strong>cours particuliers</strong> en <strong>présentiel à votre domicile</strong> (paiement <strong>CESU</strong> accepté) et en <strong>visioconférence</strong>, préparés sur mesure selon le niveau et les objectifs de l’élève, dans tout Paris.
+          <p class="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
+            Cours à domicile à Paris ou en visioconférence, pour le collège et le lycée. Je suis un professeur indépendant, pas une plateforme : un seul interlocuteur, un suivi personnalisé.
           </p>
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-colors shadow-lg"
+          >
+            Demander un entretien
+          </a>
         </div>
       </div>
     </div>
@@ -143,6 +150,35 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
             Le CESU est simple à utiliser : vous commandez des chèques auprès de votre banque ou en ligne, et vous me les remettez après chaque séance. Les démarches administratives sont prises en charge automatiquement.
           </p>
         </div>
+
+        <div class="mt-8 text-center">
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-colors"
+          >
+            Demander un entretien
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cours de maths dans Paris -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Cours de maths dans Paris
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
+          Je me déplace au domicile des élèves dans Paris, dans les arrondissements où j’interviens habituellement. Les cours en visioconférence restent possibles si le déplacement n’est pas le plus pratique.
+        </p>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
+          L’accompagnement couvre le collège et le lycée : remise à niveau à la rentrée, préparation des contrôles, spécialité maths, brevet et bac. Je propose aussi de la physique-chimie selon le besoin.
+        </p>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+          Disponible dans tous les arrondissements de Paris. Le premier échange sert à confirmer le format (domicile ou visio) et le rythme adapté à l’élève.
+        </p>
       </div>
     </div>
   </section>
@@ -357,16 +393,48 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
     </div>
   </section>
 
+  <!-- Questions d'un parent -->
+  <section class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Ce qu’il est utile de savoir avant le premier échange
+        </h2>
+        <div class="space-y-5 text-gray-700 leading-relaxed">
+          <p>
+            <strong>Un professeur, pas une plateforme.</strong> Vous échangez directement avec moi. Pas d’intermédiaire, pas de mise en relation avec un autre intervenant.
+          </p>
+          <p>
+            <strong>Où et comment.</strong> Cours à domicile à Paris, ou en visioconférence. Maths, et physique-chimie selon le besoin. Collège et lycée, de la 3ème à la terminale.
+          </p>
+          <p>
+            <strong>Premier contact.</strong> Un entretien sert à comprendre le niveau, l’objectif (rentrée, contrôles, brevet, bac, spécialité) et le format le plus adapté. Les tarifs sont détaillés sur la page <a href="/tarifs" class="text-blue-700 font-semibold underline hover:text-blue-900">tarifs</a>. Le CESU est accepté pour les cours à domicile.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-colors"
+          >
+            Demander un entretien
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <GoogleReviews />
+
   <!-- Contact Section -->
   <section id="contact" class="bg-gray-50 py-8 md:py-10">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-8">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          Commencez vos cours de maths dès maintenant
+          Demander un entretien
         </h2>
         <p class="text-lg text-gray-700 mb-6">
-          Contactez-moi pour discuter de votre situation et planifier un premier cours, en présentiel à Paris ou en visioconférence, afin de mettre en place un accompagnement adapté.
+          Décrivez la situation de l’élève. Je vous réponds sous 24h pour convenir d’un premier échange, en présentiel à Paris ou en visio.
         </p>
         </div>
         
@@ -427,154 +495,31 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
     </div>
   </section>
   
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://revise-tes-maths.fr/#local-paris",
+    "name": "Révise Tes Maths",
+    "description": "Professeur particulier de maths à Paris. Cours à domicile ou en visioconférence pour le collège et le lycée. CESU accepté.",
+    "url": "https://revise-tes-maths.fr/cours-paris",
+    "telephone": "+33616635187",
+    "email": "contact@revise-tes-maths.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Paris",
+      "addressRegion": "Île-de-France",
+      "addressCountry": "FR"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Paris"
+    },
+    "serviceType": "Cours particuliers de mathématiques",
+    "parentOrganization": {
+      "@id": "https://revise-tes-maths.fr/#organization"
+    }
+  })} />
+
   <Footer />
 </Layout>
-
-<!-- Schema.org LocalBusiness for SEO -->
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Cours de maths à Paris - Professeur particulier",
-  "description": "Cours particuliers de mathématiques en présentiel et visioconférence pour tous les arrondissements de Paris. Prof expérimenté pour collège et lycée. Paiement CESU accepté.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Paris",
-    "addressRegion": "Île-de-France",
-    "postalCode": "75000",
-    "addressCountry": "FR"
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Paris",
-      "containedIn": {
-        "@type": "State",
-        "name": "Île-de-France"
-      }
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75001"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75002"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75003"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75004"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75005"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75006"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75007"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75008"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75009"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75010"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75011"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75012"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75013"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75014"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75015"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75016"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75017"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75018"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75019"
-    },
-    {
-      "@type": "PostalCode",
-      "postalCode": "75020"
-    }
-  ],
-  "serviceType": "Cours particuliers de mathématiques",
-  "url": "https://revise-tes-maths.fr/cours-paris",
-  "telephone": "+33616635187",
-  "email": "contact@revise-tes-maths.fr",
-  "priceRange": "$$",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Cours de mathématiques",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cours de maths 3ème",
-          "description": "Cours particuliers de mathématiques pour élèves de 3ème"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cours de maths Seconde",
-          "description": "Cours particuliers de mathématiques pour élèves de Seconde"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cours de maths Première",
-          "description": "Cours particuliers de mathématiques pour élèves de Première"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cours de maths Terminale",
-          "description": "Cours particuliers de mathématiques pour élèves de Terminale"
-        }
-      }
-    ]
-  }
-})} />
 
