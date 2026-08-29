@@ -1,0 +1,76 @@
+---
+import CollegeLevelPage from '../components/CollegeLevelPage.astro';
+---
+
+<CollegeLevelPage
+  slug="4eme"
+  levelLabel="4ème"
+  title="Cours de maths 4ème | Prof particulier Paris et visio"
+  description="Cours particuliers de maths en 4ème, à domicile à Paris ou en visio. Pythagore, équations, pourcentages et probabilités."
+  h1="Cours de maths en 4ème"
+  subtitle="Préparation de l’année de 3ème, à Paris ou en visioconférence."
+  intro="La <strong>4ème</strong> durcit le calcul et la géométrie. Pythagore, équations et pourcentages reviennent toute l’année suivante. Les <strong>cours de maths en 4ème</strong> servent à poser ces outils avant la préparation au brevet, sans accumuler de méthodes floues."
+  domaines={[
+    {
+      title: 'Calcul et équations',
+      tone: 'blue',
+      items: [
+        'Calcul littéral (développement)',
+        'Équations du premier degré',
+        'Puissances',
+        'Pourcentages',
+      ],
+    },
+    {
+      title: 'Géométrie',
+      tone: 'purple',
+      items: [
+        'Théorème de Pythagore',
+        'Triangles et constructions',
+        'Translations et rotations',
+        'Aires et volumes',
+      ],
+    },
+    {
+      title: 'Probabilités et données',
+      tone: 'emerald',
+      items: [
+        'Probabilités (initiation)',
+        'Fréquences',
+        'Lecture de graphiques',
+      ],
+    },
+  ]}
+  objectifs={[
+    {
+      title: 'Rendre le calcul littéral utilisable',
+      text: 'Développer, réduire, puis s’en servir dans une équation. L’objectif n’est pas d’empiler les identités.',
+    },
+    {
+      title: 'Résoudre une équation',
+      text: 'Isoler l’inconnue, vérifier la solution dans l’énoncé, écrire une phrase de conclusion.',
+    },
+    {
+      title: 'Appliquer Pythagore avec discernement',
+      text: 'Reconnaître un triangle rectangle, choisir le bon côté, contrôler l’ordre de grandeur du résultat.',
+    },
+    {
+      title: 'Préparer la 3ème',
+      text: 'Pourcentages, puissances et premiers raisonnements probabilistes : ce qui reviendra au brevet.',
+    },
+  ]}
+  pointsCles={[
+    {
+      title: '1. Le théorème de Pythagore',
+      text: 'Beaucoup d’élèves connaissent la formule et se trompent de côté. On insiste sur la figure, l’hypoténuse, puis le calcul.',
+    },
+    {
+      title: '2. Les équations',
+      text: 'Une équation n’est pas une suite de flèches. Chaque transformation doit rester justifiée, même brièvement.',
+    },
+    {
+      title: '3. Les pourcentages',
+      text: 'Augmentation, réduction, coefficient multiplicateur. Le lien avec la proportionnalité de 5ème doit rester visible.',
+    },
+  ]}
+/>

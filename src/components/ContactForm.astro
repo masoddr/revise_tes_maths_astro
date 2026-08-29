@@ -19,7 +19,7 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
   
   <div>
     <label for="nom" class="block text-gray-700 font-medium mb-2 text-sm">
-      Prénom du parent
+      Nom
     </label>
     <input
       type="text"
@@ -28,7 +28,7 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
       required
       autocomplete="given-name"
       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-sm text-gray-900 placeholder-gray-400"
-      placeholder="Votre prénom"
+      placeholder="Votre nom"
     />
   </div>
 
@@ -43,7 +43,7 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
       required
       autocomplete="email"
       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-sm text-gray-900 placeholder-gray-400"
-      placeholder="vous@email.fr"
+      placeholder="Votre email"
     />
   </div>
 
@@ -58,7 +58,7 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
       required
       autocomplete="tel"
       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-sm text-gray-900 placeholder-gray-400"
-      placeholder="06 12 34 56 78"
+      placeholder="XX XX XX XX XX"
     />
   </div>
 
@@ -73,6 +73,9 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '6afff405-0be2-
       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-sm text-gray-900 bg-white"
     >
       <option value="">Choisir un niveau</option>
+      <option value="6eme">6ème</option>
+      <option value="5eme">5ème</option>
+      <option value="4eme">4ème</option>
       <option value="3eme">3ème</option>
       <option value="seconde">Seconde</option>
       <option value="premiere">Première</option>

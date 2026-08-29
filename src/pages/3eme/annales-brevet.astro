@@ -17,8 +17,156 @@ interface BrevetItem {
   themes?: string[]; // Thèmes des exercices (Ex1 : Intégration, Ex2: Probabilités, etc.)
 }
 
-// Liste des annales 2026 (sujets 0A et 0B)
+// Liste des annales 2026 (sessions officielles + sujets 0A et 0B)
 const annales2026: BrevetItem[] = [
+  // Métropole
+  {
+    centre: 'Métropole',
+    date: 'Juin 2026',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2026/DNB_generale_Sujet_2026-06-30_Metropole_FK-v2.pdf',
+    corrige: '/pdf/annales-brevet/2026/DNB_generale_Corrige_2026-06-30_Metropole_MD-v4.pdf',
+    themes: [
+      'Ex1: Statistiques',
+      'Ex1: Calcul',
+      'Ex2: Géométrie',
+      'Ex3: Fonctions',
+      'Ex3: Calcul',
+      'Ex4: Calcul'
+    ]
+  },
+
+  // Polynésie
+  {
+    centre: 'Polynésie',
+    date: 'Juin 2026',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2026/Brevet_Polynesie_26_juin_2026_DV-3.pdf',
+    corrige: '/pdf/annales-brevet/2026/DNB_generale_Corrige_2026-06-26_Polynesie_FK-v2.pdf',
+    themes: [
+      'Ex1: Littéral',
+      'Ex1: Algorithmique',
+      'Ex2: Géométrie',
+      'Ex2: Trigonométrie',
+      'Ex3: Calcul'
+    ]
+  },
+
+  // Asie
+  {
+    centre: 'Asie',
+    date: 'Juin 2026',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2026/DNB_generale_Sujet_2026-06-15_Asie_DV-v3.pdf',
+    corrige: '/pdf/annales-brevet/2026/DNB_generale_Corrige_2026-06-15_Asie_MD-v1.pdf',
+    themes: [
+      'Ex1: Fonctions',
+      'Ex1: Calcul',
+      'Ex2: Géométrie',
+      'Ex3: Algorithmique',
+      'Ex3: Littéral',
+      'Ex4: Géométrie',
+      'Ex4: Algorithmique'
+    ]
+  },
+
+  // Amérique du Nord
+  {
+    centre: 'Amérique du Nord',
+    date: 'Juin 2026',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2026/Brevet_Ameri_Nord_3_06_2026_DV.pdf',
+    corrige: '/pdf/annales-brevet/2026/Corrige_Brevet_Ameri_Nord_3_06_2026_FH-2.pdf',
+    themes: [
+      'Ex1: Géométrie',
+      'Ex2: Fonctions',
+      'Ex2: Algorithmique',
+      'Ex2: Littéral',
+      'Ex3: Statistiques',
+      'Ex3: Probabilités',
+      'Ex3: Calcul',
+      'Ex4: Algorithmique'
+    ]
+  },
+
+  // Antilles-Guyane
+  {
+    centre: 'Antilles-Guyane',
+    date: 'Juin 2026',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2026/DNB_generale_Sujet_2026-06-30_Antilles-Guyane_DV-v2.pdf',
+    corrige: '/pdf/annales-brevet/2026/DNB_generale_Corrige_2026-06-30_Antilles-Guyane_JG-v2.pdf',
+    themes: [
+      'Ex1: Géométrie',
+      'Ex1: Trigonométrie',
+      'Ex2: Littéral',
+      'Ex2: Algorithmique',
+      'Ex3: Fonctions',
+      'Ex3: Algorithmique'
+    ]
+  },
+
+  // Centres étrangers
+  {
+    centre: 'Centres étrangers',
+    date: 'Juin 2026',
+    type: 'Général',
+    sujet: '/pdf/annales-brevet/2026/DNB_generale_Sujet_2026-06-18_Centres-etrangers_DV-v3.pdf',
+    corrige: '/pdf/annales-brevet/2026/DNB_generale_Corrige_2026-06-18_Centres-etrangers_HP-v3.pdf',
+    themes: [
+      'Ex1: Géométrie',
+      'Ex2: Calcul',
+      'Ex3: Littéral',
+      'Ex3: Algorithmique'
+    ]
+  },
+
+  // Série professionnelle
+  {
+    centre: 'Métropole',
+    date: 'Juin 2026',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2026/Brevet_pro_Metropole_30_juin_2026_DV.pdf',
+    corrige: '/pdf/annales-brevet/2026/Brevet_pro_Metropole_Corrige_Pro_juin_2026_DV-2.pdf',
+    themes: [
+      'Ex1: Statistiques',
+      'Ex2: Calcul',
+      'Ex2: Fonctions',
+      'Ex3: Géométrie',
+      'Ex4: Probabilités'
+    ]
+  },
+  {
+    centre: 'Polynésie',
+    date: 'Juin 2026',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2026/DNB_professionnelle_Sujet_2026-06-26_Polynesie_DV-v4.pdf',
+    corrige: '/pdf/annales-brevet/2026/DNB_professionnelle_Corrige_2026-06-26_Polynesie_DV-v1.pdf',
+    themes: [
+      'Ex1: Statistiques',
+      'Ex1: Calcul',
+      'Ex2: Géométrie',
+      'Ex3: Fonctions',
+      'Ex3: Calcul'
+    ]
+  },
+  {
+    centre: 'Antilles-Guyane',
+    date: 'Juin 2026',
+    type: 'Professionnel',
+    sujet: '/pdf/annales-brevet/2026/Brevet_pro_Antilles_30_06_2026_DV-2.pdf',
+    corrige: '/pdf/annales-brevet/2026/Corrige_Brevet_Pro_Antilles_juin_2026_DV-2.pdf',
+    themes: [
+      'Ex1: Géométrie',
+      'Ex2: Statistiques',
+      'Ex3: Fonctions',
+      'Ex3: Calcul',
+      'Ex4: Probabilités',
+      'Ex4: Calcul'
+    ]
+  },
+
+  // Sujets 0 (préparation 2026)
   {
     centre: 'Métropole',
     date: 'Sujet 0A 2026',
@@ -426,8 +574,8 @@ const brevetUrgencyCountdownLabel = showBrevetUrgencyBanner
 ---
 
 <Layout 
-  title="Annales Brevet Maths - Sujets et Corrigés | revise-tes-maths.fr"
-  description="Annales brevet maths avec sujets et corrigés détaillés. Préparation efficace au brevet des collèges avec annales corrigées 2024 et 2025."
+  title="Annales brevet maths : sujets et corrigés 2026"
+  description="Sujets et corrigés du brevet de maths 2026, 2025 et 2024. Métropole, Polynésie, Asie… Téléchargement gratuit, classés par centre d'examen."
 >
   <Header />
   
@@ -436,7 +584,7 @@ const brevetUrgencyCountdownLabel = showBrevetUrgencyBanner
     <div class="container mx-auto px-4 py-3">
       <div class="max-w-4xl mx-auto">
         <Breadcrumbs items={[
-          { label: '3ème', href: '/3eme' },
+          { label: 'Annales', href: '/annales' },
           { label: 'Annales du brevet' }
         ]} />
       </div>
@@ -457,7 +605,7 @@ const brevetUrgencyCountdownLabel = showBrevetUrgencyBanner
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Annales Brevet Maths - Sujets et Corrigés
+          Annales brevet maths : sujets et corrigés 2026
         </h1>
 
         {brevetUrgencyCountdownLabel && (
@@ -506,75 +654,6 @@ const brevetUrgencyCountdownLabel = showBrevetUrgencyBanner
     </div>
   </section>
 
-  <!-- Bloc conversion (après le header) -->
-  <section class="bg-slate-900 text-white py-10 md:py-12">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto grid md:grid-cols-[1.4fr,1fr] gap-8 items-start">
-        <div>
-          <p class="inline-flex items-center text-xs font-semibold tracking-wide uppercase text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 px-3 py-1 rounded-full mb-3">
-            Entraînement guidé
-          </p>
-          <h2 class="text-2xl md:text-3xl font-bold mb-3">
-            Passez de l’entraînement seul à une vraie méthode sur les annales
-          </h2>
-          <p class="text-sm md:text-base text-slate-100/90 mb-3">
-            On choisit <strong>une annale de cette page</strong>, on la travaille ensemble&nbsp;: méthode, rédaction, gestion du temps.
-            {brevetUrgencyCountdownLabel && (
-              <span class="block mt-2 font-semibold text-amber-200">
-                Le brevet arrive vite ({brevetUrgencyCountdownLabel}) : les vacances restent un bon créneau pour une ou deux séances ciblées.
-              </span>
-            )}
-            <span class="block mt-1">
-              Une séance ciblée peut suffire pour débloquer les exercices les plus classiques du brevet.
-            </span>
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center mb-4">
-            <a
-              href={contactHref}
-              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-amber-400 text-slate-950 font-semibold shadow-lg shadow-amber-500/40 hover:bg-amber-300 transition-all duration-200"
-            >
-              Réserver une séance annales brevet
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-
-            <a
-              href={whatsappBrevetAnnalesUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-transparent border border-white/70 text-white font-semibold hover:bg-white/10 transition-colors"
-            >
-              WhatsApp : aide rapide
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-          </div>
-
-          <p class="text-xs text-slate-300">
-            Format possible : individuel ou petit groupe (2 à 4 élèves). En pratique, on part de votre annale, puis on corrige ce qui bloque.
-          </p>
-        </div>
-        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 md:p-6 shadow-2xl shadow-black/40">
-          <p class="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-2">
-            Ce que vous gagnez concrètement
-          </p>
-          <ul class="space-y-1.5 text-sm text-slate-100">
-            <li>• Améliorer la note : on repère et corrige les “points perdus”</li>
-            <li>• Gagner en méthode : quoi faire, dans quel ordre, et pourquoi</li>
-            <li>• Apprendre à rédiger : une copie claire et conforme au brevet</li>
-            <li>• Gérer son temps : travailler un sujet complet (2h)</li>
-            <li>• Identifier les exercices classiques du brevet</li>
-          </ul>
-          <p class="text-xs text-slate-300 mt-4">
-            Parents : vous repartez avec un plan de révision clair pour les semaines qui précèdent l’examen.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Réassurance -->
   <section class="bg-white py-10 md:py-14">
@@ -664,7 +743,7 @@ const brevetUrgencyCountdownLabel = showBrevetUrgencyBanner
       <div class="max-w-4xl mx-auto">
         <div class="prose prose-lg max-w-none mb-8">
           <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            Les <strong>annales brevet maths</strong> sont un outil essentiel pour réussir votre épreuve de mathématiques au brevet des collèges. Sur cette page, vous trouverez tous les <strong>sujets brevet maths</strong> et <strong>corrigés brevet maths</strong> des sessions 2024 et 2025, organisés par centre d'examen. Ces <strong>annales brevet maths corrigées</strong> vous permettront de vous entraîner efficacement et de comprendre les attentes des correcteurs.
+            Téléchargez les <strong>annales brevet maths 2026, 2025 et 2024</strong> : <strong>sujets et corrigés</strong> gratuits, classés par centre (Métropole, Polynésie, Asie…). Entraînez-vous sur le format réel de l’épreuve (2 h) et voyez ce que les correcteurs attendent.
           </p>
           
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">

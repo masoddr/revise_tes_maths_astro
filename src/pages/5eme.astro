@@ -1,0 +1,76 @@
+---
+import CollegeLevelPage from '../components/CollegeLevelPage.astro';
+---
+
+<CollegeLevelPage
+  slug="5eme"
+  levelLabel="5ème"
+  title="Cours de maths 5ème | Prof particulier Paris et visio"
+  description="Cours particuliers de maths en 5ème, à domicile à Paris ou en visio. Relatifs, fractions, proportionnalité et calcul littéral."
+  h1="Cours de maths en 5ème"
+  subtitle="Consolidation des bases du cycle 4, à Paris ou en visioconférence."
+  intro="En <strong>5ème</strong>, le programme introduit les nombres relatifs et renforce les fractions. C’est souvent là que les lacunes de 6ème redeviennent visibles. Les <strong>cours de maths en 5ème</strong> visent un calcul fiable et un premier calcul littéral, sans sauter les justifications."
+  domaines={[
+    {
+      title: 'Nombres',
+      tone: 'blue',
+      items: [
+        'Nombres relatifs',
+        'Fractions et opérations',
+        'Proportionnalité',
+        'Priorités opératoires',
+      ],
+    },
+    {
+      title: 'Calcul littéral',
+      tone: 'purple',
+      items: [
+        'Expressions simples',
+        'Réduction',
+        'Substitution d’une valeur',
+      ],
+    },
+    {
+      title: 'Géométrie et stats',
+      tone: 'emerald',
+      items: [
+        'Triangles et constructions',
+        'Symétrie centrale',
+        'Aires et volumes',
+        'Statistiques (initiation)',
+      ],
+    },
+  ]}
+  objectifs={[
+    {
+      title: 'Maîtriser les relatifs',
+      text: 'Ajouter, soustraire et situer un nombre relatif sur une droite. Sans cela, les équations de 4ème restent mécaniques.',
+    },
+    {
+      title: 'Opérer sur les fractions',
+      text: 'Additionner, multiplier, simplifier. On revient au sens dès que l’élève applique une règle sans la comprendre.',
+    },
+    {
+      title: 'Entrer dans le calcul littéral',
+      text: 'Distinguer nombre et lettre, réduire une expression, remplacer x par une valeur.',
+    },
+    {
+      title: 'Lire une situation de proportionnalité',
+      text: 'Tableau, coefficient, graphique. Le même raisonnement servira aux pourcentages en 4ème.',
+    },
+  ]}
+  pointsCles={[
+    {
+      title: '1. Les nombres relatifs',
+      text: 'Le signe moins est souvent traité comme une décoration. On travaille la droite graduée, les écarts, puis seulement les techniques.',
+    },
+    {
+      title: '2. Les fractions',
+      text: 'Si le dénominateur commun n’est pas compris, le calcul devient une recette. On revient à des exemples concrets, puis aux exercices du cours.',
+    },
+    {
+      title: '3. Le calcul littéral',
+      text: 'Réduire 3x + 2x n’est pas une formalité. C’est le premier pas vers les équations de 4ème et le brevet.',
+    },
+  ]}
+/>

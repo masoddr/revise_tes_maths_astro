@@ -1,0 +1,75 @@
+---
+import CollegeLevelPage from '../components/CollegeLevelPage.astro';
+---
+
+<CollegeLevelPage
+  slug="6eme"
+  levelLabel="6ème"
+  title="Cours de maths 6ème | Prof particulier Paris et visio"
+  description="Cours particuliers de maths en 6ème, à domicile à Paris ou en visio. Transition CM2-collège, calcul, fractions et géométrie."
+  h1="Cours de maths en 6ème"
+  subtitle="Accompagnement pour la première année de collège, à Paris ou en visioconférence."
+  intro="La <strong>6ème</strong> marque l’entrée au collège. Le rythme change, les attendus aussi. Les <strong>cours de maths en 6ème</strong> servent surtout à installer un calcul sûr, une lecture claire des énoncés et des automatismes de géométrie, avant le cycle 4."
+  domaines={[
+    {
+      title: 'Nombres et calculs',
+      tone: 'blue',
+      items: [
+        'Nombres entiers et décimaux',
+        'Fractions simples',
+        'Opérations et priorités',
+        'Proportionnalité (initiation)',
+      ],
+    },
+    {
+      title: 'Grandeurs et mesures',
+      tone: 'purple',
+      items: [
+        'Longueurs, aires, volumes',
+        'Durées et conversions',
+        'Périmètres et aires de figures usuelles',
+      ],
+    },
+    {
+      title: 'Géométrie et données',
+      tone: 'emerald',
+      items: [
+        'Figures planes et constructions',
+        'Symétrie axiale',
+        'Lecture de tableaux et graphiques',
+      ],
+    },
+  ]}
+  objectifs={[
+    {
+      title: 'Sécuriser le calcul',
+      text: 'Poser une opération, vérifier un résultat, passer d’une écriture à une autre sans perdre le sens du nombre.',
+    },
+    {
+      title: 'Lire un énoncé',
+      text: 'Repérer les données utiles, reformuler la question, choisir une méthode simple avant de calculer.',
+    },
+    {
+      title: 'Construire et justifier',
+      text: 'Utiliser règle, équerre et compas, puis expliquer une propriété en une ou deux phrases.',
+    },
+    {
+      title: 'Prendre le rythme du collège',
+      text: 'Un travail court entre les séances, pour que les devoirs et les contrôles ne s’accumulent pas.',
+    },
+  ]}
+  pointsCles={[
+    {
+      title: '1. Les fractions',
+      text: 'Une fraction mal comprise en 6ème bloque souvent les pourcentages et le calcul littéral plus tard. On insiste sur le sens (part d’un tout) avant les techniques.',
+    },
+    {
+      title: '2. Les conversions',
+      text: 'Unités de longueur, d’aire et de durée. L’erreur vient rarement de la formule : elle vient d’un ordre de grandeur mal évalué.',
+    },
+    {
+      title: '3. La géométrie plane',
+      text: 'Constructions soignées, vocabulaire précis (côté, sommet, perpendiculaire). C’est le socle de la 5ème et de la 4ème.',
+    },
+  ]}
+/>
