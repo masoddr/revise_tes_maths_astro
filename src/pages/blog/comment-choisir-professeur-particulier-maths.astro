@@ -1,0 +1,194 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout 
+  title="Comment choisir un professeur particulier de maths (sans se tromper) | Blog"
+  description="Critères concrets pour choisir un professeur particulier de maths : diagnostic, régularité, niveau, format visio ou présentiel, et signaux d'alerte à surveiller dès les premières séances."
+>
+  <Header />
+  
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Blog', href: '/blog' },
+            { label: 'Choisir un professeur particulier de maths' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <article class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <header class="mb-8 md:mb-12">
+          <div class="flex items-center gap-3 mb-4 flex-wrap">
+            <span class="px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-50 rounded-full">
+              Conseils pratiques
+            </span>
+            <span class="text-sm text-gray-500">
+              3 juillet 2026
+            </span>
+            <span class="text-sm text-gray-500">•</span>
+            <span class="text-sm text-gray-500">11 min de lecture</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Comment choisir un professeur particulier de maths (sans se tromper)
+          </h1>
+          
+          <p class="text-xl text-gray-700 leading-relaxed">
+            « Trouver un prof de maths » est facile. Trouver un accompagnement qui fait progresser l'élève, moins. Le diplôme ne suffit pas, le tarif non plus. Voici des critères concrets, utilisables dès le premier échange, pour distinguer un suivi structuré d'un simple rattrapage de devoirs.
+          </p>
+        </header>
+        
+        <div class="prose prose-lg max-w-none">
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Commencer par le besoin, pas par l'annonce</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Un <strong>professeur particulier de maths</strong> n'a pas le même rôle selon la situation : lacune ancienne, anxiété devant les devoirs, préparation brevet ou bac, maintien d'un haut niveau. Si l'objectif n'est pas nommé, on achète des heures. On n'achète pas une méthode.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Avant de comparer les profils, écrivez en cinq lignes : classe, notes récentes, ce qui bloque (calcul, compréhension, rythme, stress), et ce que vous attendez dans trois mois. Ce texte sert de cahier des charges. Un bon interlocuteur s'en saisira ; un moins bon parlera surtout de sa disponibilité.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Cinq questions à poser au premier entretien</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Un premier échange n'est pas un test de charisme. C'est un test de clarté. Demandez notamment :
+            </p>
+            <ol class="list-decimal pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>Comment diagnostiquez-vous ?</strong> Une copie récente, un exercice blanc, des questions de cours : le diagnostic précède le programme.</li>
+              <li><strong>Que fait l'élève entre deux séances ?</strong> Sans travail court et ciblé, les heures s'évaporent.</li>
+              <li><strong>Comment mesure-t-on les progrès ?</strong> Pas seulement « il a l'air plus confiant » : types d'exercices réussis, erreurs qui disparaissent.</li>
+              <li><strong>Quel format, et pourquoi ?</strong> <a href="/cours-maths-visio" class="text-blue-700 font-semibold underline hover:text-blue-900">Visio</a> ou <a href="/cours-paris" class="text-blue-700 font-semibold underline hover:text-blue-900">présentiel à Paris</a> : le bon canal est celui que l'élève tiendra chaque semaine.</li>
+              <li><strong>Que se passe-t-il si ça ne convient pas ?</strong> Un cadre clair (fréquence, durée d'essai, communication avec la famille) vaut mieux qu'une promesse floue.</li>
+            </ol>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ce qui compte plus que le CV</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Un parcours scientifique solide aide. Il ne garantit pas la pédagogie. Les méta-analyses sur le tutorat insistent surtout sur l'<strong>individualisation</strong> et le <strong>retour rapide sur l'erreur</strong>, plus que sur le statut de l'intervenant<sup>1</sup>. En pratique, observez :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li>Est-ce que le professeur <strong>fait faire</strong>, ou est-ce qu'il dicte la solution ?</li>
+              <li>Est-ce qu'il nomme la méthode (« ici on pose une équation, parce que… ») ou seulement le résultat ?</li>
+              <li>Est-ce qu'il adapte le niveau d'aide (indice, puis silence) au lieu de tout porter ?</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Un élève qui repart avec une copie propre mais sans savoir recommencer n'a pas progressé. Il a été soulagé pour le lendemain.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Signaux d'alerte dès les premières séances</h2>
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-6 mb-6">
+              <ul class="space-y-2 text-gray-700">
+                <li>Les séances consistent surtout à <strong>finir les devoirs</strong> de la semaine.</li>
+                <li>Aucun travail n'est demandé entre deux cours, ou au contraire un volume irréaliste.</li>
+                <li>Le professeur ne regarde pas les copies, seulement le manuel.</li>
+                <li>Les explications changent à chaque exercice, sans méthode transférable.</li>
+              </ul>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Deux ou trois séances suffisent souvent à voir si le cadre tient. Le bon critère n'est pas « l'élève aime bien le prof ». C'est : l'élève sait-il refaire, deux jours plus tard, un exercice du même type ?
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Plateformes, étudiants, enseignants : comment départager</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Il n'y a pas de hiérarchie morale. Il y a des usages différents. Un étudiant brillant peut être excellent sur un chapitre précis. Un enseignant du secondaire connaît le barème et les attendus. Un intervenant indépendant, s'il suit les élèves sur l'année, peut installer une progression plus longue.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Méfiez-vous surtout de deux extrêmes : le « packing » d'heures sans diagnostic, et le discours marketing (classements, garanties de notes). Un accompagnement sérieux clarifie le cadre, les limites, et le rôle de l'élève. C'est le ton que je défends sur la page <a href="/professeur-particulier-maths" class="text-blue-700 font-semibold underline hover:text-blue-900">professeur particulier de maths</a> : un suivi exigeant, pas un service ponctuel de rattrapage.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Le tarif n'est pas le critère, la régularité l'est</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Une heure peu chère, irrégulière, coûte souvent plus cher qu'un créneau stable. Les maths progressent par accumulation de petites corrections. Un rythme hebdomadaire, même d'une heure, bat trois heures « quand on a le temps ».
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Comparez donc le <strong>coût d'un trimestre tenu</strong>, pas le prix affiché d'une séance. Et vérifiez que le format (visio, Paris, éventuellement <a href="/cours-collectifs-maths" class="text-blue-700 font-semibold underline hover:text-blue-900">cours collectifs</a>) est compatible avec l'emploi du temps réel de la famille.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Références et sources</h2>
+            <ol class="list-decimal pl-6 space-y-2 text-gray-700 text-sm">
+              <li>VanLehn, K., « The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems », <em>Educational Psychologist</em>, 2011.</li>
+            </ol>
+          </section>
+          
+        </div>
+        
+        <section class="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Un premier échange pour clarifier le besoin
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Avant toute proposition de suivi, je prends le temps de comprendre le parcours de l'élève, les attendus de la famille et l'adéquation avec ma méthode de travail.
+          </p>
+          <a 
+            href="#contact" 
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-all duration-300"
+          >
+            Demander un premier échange
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </section>
+        
+      </div>
+    </div>
+  </article>
+  
+  <section id="contact" class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+  }
+  .prose p {
+    margin-bottom: 1rem;
+  }
+  .prose strong {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  .prose sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+</style>

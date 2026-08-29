@@ -1,0 +1,195 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout 
+  title="Python au lycée : ce que l'algorithmique change vraiment en maths | Blog"
+  description="Python et algorithmique au lycée : pourquoi ce n'est pas une matière à part, comment cela aide les maths (logique, suites, simulations) et comment travailler sans se noyer dans la syntaxe."
+>
+  <Header />
+  
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Blog', href: '/blog' },
+            { label: 'Python au lycée et maths' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <article class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <header class="mb-8 md:mb-12">
+          <div class="flex items-center gap-3 mb-4 flex-wrap">
+            <span class="px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-50 rounded-full">
+              Orientation
+            </span>
+            <span class="text-sm text-gray-500">
+              8 mai 2026
+            </span>
+            <span class="text-sm text-gray-500">•</span>
+            <span class="text-sm text-gray-500">10 min de lecture</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Python au lycée : ce que l'algorithmique change vraiment en maths
+          </h1>
+          
+          <p class="text-xl text-gray-700 leading-relaxed">
+            Beaucoup d'élèves voient Python comme une parenthèse technique : un langage à mémoriser, une question de bac à part. En réalité, un usage sobre de l'algorithmique <strong>clarifie</strong> souvent les maths : suites, simulations, conditions, boucles. Encore faut-il ne pas inverser les priorités.
+          </p>
+        </header>
+        
+        <div class="prose prose-lg max-w-none">
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ce n'est pas « apprendre à coder » d'abord</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Au lycée, Python n'a pas vocation à former un développeur. Il sert à <strong>écrire une procédure</strong> : une suite d'instructions qui calcule, teste, répète. C'est le même geste mental qu'une démonstration bien découpée, avec un avantage : l'ordinateur refuse l'à-peu-près. Une indentation oubliée, une variable mal nommée, et le programme s'arrête. C'est exigeant. C'est aussi pédagogique.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Les programmes de mathématiques du lycée intègrent cet outil précisément pour relier un objet mathématique (une suite, une fréquence, une fonction) à une <strong>expérimentation contrôlée</strong>. On ne « croit » plus seulement la formule : on la fait tourner sur des exemples.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Trois ponts concrets avec les maths</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Sans verser dans un cours de syntaxe, voici où Python aide réellement :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>Les suites</strong> : une boucle <code class="text-sm bg-gray-100 px-1 py-0.5 rounded">for</code> rend visible la récurrence. L'élève voit que « u<sub>n+1</sub> à partir de u<sub>n</sub> » n'est pas une magie de notation.</li>
+              <li><strong>Les probabilités</strong> : une simulation (tirages répétés) donne du sens à une fréquence, avant même la formule exacte.</li>
+              <li><strong>Les fonctions</strong> : tabuler des images, comparer une dérivée numérique à une pente, tester un seuil.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Dans tous ces cas, le code n'est pas l'objectif. Il est un <strong>laboratoire</strong>. Si l'élève ne sait pas dire ce que le programme calcule, le laboratoire ne sert à rien.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">L'erreur classique : la syntaxe avant le raisonnement</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              On voit souvent des copies où le programme « ressemble » à Python sans faire le bon calcul : mauvaise initialisation, compteur qui commence à 1 au lieu de 0, condition inversée. Le professeur de maths n'évalue pas un style de code. Il évalue si l'<strong>algorithme correspond à la notion</strong>.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Une méthode simple avant d'ouvrir l'éditeur :
+            </p>
+            <ol class="list-decimal pl-6 mb-6 space-y-2 text-gray-700">
+              <li>Écrire l'algorithme en français (3 à 8 lignes).</li>
+              <li>Le tester à la main sur un exemple minuscule (n = 3, cinq tirages).</li>
+              <li>Ensuite seulement, le traduire en Python.</li>
+            </ol>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Cette discipline évite de « déboguer au hasard ». Elle entraîne aussi la rédaction, utile bien au-delà de l'informatique.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">NSI, spécialité maths, option : qui a vraiment besoin de Python ?</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Tous les élèves de spécialité maths rencontrent Python. Ce n'est pas réservé à la NSI. En revanche, le niveau d'ambition n'est pas le même :
+            </p>
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 mb-6">
+              <ul class="space-y-2 text-gray-700">
+                <li><strong>Spécialité maths</strong> : scripts courts, lisibles, liés à un objet du cours.</li>
+                <li><strong>NSI</strong> : structures plus riches, projets, complexité — un autre métier pédagogique.</li>
+                <li><strong>Collège / début de lycée</strong> : logique, variables, conditions — sans empiler les bibliothèques.</li>
+              </ul>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Un élève en difficulté en maths n'a pas besoin d'un bootcamp. Il a besoin que le code reste un outil au service d'une notion. C'est l'esprit de la page <a href="/enseignement-python" class="text-blue-700 font-semibold underline hover:text-blue-900">enseignement Python</a> : rigueur et lisibilité, pas de course à la stack technique.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Comment travailler Python sans y passer les soirées</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Quinze minutes régulières suffisent souvent, si elles sont ciblées :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li>Un script du cours, recopié puis <strong>modifié</strong> (changer un seuil, un nombre de termes).</li>
+              <li>Expliquer à voix haute ce que fait chaque ligne.</li>
+              <li>Relier le résultat à une question de maths : « qu'est-ce que cette liste représente ? ».</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Pour se faire une idée du lien entre maths et données, les démonstrations du site (par exemple la <a href="/demo/classification-chiffres" class="text-blue-700 font-semibold underline hover:text-blue-900">classification de chiffres</a>) montrent un usage concret : on ne « croit » pas un modèle, on observe ce qu'il fait. Au lycée, l'échelle est plus petite. L'esprit est le même.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Et après le bac ?</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Python n'est pas un sésame à lui seul. Combiné à des maths solides, il devient un langage utile en sciences, en économie quantitative, en prépa, en école d'ingénieurs. L'inverse est rarement vrai : coder sans raisonnement produit des scripts opaques. D'où l'ordre que je défends : d'abord la logique, ensuite l'outil.
+            </p>
+          </section>
+          
+        </div>
+        
+        <section class="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Maths et Python, dans le même suivi
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Je peux intégrer l'algorithmique au travail mathématique de l'élève : scripts lisibles, liés au cours, sans en faire une matière parallèle décourageante.
+          </p>
+          <a 
+            href="#contact" 
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-all duration-300"
+          >
+            Demander un premier échange
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </section>
+        
+      </div>
+    </div>
+  </article>
+  
+  <section id="contact" class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+  }
+  .prose p {
+    margin-bottom: 1rem;
+  }
+  .prose strong {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  .prose sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+</style>

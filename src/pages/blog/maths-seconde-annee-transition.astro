@@ -1,0 +1,194 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout 
+  title="Maths en seconde : comment s'adapter à l'année de transition | Blog"
+  description="La seconde change le rythme des maths : abstraction, autonomie, notation. Points de bascule, méthodes concrètes et erreurs à éviter pour ne pas décrocher dès le premier trimestre."
+>
+  <Header />
+  
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Blog', href: '/blog' },
+            { label: 'Maths en seconde : année de transition' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <article class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <header class="mb-8 md:mb-12">
+          <div class="flex items-center gap-3 mb-4 flex-wrap">
+            <span class="px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-50 rounded-full">
+              Méthodologie
+            </span>
+            <span class="text-sm text-gray-500">
+              31 juillet 2026
+            </span>
+            <span class="text-sm text-gray-500">•</span>
+            <span class="text-sm text-gray-500">10 min de lecture</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Maths en seconde : comment s'adapter quand le collège ne suffit plus
+          </h1>
+          
+          <p class="text-xl text-gray-700 leading-relaxed">
+            Beaucoup d'élèves arrivent en seconde avec des notes correctes en 3ème, puis se sentent « perdus » dès novembre. Ce n'est pas forcément un problème de niveau. C'est souvent un problème d'<strong>adaptation</strong> : le contrat pédagogique a changé, sans que personne l'ait nommé clairement.
+          </p>
+        </header>
+        
+        <div class="prose prose-lg max-w-none">
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ce que le collège n'a pas toujours entraîné</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              En 3ème, un élève organisé peut encore s'en sortir en refaisant les exercices du cours et en mémorisant des procédures. En <strong>maths seconde</strong>, les énoncés demandent plus souvent de <strong>choisir</strong> une méthode, de justifier un passage, de relier un graphique à une formule. Le professeur avance plus vite. Les lacunes de calcul (fractions, identités, équations) redeviennent visibles.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Ce n'est pas une rupture brutale pour tout le monde. Mais c'est assez fréquent pour être anticipé, surtout après un brevet réussi « à l'intuition ».
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Les cinq points de bascule de l'année</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Sans tout détailler du programme, certains thèmes révèlent très tôt si la transition est en cours :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>Le calcul littéral</strong> : développer, factoriser, gérer les signes. Sans cela, les fonctions deviennent un mur.</li>
+              <li><strong>Les fonctions</strong> : vocabulaire (image, antécédent, variations) plus que les « recettes » de collège.</li>
+              <li><strong>Les équations et inéquations</strong> : on ne cherche plus seulement un nombre, on justifie un ensemble de solutions.</li>
+              <li><strong>La géométrie et les vecteurs</strong> : le dessin ne suffit plus ; il faut un langage.</li>
+              <li><strong>Les probabilités</strong> : lecture d'énoncé et arbre, plus que des pourcentages isolés.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Un élève peut « suivre » en classe et échouer en devoir si ces langages ne sont pas encore automatiques. D'où l'intérêt d'un diagnostic précoce, plutôt que d'attendre le conseil de classe de décembre.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Une méthode simple pour le premier trimestre</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              L'erreur classique est de travailler plus longtemps, de la même façon. En seconde, on gagne davantage à changer <strong>la nature</strong> du travail :
+            </p>
+            <ol class="list-decimal pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>Après chaque cours</strong> : 10 minutes pour réécrire, sans notes, la définition ou la propriété du jour.</li>
+              <li><strong>Deux fois par semaine</strong> : 40 minutes d'exercices, dont au moins un exercice « un cran au-dessus » du dernier réussi.</li>
+              <li><strong>Après chaque devoir</strong> : une fiche d'erreur en quatre lignes (type d'erreur, signal, règle, mini-exercice).</li>
+            </ol>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Cette organisation rejoint ce que les travaux sur la pratique distribuée montrent depuis longtemps : des séances courtes et régulières battent un rattrapage massif le week-end<sup>1</sup>. En maths, le week-end de rattrapage arrive trop tard : le chapitre suivant a déjà commencé.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Autonomie : ce que les familles peuvent (et ne peuvent pas) faire</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              En seconde, « faire les devoirs avec l'enfant » devient souvent contre-productif. L'élève a besoin d'un espace pour se tromper, puis de revenir. Un parent peut en revanche :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li>Aider à <strong>planifier</strong> (créneaux visibles, téléphone ailleurs).</li>
+              <li>Demander une explication orale : « explique-moi cette propriété comme si je n'avais pas le cours ».</li>
+              <li>Relire la copie corrigée pour identifier un motif d'erreur, pas pour refaire l'exercice à sa place.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Si les tensions montent autour de la table, c'est un signal : le rôle parental n'est plus celui du professeur. Un <a href="/seconde" class="text-blue-700 font-semibold underline hover:text-blue-900">suivi en maths seconde</a> sert alors à séparer les deux fonctions — cadre à la maison, méthode avec un intervenant.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Quand s'inquiéter (et quand attendre un peu)</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Une note décevante en octobre n'est pas un verdict. En revanche, trois signes méritent d'être pris au sérieux :
+            </p>
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-6 mb-6">
+              <ul class="space-y-2 text-gray-700">
+                <li>L'élève ne sait plus <strong>par où commencer</strong> un exercice, même guidé.</li>
+                <li>Les erreurs de calcul de 4ème / 3ème reviennent sur chaque copie.</li>
+                <li>Le travail à la maison devient une source d'évitement (devoirs non faits, « je comprends en classe » sans restitution).</li>
+              </ul>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Dans ces cas, attendre les vacances de Noël coûte souvent plus cher qu'un diagnostic de quelques séances. Les <a href="/seconde/cours" class="text-blue-700 font-semibold underline hover:text-blue-900">fiches de cours de seconde</a> et les exercices par chapitre aident ensuite à reconstruire, à condition de ne pas les empiler sans méthode.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Références et sources</h2>
+            <ol class="list-decimal pl-6 space-y-2 text-gray-700 text-sm">
+              <li>Cepeda, N. J. et al., « Distributed practice in verbal recall tasks: A review and quantitative synthesis », <em>Psychological Bulletin</em>, 2006.</li>
+            </ol>
+          </section>
+          
+        </div>
+        
+        <section class="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Un accompagnement pour sécuriser la transition collège–lycée
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Je travaille avec des élèves de seconde pour consolider le calcul, installer le vocabulaire des fonctions et retrouver une méthode de devoirs autonome.
+          </p>
+          <a 
+            href="#contact" 
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-all duration-300"
+          >
+            Demander un premier échange
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </section>
+        
+      </div>
+    </div>
+  </article>
+  
+  <section id="contact" class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+  }
+  .prose p {
+    margin-bottom: 1rem;
+  }
+  .prose strong {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  .prose sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+</style>

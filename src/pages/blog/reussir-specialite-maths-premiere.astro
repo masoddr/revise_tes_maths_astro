@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout 
+  title="Réussir la spécialité maths en première : rythme, pièges et méthode | Blog"
+  description="Spécialité maths en première : ce qui change vraiment, comment organiser le travail hebdomadaire, éviter les décrochages classiques et préparer sereinement la terminale."
+>
+  <Header />
+  
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-3">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs 
+          items={[
+            { label: 'Blog', href: '/blog' },
+            { label: 'Réussir la spécialité maths en première' }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <article class="bg-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <header class="mb-8 md:mb-12">
+          <div class="flex items-center gap-3 mb-4 flex-wrap">
+            <span class="px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-50 rounded-full">
+              Examens & Révisions
+            </span>
+            <span class="text-sm text-gray-500">
+              28 août 2026
+            </span>
+            <span class="text-sm text-gray-500">•</span>
+            <span class="text-sm text-gray-500">11 min de lecture</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Réussir la spécialité maths en première : rythme, pièges et méthode
+          </h1>
+          
+          <p class="text-xl text-gray-700 leading-relaxed">
+            La spécialité mathématiques en première n'est pas « plus de seconde ». C'est un changement de densité : plus de démonstration, plus d'abstraction, moins de temps pour rattraper un chapitre mal ancré. Voici une méthode réaliste pour tenir l'année sans dramatiser, et sans laisser les lacunes s'accumuler.
+          </p>
+        </header>
+        
+        <div class="prose prose-lg max-w-none">
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ce qui change vraiment par rapport à la seconde</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              En seconde, on peut encore compenser une notion fragile par du calcul ou de l'intuition. En <strong>spécialité maths première</strong>, les chapitres s'enchaînent et se réutilisent : fonctions, dérivation, suites, probabilités, vecteurs. Un trou sur les équations ou sur le vocabulaire des fonctions se paie plusieurs fois dans l'année.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              L'autre bascule est méthodologique. On attend davantage de <strong>rédaction</strong> : hypothèses, implications, justifications. Un résultat juste avec une copie illisible rapporte moins que prévu. Ce n'est pas un détail de forme : c'est une compétence d'examen, déjà utile pour le bac.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Les trois pièges les plus fréquents</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Après plusieurs années d'accompagnement en lycée, les mêmes décrochages reviennent :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>Travailler uniquement les exercices « qu'on arrive à faire »</strong>. Cela rassure, mais n'entraîne pas les questions qui feront la différence en devoir.</li>
+              <li><strong>Relire le cours sans le restituer</strong>. La relecture donne une impression de maîtrise. Un exercice blanc, cinq minutes plus tard, dit souvent le contraire.</li>
+              <li><strong>Attendre le contrôle pour diagnostiquer</strong>. En première, un chapitre mal compris n'est pas « isolé » : il revient dans le suivant.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              La recherche sur l'apprentissage confirme ce que les copies montrent : la <strong>récupération active</strong> (se tester, refaire, expliquer) est plus efficace que la relecture<sup>1</sup>. En maths, cela veut dire : feuille blanche, exercice, correction, puis refaire le même type 48 heures plus tard.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Un rythme hebdomadaire tenable</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              L'objectif n'est pas d'ajouter des heures impossibles, mais de rendre le travail <strong>prévisible</strong>. Une semaine type, hors période de devoirs, peut ressembler à ceci :
+            </p>
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 mb-6">
+              <ul class="space-y-2 text-gray-700">
+                <li><strong>2 séances courtes (40–50 min)</strong> : exercices du chapitre en cours, correction immédiate, fiche d'erreur.</li>
+                <li><strong>1 séance de rappel (25–30 min)</strong> : 4 à 6 questions de cours issues des chapitres précédents (suites, dérivées, équations).</li>
+                <li><strong>Avant un devoir</strong> : un sujet type ou un mélange d'exercices, dans le temps imparti, sans téléphone à portée.</li>
+              </ul>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Ce rythme est compatible avec le reste des spécialités. Ce qui le fait échouer, ce n'est pas le volume : c'est l'irrégularité. Trois semaines sans pratique, puis un week-end de rattrapage, produisent de la fatigue et peu de transfert.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Que faire d'un chapitre « à côté » ?</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Un chapitre raté n'oblige pas à tout recommencer. Une séquence courte suffit souvent :
+            </p>
+            <ol class="list-decimal pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>Identifier l'obstacle exact</strong> : vocabulaire, technique de calcul, lecture d'énoncé, ou raisonnement.</li>
+              <li><strong>Revenir à 3 exercices fondateurs</strong> du chapitre, pas à toute la fiche.</li>
+              <li><strong>Les refaire à J+2</strong> sans regarder le corrigé d'abord.</li>
+              <li><strong>Les reconnecter au chapitre actuel</strong> (une dérivée utilise les fonctions ; une suite utilise les équations).</li>
+            </ol>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              C'est précisément le rôle d'un <a href="/premiere" class="text-blue-700 font-semibold underline hover:text-blue-900">accompagnement en maths première</a> : diagnostiquer vite, plutôt que multiplier les pages. Les <a href="/premiere/exercices" class="text-blue-700 font-semibold underline hover:text-blue-900">exercices ciblés par chapitre</a> servent ensuite à ancrer, pas à « faire du volume ».
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Garder ou abandonner la spécialité ?</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              La question revient souvent au deuxième trimestre. Elle n'a pas de réponse universelle. Trois critères concrets aident à trancher sans panique :
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+              <li><strong>Le projet post-bac</strong> : certaines formations exigent la spécialité maths, d'autres la valorisent fortement.</li>
+              <li><strong>La nature des difficultés</strong> : un problème de méthode se rattrape ; un rejet durable de l'abstraction, moins.</li>
+              <li><strong>La tendance, pas une note isolée</strong> : une copie médiocre après un chapitre dense n'est pas un verdict d'année.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Si l'élève reste, l'objectif n'est pas « tout rattraper en deux semaines ». C'est de reconstruire un socle (calcul, fonctions, rédaction) puis de reprendre le rythme. Un suivi régulier, en visio ou à Paris, sert surtout à éviter que la décision se prenne trop tard, sur un sentiment plutôt que sur un diagnostic.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Préparer la terminale dès la première</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              On n'anticipe pas le bac en accumulant des annales de terminale trop tôt. On anticipe en installant des automatismes : dériver proprement, lire un graphique, rédiger une implication, gérer le temps d'un exercice long.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Les élèves qui arrivent sereins en terminale ont rarement « tout compris du premier coup ». Ils ont surtout <strong>corrigé leurs erreurs au fil de l'eau</strong>. C'est une habitude, pas un don.
+            </p>
+          </section>
+          
+          <section class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Références et sources</h2>
+            <ol class="list-decimal pl-6 space-y-2 text-gray-700 text-sm">
+              <li>Dunlosky, J. et al., « Improving Students' Learning With Effective Learning Techniques », <em>Psychological Science in the Public Interest</em>, 2013.</li>
+            </ol>
+          </section>
+          
+        </div>
+        
+        <section class="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Un suivi adapté à la spécialité maths en première
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Je propose un accompagnement individualisé pour clarifier les chapitres fragiles, installer une méthode de travail et préparer la suite en terminale.
+          </p>
+          <a 
+            href="#contact" 
+            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-all duration-300"
+          >
+            Demander un premier échange
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </section>
+        
+      </div>
+    </div>
+  </article>
+  
+  <section id="contact" class="bg-gray-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+  }
+  .prose p {
+    margin-bottom: 1rem;
+  }
+  .prose strong {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  .prose sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+</style>
